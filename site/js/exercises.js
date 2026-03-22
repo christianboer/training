@@ -482,13 +482,155 @@ function findSvg(name) {
     </svg>`;
 }
 
+// Convert exercise name to image filename slug
+function nameToSlug(name) {
+    return name
+        .toLowerCase()
+        .replace(/\(.*?\)/g, '')       // remove parenthetical
+        .replace(/[^a-z0-9]+/g, '-')   // non-alphanum to hyphens
+        .replace(/^-|-$/g, '')          // trim hyphens
+        .replace(/-+/g, '-');           // collapse multiple
+}
+
+// YouTube video mapping — add video IDs here as you find good demos
+// Key: exercise slug, Value: YouTube video ID
+const EXERCISE_VIDEOS = {
+    '90-90-hip-switches': 'iPqysXFsvTQ',
+};
+
+function getVideoId(slug) {
+    return EXERCISE_VIDEOS[slug] || null;
+}
+
+function youtubeEmbed(videoId) {
+    return `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
+}
+
+// Check if an image exists (cache results)
+const _imageCache = {};
+async function imageExists(slug) {
+    if (slug in _imageCache) return _imageCache[slug];
+    const extensions = ['png', 'jpg', 'jpeg', 'webp'];
+    for (const ext of extensions) {
+        const url = `img/exercises/${slug}.${ext}`;
+        try {
+            const resp = await fetch(url, { method: 'HEAD' });
+            if (resp.ok) {
+                _imageCache[slug] = url;
+                return url;
+            }
+        } catch (e) { /* skip */ }
+    }
+    _imageCache[slug] = null;
+    return null;
+}
+
+// ---- Modal ----
+
+let modalEl = null;
+
+function getModal() {
+    if (modalEl) return modalEl;
+    modalEl = document.createElement('div');
+    modalEl.className = 'exercise-modal';
+    modalEl.innerHTML = `
+        <div class="exercise-modal-backdrop"></div>
+        <div class="exercise-modal-content">
+            <button class="exercise-modal-close" aria-label="Close">&times;</button>
+            <div class="exercise-modal-body">
+                <div class="exercise-modal-media"></div>
+                <div class="exercise-modal-info"></div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modalEl);
+
+    modalEl.querySelector('.exercise-modal-backdrop').addEventListener('click', closeModal);
+    modalEl.querySelector('.exercise-modal-close').addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    return modalEl;
+}
+
+function openModal(ex, svgHtml, imageUrl, videoId) {
+    const modal = getModal();
+    const mediaDiv = modal.querySelector('.exercise-modal-media');
+    const infoDiv = modal.querySelector('.exercise-modal-info');
+
+    const hasPhoto = !!imageUrl;
+    const hasVideo = !!videoId;
+
+    // Build media section: photo and/or video side by side
+    let mediaHtml = '';
+
+    if (hasPhoto && hasVideo) {
+        mediaHtml = `
+            <div class="exercise-modal-photo">
+                <img src="${imageUrl}" alt="${ex.name}">
+            </div>
+            <div class="exercise-modal-video">
+                <iframe src="${youtubeEmbed(videoId)}" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        `;
+    } else if (hasPhoto) {
+        mediaHtml = `
+            <div class="exercise-modal-photo solo">
+                <img src="${imageUrl}" alt="${ex.name}">
+            </div>
+        `;
+    } else if (hasVideo) {
+        mediaHtml = `
+            <div class="exercise-modal-video solo">
+                <iframe src="${youtubeEmbed(videoId)}" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        `;
+    } else {
+        mediaHtml = `<div class="exercise-modal-svg-large">${svgHtml}</div>`;
+    }
+
+    mediaDiv.innerHTML = mediaHtml;
+
+    // Info section
+    const reps = ex.sets_reps || ex.reps || '';
+    const desc = ex.description || ex.purpose || '';
+    const group = ex.group || '';
+
+    infoDiv.innerHTML = `
+        ${group ? `<div class="ex-group">${group}</div>` : ''}
+        <h3 class="exercise-modal-name">${ex.name}</h3>
+        ${reps ? `<div class="exercise-modal-reps">${reps}</div>` : ''}
+        <div class="exercise-modal-desc">${desc}</div>
+        <div class="exercise-modal-svg-small">${svgHtml}</div>
+    `;
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    if (!modalEl) return;
+    // Stop any playing video by clearing iframes
+    const iframes = modalEl.querySelectorAll('iframe');
+    iframes.forEach(f => { f.src = ''; });
+    modalEl.classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+// ---- Render ----
+
 export function renderExercises(exercises) {
     const grid = document.getElementById('exercise-grid');
     const tabs = document.querySelectorAll('.tab-btn');
 
     let activeTab = 'morning';
 
-    function render() {
+    async function render() {
         grid.innerHTML = '';
         let items = [];
 
@@ -496,26 +638,44 @@ export function renderExercises(exercises) {
         else if (activeTab === 'postrun') items = exercises.postrun;
         else if (activeTab === 'strength') items = exercises.strength;
 
-        items.forEach(ex => {
+        for (const ex of items) {
             const card = document.createElement('div');
             card.className = 'exercise-card';
 
             const name = ex.name;
             const svg = findSvg(name);
+            const slug = nameToSlug(name);
             const reps = ex.sets_reps || ex.reps || '';
             const desc = ex.description || ex.purpose || '';
             const group = ex.group ? `<div class="ex-group">${ex.group}</div>` : '';
 
+            // Check for photo and video
+            const photoUrl = await imageExists(slug);
+            const videoId = getVideoId(slug);
+            const hasPhoto = !!photoUrl;
+            const hasVideo = !!videoId;
+            const hasMedia = hasPhoto || hasVideo;
+
             card.innerHTML = `
-                <div class="exercise-visual">${svg}</div>
+                <div class="exercise-visual">
+                    <div class="exercise-visual-svg">${svg}</div>
+                    ${hasPhoto ? `<div class="exercise-visual-photo"><img src="${photoUrl}" alt="${name}" loading="lazy"></div>` : ''}
+                </div>
                 ${group}
-                <div class="ex-name">${name}</div>
+                <div class="ex-name">
+                    ${name}
+                    ${hasPhoto ? '<span class="ex-photo-badge" title="Photo available"></span>' : ''}
+                    ${hasVideo ? '<span class="ex-video-badge" title="Video available">&#9654;</span>' : ''}
+                </div>
                 ${reps ? `<div class="ex-reps">${reps}</div>` : ''}
                 <div class="ex-desc">${desc}</div>
             `;
 
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', () => openModal(ex, svg, photoUrl, videoId));
+
             grid.appendChild(card);
-        });
+        }
     }
 
     tabs.forEach(tab => {

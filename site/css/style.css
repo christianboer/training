@@ -834,10 +834,8 @@ a:hover { color: var(--accent-light); }
 
 .exercise-visual {
     width: 100%;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 160px;
+    position: relative;
     margin-bottom: 12px;
     border-radius: var(--radius-sm);
     background: rgba(15, 23, 42, 0.3);
@@ -848,9 +846,49 @@ a:hover { color: var(--accent-light); }
     background: rgba(241, 245, 249, 0.8);
 }
 
-.exercise-visual svg {
+.exercise-visual-svg {
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s;
+}
+
+.exercise-visual-svg svg {
+    width: 100%;
+    height: 100%;
+}
+
+.exercise-visual-photo {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.exercise-visual-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.exercise-card:hover .exercise-visual-photo {
+    opacity: 1;
+}
+
+.exercise-card:hover .exercise-visual-svg {
+    opacity: 0;
+}
+
+.ex-photo-badge {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-left: 6px;
+    vertical-align: middle;
 }
 
 .exercise-card .ex-name {
@@ -878,6 +916,228 @@ a:hover { color: var(--accent-light); }
     letter-spacing: 0.05em;
     color: var(--text-muted);
     margin-bottom: 8px;
+}
+
+/* ---- Exercise Modal ---- */
+
+.exercise-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+}
+
+.exercise-modal.open { display: flex; align-items: center; justify-content: center; }
+
+.exercise-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+}
+
+.exercise-modal-content {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    width: 95vw;
+    max-width: 1400px;
+    height: 85vh;
+    max-height: 900px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.5);
+}
+
+.exercise-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 2;
+    line-height: 1;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+}
+
+.exercise-modal-close:hover { background: rgba(0, 0, 0, 0.6); }
+
+.exercise-modal-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* ---- Media row: photo + video side by side ---- */
+
+.exercise-modal-media {
+    display: flex;
+    gap: 0;
+    min-height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.exercise-modal-photo {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.5);
+}
+
+.exercise-modal-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.exercise-modal-photo.solo img {
+    object-fit: contain;
+}
+
+.exercise-modal-video {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    background: #000;
+}
+
+.exercise-modal-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.exercise-modal-svg-large {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: rgba(15, 23, 42, 0.3);
+}
+
+.exercise-modal-svg-large svg {
+    width: 100%;
+    max-height: 100%;
+}
+
+/* ---- Info row below media ---- */
+
+.exercise-modal-info {
+    padding: 24px 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    border-top: 1px solid var(--border);
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.exercise-modal-info .ex-group {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.exercise-modal-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.exercise-modal-reps {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 4px;
+}
+
+.exercise-modal-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-top: 8px;
+    flex: 1;
+}
+
+.exercise-modal-svg-small {
+    flex-shrink: 0;
+    width: 180px;
+    height: 100px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.exercise-modal-svg-small:hover { opacity: 0.9; }
+
+.exercise-modal-svg-small svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ---- Video badge on card ---- */
+
+.ex-video-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: var(--missed);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.55rem;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .exercise-modal-content {
+        width: 100vw;
+        height: 100vh;
+        max-height: none;
+        border-radius: 0;
+    }
+    .exercise-modal-media {
+        flex-direction: column;
+    }
+    .exercise-modal-photo,
+    .exercise-modal-video {
+        min-height: 200px;
+    }
+    .exercise-modal-video.solo,
+    .exercise-modal-photo.solo {
+        min-height: 300px;
+    }
+    .exercise-modal-info {
+        flex-direction: column;
+        padding: 16px 20px;
+    }
+    .exercise-modal-svg-small {
+        width: 100%;
+        height: 80px;
+    }
 }
 
 /* ---- Race Day ---- */

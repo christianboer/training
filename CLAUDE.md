@@ -110,7 +110,7 @@ GROUP BY l.legging_id ORDER BY wears DESC;
 
 ## Training Dashboard
 
-Static HTML/CSS/JS site in `site/`. Displays the 14-week training plan, progress charts, exercise library, and race day reference.
+Static HTML/CSS/JS site in `site/`. Displays the 14-week training plan, progress charts, time prediction, exercise library, and race day reference.
 
 ### Serving locally
 
@@ -133,9 +133,16 @@ The dashboard reads `site/data/training.json` which is generated from `db/traini
 - `site/index.html` — Single page with all sections
 - `site/css/style.css` — Mountain dark theme, responsive
 - `site/js/app.js` — Main controller (countdown, timeline, heatmap, gear checklist, pace calculator)
-- `site/js/plan.js` — This Week view (matches plan days to actual activities)
+- `site/js/plan.js` — This Week view (matches plan days to actual activities, week navigation)
 - `site/js/charts.js` — Chart.js charts (weekly volume, elevation, cumulative progress)
-- `site/js/exercises.js` — Exercise cards with inline SVG stick-figure illustrations
+- `site/js/exercises.js` — Exercise cards with inline SVG stick-figure illustrations, photo hover, video support, click-to-modal
+- `site/img/exercises/` — Exercise photos (1:1, 1024x1024 PNG). Named by slug: `90-90-hip-switches.png`, `cat-cow.png`, etc. Auto-detected on page load.
+
+### Adding exercise media
+
+**Photos:** Drop a 1024x1024 image in `site/img/exercises/{slug}.png` (supports .jpg, .jpeg, .webp too). The slug is the exercise name lowercased with hyphens (e.g., `half-kneeling-hip-flexor-stretch`). Photos appear on card hover and in the modal.
+
+**Videos:** Add a YouTube video ID to the `EXERCISE_VIDEOS` map in `site/js/exercises.js`. Videos appear alongside the photo in the modal.
 
 ## Data Sources
 
