@@ -293,6 +293,59 @@ a:hover { color: var(--accent-light); }
     color: var(--text-muted);
 }
 
+/* ---- Week Navigation ---- */
+
+.week-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.week-nav-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: 1rem;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: var(--font-main);
+}
+
+.week-nav-btn:hover:not(:disabled) {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.week-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.week-nav-label {
+    flex: 1;
+    font-size: 0.9rem;
+    min-width: 200px;
+}
+
+.week-nav-today {
+    background: var(--accent);
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: var(--font-main);
+    padding: 5px 14px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.week-nav-today:hover { opacity: 0.85; }
+
 /* ---- This Week ---- */
 
 .week-summary {
@@ -353,6 +406,7 @@ a:hover { color: var(--accent-light); }
 .day-card.done { border-left: 3px solid var(--done); }
 .day-card.missed { border-left: 3px solid var(--missed); }
 .day-card.rest { border-left: 3px solid var(--rest); opacity: 0.7; }
+.day-card.ride { border-left: 3px solid var(--phase-base); }
 
 .day-header {
     display: flex;
@@ -404,10 +458,15 @@ a:hover { color: var(--accent-light); }
 
 .day-target {
     margin-top: auto;
-    padding-top: 6px;
+    padding-top: 8px;
     font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-glow);
+    border-radius: 4px;
+    padding: 4px 8px;
+    display: inline-block;
 }
 
 /* ---- Progress Charts ---- */

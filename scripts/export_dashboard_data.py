@@ -63,23 +63,32 @@ def parse_plan(plan_path):
 
         # Parse the day table rows
         days = []
-        # Match table rows: | Day | Session | km | Elev | or | Day | Session |
-        row_pattern = re.compile(r'^\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*(?:\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|)?', re.MULTILINE)
-        for row in row_pattern.finditer(block):
-            day_name = row.group(1).strip().replace('**', '')
-            session = row.group(2).strip().replace('**', '')
+        for line in block.split('\n'):
+            line = line.strip()
+            if not line.startswith('|'):
+                continue
+            cells = [c.strip() for c in line.split('|')]
+            # split('|') gives ['', cell1, cell2, ...], filter empties from edges
+            cells = [c for c in cells if c != '']
+            if len(cells) < 2:
+                continue
+
+            day_name = cells[0].replace('**', '').strip()
+            session = cells[1].replace('**', '').strip()
 
             # Skip header and separator rows
             if day_name in ('Day', '---', '') or session in ('Session', '---', ''):
                 continue
-            if day_name == 'Total' or day_name.startswith('**Total'):
+            if '---' in day_name:
+                continue
+            if day_name == 'Total' or day_name.startswith('Total'):
                 continue
 
             # Strip date annotations like "(May 22)" from day names
             day_clean = re.sub(r'\s*\([^)]+\)', '', day_name).strip()
 
-            km_str = row.group(3).strip() if row.group(3) else '—'
-            elev_str = row.group(4).strip() if row.group(4) else '—'
+            km_str = cells[2].replace('**', '').strip() if len(cells) > 2 else '—'
+            elev_str = cells[3].replace('**', '').strip() if len(cells) > 3 else '—'
 
             # Parse km
             km = None

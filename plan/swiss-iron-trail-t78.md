@@ -160,15 +160,16 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 ## Phase 3: Mountain Specificity — Weeks 9–10 (May 18–31)
 
 ### Week 9 — French Alps (May 18–24)
-| Day | Session |
-|---|---|
-| Mon | Travel + easy run (8 km) |
-| Tue | Easy run (10 km) + mobility |
-| Wed | Easy run or rest |
-| Thu | **Rest** — mobility, prep for tomorrow |
-| Fri (May 22) | **Alps trail day — ~30 km, 3,000m elevation, 6–8 hours.** Practice power-hiking, nutrition, gear, poles. This is the most important training day of the plan. |
-| Sat (May 23) | Cycling day 1 — enjoy, moderate intensity |
-| Sun (May 24) | Cycling day 2 — enjoy, moderate intensity |
+| Day | Session | km | Elev |
+|---|---|---|---|
+| Mon | Travel + easy run | 8 | — |
+| Tue | Easy run + mobility | 10 | — |
+| Wed | Easy run or rest | — | — |
+| Thu | **Rest** — mobility, prep for tomorrow | — | — |
+| Fri (May 22) | **Alps trail day** — power-hiking, nutrition, gear, poles practice. Most important training day of the plan. | 30 | 3,000m |
+| Sat (May 23) | Cycling day 1 — enjoy, moderate intensity | — | — |
+| Sun (May 24) | Cycling day 2 — enjoy, moderate intensity | — | — |
+| **Total** | | **~48 km run** | **~3,000m** |
 
 **Alps day guidance:**
 - Practice exact race nutrition (250–300 kcal/hour from hour 1)
@@ -194,15 +195,16 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 ## Phase 4: Race Rehearsal & Taper — Weeks 11–14 (Jun 1–27)
 
 ### Week 11 — Trail Godefroy (Jun 1–7)
-| Day | Session |
-|---|---|
-| Mon | Easy run + strength (8 km) |
-| Tue | Easy run + strides (10 km) |
-| Wed | Shakeout (6 km) |
-| Thu | **Rest** — mobility only |
-| Fri | Travel to Bouillon |
-| Sat (Jun 6) | **Trail Godefroy 50 km** (1,840m elevation) |
-| Sun | Rest |
+| Day | Session | km | Elev |
+|---|---|---|---|
+| Mon | Easy run + strength | 8 | — |
+| Tue | Easy run + strides | 10 | — |
+| Wed | Shakeout | 6 | — |
+| Thu | **Rest** — mobility only | — | — |
+| Fri | Travel to Bouillon | — | — |
+| Sat (Jun 6) | **Trail Godefroy 50 km** — dress rehearsal | 50 | 1,840m |
+| Sun | Rest | — | — |
+| **Total** | | **~74 km** | **~1,840m** |
 
 **Godefroy strategy:** dress rehearsal, NOT a race effort. Run at projected T78 pace/effort. Practice exact nutrition plan, gear, pacing. Target a comfortable finish — save legs for 3 weeks later.
 
@@ -231,14 +233,15 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 | **Total** | | **~42 km** | **~400m** |
 
 ### Week 14 — Race Week (Jun 22–27)
-| Day | Session |
-|---|---|
-| Mon | Easy run (6 km) |
-| Tue | Shakeout + strides (4 km) |
-| Wed | Rest — mobility only |
-| Thu | **Rest** — mobility only |
-| Fri | Rest — travel to Savognin. Short walk if needed. |
-| Sat (Jun 27) | **SWISS IRON TRAIL T78 — 04:00 start** |
+| Day | Session | km | Elev |
+|---|---|---|---|
+| Mon | Easy run | 6 | — |
+| Tue | Shakeout + strides | 4 | — |
+| Wed | Rest — mobility only | — | — |
+| Thu | **Rest** — mobility only | — | — |
+| Fri | Rest — travel to Savognin | — | — |
+| Sat (Jun 27) | **SWISS IRON TRAIL T78 — 04:00 start** | 78 | 5,000m |
+| **Total** | | **~88 km** | **~5,000m** |
 
 ---
 
