@@ -59,10 +59,53 @@ Check the latest activity date before syncing:
 sqlite3 db/training.db "SELECT MAX(activity_date) FROM activities"
 ```
 
+## Legging Wear Tracking
+
+### Tables
+
+**`leggings`** — 40 Lululemon leggings from `~/Documents/Projects/outfits/web/src/data/collection.json`
+
+| Column | Notes |
+|---|---|
+| `legging_id` | PK autoincrement |
+| `slug` | UNIQUE `type-slug/color-slug` |
+| `type_name` | e.g. `Swift Speed 28"` |
+| `color_name` | e.g. `Sonic Pink` |
+| `full_name` | e.g. `Lululemon Swift Speed 28" Sonic Pink` |
+| `location` | Where stored (Ouddorp, Barendrecht) |
+
+**`legging_wears`** — Links activities to leggings (`activity_id`, `legging_id`, `match_method`)
+
+### Season queries
+
+Seasons: fall-winter runs Sep–Apr, spring-summer runs May–Aug.
+
+```sql
+-- Not yet worn this season (fall-winter 25-26)
+SELECT l.full_name, l.location FROM leggings l
+WHERE l.legging_id NOT IN (
+    SELECT lw.legging_id FROM legging_wears lw
+    JOIN activities a ON a.activity_id = lw.activity_id
+    WHERE a.activity_date >= '2025-09-01' AND a.activity_date < '2026-05-01'
+) ORDER BY l.type_name, l.color_name;
+
+-- Wear count this season
+SELECT l.full_name, COUNT(*) as wears FROM legging_wears lw
+JOIN leggings l ON l.legging_id = lw.legging_id
+JOIN activities a ON a.activity_id = lw.activity_id
+WHERE a.activity_date >= '2025-09-01' AND a.activity_date < '2026-05-01'
+GROUP BY l.legging_id ORDER BY wears DESC;
+```
+
+### Matching private notes to leggings
+
+`scripts/index_leggings.py` auto-matches activity private notes to leggings by type keyword + color slug words. Notes that can't be auto-matched (typos, alternate names, pipe separators) are reported for manual resolution via SQL INSERT into `legging_wears`.
+
 ## Scripts
 
 - `scripts/import_csv.py` — One-time import of `strava/activities.csv` into SQLite. Idempotent (INSERT OR REPLACE).
 - `scripts/sync_strava.py` — Insert activities from a JSON file (Strava API format). Marks them with `source = 'strava_api'`.
+- `scripts/index_leggings.py` — Import leggings collection and auto-match private notes to legging wears. Re-runnable (idempotent). Reports unmatched for manual review.
 
 ## Data Sources
 
