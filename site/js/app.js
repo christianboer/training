@@ -195,6 +195,114 @@ function renderGearChecklist() {
     });
 }
 
+// ---- Time Prediction ----
+
+function renderPrediction(prediction) {
+    const scenarioBars = document.getElementById('scenario-bars');
+    const keyFactors = document.getElementById('key-factors');
+
+    if (!prediction || !scenarioBars) return;
+
+    const cutoff = prediction.cutoff_hours;
+
+    scenarioBars.innerHTML = prediction.scenarios.map(s => {
+        const pct = Math.min((s.hours / cutoff) * 100, 100);
+        const cls = s.label.toLowerCase();
+        const h = Math.floor(s.hours);
+        const m = Math.round((s.hours - h) * 60);
+        const timeStr = `${h}h${m > 0 ? String(m).padStart(2, '0') : '00'}`;
+
+        return `
+            <div class="scenario-bar-row">
+                <span class="scenario-label ${cls}">${s.label}</span>
+                <div class="scenario-bar-track">
+                    <div class="scenario-bar-fill ${cls}" style="width: ${pct}%">
+                        <span class="bar-time">${timeStr}</span>
+                    </div>
+                    <div class="cutoff-marker" title="Cutoff: ${cutoff}h"></div>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    keyFactors.innerHTML = prediction.key_factors
+        .map(f => `<li>${f}</li>`)
+        .join('');
+
+    // Reference race chart
+    renderReferenceChart(prediction.reference_races, prediction.scenarios);
+}
+
+function renderReferenceChart(races, scenarios) {
+    const ctx = document.getElementById('chart-reference');
+    if (!ctx || !races.length) return;
+
+    const isDark = document.documentElement.dataset.theme !== 'light';
+    const textColor = isDark ? '#94a3b8' : '#475569';
+    const gridColor = isDark ? '#1e293b' : '#e2e8f0';
+
+    // Filter to mountain ultras (>40km, >2000m)
+    const filtered = races.filter(r => r.distance_km > 40 && r.elevation_m > 2000);
+
+    // Add T78 prediction point
+    const targetScenario = scenarios.find(s => s.label === 'Target');
+
+    const datasets = [{
+        label: 'Past races',
+        data: filtered.map(r => ({ x: r.elevation_m, y: r.time_hours, name: r.name, date: r.date.slice(0, 4) })),
+        backgroundColor: '#3b82f6',
+        borderColor: '#3b82f6',
+        pointRadius: 6,
+        pointHoverRadius: 8,
+    }];
+
+    if (targetScenario) {
+        datasets.push({
+            label: 'T78 target',
+            data: [{ x: 5000, y: targetScenario.hours, name: 'Swiss Iron Trail T78' }],
+            backgroundColor: '#f97316',
+            borderColor: '#f97316',
+            pointRadius: 10,
+            pointStyle: 'star',
+            pointHoverRadius: 12,
+        });
+    }
+
+    new Chart(ctx, {
+        type: 'scatter',
+        data: { datasets },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { labels: { color: textColor, font: { size: 11 } } },
+                tooltip: {
+                    callbacks: {
+                        label: (ctx) => {
+                            const p = ctx.raw;
+                            const h = Math.floor(p.y);
+                            const m = Math.round((p.y - h) * 60);
+                            return `${p.name}${p.date ? ' (' + p.date + ')' : ''}: ${h}h${String(m).padStart(2,'0')} — ${p.x}m D+`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    title: { display: true, text: 'Elevation gain (m)', color: textColor },
+                    ticks: { color: textColor, font: { size: 11 } },
+                    grid: { color: gridColor },
+                },
+                y: {
+                    title: { display: true, text: 'Time (hours)', color: textColor },
+                    ticks: { color: textColor, font: { size: 11 }, callback: v => v + 'h' },
+                    grid: { color: gridColor },
+                },
+            },
+        },
+    });
+}
+
 // ---- Pace Calculator ----
 
 function initPaceCalc() {
@@ -269,6 +377,9 @@ async function init() {
 
     // Charts
     renderCharts(data);
+
+    // Prediction
+    renderPrediction(data.prediction);
 
     // Timeline
     renderTimeline(data.events);

@@ -211,12 +211,18 @@ def parse_exercises(plan_path):
         content, re.DOTALL
     )
     if strength_match:
-        row_pattern = re.compile(r'^\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|', re.MULTILINE)
-        for row in row_pattern.finditer(strength_match.group(1)):
-            name = row.group(1).strip()
-            sets_reps = row.group(2).strip()
-            purpose = row.group(3).strip()
-            if name in ('Exercise', '---', ''):
+        for line in strength_match.group(1).strip().split('\n'):
+            line = line.strip()
+            if not line.startswith('|'):
+                continue
+            cells = [c.strip() for c in line.split('|')]
+            cells = [c for c in cells if c != '']
+            if len(cells) < 3:
+                continue
+            name = cells[0]
+            sets_reps = cells[1]
+            purpose = cells[2]
+            if name in ('Exercise', '---', '') or '---' in name:
                 continue
             exercises["strength"].append({
                 "name": name,
@@ -342,6 +348,31 @@ def query_daily_runs(conn, weeks_back=52):
     return {r[0]: round(r[1], 1) for r in rows}
 
 
+def query_reference_races(conn):
+    """Query reference race performances for time prediction."""
+    rows = conn.execute("""
+        SELECT activity_date, activity_name,
+               ROUND(distance_m/1000, 1) as km,
+               ROUND(elevation_gain_m, 0) as elev,
+               ROUND(moving_time_s/3600.0, 2) as hours,
+               ROUND(elevation_gain_m / (moving_time_s/3600.0), 0) as vert_rate,
+               ROUND(moving_time_s/60.0/(distance_m/1000), 2) as pace
+        FROM activities
+        WHERE activity_type = 'Run' AND distance_m > 40000 AND elevation_gain_m > 2000
+        ORDER BY activity_date
+    """).fetchall()
+
+    return [{
+        "date": r[0][:10],
+        "name": r[1],
+        "distance_km": r[2],
+        "elevation_m": r[3],
+        "time_hours": r[4],
+        "vert_rate": r[5],
+        "pace_min_km": r[6],
+    } for r in rows]
+
+
 def main():
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 
@@ -354,6 +385,7 @@ def main():
     actual_weeks = query_actuals(conn, PLAN_START)
     history = query_history(conn)
     daily_runs = query_daily_runs(conn)
+    reference_races = query_reference_races(conn)
     conn.close()
 
     # Build output
@@ -377,6 +409,22 @@ def main():
         "history": history,
         "daily_runs": daily_runs,
         "exercises": exercises,
+        "prediction": {
+            "reference_races": reference_races,
+            "scenarios": [
+                {"label": "Optimistic", "hours": 13.5, "conditions": "2024-level fitness, strong execution, good weather"},
+                {"label": "Target", "hours": 14.0, "conditions": "Solid prep, pacing discipline, no major issues"},
+                {"label": "Realistic", "hours": 14.5, "conditions": "Some unknowns, altitude adjustment"},
+                {"label": "Conservative", "hours": 15.5, "conditions": "Stiffness issues or bad weather"},
+            ],
+            "cutoff_hours": 21,
+            "key_factors": [
+                "Descending speed — 5,000m of descent is where time is won or lost",
+                "Vertical endurance — sustaining 280+ m/hr climbing rate beyond hour 10",
+                "Back-to-back fatigue resistance — running vertical on pre-fatigued legs",
+                "Race execution — eat from km 1, hold HR 140–145, power-hike efficiently",
+            ],
+        },
     }
 
     with open(OUTPUT_PATH, 'w') as f:

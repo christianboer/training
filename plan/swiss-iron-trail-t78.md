@@ -105,7 +105,7 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 
 ## Phase 2: Vertical Loading — Weeks 5–8 (Apr 20 – May 17)
 
-**Goal:** Peak at 80 km/week. Weekly elevation to 1,500–2,000m. Introduce back-to-back long days.
+**Goal:** Peak at 80 km/week. Weekly elevation to 2,000–3,000m. Introduce back-to-back vertical days. Dedicated downhill sessions.
 
 ### Week 5 (Apr 20–26)
 | Day | Session | km | Elev |
@@ -114,34 +114,34 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 | Tue | Dyke repeats (700m vertical) | 14 | 700m |
 | Wed | Easy run + strength | 10 | — |
 | Thu | **Rest** — mobility only | — | — |
-| Fri | Easy run + dyke (400m vertical) | 10 | 400m |
-| Sat | Long run — max elevation (Trappenmarathon style) + strength | 30 | 1,000m |
-| Sun | Back-to-back medium run | 12 | — |
-| **Total** | | **~86 km** | **~2,100m** |
+| Fri | Downhill repeats — fast descent reps on steepest dyke, walk up | 8 | 400m |
+| Sat | Long run — max elevation (Trappenmarathon style) + strength | 30 | 1,200m |
+| Sun | Back-to-back run with dyke repeats (tired-leg vertical) | 12 | 400m |
+| **Total** | | **~84 km** | **~2,700m** |
 
 ### Week 6 (Apr 27 – May 3)
 | Day | Session | km | Elev |
 |---|---|---|---|
 | Mon | Easy run + strength | 10 | — |
 | Tue | Dyke repeats (800m vertical) | 14 | 800m |
-| Wed | Easy run + strength | 12 | — |
+| Wed | Easy run + downhill repeats | 10 | 300m |
 | Thu | **Rest** — mobility only | — | — |
-| Fri | Easy run + dyke (400m vertical) | 10 | 400m |
-| Sat | Long run — Trappenmarathon style (1,200m+) + strength | 32 | 1,200m |
-| Sun | Back-to-back medium run | 15 | — |
-| **Total** | | **~93 km** | **~2,400m** |
+| Fri | Easy run + dyke (500m vertical) | 10 | 500m |
+| Sat | Long run — Trappenmarathon style (1,500m+) + strength | 32 | 1,500m |
+| Sun | Back-to-back medium run with dyke repeats | 15 | 400m |
+| **Total** | | **~91 km** | **~3,500m** |
 
 ### Week 7 — Peak Week (May 4–10)
 | Day | Session | km | Elev |
 |---|---|---|---|
 | Mon | Easy run + strength | 10 | — |
 | Tue | Dyke repeats (800m vertical) | 14 | 800m |
-| Wed | Easy run + strength | 12 | — |
+| Wed | Easy run + downhill repeats | 10 | 300m |
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Easy run + dyke (500m vertical) | 10 | 500m |
-| Sat | **Long trail run (1,500m+ vert, 5–6 hours)** + strength | 35 | 1,500m |
-| Sun | Back-to-back easy run | 12 | — |
-| **Total** | | **~93 km** | **~2,800m** ← peak |
+| Sat | **Long trail run (2,000m+ vert, 6–7 hours)** — Trappenmarathon-level effort + strength | 35 | 2,000m |
+| Sun | Back-to-back run with dyke repeats (tired-leg descending focus) | 12 | 400m |
+| **Total** | | **~91 km** | **~4,000m** ← peak |
 
 ### Week 8 — Deload (May 11–17)
 | Day | Session | km | Elev |
@@ -287,13 +287,15 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 | Calf raises (slow eccentric, off step) | 3x15 | Achilles/calf resilience for 5,000m descending |
 | Dead bug | 3x8 each side | Core anti-rotation, energy efficiency |
 | Banded clamshells | 3x15 each | External hip rotator activation |
+| Step-downs (slow eccentric, off step/bench) | 3x10 each | Eccentric quad strength for 5,000m descending |
+| Single-leg squat to bench | 3x8 each | Quad endurance + balance for technical descent |
 
 ---
 
 ## Race Day Strategy
 
 ### Targets
-- **Finish time:** 14–16 hours
+- **Finish time:** 13h30–15h00 (target: sub-14h)
 - **Avg HR:** 140–145 bpm (don't repeat 2025's too-conservative 137)
 - **Nutrition:** 250–300 kcal/hour from km 1
 - **Hydration:** electrolytes every hour, more above 2,000m
@@ -325,9 +327,47 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 | Phase | Weeks | Run km/wk | Elevation/wk | Notes |
 |---|---|---|---|---|
 | Base | 1–4 | 45–80 | 500–800m | Includes Rotterdam HM taper/rebound |
-| Vertical Loading | 5–8 | 48–93 | 700–2,800m | Peak week 7; deload week 8 |
-| Mountain | 9–10 | 18–51 | 300–3,000m | Alps week is key; then absorb |
-| Taper | 11–14 | 10–52 | 0–500m | Godefroy as dress rehearsal; then sharpen |
+| Vertical Loading | 5–8 | 48–91 | 700–4,000m | Peak week 7; deload week 8 |
+| Mountain | 9–10 | 18–48 | 300–3,000m | Alps week is key; then absorb |
+| Taper | 11–14 | 10–74 | 0–1,840m | Godefroy as dress rehearsal; then sharpen |
+
+---
+
+## Time Prediction
+
+### Reference performances
+
+| Race | Year | km | D+ | Time | Vert rate | Pace |
+|---|---|---|---|---|---|---|
+| Davos K78 | 2012 | 74.8 | 3,384m | 8h42 | 389 m/hr | 6:59/km |
+| Davos K78 | 2014 | 80.7 | 3,066m | 9h29 | 323 m/hr | 7:05/km |
+| SCT | 2024 | 83.2 | 3,284m | 10h30 | 313 m/hr | 7:35/km |
+| SCT | 2025 | 83.8 | 3,485m | 12h03 | 290 m/hr | 8:37/km |
+| Trappenmarathon | 2025 | 47.2 | 3,090m | 6h20 | 488 m/hr | 8:04/km |
+
+### Prediction for T78 (78 km, ~5,000m D+)
+
+The key difference vs SCT: ~1,700m additional climbing at similar distance.
+
+**Method 1 — effort-based:** Each 100m D+ adds ~1 min. Extra 1,700m ≈ +2h30–3h00 on top of SCT 2024 (10h30) → **13h00–13h30**
+
+**Method 2 — vertical rate decay:** Climbing rate degrades with duration. At 14–16h effort, expect ~260–280 m/hr. Blending flat pace (6:00–6:30/km) with fatigued climbing → **13h30–15h00**
+
+| Scenario | Time | Conditions |
+|---|---|---|
+| Optimistic | ~13h30 | 2024-level fitness, strong execution, good weather |
+| **Target** | **~14h00** | **Solid prep, pacing discipline, no major issues** |
+| Realistic | ~14h30 | Some unknowns, altitude adjustment |
+| Conservative | ~15h30 | If stiffness returns or weather is bad |
+
+**Cutoff (21h) is comfortable in all scenarios.**
+
+### Key factors that move the needle
+
+1. **Descending speed** — 5,000m of descent is where time is won or lost. Eccentric quad strength and downhill technique training directly reduce finish time.
+2. **Vertical endurance** — sustaining 280+ m/hr climbing rate beyond hour 10. Training with 2,000m+ single-session vertical builds this.
+3. **Back-to-back fatigue resistance** — running vertical on pre-fatigued legs simulates the final 30 km.
+4. **Race execution** — start eating at km 1, hold HR 140–145, power-hike efficiently. The 2025 SCT HR of 137 was too conservative; the 2024 HR of 150 was the sweet spot.
 
 ---
 
@@ -337,3 +377,4 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 2. **Limit bike volume in final 6 weeks** — max 2 rides/week from mid-April. Cross-training is good; overloading is not.
 3. **Address stiffness proactively** — daily mobility routine is non-negotiable. The strength work targets the muscle groups that lock up under ultra fatigue.
 4. **Race-day execution** — start eating early, hold target HR, don't sandbag the uphills. Power-hiking at a strong pace is faster than jogging slowly uphill.
+5. **Train the descent** — dedicated downhill repeat sessions and eccentric quad strength protect against the performance collapse seen in high-elevation races.

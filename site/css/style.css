@@ -469,6 +469,127 @@ a:hover { color: var(--accent-light); }
     display: inline-block;
 }
 
+/* ---- Time Prediction ---- */
+
+.prediction-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.scenario-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.scenario-bar-row:last-child { border-bottom: none; }
+
+.scenario-label {
+    min-width: 90px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.scenario-label.target {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.scenario-bar-track {
+    flex: 1;
+    height: 24px;
+    background: var(--bg-primary);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.scenario-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.6s ease;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+}
+
+.scenario-bar-fill .bar-time {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.scenario-bar-fill.optimistic { background: var(--done); }
+.scenario-bar-fill.target { background: var(--accent); }
+.scenario-bar-fill.realistic { background: var(--phase-base); }
+.scenario-bar-fill.conservative { background: var(--text-muted); }
+
+.scenario-conditions {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cutoff-marker {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--missed);
+}
+
+.prediction-key-factors {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.prediction-key-factors h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.prediction-key-factors ul {
+    list-style: none;
+    padding: 0;
+}
+
+.prediction-key-factors li {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+}
+
+.prediction-key-factors li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.reference-chart-wrap {
+    height: 280px;
+}
+
 /* ---- Progress Charts ---- */
 
 .metrics-bar {
@@ -935,6 +1056,7 @@ footer {
     .day-card .day-target { margin-top: 0; padding-top: 0; }
 
     .charts-grid { grid-template-columns: 1fr; }
+    .prediction-grid { grid-template-columns: 1fr; }
     .raceday-grid { grid-template-columns: 1fr; }
 
     .timeline {

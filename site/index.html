@@ -23,6 +23,7 @@
             <div class="nav-links">
                 <a href="#week">This Week</a>
                 <a href="#progress">Progress</a>
+                <a href="#prediction">Prediction</a>
                 <a href="#timeline">Events</a>
                 <a href="#history">History</a>
                 <a href="#exercises">Exercises</a>
@@ -94,6 +95,29 @@
             <div class="chart-card chart-full">
                 <h3>Cumulative Progress</h3>
                 <canvas id="chart-cumulative"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Time Prediction -->
+    <section id="prediction">
+        <div class="container">
+            <h2>Time Prediction</h2>
+            <div class="prediction-grid">
+                <div class="card prediction-scenarios">
+                    <h3>T78 Finish Time Scenarios</h3>
+                    <div id="scenario-bars"></div>
+                    <div class="prediction-key-factors">
+                        <h4>Key factors</h4>
+                        <ul id="key-factors"></ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Reference Races</h3>
+                    <div class="reference-chart-wrap">
+                        <canvas id="chart-reference"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
