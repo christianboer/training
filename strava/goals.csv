@@ -1,0 +1,18 @@
+Goal Type,Activity Type,Goal,Start Date,End Date,Segment ID,Time Period,Interval Time
+Distance Goal,Run,3290000.0,"Jan 10, 2016, 9:23:52 AM","Aug 31, 2020, 11:58:09 AM",,Year
+Distance Goal,All Run,90000.0,"Aug 31, 2020, 11:58:09 AM",,,Week
+Distance Goal,All Ride,60000.0,"Sep 17, 2020, 12:02:09 AM",,,Week
+Distance Goal,Run,60000.0,"Nov 3, 2013, 9:29:13 AM","Feb 22, 2014, 9:49:43 AM",,Week
+Distance Goal,Run,90000.0,"Feb 22, 2014, 9:49:43 AM","Aug 31, 2020, 11:58:09 AM",,Week
+Distance Goal,All Run,3290000.0,"Aug 31, 2020, 11:58:09 AM",,,Year
+Distance Goal,Run,50000.0,"Jun 22, 2013, 6:43:43 PM","Nov 3, 2013, 9:29:13 AM",,Week
+Distance Goal,E-Bike Ride,60000.0,"Jul 19, 2013, 7:56:28 AM","Sep 17, 2020, 12:02:09 AM",,Week
+Segment Goal,Run,201,"Sep 25, 2013, 12:00:00 AM","Oct 25, 2013, 12:00:00 AM",2600467
+Segment Goal,Run,673,"Sep 25, 2013, 12:00:00 AM","Oct 25, 2013, 12:00:00 AM",2256444
+Segment Goal,Run,514,"Sep 25, 2013, 12:00:00 AM","Nov 29, 2013, 12:00:00 AM",4369918
+Segment Goal,Run,235,"May 20, 2014, 12:00:00 AM","Dec 30, 2014, 12:00:00 AM",6204077
+Segment Goal,Run,444,"May 20, 2014, 12:00:00 AM","Jun 30, 2014, 12:00:00 AM",5153563
+Segment Goal,Run,599,"May 20, 2014, 12:00:00 AM","Dec 29, 2014, 12:00:00 AM",5004671
+Segment Goal,Run,289,"May 20, 2014, 12:00:00 AM","Dec 30, 2014, 12:00:00 AM",5465697
+Segment Goal,Run,571,"May 20, 2014, 12:00:00 AM","Dec 30, 2014, 12:00:00 AM",2256444
+Segment Goal,Run,298,"Aug 21, 2014, 12:00:00 AM","Dec 30, 2014, 12:00:00 AM",6649797
