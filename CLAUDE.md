@@ -30,6 +30,7 @@ sqlite3 db/training.db "SELECT ... FROM activities ..."
 | `calories` | REAL | |
 | `avg_cadence` | REAL | |
 | `gear` | TEXT | Shoe/bike name |
+| `private_note` | TEXT | User's private note on the activity |
 | `athlete_weight_kg` | REAL | |
 | `avg_temperature_c` | REAL | |
 | `source` | TEXT | `export` or `strava_api` |

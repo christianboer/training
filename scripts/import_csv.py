@@ -87,6 +87,7 @@ CREATE TABLE IF NOT EXISTS activities (
     elevation_low_m REAL,
     elevation_high_m REAL,
     filename TEXT,
+    private_note TEXT,
     source TEXT DEFAULT 'export'
 );
 
@@ -107,8 +108,9 @@ INSERT OR REPLACE INTO activities (
     max_speed_mps, average_speed_mps, avg_heart_rate, max_heart_rate,
     avg_watts, max_watts, calories, avg_cadence, max_cadence, gear,
     athlete_weight_kg, avg_temperature_c, relative_effort, total_work,
-    training_load, intensity, elevation_low_m, elevation_high_m, filename, source
-) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    training_load, intensity, elevation_low_m, elevation_high_m, filename,
+    private_note, source
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 """
 
 
@@ -197,6 +199,7 @@ def main():
                 to_float(row[22]),             # elevation_low_m
                 to_float(row[23]),             # elevation_high_m
                 row[12].strip() or None,       # filename
+                row[10].strip() or None,       # private_note
                 'export',
             ))
             imported += 1

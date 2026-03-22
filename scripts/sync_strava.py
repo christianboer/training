@@ -29,8 +29,9 @@ INSERT OR REPLACE INTO activities (
     max_speed_mps, average_speed_mps, avg_heart_rate, max_heart_rate,
     avg_watts, max_watts, calories, avg_cadence, max_cadence, gear,
     athlete_weight_kg, avg_temperature_c, relative_effort, total_work,
-    training_load, intensity, elevation_low_m, elevation_high_m, filename, source
-) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    training_load, intensity, elevation_low_m, elevation_high_m, filename,
+    private_note, source
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 """
 
 
@@ -66,6 +67,7 @@ def map_activity(a):
         a.get('elev_low'),
         a.get('elev_high'),
         None,                               # no filename from API
+        a.get('private_note'),
         'strava_api',
     )
 
