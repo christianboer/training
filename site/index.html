@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T78 Training Dashboard</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-brand">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 20 L8 8 L12 14 L16 6 L21 20Z"/>
+                </svg>
+                T78
+            </a>
+            <div class="nav-links">
+                <a href="#week">This Week</a>
+                <a href="#progress">Progress</a>
+                <a href="#timeline">Events</a>
+                <a href="#history">History</a>
+                <a href="#exercises">Exercises</a>
+                <a href="#raceday">Race Day</a>
+            </div>
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero / Countdown -->
+    <section id="hero">
+        <div class="mountain-bg">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path class="ridge ridge-3" d="M0,320 L0,200 L120,160 L240,190 L360,130 L480,170 L600,100 L720,150 L840,90 L960,140 L1080,80 L1200,120 L1320,70 L1440,110 L1440,320Z"/>
+                <path class="ridge ridge-2" d="M0,320 L0,220 L100,190 L200,210 L350,160 L500,200 L650,140 L800,180 L950,120 L1100,170 L1250,130 L1440,160 L1440,320Z"/>
+                <path class="ridge ridge-1" d="M0,320 L0,240 L150,220 L300,250 L450,210 L600,240 L750,200 L900,230 L1050,190 L1200,220 L1350,200 L1440,230 L1440,320Z"/>
+            </svg>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" id="phase-badge">Loading...</div>
+            <h1>Swiss Iron Trail T78</h1>
+            <p class="hero-subtitle">78 km &middot; 5,000m D+ &middot; Savognin</p>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-value" id="cd-days">--</span>
+                    <span class="countdown-label">days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="cd-hours">--</span>
+                    <span class="countdown-label">hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="cd-mins">--</span>
+                    <span class="countdown-label">min</span>
+                </div>
+            </div>
+            <div class="phase-progress" id="phase-progress"></div>
+            <p class="hero-meta" id="hero-meta"></p>
+        </div>
+    </section>
+
+    <!-- This Week -->
+    <section id="week">
+        <div class="container">
+            <h2>This Week</h2>
+            <div id="week-summary" class="week-summary"></div>
+            <div id="week-grid" class="week-grid"></div>
+        </div>
+    </section>
+
+    <!-- Progress Charts -->
+    <section id="progress">
+        <div class="container">
+            <h2>Progress</h2>
+            <div class="metrics-bar" id="metrics-bar"></div>
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Weekly Running Volume</h3>
+                    <canvas id="chart-volume"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Weekly Elevation Gain</h3>
+                    <canvas id="chart-elevation"></canvas>
+                </div>
+            </div>
+            <div class="chart-card chart-full">
+                <h3>Cumulative Progress</h3>
+                <canvas id="chart-cumulative"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Race Calendar Timeline -->
+    <section id="timeline">
+        <div class="container">
+            <h2>Race Calendar</h2>
+            <div class="timeline" id="event-timeline"></div>
+        </div>
+    </section>
+
+    <!-- Training History -->
+    <section id="history">
+        <div class="container">
+            <h2>Training History</h2>
+            <div class="heatmap-wrapper">
+                <div class="heatmap" id="heatmap"></div>
+                <div class="heatmap-legend">
+                    <span>Less</span>
+                    <span class="heatmap-swatch" data-level="0"></span>
+                    <span class="heatmap-swatch" data-level="1"></span>
+                    <span class="heatmap-swatch" data-level="2"></span>
+                    <span class="heatmap-swatch" data-level="3"></span>
+                    <span class="heatmap-swatch" data-level="4"></span>
+                    <span>More</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exercises -->
+    <section id="exercises">
+        <div class="container">
+            <h2>Exercises</h2>
+            <div class="exercise-tabs">
+                <button class="tab-btn active" data-tab="morning">Morning Mobility</button>
+                <button class="tab-btn" data-tab="postrun">Post-Run</button>
+                <button class="tab-btn" data-tab="strength">Strength</button>
+            </div>
+            <div class="exercise-grid" id="exercise-grid"></div>
+        </div>
+    </section>
+
+    <!-- Race Day -->
+    <section id="raceday">
+        <div class="container">
+            <h2>Race Day</h2>
+            <div class="raceday-grid">
+                <div class="card">
+                    <h3>Pacing Strategy</h3>
+                    <table class="data-table">
+                        <thead><tr><th>Terrain</th><th>Pace</th><th>HR Target</th></tr></thead>
+                        <tbody>
+                            <tr><td>Flat / gentle down</td><td>6:00–6:30/km</td><td>140–150 bpm</td></tr>
+                            <tr><td>Uphill &lt;15%</td><td>7:30–9:00/km</td><td>145–155 bpm</td></tr>
+                            <tr><td>Uphill &gt;15% (hike)</td><td>400–500m/hr vert</td><td>130–145 bpm</td></tr>
+                            <tr><td>Technical descent</td><td>6:30–8:00/km</td><td>120–135 bpm</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="pace-calc">
+                        <label>Target finish time:
+                            <input type="range" id="pace-input" min="12" max="20" step="0.5" value="15">
+                            <span id="pace-display">15h</span>
+                        </label>
+                        <p id="pace-result">Average pace: 11:32/km</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Nutrition Timeline</h3>
+                    <div class="nutrition-timeline" id="nutrition-timeline">
+                        <div class="nutrition-block">
+                            <span class="nutrition-time">Hour 1–6</span>
+                            <span class="nutrition-detail">Gel/chew every 30 min (~250 kcal/hr)</span>
+                        </div>
+                        <div class="nutrition-block">
+                            <span class="nutrition-time">Hour 6–12</span>
+                            <span class="nutrition-detail">Real food + gels (sandwich, rice, broth at aid stations)</span>
+                        </div>
+                        <div class="nutrition-block">
+                            <span class="nutrition-time">Hour 12+</span>
+                            <span class="nutrition-detail">Whatever works — palatability drops. Cola + caffeine gels.</span>
+                        </div>
+                    </div>
+                    <div class="nutrition-calc">
+                        <p id="nutrition-total"></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Gear Checklist</h3>
+                    <div id="gear-checklist" class="gear-checklist"></div>
+                </div>
+                <div class="card">
+                    <h3>Course Info</h3>
+                    <ul class="course-info">
+                        <li><strong>Start:</strong> 04:00, Savognin</li>
+                        <li><strong>Cutoff:</strong> 21 hours (01:00 next day)</li>
+                        <li><strong>Max altitude:</strong> ~2,800m (Pass Lunghin area)</li>
+                        <li><strong>Conditions:</strong> Sub-zero + snow possible above 2,000m</li>
+                        <li><strong>Key sections:</strong> Val d'Err, Alp Flix, Himmelstor, Leg Grevasalvas, Septimerpass, Stallerberg</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Last updated: <span id="last-updated">—</span></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

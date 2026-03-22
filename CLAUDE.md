@@ -106,6 +106,36 @@ GROUP BY l.legging_id ORDER BY wears DESC;
 - `scripts/import_csv.py` — One-time import of `strava/activities.csv` into SQLite. Idempotent (INSERT OR REPLACE).
 - `scripts/sync_strava.py` — Insert activities from a JSON file (Strava API format). Marks them with `source = 'strava_api'`.
 - `scripts/index_leggings.py` — Import leggings collection and auto-match private notes to legging wears. Re-runnable (idempotent). Reports unmatched for manual review.
+- `scripts/export_dashboard_data.py` — Export SQLite + plan markdown to `site/data/training.json` for the dashboard. Re-run after every Strava sync.
+
+## Training Dashboard
+
+Static HTML/CSS/JS site in `site/`. Displays the 14-week training plan, progress charts, exercise library, and race day reference.
+
+### Serving locally
+
+```bash
+python3 -m http.server -d site 8080
+# Open http://localhost:8080
+```
+
+### Updating data after Strava sync
+
+```bash
+python3 scripts/sync_strava.py /tmp/strava_sync.json
+python3 scripts/export_dashboard_data.py
+```
+
+The dashboard reads `site/data/training.json` which is generated from `db/training.db` and `plan/swiss-iron-trail-t78.md`. The plan markdown is the source of truth — editing it automatically updates the dashboard on next export.
+
+### Structure
+
+- `site/index.html` — Single page with all sections
+- `site/css/style.css` — Mountain dark theme, responsive
+- `site/js/app.js` — Main controller (countdown, timeline, heatmap, gear checklist, pace calculator)
+- `site/js/plan.js` — This Week view (matches plan days to actual activities)
+- `site/js/charts.js` — Chart.js charts (weekly volume, elevation, cumulative progress)
+- `site/js/exercises.js` — Exercise cards with inline SVG stick-figure illustrations
 
 ## Data Sources
 
