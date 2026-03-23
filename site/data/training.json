@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-22T21:47:58",
+  "generated_at": "2026-03-23T17:33:50",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -907,12 +907,25 @@
       "week_number": 1,
       "start_date": "2026-03-23",
       "end_date": "2026-03-29",
-      "total_km": 0,
-      "run_km": 0,
-      "total_elevation": 0,
-      "run_elevation": 0,
-      "total_hours": 0,
-      "activities": []
+      "total_km": 10.0,
+      "run_km": 10.0,
+      "total_elevation": 8.0,
+      "run_elevation": 8.0,
+      "total_hours": 0.9,
+      "activities": [
+        {
+          "date": "2026-03-23",
+          "name": "Lunch Run",
+          "type": "Run",
+          "distance_km": 10.0,
+          "elevation_m": 8.0,
+          "moving_time_hours": 0.91,
+          "avg_hr": 134.9,
+          "calories": 652.0,
+          "gear": "New Balance 880L12",
+          "pace_min_km": 5.5
+        }
+      ]
     },
     {
       "week_number": 2,
@@ -1059,15 +1072,6 @@
     }
   ],
   "history": [
-    {
-      "week_start": "2025-03-17",
-      "run_km": 49.8,
-      "run_elevation": 1072.0,
-      "run_hours": 5.7,
-      "total_km": 49.8,
-      "total_elevation": 1072.0,
-      "activity_count": 1
-    },
     {
       "week_start": "2025-03-24",
       "run_km": 55.1,
@@ -1532,13 +1536,12 @@
       "run_km": 59.9,
       "run_elevation": 1265.0,
       "run_hours": 6.3,
-      "total_km": 75.9,
-      "total_elevation": 2545.0,
-      "activity_count": 6
+      "total_km": 148.0,
+      "total_elevation": 3943.0,
+      "activity_count": 8
     }
   ],
   "daily_runs": {
-    "2025-03-23": 49.8,
     "2025-03-25": 10.0,
     "2025-03-26": 10.1,
     "2025-03-30": 35.0,
