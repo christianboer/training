@@ -42,7 +42,22 @@ EVENTS = [
          "total_fluid_l": 4,
          "heat_note": ">20°C: add 500ml plain water per loop alongside Maurten"
      }},
-    {"date": "2026-06-06", "name": "Trail Godefroy", "distance_km": 50, "elevation_m": 1840, "role": "Dress rehearsal"},
+    {"date": "2026-06-06", "name": "Trail Godefroy", "distance_km": 53, "elevation_m": 1960, "role": "Dress rehearsal",
+     "aid_stations": [
+         {"name": "R1", "km": 9, "action": "Top up flasks, ½ bar"},
+         {"name": "R2", "km": 18, "action": "Full refuel: flask + bar + fruit"},
+         {"name": "R3 — Bouillon", "km": 27, "action": "Key stop: Maurten sachet + bar + fruit"},
+         {"name": "R4", "km": 36, "action": "Top up flasks, ½ bar"},
+         {"name": "R5", "km": 45, "action": "Full refuel: flask + bar + fruit"},
+     ],
+     "nutrition": {
+         "product": "Maurten 320 + bars",
+         "strategy": "1× Maurten 320 per segment + ½ bar from R1, fruit at R2/R3/R5",
+         "total_kcal": 2620,
+         "total_fluid_l": 3.75,
+         "carry": "6× Maurten 320 sachets + 3 bars (~200 kcal each)",
+         "heat_note": ">25°C: extra water at aid stations + electrolyte tab"
+     }},
     {"date": "2026-06-27", "name": "Swiss Iron Trail T78", "distance_km": 78, "elevation_m": 5000, "role": "A-race"},
 ]
 

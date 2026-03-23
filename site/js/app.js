@@ -113,15 +113,29 @@ function renderTimeline(events) {
                 ).join('') + `</div>`;
         }
 
+        let aidHtml = '';
+        if (ev.aid_stations && ev.aid_stations.length) {
+            aidHtml = `<div class="event-routes">` +
+                ev.aid_stations.map(s => `
+                    <div class="event-route">
+                        <span class="route-num aid">${s.name.replace(/^R/, '')}</span>
+                        <span class="route-km">km ${s.km}</span>
+                        <span class="route-stats">${s.action}</span>
+                    </div>`
+                ).join('') + `</div>`;
+        }
+
         let nutritionHtml = '';
         if (ev.nutrition && typeof ev.nutrition === 'object') {
-            nutritionHtml = `
-                <div class="event-nutrition">
-                    <div class="nutrition-row"><span class="nutrition-icon">⚡</span> ${ev.nutrition.product}: ${ev.nutrition.per_loop}</div>
-                    <div class="nutrition-row"><span class="nutrition-icon">🏨</span> ${ev.nutrition.hotel_stop}</div>
-                    <div class="nutrition-row"><span class="nutrition-icon">Σ</span> ${ev.nutrition.total_kcal} kcal · ${ev.nutrition.total_fluid_l}L fluid</div>
-                    <div class="nutrition-row heat">${ev.nutrition.heat_note}</div>
-                </div>`;
+            const rows = [];
+            rows.push(`<div class="nutrition-row"><span class="nutrition-icon">⚡</span> ${ev.nutrition.product}</div>`);
+            if (ev.nutrition.per_loop) rows.push(`<div class="nutrition-row"><span class="nutrition-icon">↻</span> ${ev.nutrition.per_loop}</div>`);
+            if (ev.nutrition.strategy) rows.push(`<div class="nutrition-row"><span class="nutrition-icon">📋</span> ${ev.nutrition.strategy}</div>`);
+            if (ev.nutrition.hotel_stop) rows.push(`<div class="nutrition-row"><span class="nutrition-icon">🏨</span> ${ev.nutrition.hotel_stop}</div>`);
+            if (ev.nutrition.carry) rows.push(`<div class="nutrition-row"><span class="nutrition-icon">🎒</span> ${ev.nutrition.carry}</div>`);
+            rows.push(`<div class="nutrition-row"><span class="nutrition-icon">Σ</span> ${ev.nutrition.total_kcal} kcal · ${ev.nutrition.total_fluid_l}L fluid</div>`);
+            rows.push(`<div class="nutrition-row heat">${ev.nutrition.heat_note}</div>`);
+            nutritionHtml = `<div class="event-nutrition">${rows.join('')}</div>`;
         } else if (ev.nutrition) {
             nutritionHtml = `<div class="event-nutrition">${ev.nutrition}</div>`;
         }
@@ -133,6 +147,7 @@ function renderTimeline(events) {
                 <div class="event-name">${ev.name}</div>
                 <div class="event-detail">${ev.distance_km}km · ${ev.elevation_m}m D+</div>
                 ${routesHtml}
+                ${aidHtml}
                 ${nutritionHtml}
                 <div class="event-days">${daysText}</div>
             </div>

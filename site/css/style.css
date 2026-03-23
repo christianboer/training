@@ -745,6 +745,20 @@ a:hover { color: var(--accent-light); }
     font-weight: 600;
 }
 
+.event-route .route-km {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    min-width: 36px;
+}
+
+.event-route .route-num.aid {
+    background: var(--phase-mountain);
+    font-size: 0.6rem;
+    width: 14px;
+    height: 14px;
+}
+
 .event-route a {
     color: var(--text-primary);
     text-decoration: none;

@@ -227,11 +227,46 @@ Warm weather adjustment (>20°C valley): add 500ml plain water per loop alongsid
 | Wed | Shakeout | 6 | — |
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Travel to Bouillon | — | — |
-| Sat (Jun 6) | **Trail Godefroy 50 km** — dress rehearsal | 50 | 1,840m |
+| Sat (Jun 6) | **Trail Godefroy 53 km** — dress rehearsal | 53 | 1,960m |
 | Sun | Rest | — | — |
-| **Total** | | **~74 km** | **~1,840m** |
+| **Total** | | **~77 km** | **~1,960m** |
 
 **Godefroy strategy:** dress rehearsal, NOT a race effort. Run at projected T78 pace/effort. Practice exact nutrition plan, gear, pacing. Target a comfortable finish — save legs for 3 weeks later.
+
+**Course:** 53.5 km, ~1,960m D+. Figure-eight from Kasteel Bouillon — east loop toward Herbeumont (rolling), through Bouillon, then west loop toward Vresse-sur-Semois (more technical). Finish is a steep climb up to the castle.
+
+**Estimated aid stations** (confirm with roadbook ~2 weeks before race):
+
+| # | Est. km | Location (est.) | What to do |
+|---|---|---|---|
+| — | 0 | Start — Bouillon Castle | Start fuelling immediately |
+| R1 | ~9 | East loop | Top up flasks, eat half a bar |
+| R2 | ~18 | East loop turnaround | Full refuel: flask + bar + fruit |
+| R3 | ~27 | Bouillon (centre of 8) | Key stop: full refuel, Maurten sachet + bar + fruit |
+| R4 | ~36 | West loop | Top up flasks, eat half a bar |
+| R5 | ~45 | West loop turnaround | Full refuel: flask + bar + fruit |
+| — | 53.5 | Finish — Bouillon Castle | Done! |
+
+**Godefroy nutrition plan:**
+
+Combi approach: Maurten Drink Mix 320 for isotonic energy + bars for solid fuel at aid stations.
+
+| Segment | km | Nutrition | Kcal | Fluid |
+|---|---|---|---|---|
+| Start → R1 | 0–9 | 1× Maurten 320 flask (500ml) | 320 | 500ml |
+| R1 → R2 | 9–18 | 1× Maurten 320 flask + ½ bar | 420 | 500ml |
+| R2 → R3 | 18–27 | 1× Maurten 320 flask + ½ bar | 420 | 500ml |
+| R3 → R4 | 27–36 | 1× Maurten 320 flask + ½ bar | 420 | 500ml |
+| R4 → R5 | 36–45 | 1× Maurten 320 flask + ½ bar | 420 | 500ml |
+| R5 → Finish | 45–53 | 1× Maurten 320 flask | 320 | 500ml |
+| **Aid station food** | | Fruit + water at R2, R3, R5 | ~300 | ~750ml |
+| **Total** | | | **~2,620** | **~3.75L** |
+
+Target: ~280 kcal/hour across ~9:00–9:30. Carry 6× Maurten 320 sachets + 3 bars (e.g. Maurten Solid, Clif, or similar ~200 kcal bars).
+
+**Warm weather adjustment:** take water from aid stations alongside Maurten flasks. Add electrolyte tab if >25°C.
+
+**Pacing target:** even effort, not even pace. Power-hike steep climbs, run flats and gentle descents at ~6:30–7:00/km. Don't race — stay comfortable, practice T78 effort.
 
 ### Week 12 — Recovery (Jun 8–14)
 | Day | Session | km | Elev |
