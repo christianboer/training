@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-23T17:33:50",
+  "generated_at": "2026-03-23T20:52:59",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -21,9 +21,40 @@
     {
       "date": "2026-05-22",
       "name": "French Alps — Bourg d'Oisans",
-      "distance_km": 30,
-      "elevation_m": 3000,
-      "role": "Mountain adaptation"
+      "distance_km": 41,
+      "elevation_m": 3138,
+      "role": "Mountain adaptation",
+      "routes": [
+        {
+          "name": "Villard via weg omhoog",
+          "km": 14.6,
+          "elevation_m": 1008,
+          "max_alt_m": 1671,
+          "url": "https://www.strava.com/routes/3457828796816278982"
+        },
+        {
+          "name": "Villard steil linksom",
+          "km": 13.9,
+          "elevation_m": 1000,
+          "max_alt_m": 1671,
+          "url": "https://www.strava.com/routes/3457840458426864014"
+        },
+        {
+          "name": "Villard steil rechtsom",
+          "km": 12.2,
+          "elevation_m": 1130,
+          "max_alt_m": 1833,
+          "url": "https://www.strava.com/routes/3457826669002961350"
+        }
+      ],
+      "nutrition": {
+        "product": "Maurten Drink Mix 320",
+        "per_loop": "2× soft flask 500ml = 640 kcal",
+        "hotel_stop": "Banana + bread w/ honey (~200 kcal) + 500ml water",
+        "total_kcal": 2320,
+        "total_fluid_l": 4,
+        "heat_note": ">20°C: add 500ml plain water per loop alongside Maurten"
+      }
     },
     {
       "date": "2026-06-06",
@@ -559,8 +590,8 @@
       "phase": "Mountain Specificity",
       "start_date": "2026-05-18",
       "end_date": "2026-05-24",
-      "target_km": 48.0,
-      "target_elevation": 3000.0,
+      "target_km": 59.0,
+      "target_elevation": 3138.0,
       "days": [
         {
           "day": "Mon",
@@ -592,9 +623,9 @@
         },
         {
           "day": "Fri",
-          "session": "Alps trail day — power-hiking, nutrition, gear, poles practice. Most important training day of the plan.",
-          "target_km": 30.0,
-          "target_elevation": 3000.0,
+          "session": "Alps trail day — 3 loops from hotel in Bourg d'Oisans. Most important training day of the plan.",
+          "target_km": 41.0,
+          "target_elevation": 3138.0,
           "date": "2026-05-22"
         },
         {

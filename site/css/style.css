@@ -716,6 +716,82 @@ a:hover { color: var(--accent-light); }
     margin-top: 4px;
 }
 
+.event-routes {
+    margin-top: 8px;
+    text-align: left;
+    display: inline-block;
+}
+
+.event-route {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 0.7rem;
+    line-height: 1.7;
+}
+
+.event-route .route-num {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--bg-primary);
+    background: var(--accent);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: 600;
+}
+
+.event-route a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.event-route a:hover {
+    color: var(--accent);
+}
+
+.event-route .route-stats {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    white-space: nowrap;
+}
+
+.event-nutrition {
+    margin-top: 8px;
+    text-align: left;
+    display: inline-block;
+}
+
+.event-nutrition .nutrition-row {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.event-nutrition .nutrition-icon {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+    color: var(--phase-mountain);
+}
+
+.event-nutrition .nutrition-row.heat {
+    color: var(--accent);
+    font-size: 0.65rem;
+    margin-top: 2px;
+}
+
 /* ---- Heatmap ---- */
 
 .heatmap-wrapper {

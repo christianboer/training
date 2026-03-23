@@ -166,14 +166,39 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 | Tue | Easy run + mobility | 10 | — |
 | Wed | Easy run or rest | — | — |
 | Thu | **Rest** — mobility, prep for tomorrow | — | — |
-| Fri (May 22) | **Alps trail day** — power-hiking, nutrition, gear, poles practice. Most important training day of the plan. | 30 | 3,000m |
+| Fri (May 22) | **Alps trail day** — 3 loops from hotel in Bourg d'Oisans. Most important training day of the plan. | 41 | 3,138m |
 | Sat (May 23) | Cycling day 1 — enjoy, moderate intensity | — | — |
 | Sun (May 24) | Cycling day 2 — enjoy, moderate intensity | — | — |
-| **Total** | | **~48 km run** | **~3,000m** |
+| **Total** | | **~59 km run** | **~3,138m** |
+
+**Alps day routes (Bourg d'Oisans → Villard):**
+
+All loops start and finish at the hotel for refuelling.
+
+| # | Route | km | D+ | Max alt | Strava |
+|---|---|---|---|---|---|
+| 1 | Villard via weg omhoog | 14.6 | 1,008m | 1,671m | [route](https://www.strava.com/routes/3457828796816278982) |
+| 2 | Villard steil linksom | 13.9 | 1,000m | 1,671m | [route](https://www.strava.com/routes/3457840458426864014) |
+| 3 | Villard steil rechtsom | 12.2 | 1,130m | 1,833m | [route](https://www.strava.com/routes/3457826669002961350) |
+
+Order: easiest first (via weg) as warm-up, then linksom, then rechtsom (steepest, highest) as finale.
+
+**Alps day nutrition plan:**
+
+Target: 250–300 kcal/hour from the start. Estimated total time ~7:00–7:30 on trail + 2 hotel stops.
+
+| Phase | Duration | Nutrition | Kcal | Fluid |
+|---|---|---|---|---|
+| Loop 1 — Via weg omhoog | ~2:15 | 2× Maurten 320 (1 per soft flask) | 640 | 1L |
+| Hotel stop 1 | ~15 min | Banana + white bread w/ honey | ~200 | 500ml water |
+| Loop 2 — Steil linksom | ~2:15 | 2× Maurten 320 | 640 | 1L |
+| Hotel stop 2 | ~15 min | Banana + white bread w/ honey | ~200 | 500ml water |
+| Loop 3 — Steil rechtsom | ~2:30 | 2× Maurten 320 | 640 | 1L |
+| **Total** | **~8:00** | | **~2,320** | **~4L** |
+
+Warm weather adjustment (>20°C valley): add 500ml plain water per loop alongside the Maurten flasks. Maurten 320 is hypertonic — pair with water in heat to avoid GI issues.
 
 **Alps day guidance:**
-- Practice exact race nutrition (250–300 kcal/hour from hour 1)
-- Use poles — get comfortable with them before T78
 - Power-hike all uphills >15% grade, targeting 400–500m/hour vertical rate
 - Practice smooth hike-to-run transitions
 - Wear planned race kit and pack

@@ -101,12 +101,39 @@ function renderTimeline(events) {
 
         const dateStr = new Date(ev.date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
 
+        let routesHtml = '';
+        if (ev.routes && ev.routes.length) {
+            routesHtml = `<div class="event-routes">` +
+                ev.routes.map((r, i) => `
+                    <div class="event-route">
+                        <span class="route-num">${i + 1}</span>
+                        <a href="${r.url}" target="_blank" rel="noopener">${r.name}</a>
+                        <span class="route-stats">${r.km}km · ${r.elevation_m}m D+ · ${r.max_alt_m}m</span>
+                    </div>`
+                ).join('') + `</div>`;
+        }
+
+        let nutritionHtml = '';
+        if (ev.nutrition && typeof ev.nutrition === 'object') {
+            nutritionHtml = `
+                <div class="event-nutrition">
+                    <div class="nutrition-row"><span class="nutrition-icon">⚡</span> ${ev.nutrition.product}: ${ev.nutrition.per_loop}</div>
+                    <div class="nutrition-row"><span class="nutrition-icon">🏨</span> ${ev.nutrition.hotel_stop}</div>
+                    <div class="nutrition-row"><span class="nutrition-icon">Σ</span> ${ev.nutrition.total_kcal} kcal · ${ev.nutrition.total_fluid_l}L fluid</div>
+                    <div class="nutrition-row heat">${ev.nutrition.heat_note}</div>
+                </div>`;
+        } else if (ev.nutrition) {
+            nutritionHtml = `<div class="event-nutrition">${ev.nutrition}</div>`;
+        }
+
         return `
             <div class="timeline-event ${status}">
                 <div class="timeline-dot"></div>
                 <div class="event-date">${dateStr}</div>
                 <div class="event-name">${ev.name}</div>
                 <div class="event-detail">${ev.distance_km}km · ${ev.elevation_m}m D+</div>
+                ${routesHtml}
+                ${nutritionHtml}
                 <div class="event-days">${daysText}</div>
             </div>
         `;
@@ -154,7 +181,6 @@ function renderHeatmap(dailyRuns) {
 
 const GEAR_ITEMS = [
     { name: 'Running shoes (tested, aggressive tread)', mandatory: true },
-    { name: 'Poles', mandatory: false },
     { name: 'Headlamp + spare battery', mandatory: true },
     { name: 'Rain jacket (waterproof)', mandatory: true },
     { name: 'Warm layer (fleece/puffy)', mandatory: true },

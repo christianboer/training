@@ -28,7 +28,20 @@ RACE_DATE = '2026-06-27'
 
 EVENTS = [
     {"date": "2026-04-12", "name": "Rotterdam Half Marathon", "distance_km": 21, "elevation_m": 0, "role": "Speed sharpener"},
-    {"date": "2026-05-22", "name": "French Alps \u2014 Bourg d'Oisans", "distance_km": 30, "elevation_m": 3000, "role": "Mountain adaptation"},
+    {"date": "2026-05-22", "name": "French Alps — Bourg d'Oisans", "distance_km": 41, "elevation_m": 3138, "role": "Mountain adaptation",
+     "routes": [
+         {"name": "Villard via weg omhoog", "km": 14.6, "elevation_m": 1008, "max_alt_m": 1671, "url": "https://www.strava.com/routes/3457828796816278982"},
+         {"name": "Villard steil linksom", "km": 13.9, "elevation_m": 1000, "max_alt_m": 1671, "url": "https://www.strava.com/routes/3457840458426864014"},
+         {"name": "Villard steil rechtsom", "km": 12.2, "elevation_m": 1130, "max_alt_m": 1833, "url": "https://www.strava.com/routes/3457826669002961350"},
+     ],
+     "nutrition": {
+         "product": "Maurten Drink Mix 320",
+         "per_loop": "2× soft flask 500ml = 640 kcal",
+         "hotel_stop": "Banana + bread w/ honey (~200 kcal) + 500ml water",
+         "total_kcal": 2320,
+         "total_fluid_l": 4,
+         "heat_note": ">20°C: add 500ml plain water per loop alongside Maurten"
+     }},
     {"date": "2026-06-06", "name": "Trail Godefroy", "distance_km": 50, "elevation_m": 1840, "role": "Dress rehearsal"},
     {"date": "2026-06-27", "name": "Swiss Iron Trail T78", "distance_km": 78, "elevation_m": 5000, "role": "A-race"},
 ]
