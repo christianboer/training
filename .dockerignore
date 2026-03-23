@@ -1,0 +1,16 @@
+**/.git
+**/.gitignore
+**/.vscode
+**/.env
+**/node_modules
+**/docker-compose*
+**/Dockerfile*
+**/.dockerignore
+
+# Project files not needed in image
+db/
+strava/
+scripts/
+plan/
+*.md
+LICENSE
