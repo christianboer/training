@@ -517,6 +517,7 @@ const EXERCISE_VIDEOS = {
     'dead-bug': 'eEhoSeBFoBk',
     'banded-clamshells': 'oHjBwnfpcQs',
     'single-leg-squat-to-bench': '19G5r-l1Q_I',
+    'step-downs': 'zeaVLglTeME',
 };
 
 function getVideoId(slug) {
