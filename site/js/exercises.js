@@ -496,6 +496,27 @@ function nameToSlug(name) {
 // Key: exercise slug, Value: YouTube video ID
 const EXERCISE_VIDEOS = {
     '90-90-hip-switches': 'iPqysXFsvTQ',
+    'half-kneeling-hip-flexor-stretch': 'bnVfloe6yTo',
+    'open-book-rotations': 'YMswmjk7Qj4',
+    'cat-cow': 'fcnv4gyMzf8',
+    'thread-the-needle': 'oAQ_qycUj5o',
+    'ankle-circles': 'om1IAdzpKsg',
+    'wall-calf-stretch': 'f1HzSAuB-Vw',
+    'tibialis-raises': 'VzIcGAgBiaM',
+    'pigeon-stretch': 'op-eDU9eNqM',
+    'standing-single-leg-romanian-deadlift': 'fZNiG7c7r8U',
+    'world-s-greatest-stretch': '-CiWQ2IvY34',
+    'leg-swings': 'HeH7nQ7GamM',
+    'couch-stretch': 'X8_iXsOwDA8',
+    'deep-squat-hold': 'zJBLDJMJiDE',
+    'supine-twist': 'mKC3IeldPOc',
+    'single-leg-glute-bridge': 'nat5dN0Kuao',
+    'nordic-hamstring-curl': 'rzK7glg8OnA',
+    'copenhagen-adductor-plank': 'df8hjsKX16o',
+    'calf-raises': '4josoSC3RFI',
+    'dead-bug': 'eEhoSeBFoBk',
+    'banded-clamshells': 'oHjBwnfpcQs',
+    'single-leg-squat-to-bench': '19G5r-l1Q_I',
 };
 
 function getVideoId(slug) {
