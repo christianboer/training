@@ -59,7 +59,7 @@ Check the latest activity date before syncing:
 sqlite3 db/training.db "SELECT MAX(activity_date) FROM activities"
 ```
 
-**Important:** Always run `python3 scripts/export_dashboard_data.py` after syncing new activities. This updates `site/data/training.json` (including the "Last updated" timestamp shown in the dashboard footer).
+**Important:** Always run `python3 scripts/export_dashboard_data.py` after syncing new activities. This updates `site/data/training.json` (including the "Last updated" timestamp shown in the dashboard footer). Then **commit and push** the updated `site/data/training.json` so the change is reflected in the remote repository.
 
 ## Legging Wear Tracking
 
