@@ -63,6 +63,8 @@
 | Sun | Easy run — Rome 🇮🇹 | 10 | — |
 | **Total** | | **~70 km run** | **~671m** |
 
+No riding this week — bike is at weekend home, in Rome Thu–Sun.
+
 ### Week 2 (Mar 30 – Apr 5)
 | Day | Session | km | Elev |
 |---|---|---|---|
@@ -70,10 +72,10 @@
 | Tue | Dike repeats (500m vertical target) | 14 | 500m |
 | Wed | Easy run w/ tempo intervals (4x5 min) + strength | 12 | — |
 | Thu | **Rest** — mobility only | — | — |
-| Fri | Virtual ride (climbing) | — | — |
-| Sat | Long trail run + strength | 25 | 150m |
-| Sun | Back-to-back easy run | 10 | — |
-| **Total** | | **~71 km run** | **~650m** |
+| Fri | Rest | — | — |
+| Sat | **Virtual ride — long climbing** (2.5–3h, 1,500m+ vert) | — | — |
+| Sun | Long trail run + strength | 25 | 150m |
+| **Total** | | **~61 km run** | **~650m** |
 
 ### Week 3 — Rotterdam HM (Apr 6–12)
 | Day | Session | km | Elev |
@@ -96,10 +98,10 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 | Tue | Dike repeats (600m vertical target) | 14 | 600m |
 | Wed | Easy run + strength | 10 | — |
 | Thu | **Rest** — mobility only | — | — |
-| Fri | Virtual ride (climbing) or easy run | 8 | — |
-| Sat | Long trail run + strength | 28 | 200m |
-| Sun | Back-to-back easy run | 10 | — |
-| **Total** | | **~80 km run** (rebound) | **~800m** |
+| Fri | Rest | — | — |
+| Sat | **Virtual ride — long climbing** (2.5–3h, 1,500m+ vert) | — | — |
+| Sun | Long trail run + strength | 28 | 200m |
+| **Total** | | **~72 km run** (rebound) | **~800m** |
 
 ---
 
@@ -116,8 +118,8 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Downhill repeats — fast descent reps on steepest dike, walk up | 8 | 400m |
 | Sat | Long run — max elevation (Trappenmarathon style) + strength | 30 | 1,200m |
-| Sun | Back-to-back run with dike repeats (tired-leg vertical) | 12 | 400m |
-| **Total** | | **~84 km** | **~2,700m** |
+| Sun | **Virtual ride — moderate climbing** (1.5–2h, 1,000m vert) | — | — |
+| **Total** | | **~72 km run** | **~2,300m** |
 
 ### Week 6 (Apr 27 – May 3)
 | Day | Session | km | Elev |
@@ -128,8 +130,8 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Easy run + dike (500m vertical) | 10 | 500m |
 | Sat | Long run — Trappenmarathon style (1,500m+) + strength | 32 | 1,500m |
-| Sun | Back-to-back medium run with dike repeats | 15 | 400m |
-| **Total** | | **~91 km** | **~3,500m** |
+| Sun | **Virtual ride — moderate climbing** (1.5–2h, 1,000m vert) | — | — |
+| **Total** | | **~76 km run** | **~3,100m** |
 
 ### Week 7 — Peak Week (May 4–10)
 | Day | Session | km | Elev |
@@ -140,8 +142,8 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Easy run + dike (500m vertical) | 10 | 500m |
 | Sat | **Long trail run (2,000m+ vert, 6–7 hours)** — Trappenmarathon-level effort + strength | 35 | 2,000m |
-| Sun | Back-to-back run with dike repeats (tired-leg descending focus) | 12 | 400m |
-| **Total** | | **~91 km** | **~4,000m** ← peak |
+| Sun | **Virtual ride — easy spin** (1–1.5h, recovery effort) | — | — |
+| **Total** | | **~79 km run** | **~4,300m** ← peak |
 
 ### Week 8 — Deload (May 11–17)
 | Day | Session | km | Elev |
@@ -150,10 +152,10 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 | Tue | Easy run + dike (400m vertical) | 10 | 400m |
 | Wed | Easy run + strength | 8 | — |
 | Thu | **Rest** — mobility only | — | — |
-| Fri | Virtual ride (easy) | — | — |
-| Sat | Moderate long run | 22 | 300m |
-| Sun | Rest or easy ride | — | — |
-| **Total** | | **~48 km** (deload) | **~700m** |
+| Fri | Rest | — | — |
+| Sat | **Virtual ride — easy climbing** (1.5–2h, moderate effort) | — | — |
+| Sun | Moderate long run | 22 | 300m |
+| **Total** | | **~48 km run** (deload) | **~700m** |
 
 ---
 
@@ -162,10 +164,10 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 ### Week 9 — French Alps (May 18–24)
 | Day | Session | km | Elev |
 |---|---|---|---|
-| Mon | Travel + easy run | 8 | — |
+| Mon | Easy run + strength | 10 | — |
 | Tue | Easy run + mobility | 10 | — |
 | Wed | Easy run or rest | — | — |
-| Thu | **Rest** — mobility, prep for tomorrow | — | — |
+| Thu (May 21) | **Travel to Bourg d'Oisans** | — | — |
 | Fri (May 22) | **Alps trail day** — 3 loops from hotel in Bourg d'Oisans. Most important training day of the plan. | 41 | 3,138m |
 | Sat (May 23) | Cycling day 1 — enjoy, moderate intensity | — | — |
 | Sun (May 24) | Cycling day 2 — enjoy, moderate intensity | — | — |
@@ -433,12 +435,12 @@ Three hill variants on the Barendrecht dike, each 13m elevation gain. The dike i
 
 ## Weekly Volume Summary
 
-| Phase | Weeks | Run km/wk | Elevation/wk | Notes |
-|---|---|---|---|---|
-| Base | 1–4 | 45–80 | 500–800m | Includes Rotterdam HM taper/rebound |
-| Vertical Loading | 5–8 | 48–91 | 700–4,000m | Peak week 7; deload week 8 |
-| Mountain | 9–10 | 18–48 | 300–3,000m | Alps week is key; then absorb |
-| Taper | 11–14 | 10–74 | 0–1,840m | Godefroy as dress rehearsal; then sharpen |
+| Phase | Weeks | Run km/wk | Elevation/wk | Riding | Notes |
+|---|---|---|---|---|---|
+| Base | 1–4 | 45–72 | 500–800m | 1× long (2.5–3h) on Sat, none in Rome wk | Includes Rotterdam HM taper/rebound |
+| Vertical Loading | 5–8 | 48–79 | 700–4,300m | 1× moderate (1.5–2h) on Sun | Shorter rides — running vert is the priority |
+| Mountain | 9–10 | 18–48 | 300–3,000m | Alps cycling days only | Alps provide real mountains; then absorb |
+| Taper | 11–14 | 10–74 | 0–1,840m | None | No virtual rides — legs need to sharpen |
 
 ---
 
@@ -483,7 +485,7 @@ The key difference vs SCT: ~1,700m additional climbing at similar distance.
 ## Lessons from Past Races
 
 1. **More volume does not equal better race** — 2025 had higher training load than 2024 but raced 1.5h slower. Quality, recovery, and mobility matter more than chasing km.
-2. **Limit bike volume in final 6 weeks** — max 2 rides/week from mid-April. Cross-training is good; overloading is not.
+2. **Limit bike volume in final 6 weeks** — max 1 ride/week from mid-April, shorter (1.5–2h) during vertical loading. Drop virtual rides entirely after the Alps (Week 10+). Cross-training is good; overloading is not.
 3. **Address stiffness proactively** — daily mobility routine is non-negotiable. The strength work targets the muscle groups that lock up under ultra fatigue.
 4. **Race-day execution** — start eating early, hold target HR, don't sandbag the uphills. Power-hiking at a strong pace is faster than jogging slowly uphill.
 5. **Train the descent** — dedicated downhill repeat sessions and eccentric quad strength protect against the performance collapse seen in high-elevation races.

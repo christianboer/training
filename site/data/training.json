@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-26T17:12:34",
+  "generated_at": "2026-03-26T22:04:19",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -212,7 +212,7 @@
       "phase": "Base Building",
       "start_date": "2026-03-30",
       "end_date": "2026-04-05",
-      "target_km": 71.0,
+      "target_km": 61.0,
       "target_elevation": 650.0,
       "days": [
         {
@@ -245,23 +245,23 @@
         },
         {
           "day": "Fri",
-          "session": "Virtual ride (climbing)",
+          "session": "Rest",
           "target_km": null,
           "target_elevation": null,
           "date": "2026-04-03"
         },
         {
           "day": "Sat",
-          "session": "Long trail run + strength",
-          "target_km": 25.0,
-          "target_elevation": 150.0,
+          "session": "Virtual ride — long climbing (2.5–3h, 1,500m+ vert)",
+          "target_km": null,
+          "target_elevation": null,
           "date": "2026-04-04"
         },
         {
           "day": "Sun",
-          "session": "Back-to-back easy run",
-          "target_km": 10.0,
-          "target_elevation": null,
+          "session": "Long trail run + strength",
+          "target_km": 25.0,
+          "target_elevation": 150.0,
           "date": "2026-04-05"
         }
       ]
@@ -330,7 +330,7 @@
       "phase": "Base Building",
       "start_date": "2026-04-13",
       "end_date": "2026-04-19",
-      "target_km": 80.0,
+      "target_km": 72.0,
       "target_elevation": 800.0,
       "days": [
         {
@@ -363,23 +363,23 @@
         },
         {
           "day": "Fri",
-          "session": "Virtual ride (climbing) or easy run",
-          "target_km": 8.0,
+          "session": "Rest",
+          "target_km": null,
           "target_elevation": null,
           "date": "2026-04-17"
         },
         {
           "day": "Sat",
-          "session": "Long trail run + strength",
-          "target_km": 28.0,
-          "target_elevation": 200.0,
+          "session": "Virtual ride — long climbing (2.5–3h, 1,500m+ vert)",
+          "target_km": null,
+          "target_elevation": null,
           "date": "2026-04-18"
         },
         {
           "day": "Sun",
-          "session": "Back-to-back easy run",
-          "target_km": 10.0,
-          "target_elevation": null,
+          "session": "Long trail run + strength",
+          "target_km": 28.0,
+          "target_elevation": 200.0,
           "date": "2026-04-19"
         }
       ]
@@ -389,8 +389,8 @@
       "phase": "Vertical Loading",
       "start_date": "2026-04-20",
       "end_date": "2026-04-26",
-      "target_km": 84.0,
-      "target_elevation": 2700.0,
+      "target_km": 72.0,
+      "target_elevation": 2300.0,
       "days": [
         {
           "day": "Mon",
@@ -436,9 +436,9 @@
         },
         {
           "day": "Sun",
-          "session": "Back-to-back run with dike repeats (tired-leg vertical)",
-          "target_km": 12.0,
-          "target_elevation": 400.0,
+          "session": "Virtual ride — moderate climbing (1.5–2h, 1,000m vert)",
+          "target_km": null,
+          "target_elevation": null,
           "date": "2026-04-26"
         }
       ]
@@ -448,8 +448,8 @@
       "phase": "Vertical Loading",
       "start_date": "2026-04-27",
       "end_date": "2026-05-03",
-      "target_km": 91.0,
-      "target_elevation": 3500.0,
+      "target_km": 76.0,
+      "target_elevation": 3100.0,
       "days": [
         {
           "day": "Mon",
@@ -495,9 +495,9 @@
         },
         {
           "day": "Sun",
-          "session": "Back-to-back medium run with dike repeats",
-          "target_km": 15.0,
-          "target_elevation": 400.0,
+          "session": "Virtual ride — moderate climbing (1.5–2h, 1,000m vert)",
+          "target_km": null,
+          "target_elevation": null,
           "date": "2026-05-03"
         }
       ]
@@ -507,8 +507,8 @@
       "phase": "Vertical Loading",
       "start_date": "2026-05-04",
       "end_date": "2026-05-10",
-      "target_km": 91.0,
-      "target_elevation": 4000.0,
+      "target_km": 79.0,
+      "target_elevation": 4300.0,
       "days": [
         {
           "day": "Mon",
@@ -554,9 +554,9 @@
         },
         {
           "day": "Sun",
-          "session": "Back-to-back run with dike repeats (tired-leg descending focus)",
-          "target_km": 12.0,
-          "target_elevation": 400.0,
+          "session": "Virtual ride — easy spin (1–1.5h, recovery effort)",
+          "target_km": null,
+          "target_elevation": null,
           "date": "2026-05-10"
         }
       ]
@@ -599,23 +599,23 @@
         },
         {
           "day": "Fri",
-          "session": "Virtual ride (easy)",
+          "session": "Rest",
           "target_km": null,
           "target_elevation": null,
           "date": "2026-05-15"
         },
         {
           "day": "Sat",
-          "session": "Moderate long run",
-          "target_km": 22.0,
-          "target_elevation": 300.0,
+          "session": "Virtual ride — easy climbing (1.5–2h, moderate effort)",
+          "target_km": null,
+          "target_elevation": null,
           "date": "2026-05-16"
         },
         {
           "day": "Sun",
-          "session": "Rest or easy ride",
-          "target_km": null,
-          "target_elevation": null,
+          "session": "Moderate long run",
+          "target_km": 22.0,
+          "target_elevation": 300.0,
           "date": "2026-05-17"
         }
       ]
@@ -630,8 +630,8 @@
       "days": [
         {
           "day": "Mon",
-          "session": "Travel + easy run",
-          "target_km": 8.0,
+          "session": "Easy run + strength",
+          "target_km": 10.0,
           "target_elevation": null,
           "date": "2026-05-18"
         },
@@ -651,7 +651,7 @@
         },
         {
           "day": "Thu",
-          "session": "Rest — mobility, prep for tomorrow",
+          "session": "Travel to Bourg d'Oisans",
           "target_km": null,
           "target_elevation": null,
           "date": "2026-05-21"
@@ -1948,8 +1948,8 @@
     ]
   },
   "plan_totals": {
-    "target_km": 949.0,
-    "target_elevation": 24319.0
+    "target_km": 892.0,
+    "target_elevation": 23819.0
   },
   "course_profile": {
     "profile": [
