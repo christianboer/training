@@ -138,11 +138,11 @@ The dashboard reads `site/data/training.json` which is generated from `db/traini
 - `site/js/plan.js` — This Week view (matches plan days to actual activities, week navigation)
 - `site/js/charts.js` — Chart.js charts (weekly volume, elevation, cumulative progress)
 - `site/js/exercises.js` — Exercise cards with inline SVG stick-figure illustrations, photo hover, video support, click-to-modal
-- `site/img/exercises/` — Exercise photos (1:1, 1024x1024 PNG). Named by slug: `90-90-hip-switches.png`, `cat-cow.png`, etc. Auto-detected on page load.
+- `site/img/exercises/` — Exercise photos (1:1, 1024x1024 JPG). Named by slug: `90-90-hip-switches.jpg`, `cat-cow.jpg`, etc. Auto-detected on page load.
 
 ### Adding exercise media
 
-**Photos:** Drop a 1024x1024 image in `site/img/exercises/{slug}.png` (supports .jpg, .jpeg, .webp too). The slug is the exercise name lowercased with hyphens (e.g., `half-kneeling-hip-flexor-stretch`). Photos appear on card hover and in the modal.
+**Photos:** Drop a 1024x1024 image in `site/img/exercises/{slug}.jpg` (supports .png, .jpeg, .webp too). The slug is the exercise name lowercased with hyphens (e.g., `half-kneeling-hip-flexor-stretch`). Photos appear on card hover and in the modal.
 
 **Videos:** Add a YouTube video ID to the `EXERCISE_VIDEOS` map in `site/js/exercises.js`. Videos appear alongside the photo in the modal.
 

@@ -532,7 +532,7 @@ function youtubeEmbed(videoId) {
 const _imageCache = {};
 async function imageExists(slug) {
     if (slug in _imageCache) return _imageCache[slug];
-    const extensions = ['png', 'jpg', 'jpeg', 'webp'];
+    const extensions = ['jpg', 'jpeg', 'webp', 'png'];
     for (const ext of extensions) {
         const url = `img/exercises/${slug}.${ext}`;
         try {
