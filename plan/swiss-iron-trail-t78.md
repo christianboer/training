@@ -58,10 +58,10 @@
 | Tue | Dyke repeats (400m vertical target) | 12 | 400m |
 | Wed | Easy run + strength | 10 | — |
 | Thu | **Rest** — mobility only | — | — |
-| Fri | Virtual ride (climbing program) | — | — |
-| Sat | Long trail run + strength | 20 | 100m |
-| Sun | Easy run or recovery ride | 10 | — |
-| **Total** | | **~62 km run** | **~500m** |
+| Fri | Easy sightseeing run — Rome 🇮🇹 | 8 | — |
+| Sat | Long run — Rome 🇮🇹 | 20 | 271m |
+| Sun | Easy run — Rome 🇮🇹 | 10 | — |
+| **Total** | | **~70 km run** | **~671m** |
 
 ### Week 2 (Mar 30 – Apr 5)
 | Day | Session | km | Elev |
