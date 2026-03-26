@@ -6,6 +6,9 @@ import { renderWeek } from './plan.js';
 import { renderCharts } from './charts.js';
 import { renderExercises } from './exercises.js';
 import { renderDikeTraining } from './dike.js';
+import { renderCompliance } from './compliance.js';
+import { renderElevationThermometer } from './elevation.js';
+import { renderCourseProfile } from './course.js';
 
 // ---- Data Loading ----
 
@@ -416,6 +419,13 @@ async function init() {
     // This Week
     const currentWeek = getCurrentWeek(data.plan_start);
     renderWeek(data, currentWeek);
+
+    // Plan vs Actual
+    renderCompliance(data);
+    renderElevationThermometer(data);
+
+    // Course Profile
+    renderCourseProfile(data);
 
     // Charts
     renderCharts(data);

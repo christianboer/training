@@ -30,12 +30,12 @@
             </a>
             <div class="nav-links">
                 <a href="#week">This Week</a>
+                <a href="#compliance">Plan</a>
                 <a href="#progress">Progress</a>
                 <a href="#prediction">Prediction</a>
                 <a href="#timeline">Events</a>
-                <a href="#history">History</a>
+                <a href="#course">Course</a>
                 <a href="#dike">Dike</a>
-                <a href="#exercises">Exercises</a>
                 <a href="#raceday">Race Day</a>
             </div>
             <button id="theme-toggle" aria-label="Toggle theme">
@@ -83,6 +83,23 @@
             <h2>This Week</h2>
             <div id="week-summary" class="week-summary"></div>
             <div id="week-grid" class="week-grid"></div>
+        </div>
+    </section>
+
+    <!-- Plan vs Actual -->
+    <section id="compliance">
+        <div class="container">
+            <h2>Plan vs Actual</h2>
+            <div class="compliance-layout">
+                <div class="compliance-main">
+                    <div class="compliance-summary" id="compliance-summary"></div>
+                    <div class="compliance-grid" id="compliance-grid"></div>
+                </div>
+                <div class="compliance-side">
+                    <h3>Elevation Gained</h3>
+                    <div class="elevation-thermometer" id="elevation-thermometer"></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -188,6 +205,15 @@
                 <button class="tab-btn" data-tab="strength">Strength</button>
             </div>
             <div class="exercise-grid" id="exercise-grid"></div>
+        </div>
+    </section>
+
+    <!-- Course Profile -->
+    <section id="course">
+        <div class="container">
+            <h2>T78 Course Profile</h2>
+            <p class="section-subtitle">78 km through the Engadin — Savognin to Savognin via Pass Lunghin, Septimerpass, and Stallerberg.</p>
+            <div class="course-profile-wrap" id="course-profile"></div>
         </div>
     </section>
 

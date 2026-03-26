@@ -1368,6 +1368,355 @@ a:hover { color: var(--accent-light); }
 
 .course-info li strong { color: var(--text-primary); }
 
+/* ---- Plan vs Actual (Compliance) ---- */
+
+.compliance-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 24px;
+    align-items: start;
+}
+
+.compliance-summary {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.compliance-stat {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px 24px;
+    text-align: center;
+    flex: 1;
+}
+
+.compliance-stat-value {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.compliance-stat-value.good { color: var(--done); }
+.compliance-stat-value.ok { color: var(--accent); }
+.compliance-stat-value.low { color: var(--missed); }
+
+.compliance-stat-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
+.compliance-stat-sub {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.compliance-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.compliance-week {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.compliance-week.current {
+    border-color: var(--accent);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.compliance-week.future {
+    opacity: 0.45;
+}
+
+.compliance-week-label {
+    min-width: 70px;
+    flex-shrink: 0;
+}
+
+.compliance-week-num {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.compliance-week-phase {
+    display: block;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+.compliance-bars {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.compliance-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.compliance-bar-icon {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    min-width: 20px;
+    text-align: right;
+}
+
+.compliance-bar-track {
+    flex: 1;
+    height: 10px;
+    background: var(--bg-primary);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.compliance-bar-plan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--border);
+    border-radius: 5px;
+    opacity: 0.4;
+}
+
+.compliance-bar-actual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.4s ease;
+}
+
+.compliance-bar-value {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    min-width: 70px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* ---- Elevation Thermometer ---- */
+
+.compliance-side {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+}
+
+.elevation-thermometer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thermo-svg {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+}
+
+.thermo-svg .thermo-landmark {
+    font-size: 9px;
+    fill: var(--text-muted);
+}
+
+.thermo-svg .thermo-landmark.reached {
+    fill: var(--done);
+    font-weight: 600;
+}
+
+.thermo-svg .thermo-elev-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    fill: var(--text-muted);
+}
+
+.thermo-svg .thermo-target {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    fill: var(--text-muted);
+}
+
+.thermo-svg .thermo-current {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    font-weight: 700;
+    fill: var(--done);
+}
+
+.thermo-svg .thermo-pct {
+    font-size: 10px;
+    fill: var(--text-secondary);
+}
+
+.thermo-legend {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.thermo-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.thermo-swatch {
+    width: 16px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.thermo-swatch.filled {
+    background: var(--done);
+}
+
+.thermo-swatch.planned {
+    background: var(--accent);
+    border: 1px dashed var(--accent);
+    background: transparent;
+}
+
+/* ---- Course Profile ---- */
+
+.course-profile-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    position: relative;
+    overflow: visible;
+}
+
+.course-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.course-svg .course-axis-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    fill: var(--text-muted);
+}
+
+.course-svg .course-axis-title {
+    font-size: 10px;
+    fill: var(--text-muted);
+}
+
+.course-svg .course-wp-name {
+    font-size: 8.5px;
+    font-weight: 600;
+    fill: var(--text-primary);
+}
+
+.course-svg .course-wp-ele {
+    font-family: var(--font-mono);
+    font-size: 7.5px;
+    fill: var(--text-muted);
+}
+
+.course-svg .course-waypoint:hover .course-wp-name {
+    fill: var(--accent);
+}
+
+.course-svg .course-hover-zone {
+    cursor: crosshair;
+}
+
+.course-tooltip {
+    display: none;
+    position: absolute;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    color: var(--text-primary);
+    pointer-events: none;
+    z-index: 10;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateX(-50%);
+}
+
+.course-legend {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.course-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.course-swatch {
+    width: 12px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .compliance-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .compliance-summary {
+        flex-direction: column;
+    }
+
+    .compliance-week-label {
+        min-width: 50px;
+    }
+
+    .compliance-bar-value {
+        min-width: 55px;
+        font-size: 0.6rem;
+    }
+}
+
 /* ---- Dike Training ---- */
 
 .section-subtitle {

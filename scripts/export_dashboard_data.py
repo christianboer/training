@@ -13,9 +13,11 @@ Writes:
 """
 
 import json
+import math
 import os
 import re
 import sqlite3
+import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
 
 BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
@@ -479,6 +481,110 @@ def query_reference_races(conn):
     } for r in rows]
 
 
+GPX_PATH = os.path.expanduser(
+    '~/Downloads/t806176149_swiss irontrail t78-78.0(1).gpx'
+)
+
+# Key waypoints along the T78 course (name, approximate km)
+T78_WAYPOINTS = [
+    {"name": "Savognin", "type": "start"},
+    {"name": "Val d'Err", "type": "landmark"},
+    {"name": "Alp Flix", "type": "aid"},
+    {"name": "Fuorcla digl Leget", "type": "pass", "note": "Heaven's Gate"},
+    {"name": "La Veduta", "type": "aid"},
+    {"name": "Leg Grevasalvas", "type": "landmark"},
+    {"name": "Pass Lunghin", "type": "pass", "note": "Triple watershed"},
+    {"name": "Septimerpass", "type": "pass", "note": "Oldest Alpine crossing"},
+    {"name": "Uf da Flüe", "type": "peak", "note": "Highest point (2,775m)"},
+    {"name": "Fuorcla Valletta", "type": "pass"},
+    {"name": "Stallerberg", "type": "pass"},
+    {"name": "Bivio", "type": "aid"},
+    {"name": "Marmorera", "type": "landmark"},
+    {"name": "Sur", "type": "landmark"},
+    {"name": "Rona", "type": "landmark"},
+    {"name": "Savognin", "type": "finish"},
+]
+
+
+def parse_gpx_profile(gpx_path, num_points=100):
+    """Parse GPX file into a sampled elevation profile."""
+    if not os.path.exists(gpx_path):
+        print(f"  Warning: GPX not found at {gpx_path}, using fallback profile")
+        return None
+
+    tree = ET.parse(gpx_path)
+    root = tree.getroot()
+    ns = {'gpx': 'http://www.topografix.com/GPX/1/1'}
+    pts = root.findall('.//gpx:trkpt', ns)
+
+    def haversine(lat1, lon1, lat2, lon2):
+        R = 6371000
+        dlat = math.radians(lat2 - lat1)
+        dlon = math.radians(lon2 - lon1)
+        a = (math.sin(dlat / 2) ** 2 +
+             math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) *
+             math.sin(dlon / 2) ** 2)
+        return R * 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+    prev = None
+    all_dist = []
+    all_ele = []
+    cum_dist = 0
+    total_up = 0
+
+    for p in pts:
+        lat = float(p.attrib['lat'])
+        lon = float(p.attrib['lon'])
+        ele_el = p.find('gpx:ele', ns)
+        ele = float(ele_el.text) if ele_el is not None else 0
+        if prev:
+            d = haversine(prev[0], prev[1], lat, lon)
+            cum_dist += d
+            diff = ele - prev[2]
+            if diff > 0:
+                total_up += diff
+        all_dist.append(cum_dist)
+        all_ele.append(ele)
+        prev = (lat, lon, ele)
+
+    # Sample evenly
+    step = max(1, len(pts) // num_points)
+    profile = []
+    for i in range(0, len(pts), step):
+        profile.append({
+            "km": round(all_dist[i] / 1000, 1),
+            "ele": round(all_ele[i]),
+        })
+    # Always include last point
+    if profile[-1]["km"] != round(all_dist[-1] / 1000, 1):
+        profile.append({
+            "km": round(all_dist[-1] / 1000, 1),
+            "ele": round(all_ele[-1]),
+        })
+
+    # Assign waypoints to nearest profile point by known approximate positions
+    # Aligned with GPX elevation features
+    waypoint_kms = [0, 8, 15, 22, 30, 38, 46, 50, 48, 53, 58, 62, 67, 72, 75, 78]
+    waypoints = []
+    for wp, approx_km in zip(T78_WAYPOINTS, waypoint_kms):
+        # Find closest profile point
+        closest = min(profile, key=lambda p: abs(p["km"] - approx_km))
+        waypoints.append({
+            **wp,
+            "km": closest["km"],
+            "ele": closest["ele"],
+        })
+
+    return {
+        "profile": profile,
+        "waypoints": waypoints,
+        "total_km": round(all_dist[-1] / 1000, 1),
+        "total_ascent": round(total_up),
+        "min_ele": round(min(all_ele)),
+        "max_ele": round(max(all_ele)),
+    }
+
+
 def main():
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 
@@ -493,6 +599,13 @@ def main():
     daily_runs = query_daily_runs(conn)
     reference_races = query_reference_races(conn)
     conn.close()
+
+    # Parse GPX course profile
+    course_profile = parse_gpx_profile(GPX_PATH)
+
+    # Calculate plan elevation target total
+    plan_total_elevation = sum(w.get("target_elevation") or 0 for w in plan_weeks)
+    plan_total_km = sum(w.get("target_km") or 0 for w in plan_weeks)
 
     # Build output
     data = {
@@ -515,6 +628,11 @@ def main():
         "history": history,
         "daily_runs": daily_runs,
         "exercises": exercises,
+        "plan_totals": {
+            "target_km": plan_total_km,
+            "target_elevation": plan_total_elevation,
+        },
+        "course_profile": course_profile,
         "dike_training": DIKE_TRAINING,
         "prediction": {
             "reference_races": reference_races,
