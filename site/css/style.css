@@ -75,6 +75,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: calc(var(--nav-height) + 16px);
+    overflow-x: hidden;
 }
 
 body {
@@ -83,6 +84,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 .container {
@@ -656,6 +658,8 @@ a:hover { color: var(--accent-light); }
     align-items: flex-start;
     position: relative;
     padding: 40px 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .timeline::before {
@@ -673,6 +677,7 @@ a:hover { color: var(--accent-light); }
     text-align: center;
     flex: 1;
     padding: 0 8px;
+    min-width: 120px;
 }
 
 .timeline-dot {
@@ -1698,25 +1703,6 @@ a:hover { color: var(--accent-light); }
     border-radius: 2px;
 }
 
-@media (max-width: 768px) {
-    .compliance-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .compliance-summary {
-        flex-direction: column;
-    }
-
-    .compliance-week-label {
-        min-width: 50px;
-    }
-
-    .compliance-bar-value {
-        min-width: 55px;
-        font-size: 0.6rem;
-    }
-}
-
 /* ---- Dike Training ---- */
 
 .section-subtitle {
@@ -1937,11 +1923,21 @@ footer {
 
 /* ---- Responsive ---- */
 
+/* Tablet portrait (iPad etc.) */
+@media (max-width: 1024px) {
+    .prediction-grid { grid-template-columns: 1fr; }
+    .raceday-grid { grid-template-columns: 1fr; }
+    .compliance-layout { grid-template-columns: 1fr; }
+
+    .timeline-event { min-width: 100px; }
+}
+
 @media (max-width: 768px) {
     :root {
         --section-gap: 48px;
     }
 
+    .container { padding: 0 16px; }
     .nav-links { display: none; }
 
     #hero h1 { font-size: 1.75rem; }
@@ -1970,6 +1966,7 @@ footer {
         flex-direction: column;
         gap: 24px;
         padding: 20px 0;
+        overflow-x: visible;
     }
 
     .timeline::before {
@@ -1986,6 +1983,7 @@ footer {
         display: flex;
         gap: 16px;
         align-items: flex-start;
+        min-width: 0;
     }
 
     .timeline-dot {
@@ -1994,11 +1992,53 @@ footer {
     }
 
     .exercise-grid { grid-template-columns: 1fr; }
+
+    /* Prevent tables from overflowing */
+    .data-table { font-size: 0.78rem; }
+    .data-table th, .data-table td { padding: 6px 4px; }
+
+    .card { padding: 16px; }
+    .chart-card { padding: 16px; }
+
+    /* Compliance */
+    .compliance-summary { flex-direction: column; }
+    .compliance-week-label { min-width: 50px; }
+    .compliance-bar-value { min-width: 55px; font-size: 0.6rem; }
+
+    /* Scenario bars */
+    .scenario-bar-row { flex-wrap: wrap; gap: 8px; }
+    .scenario-label { min-width: 70px; font-size: 0.8rem; }
+    .scenario-conditions { display: none; }
+
+    /* Course profile scroll on small screens */
+    .course-profile-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    /* Pace calc */
+    .pace-calc label { flex-wrap: wrap; }
+
+    /* Nutrition */
+    .nutrition-block { flex-direction: column; gap: 4px; }
+    .nutrition-time { min-width: auto; }
 }
 
 @media (max-width: 480px) {
+    .container { padding: 0 12px; }
     .countdown { gap: 16px; }
     .countdown-value { font-size: 1.5rem; }
     .week-summary { grid-template-columns: repeat(2, 1fr); }
     .metrics-bar { grid-template-columns: repeat(2, 1fr); }
+
+    #hero h1 { font-size: 1.4rem; }
+    .hero-subtitle { font-size: 1rem; }
+
+    section h2 { font-size: 1.25rem; }
+
+    .phase-progress .week-dot { width: 16px; height: 5px; }
+
+    /* Compliance stat cards stack nicely */
+    .compliance-stat { padding: 12px 16px; }
+    .compliance-stat-value { font-size: 1.5rem; }
+
+    /* Gear checklist */
+    .gear-checklist label { font-size: 0.8rem; }
 }
