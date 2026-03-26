@@ -42,7 +42,7 @@
 
 1. **Never raced above 3,500m cumulative elevation** — T78 demands ~5,000m
 2. **Stiffness under fatigue** — limits stride efficiency and descending speed
-3. **Flat terrain constraint** — must manufacture vertical with dyke repeats and stairs
+3. **Flat terrain constraint** — must manufacture vertical with dike repeats and stairs
 4. **Race duration** — T78 will take 14–16 hours; longest recent effort was 12h (SCT 2025)
 
 ---
@@ -55,7 +55,7 @@
 | Day | Session | km | Elev |
 |---|---|---|---|
 | Mon | Easy run + strength | 10 | — |
-| Tue | Dyke repeats (400m vertical target) | 12 | 400m |
+| Tue | Dike repeats (400m vertical target) | 12 | 400m |
 | Wed | Easy run + strength | 10 | — |
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Easy sightseeing run — Rome 🇮🇹 | 8 | — |
@@ -67,7 +67,7 @@
 | Day | Session | km | Elev |
 |---|---|---|---|
 | Mon | Easy run + strength | 10 | — |
-| Tue | Dyke repeats (500m vertical target) | 14 | 500m |
+| Tue | Dike repeats (500m vertical target) | 14 | 500m |
 | Wed | Easy run w/ tempo intervals (4x5 min) + strength | 12 | — |
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Virtual ride (climbing) | — | — |
@@ -93,7 +93,7 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 | Day | Session | km | Elev |
 |---|---|---|---|
 | Mon | Recovery run + strength | 10 | — |
-| Tue | Dyke repeats (600m vertical target) | 14 | 600m |
+| Tue | Dike repeats (600m vertical target) | 14 | 600m |
 | Wed | Easy run + strength | 10 | — |
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Virtual ride (climbing) or easy run | 8 | — |
@@ -111,43 +111,43 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 | Day | Session | km | Elev |
 |---|---|---|---|
 | Mon | Easy run + strength | 10 | — |
-| Tue | Dyke repeats (700m vertical) | 14 | 700m |
+| Tue | Dike repeats (700m vertical) | 14 | 700m |
 | Wed | Easy run + strength | 10 | — |
 | Thu | **Rest** — mobility only | — | — |
-| Fri | Downhill repeats — fast descent reps on steepest dyke, walk up | 8 | 400m |
+| Fri | Downhill repeats — fast descent reps on steepest dike, walk up | 8 | 400m |
 | Sat | Long run — max elevation (Trappenmarathon style) + strength | 30 | 1,200m |
-| Sun | Back-to-back run with dyke repeats (tired-leg vertical) | 12 | 400m |
+| Sun | Back-to-back run with dike repeats (tired-leg vertical) | 12 | 400m |
 | **Total** | | **~84 km** | **~2,700m** |
 
 ### Week 6 (Apr 27 – May 3)
 | Day | Session | km | Elev |
 |---|---|---|---|
 | Mon | Easy run + strength | 10 | — |
-| Tue | Dyke repeats (800m vertical) | 14 | 800m |
+| Tue | Dike repeats (800m vertical) | 14 | 800m |
 | Wed | Easy run + downhill repeats | 10 | 300m |
 | Thu | **Rest** — mobility only | — | — |
-| Fri | Easy run + dyke (500m vertical) | 10 | 500m |
+| Fri | Easy run + dike (500m vertical) | 10 | 500m |
 | Sat | Long run — Trappenmarathon style (1,500m+) + strength | 32 | 1,500m |
-| Sun | Back-to-back medium run with dyke repeats | 15 | 400m |
+| Sun | Back-to-back medium run with dike repeats | 15 | 400m |
 | **Total** | | **~91 km** | **~3,500m** |
 
 ### Week 7 — Peak Week (May 4–10)
 | Day | Session | km | Elev |
 |---|---|---|---|
 | Mon | Easy run + strength | 10 | — |
-| Tue | Dyke repeats (800m vertical) | 14 | 800m |
+| Tue | Dike repeats (800m vertical) | 14 | 800m |
 | Wed | Easy run + downhill repeats | 10 | 300m |
 | Thu | **Rest** — mobility only | — | — |
-| Fri | Easy run + dyke (500m vertical) | 10 | 500m |
+| Fri | Easy run + dike (500m vertical) | 10 | 500m |
 | Sat | **Long trail run (2,000m+ vert, 6–7 hours)** — Trappenmarathon-level effort + strength | 35 | 2,000m |
-| Sun | Back-to-back run with dyke repeats (tired-leg descending focus) | 12 | 400m |
+| Sun | Back-to-back run with dike repeats (tired-leg descending focus) | 12 | 400m |
 | **Total** | | **~91 km** | **~4,000m** ← peak |
 
 ### Week 8 — Deload (May 11–17)
 | Day | Session | km | Elev |
 |---|---|---|---|
 | Mon | Easy run + strength | 8 | — |
-| Tue | Easy run + dyke (400m vertical) | 10 | 400m |
+| Tue | Easy run + dike (400m vertical) | 10 | 400m |
 | Wed | Easy run + strength | 8 | — |
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Virtual ride (easy) | — | — |
@@ -211,7 +211,7 @@ Warm weather adjustment (>20°C valley): add 500ml plain water per loop alongsid
 | Wed | Easy run + strength | 10 | — |
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Easy run | 8 | — |
-| Sat | Moderate run + light dyke work | 15 | 300m |
+| Sat | Moderate run + light dike work | 15 | 300m |
 | Sun | Easy run | 8 | — |
 | **Total** | | **~51 km** (absorption) | **~300m** |
 
@@ -276,7 +276,7 @@ Target: ~280 kcal/hour across ~9:00–9:30. Carry 6× Maurten 320 sachets + 3 ba
 | Wed | Easy run + strength | 10 | — |
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Easy run | 8 | — |
-| Sat | Moderate run + dyke (500m vert) | 18 | 500m |
+| Sat | Moderate run + dike (500m vert) | 18 | 500m |
 | Sun | Easy run | 8 | — |
 | **Total** | | **~52 km** | **~500m** |
 
@@ -302,6 +302,55 @@ Target: ~280 kcal/hour across ~9:00–9:30. Carry 6× Maurten 320 sachets + 3 ba
 | Fri | Rest — travel to Savognin | — | — |
 | Sat (Jun 27) | **SWISS IRON TRAIL T78 — 04:00 start** | 78 | 5,000m |
 | **Total** | | **~88 km** | **~5,000m** |
+
+---
+
+## Dike Training — Barendrecht
+
+Three hill variants on the Barendrecht dike, each 13m elevation gain. The dike is the primary tool for manufacturing vertical in a flat environment.
+
+### Variants
+
+| Variant | Surface | Distance | Gradient | Simulates | Primary stimulus |
+|---|---|---|---|---|---|
+| A — Long asphalt | Asphalt | 250m | ~5% | Gentle trail climbs | HR endurance, sustained climbing |
+| B — Stairs + asphalt | Asphalt + stairs | 120m (7m stairs, 6m asphalt) | ~11% | Steep trail climbing | Power hiking, leg strength |
+| C — Steep grass | Grass | 50m | ~26% | Technical steep terrain + descent | Eccentric quad strength, ankle stability |
+
+### Session Types
+
+**Session A — Volume Climbing (variant A: long asphalt)**
+- 8–12 repeats (100–160 hm)
+- Steady effort up, easy jog down
+- Builds cardiac endurance for sustained T78 climbs
+
+**Session B — Steep Repeats (variant B: stairs + asphalt)**
+- 10–15 repeats (130–195 hm)
+- Power hike up with strong arm drive (simulating poles)
+- Controlled descent, focus on technique
+- Builds strength and efficiency on steep grades
+
+**Session C — Downhill Focus (variant C: steep grass)**
+- 6–10 repeats (80–130 hm)
+- Easy effort uphill (the descent is the workout)
+- Progressively faster downhill: small steps, forward lean
+- Builds eccentric quad strength for 5,000m of T78 descent
+- Allow 10–14 days between sessions (eccentric recovery is slow)
+
+**Session D — Mix (all three variants)**
+- 4x grass up + long asphalt down
+- 4x stairs up + grass down
+- 4x long asphalt up + stairs down
+- ~150 hm with varied stimuli in ~45 min
+
+### Periodization
+
+| Period | Focus | Sessions |
+|---|---|---|
+| Weeks 1–4 (Base) | A + B rotation, 1x/week | Session C every 2 weeks |
+| Weeks 5–8 (Vertical Loading) | All sessions, 1–2x/week | Session C every 10–14 days |
+| Weeks 9–10 (Mountain) | Light session A only | Alps provide real vertical |
+| Weeks 11–14 (Taper) | Session A only, reduced volume | No session C after week 11 |
 
 ---
 

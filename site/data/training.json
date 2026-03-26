@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-26T09:14:15",
+  "generated_at": "2026-03-26T16:55:24",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -165,7 +165,7 @@
         },
         {
           "day": "Tue",
-          "session": "Dyke repeats (400m vertical target)",
+          "session": "Dike repeats (400m vertical target)",
           "target_km": 12.0,
           "target_elevation": 400.0,
           "date": "2026-03-24"
@@ -224,7 +224,7 @@
         },
         {
           "day": "Tue",
-          "session": "Dyke repeats (500m vertical target)",
+          "session": "Dike repeats (500m vertical target)",
           "target_km": 14.0,
           "target_elevation": 500.0,
           "date": "2026-03-31"
@@ -342,7 +342,7 @@
         },
         {
           "day": "Tue",
-          "session": "Dyke repeats (600m vertical target)",
+          "session": "Dike repeats (600m vertical target)",
           "target_km": 14.0,
           "target_elevation": 600.0,
           "date": "2026-04-14"
@@ -401,7 +401,7 @@
         },
         {
           "day": "Tue",
-          "session": "Dyke repeats (700m vertical)",
+          "session": "Dike repeats (700m vertical)",
           "target_km": 14.0,
           "target_elevation": 700.0,
           "date": "2026-04-21"
@@ -422,7 +422,7 @@
         },
         {
           "day": "Fri",
-          "session": "Downhill repeats — fast descent reps on steepest dyke, walk up",
+          "session": "Downhill repeats — fast descent reps on steepest dike, walk up",
           "target_km": 8.0,
           "target_elevation": 400.0,
           "date": "2026-04-24"
@@ -436,7 +436,7 @@
         },
         {
           "day": "Sun",
-          "session": "Back-to-back run with dyke repeats (tired-leg vertical)",
+          "session": "Back-to-back run with dike repeats (tired-leg vertical)",
           "target_km": 12.0,
           "target_elevation": 400.0,
           "date": "2026-04-26"
@@ -460,7 +460,7 @@
         },
         {
           "day": "Tue",
-          "session": "Dyke repeats (800m vertical)",
+          "session": "Dike repeats (800m vertical)",
           "target_km": 14.0,
           "target_elevation": 800.0,
           "date": "2026-04-28"
@@ -481,7 +481,7 @@
         },
         {
           "day": "Fri",
-          "session": "Easy run + dyke (500m vertical)",
+          "session": "Easy run + dike (500m vertical)",
           "target_km": 10.0,
           "target_elevation": 500.0,
           "date": "2026-05-01"
@@ -495,7 +495,7 @@
         },
         {
           "day": "Sun",
-          "session": "Back-to-back medium run with dyke repeats",
+          "session": "Back-to-back medium run with dike repeats",
           "target_km": 15.0,
           "target_elevation": 400.0,
           "date": "2026-05-03"
@@ -519,7 +519,7 @@
         },
         {
           "day": "Tue",
-          "session": "Dyke repeats (800m vertical)",
+          "session": "Dike repeats (800m vertical)",
           "target_km": 14.0,
           "target_elevation": 800.0,
           "date": "2026-05-05"
@@ -540,7 +540,7 @@
         },
         {
           "day": "Fri",
-          "session": "Easy run + dyke (500m vertical)",
+          "session": "Easy run + dike (500m vertical)",
           "target_km": 10.0,
           "target_elevation": 500.0,
           "date": "2026-05-08"
@@ -554,7 +554,7 @@
         },
         {
           "day": "Sun",
-          "session": "Back-to-back run with dyke repeats (tired-leg descending focus)",
+          "session": "Back-to-back run with dike repeats (tired-leg descending focus)",
           "target_km": 12.0,
           "target_elevation": 400.0,
           "date": "2026-05-10"
@@ -578,7 +578,7 @@
         },
         {
           "day": "Tue",
-          "session": "Easy run + dyke (400m vertical)",
+          "session": "Easy run + dike (400m vertical)",
           "target_km": 10.0,
           "target_elevation": 400.0,
           "date": "2026-05-12"
@@ -724,7 +724,7 @@
         },
         {
           "day": "Sat",
-          "session": "Moderate run + light dyke work",
+          "session": "Moderate run + light dike work",
           "target_km": 15.0,
           "target_elevation": 300.0,
           "date": "2026-05-30"
@@ -842,7 +842,7 @@
         },
         {
           "day": "Sat",
-          "session": "Moderate run + dyke (500m vert)",
+          "session": "Moderate run + dike (500m vert)",
           "target_km": 18.0,
           "target_elevation": 500.0,
           "date": "2026-06-13"
@@ -1944,6 +1944,94 @@
         "name": "Single-leg squat to bench",
         "sets_reps": "3x8 each",
         "purpose": "Quad endurance + balance for technical descent"
+      }
+    ]
+  },
+  "dike_training": {
+    "elevation_per_rep": 13,
+    "variants": [
+      {
+        "id": "A",
+        "name": "Long Asphalt",
+        "surface": "Asphalt",
+        "distance_m": 250,
+        "gradient_pct": 5,
+        "color": "#3b82f6",
+        "simulates": "Gentle trail climbs",
+        "stimulus": "HR endurance, sustained climbing"
+      },
+      {
+        "id": "B",
+        "name": "Stairs + Asphalt",
+        "surface": "Asphalt + stairs",
+        "distance_m": 120,
+        "gradient_pct": 11,
+        "color": "#8b5cf6",
+        "simulates": "Steep trail climbing",
+        "stimulus": "Power hiking, leg strength"
+      },
+      {
+        "id": "C",
+        "name": "Steep Grass",
+        "surface": "Grass",
+        "distance_m": 50,
+        "gradient_pct": 26,
+        "color": "#10b981",
+        "simulates": "Technical steep terrain + descent",
+        "stimulus": "Eccentric quad strength, ankle stability"
+      }
+    ],
+    "sessions": [
+      {
+        "id": "A",
+        "name": "Volume Climbing",
+        "variant": "A",
+        "repeats": "8–12",
+        "elevation": "100–160 hm",
+        "description": "Steady effort up, easy jog down. Builds cardiac endurance for sustained T78 climbs."
+      },
+      {
+        "id": "B",
+        "name": "Steep Repeats",
+        "variant": "B",
+        "repeats": "10–15",
+        "elevation": "130–195 hm",
+        "description": "Power hike up with strong arm drive. Controlled descent, focus on technique."
+      },
+      {
+        "id": "C",
+        "name": "Downhill Focus",
+        "variant": "C",
+        "repeats": "6–10",
+        "elevation": "80–130 hm",
+        "description": "Easy uphill, progressively faster downhill. Builds eccentric quad strength for 5,000m descent.",
+        "recovery_note": "Allow 10–14 days between sessions"
+      },
+      {
+        "id": "D",
+        "name": "Mix Session",
+        "variant": "all",
+        "repeats": "12 (4x3)",
+        "elevation": "~150 hm",
+        "description": "All three variants combined. Grass up + asphalt down, stairs up + grass down, asphalt up + stairs down."
+      }
+    ],
+    "periodization": [
+      {
+        "phase": "Base (Wk 1–4)",
+        "focus": "A + B rotation 1x/week, C every 2 weeks"
+      },
+      {
+        "phase": "Vertical (Wk 5–8)",
+        "focus": "All sessions 1–2x/week, C every 10–14 days"
+      },
+      {
+        "phase": "Mountain (Wk 9–10)",
+        "focus": "Light session A only"
+      },
+      {
+        "phase": "Taper (Wk 11–14)",
+        "focus": "Session A only, no C after week 11"
       }
     ]
   },

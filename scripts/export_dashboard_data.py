@@ -261,6 +261,84 @@ def parse_exercises(plan_path):
     return exercises
 
 
+DIKE_TRAINING = {
+    "elevation_per_rep": 13,
+    "variants": [
+        {
+            "id": "A",
+            "name": "Long Asphalt",
+            "surface": "Asphalt",
+            "distance_m": 250,
+            "gradient_pct": 5,
+            "color": "#3b82f6",
+            "simulates": "Gentle trail climbs",
+            "stimulus": "HR endurance, sustained climbing",
+        },
+        {
+            "id": "B",
+            "name": "Stairs + Asphalt",
+            "surface": "Asphalt + stairs",
+            "distance_m": 120,
+            "gradient_pct": 11,
+            "color": "#8b5cf6",
+            "simulates": "Steep trail climbing",
+            "stimulus": "Power hiking, leg strength",
+        },
+        {
+            "id": "C",
+            "name": "Steep Grass",
+            "surface": "Grass",
+            "distance_m": 50,
+            "gradient_pct": 26,
+            "color": "#10b981",
+            "simulates": "Technical steep terrain + descent",
+            "stimulus": "Eccentric quad strength, ankle stability",
+        },
+    ],
+    "sessions": [
+        {
+            "id": "A",
+            "name": "Volume Climbing",
+            "variant": "A",
+            "repeats": "8–12",
+            "elevation": "100–160 hm",
+            "description": "Steady effort up, easy jog down. Builds cardiac endurance for sustained T78 climbs.",
+        },
+        {
+            "id": "B",
+            "name": "Steep Repeats",
+            "variant": "B",
+            "repeats": "10–15",
+            "elevation": "130–195 hm",
+            "description": "Power hike up with strong arm drive. Controlled descent, focus on technique.",
+        },
+        {
+            "id": "C",
+            "name": "Downhill Focus",
+            "variant": "C",
+            "repeats": "6–10",
+            "elevation": "80–130 hm",
+            "description": "Easy uphill, progressively faster downhill. Builds eccentric quad strength for 5,000m descent.",
+            "recovery_note": "Allow 10–14 days between sessions",
+        },
+        {
+            "id": "D",
+            "name": "Mix Session",
+            "variant": "all",
+            "repeats": "12 (4x3)",
+            "elevation": "~150 hm",
+            "description": "All three variants combined. Grass up + asphalt down, stairs up + grass down, asphalt up + stairs down.",
+        },
+    ],
+    "periodization": [
+        {"phase": "Base (Wk 1–4)", "focus": "A + B rotation 1x/week, C every 2 weeks"},
+        {"phase": "Vertical (Wk 5–8)", "focus": "All sessions 1–2x/week, C every 10–14 days"},
+        {"phase": "Mountain (Wk 9–10)", "focus": "Light session A only"},
+        {"phase": "Taper (Wk 11–14)", "focus": "Session A only, no C after week 11"},
+    ],
+}
+
+
 def query_actuals(conn, plan_start, num_weeks=14):
     """Query actual activity data aligned to plan weeks."""
     weeks = []
@@ -437,6 +515,7 @@ def main():
         "history": history,
         "daily_runs": daily_runs,
         "exercises": exercises,
+        "dike_training": DIKE_TRAINING,
         "prediction": {
             "reference_races": reference_races,
             "scenarios": [

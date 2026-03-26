@@ -5,6 +5,7 @@
 import { renderWeek } from './plan.js';
 import { renderCharts } from './charts.js';
 import { renderExercises } from './exercises.js';
+import { renderDikeTraining } from './dike.js';
 
 // ---- Data Loading ----
 
@@ -427,6 +428,9 @@ async function init() {
 
     // Heatmap
     renderHeatmap(data.daily_runs);
+
+    // Dike Training
+    renderDikeTraining(data);
 
     // Exercises
     renderExercises(data.exercises);

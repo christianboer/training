@@ -1368,6 +1368,214 @@ a:hover { color: var(--accent-light); }
 
 .course-info li strong { color: var(--text-primary); }
 
+/* ---- Dike Training ---- */
+
+.section-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: -16px;
+    margin-bottom: 32px;
+    max-width: 600px;
+}
+
+.dike-profile {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+}
+
+.dike-svg {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.dike-svg .dike-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    fill: var(--text-muted);
+}
+
+.dike-svg .dike-name {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.dike-svg .dike-stat {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    fill: var(--text-secondary);
+}
+
+.dike-svg .dike-surface {
+    font-size: 9px;
+    fill: var(--text-muted);
+}
+
+.dike-sessions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.dike-session-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    border-top: 3px solid var(--session-color);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.dike-session-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-color: var(--session-color);
+}
+
+.dike-session-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--session-color);
+    margin-bottom: 12px;
+    opacity: 0.8;
+}
+
+.dike-session-header {
+    margin-bottom: 12px;
+}
+
+.dike-session-id {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--session-color);
+    opacity: 0.8;
+}
+
+.dike-session-header h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 2px 0 0;
+}
+
+.dike-session-stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+    padding: 10px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.dike-stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.dike-stat-value {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.dike-stat-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+.dike-session-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.dike-session-note {
+    margin-top: 10px;
+    padding: 6px 10px;
+    background: var(--accent-glow);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--accent);
+}
+
+.dike-periodization {
+    margin-top: 0;
+}
+
+.dike-period-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.dike-period-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.dike-period-row:last-child { border-bottom: none; }
+
+.dike-period-phase {
+    min-width: 160px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--phase-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dike-period-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.dike-period-focus {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .dike-sessions {
+        grid-template-columns: 1fr;
+    }
+
+    .dike-period-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .dike-period-phase {
+        min-width: auto;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .dike-sessions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* ---- Footer ---- */
 
 footer {
