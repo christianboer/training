@@ -17,11 +17,7 @@ Each prompt uses the same model, outfit, and setting for visual consistency.
 ### 1. 90/90 Hip Switches
 **Slug:** `90-90-hip-switches`
 
-A fit woman with medium-length wavy brown hair sitting on the floor of a bright modern living room with large windows overlooking a mountain landscape at golden hour. She is performing a 90/90 hip switch exercise — seated on the floor with both knees bent at 90-degree angles, her torso upright and tall, hands lightly placed on the floor beside her hips for balance, rotating her legs to one side. She is mid-transition, showing dynamic hip rotation.
-
-She is wearing a matching Lululemon set: high-rise full-length leggings in a bold blue-and-white abstract floral watercolor print (blending deep navy, cobalt blue, and soft white in large flowing petal-like shapes), paired with a matching scoop-neck cross-strap sports bra in the same blue watercolor print. White low-top sneakers. The fabric has a smooth, glossy Luxtreme finish that catches the light.
-
-Shot from a slightly elevated 3/4 angle, full body visible, natural warm lighting from the windows. Clean, minimal interior with light wood floors. Photorealistic fitness editorial style.
+A fit woman with medium-length wavy brown hair sitting on the floor of a bright modern living room with large windows overlooking a mountain landscape at golden hour. She is performing a 90/90 hip switch exercise — seated on the floor with both knees bent at 90-degree angles, her torso upright and tall, hands lightly placed on the floor beside her hips for balance, rotating her legs to one side. She is mid-transition, showing dynamic hip rotation. She is wearing a matching Lululemon set: high-rise full-length leggings in a bold blue-and-white abstract floral watercolor print (blending deep navy, cobalt blue, and soft white in large flowing petal-like shapes), paired with a matching scoop-neck cross-strap sports bra in the same blue watercolor print. White low-top sneakers. The fabric has a smooth, glossy Luxtreme finish that catches the light. Shot from a slightly elevated 3/4 angle, full body visible, natural warm lighting from the windows. Clean, minimal interior with light wood floors. Photorealistic fitness editorial style.
 
 ---
 
