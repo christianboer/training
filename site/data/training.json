@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-26T22:04:19",
+  "generated_at": "2026-03-30T08:38:29",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -973,11 +973,11 @@
       "week_number": 1,
       "start_date": "2026-03-23",
       "end_date": "2026-03-29",
-      "total_km": 28.3,
-      "run_km": 28.3,
-      "total_elevation": 546.0,
-      "run_elevation": 546.0,
-      "total_hours": 2.8,
+      "total_km": 67.9,
+      "run_km": 67.9,
+      "total_elevation": 952.0,
+      "run_elevation": 952.0,
+      "total_hours": 6.8,
       "activities": [
         {
           "date": "2026-03-23",
@@ -1014,6 +1014,42 @@
           "calories": 665.0,
           "gear": "HOKA Bondi 9 RLTT",
           "pace_min_km": 5.7
+        },
+        {
+          "date": "2026-03-27",
+          "name": "Afternoon Run",
+          "type": "Run",
+          "distance_km": 8.9,
+          "elevation_m": 73.0,
+          "moving_time_hours": 0.85,
+          "avg_hr": 131.5,
+          "calories": 573.0,
+          "gear": "New Balance 880G13",
+          "pace_min_km": 5.7
+        },
+        {
+          "date": "2026-03-28",
+          "name": "Afternoon Run",
+          "type": "Run",
+          "distance_km": 20.9,
+          "elevation_m": 278.0,
+          "moving_time_hours": 2.1,
+          "avg_hr": 132.3,
+          "calories": 1384.0,
+          "gear": "New Balance 880G13",
+          "pace_min_km": 6.0
+        },
+        {
+          "date": "2026-03-29",
+          "name": "Morning Run",
+          "type": "Run",
+          "distance_km": 9.8,
+          "elevation_m": 55.0,
+          "moving_time_hours": 1.04,
+          "avg_hr": 128.4,
+          "calories": 636.0,
+          "gear": "New Balance 880G13",
+          "pace_min_km": 6.3
         }
       ]
     },
@@ -1162,15 +1198,6 @@
     }
   ],
   "history": [
-    {
-      "week_start": "2025-03-24",
-      "run_km": 35.0,
-      "run_elevation": 150.0,
-      "run_hours": 3.3,
-      "total_km": 76.7,
-      "total_elevation": 2765.0,
-      "activity_count": 2
-    },
     {
       "week_start": "2025-03-31",
       "run_km": 42.7,
@@ -1632,16 +1659,15 @@
     },
     {
       "week_start": "2026-03-23",
-      "run_km": 28.3,
-      "run_elevation": 546.0,
-      "run_hours": 2.8,
-      "total_km": 28.3,
-      "total_elevation": 546.0,
-      "activity_count": 3
+      "run_km": 67.9,
+      "run_elevation": 952.0,
+      "run_hours": 6.8,
+      "total_km": 67.9,
+      "total_elevation": 952.0,
+      "activity_count": 6
     }
   ],
   "daily_runs": {
-    "2025-03-30": 35.0,
     "2025-03-31": 10.0,
     "2025-04-01": 9.9,
     "2025-04-06": 22.8,
@@ -1810,7 +1836,10 @@
     "2026-03-21": 30.4,
     "2026-03-23": 10.0,
     "2026-03-24": 8.3,
-    "2026-03-25": 10.0
+    "2026-03-25": 10.0,
+    "2026-03-27": 8.9,
+    "2026-03-28": 20.9,
+    "2026-03-29": 9.8
   },
   "exercises": {
     "morning": [
