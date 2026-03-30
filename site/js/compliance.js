@@ -7,6 +7,7 @@ export function renderCompliance(data) {
     if (!container || !data.plan || !data.actual) return;
 
     const currentWeek = getCurrentWeekNum(data.plan_start);
+    const weekProgress = getCurrentWeekProgress(data.plan_start);
 
     // Calculate overall adherence
     let totalPlanKm = 0, totalActualKm = 0;
@@ -14,10 +15,18 @@ export function renderCompliance(data) {
 
     data.plan.forEach((pw, i) => {
         const aw = data.actual[i];
-        if (i < currentWeek) {
+        const weekNum = i + 1;
+        if (weekNum < currentWeek) {
+            // Past weeks: full target
             totalPlanKm += pw.target_km || 0;
             totalActualKm += aw ? aw.run_km : 0;
             totalPlanElev += pw.target_elevation || 0;
+            totalActualElev += aw ? aw.run_elevation : 0;
+        } else if (weekNum === currentWeek) {
+            // Current week: pro-rate target by days elapsed
+            totalPlanKm += (pw.target_km || 0) * weekProgress;
+            totalActualKm += aw ? aw.run_km : 0;
+            totalPlanElev += (pw.target_elevation || 0) * weekProgress;
             totalActualElev += aw ? aw.run_elevation : 0;
         }
     });
@@ -53,9 +62,11 @@ export function renderCompliance(data) {
         const phase = data.phases.find(p => p.weeks.includes(weekNum));
         const phaseColor = phase ? phase.color : 'var(--border)';
 
-        const planKm = pw.target_km || 0;
+        const fullPlanKm = pw.target_km || 0;
+        const fullPlanElev = pw.target_elevation || 0;
+        const planKm = isCurrent ? fullPlanKm * weekProgress : fullPlanKm;
         const actualKm = aw ? aw.run_km : 0;
-        const planElev = pw.target_elevation || 0;
+        const planElev = isCurrent ? fullPlanElev * weekProgress : fullPlanElev;
         const actualElev = aw ? aw.run_elevation : 0;
 
         const kmPct = planKm > 0 ? Math.min(Math.round((actualKm / planKm) * 100), 150) : 0;
@@ -65,10 +76,10 @@ export function renderCompliance(data) {
         const maxPlanKm = Math.max(...data.plan.map(w => w.target_km || 0));
         const maxPlanElev = Math.max(...data.plan.map(w => w.target_elevation || 0));
 
-        const kmBarWidth = planKm > 0 ? (planKm / maxPlanKm) * 100 : 0;
-        const kmActualWidth = planKm > 0 ? Math.min((actualKm / maxPlanKm) * 100, 100) : 0;
-        const elevBarWidth = planElev > 0 ? (planElev / maxPlanElev) * 100 : 0;
-        const elevActualWidth = planElev > 0 ? Math.min((actualElev / maxPlanElev) * 100, 100) : 0;
+        const kmBarWidth = fullPlanKm > 0 ? (fullPlanKm / maxPlanKm) * 100 : 0;
+        const kmActualWidth = fullPlanKm > 0 ? Math.min((actualKm / maxPlanKm) * 100, 100) : 0;
+        const elevBarWidth = fullPlanElev > 0 ? (fullPlanElev / maxPlanElev) * 100 : 0;
+        const elevActualWidth = fullPlanElev > 0 ? Math.min((actualElev / maxPlanElev) * 100, 100) : 0;
 
         const statusClass = isCurrent ? 'current' : isPast ? 'past' : 'future';
         const kmColor = isPast || isCurrent ? adherenceColorVar(kmPct) : 'var(--border)';
@@ -87,7 +98,7 @@ export function renderCompliance(data) {
                         <div class="compliance-bar-plan" style="width: ${kmBarWidth}%"></div>
                         <div class="compliance-bar-actual" style="width: ${kmActualWidth}%; background: ${kmColor}"></div>
                     </div>
-                    <span class="compliance-bar-value">${isPast || isCurrent ? `${Math.round(actualKm)}/${Math.round(planKm)}` : Math.round(planKm)}</span>
+                    <span class="compliance-bar-value">${isPast || isCurrent ? `${Math.round(actualKm)}/${Math.round(planKm)}` : Math.round(fullPlanKm)}</span>
                 </div>
                 <div class="compliance-bar-row">
                     <span class="compliance-bar-icon" title="Elevation">D+</span>
@@ -95,7 +106,7 @@ export function renderCompliance(data) {
                         <div class="compliance-bar-plan" style="width: ${elevBarWidth}%"></div>
                         <div class="compliance-bar-actual" style="width: ${elevActualWidth}%; background: ${elevColor}"></div>
                     </div>
-                    <span class="compliance-bar-value">${planElev > 0 ? (isPast || isCurrent ? `${Math.round(actualElev)}/${Math.round(planElev)}` : Math.round(planElev)) : '—'}</span>
+                    <span class="compliance-bar-value">${fullPlanElev > 0 ? (isPast || isCurrent ? `${Math.round(actualElev)}/${Math.round(planElev)}` : Math.round(fullPlanElev)) : '—'}</span>
                 </div>
             </div>
         </div>`;
@@ -108,6 +119,16 @@ function getCurrentWeekNum(planStart) {
     const diffDays = Math.floor((now - start) / (1000 * 60 * 60 * 24));
     if (diffDays < 0) return 0;
     return Math.min(Math.floor(diffDays / 7) + 1, 14);
+}
+
+// Returns fraction of current week elapsed (0..1), e.g. Monday = 1/7, Sunday = 1.0
+function getCurrentWeekProgress(planStart) {
+    const now = new Date();
+    const start = new Date(planStart);
+    const diffDays = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+    if (diffDays < 0) return 0;
+    const dayInWeek = diffDays % 7;
+    return Math.min((dayInWeek + 1) / 7, 1);
 }
 
 function adherenceClass(pct) {

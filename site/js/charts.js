@@ -281,9 +281,21 @@ function renderMetrics(data) {
     const planWeek = data.plan[currentWeekIdx];
     const targetKm = planWeek ? planWeek.target_km || '—' : '—';
 
-    // Total plan vs actual
-    const totalPlanKm = Math.round(data.plan.reduce((s, w) => s + (w.target_km || 0), 0));
-    const totalActualKm = Math.round(data.actual.reduce((s, w) => s + w.run_km, 0));
+    // Total plan vs actual (pro-rate current week)
+    const dayInWeek = diffDays % 7;
+    const weekProgress = Math.min((dayInWeek + 1) / 7, 1);
+    let totalPlanKm = 0, totalActualKm = 0;
+    data.plan.forEach((w, i) => {
+        if (i < currentWeekIdx) {
+            totalPlanKm += w.target_km || 0;
+            totalActualKm += data.actual[i] ? data.actual[i].run_km : 0;
+        } else if (i === currentWeekIdx) {
+            totalPlanKm += (w.target_km || 0) * weekProgress;
+            totalActualKm += data.actual[i] ? data.actual[i].run_km : 0;
+        }
+    });
+    totalPlanKm = Math.round(totalPlanKm);
+    totalActualKm = Math.round(totalActualKm);
 
     container.innerHTML = `
         <div class="metric-item">
