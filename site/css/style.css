@@ -2067,6 +2067,7 @@ footer {
 .coach-toggle svg { width: 24px; height: 24px; }
 .coach-toggle:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(249, 115, 22, 0.5); }
 .coach-toggle.active { background: var(--text-muted); box-shadow: none; }
+.coach-toggle.hidden { display: none; }
 
 .coach-window {
     position: fixed;
@@ -2263,14 +2264,17 @@ footer {
         right: 0;
         left: 0;
         width: 100%;
-        max-height: 100vh;
-        height: 100vh;
+        max-height: 100dvh;
+        height: 100dvh;
         border-radius: 0;
         border: none;
     }
 
     .coach-messages { max-height: none; flex: 1; }
 
+    .coach-header { padding-top: calc(12px + env(safe-area-inset-top)); }
+
+    .coach-input-wrap { padding-bottom: calc(12px + env(safe-area-inset-bottom)); }
+
     .coach-toggle { bottom: 16px; right: 16px; }
-    .coach-window.open ~ .coach-toggle { display: none; }
 }

@@ -226,10 +226,15 @@ export function initCoach(data) {
     loadHistory();
     renderAllMessages();
 
+    function isMobile() {
+        return window.matchMedia('(max-width: 768px)').matches;
+    }
+
     // Toggle panel
     toggle.addEventListener('click', () => {
         const isOpen = window_.classList.toggle('open');
         toggle.classList.toggle('active', isOpen);
+        if (isMobile()) toggle.classList.toggle('hidden', isOpen);
         if (isOpen) {
             inputEl.focus();
             scrollToBottom();
@@ -238,7 +243,7 @@ export function initCoach(data) {
 
     closeBtn.addEventListener('click', () => {
         window_.classList.remove('open');
-        toggle.classList.remove('active');
+        toggle.classList.remove('active', 'hidden');
     });
 
     clearBtn.addEventListener('click', () => {
