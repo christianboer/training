@@ -5,4 +5,16 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    volumes:
+      - ./site/data/training.json:/app/data/training.json:ro
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
     restart: unless-stopped

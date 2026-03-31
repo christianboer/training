@@ -9,6 +9,7 @@ import { renderDikeTraining } from './dike.js';
 import { renderCompliance } from './compliance.js';
 import { renderElevationThermometer } from './elevation.js';
 import { renderCourseProfile } from './course.js';
+import { initCoach } from './coach.js';
 
 // ---- Data Loading ----
 
@@ -448,6 +449,9 @@ async function init() {
     // Race Day
     renderGearChecklist();
     initPaceCalc();
+
+    // AI Coach
+    initCoach(data);
 
     // Footer
     setLastUpdated(data.generated_at);
