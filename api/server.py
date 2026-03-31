@@ -12,7 +12,7 @@ from pydantic import BaseModel
 app = FastAPI()
 client = anthropic.AsyncAnthropic()
 
-DATA_PATH = Path("/app/data/training.json")
+DATA_PATH = Path("/usr/share/nginx/html/data/training.json")
 MODEL = "claude-sonnet-4-6"
 MAX_TOKENS = 2048
 
