@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01T08:42:17",
+  "generated_at": "2026-04-03T08:28:52",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1057,11 +1057,11 @@
       "week_number": 2,
       "start_date": "2026-03-30",
       "end_date": "2026-04-05",
-      "total_km": 24.2,
-      "run_km": 24.2,
-      "total_elevation": 556.0,
-      "run_elevation": 556.0,
-      "total_hours": 2.5,
+      "total_km": 35.2,
+      "run_km": 35.2,
+      "total_elevation": 590.0,
+      "run_elevation": 590.0,
+      "total_hours": 3.6,
       "activities": [
         {
           "date": "2026-03-30",
@@ -1086,6 +1086,18 @@
           "calories": 1038.0,
           "gear": "HOKA Bondi 9 RLTT",
           "pace_min_km": 6.4
+        },
+        {
+          "date": "2026-04-03",
+          "name": "Morning Run",
+          "type": "Run",
+          "distance_km": 11.0,
+          "elevation_m": 34.0,
+          "moving_time_hours": 1.08,
+          "avg_hr": 131.6,
+          "calories": 723.0,
+          "gear": "HOKA Bondi 9 RLTT",
+          "pace_min_km": 5.9
         }
       ]
     },
