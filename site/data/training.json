@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-06T14:59:37",
+  "generated_at": "2026-04-06T15:05:36",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -212,7 +212,7 @@
       "phase": "Base Building",
       "start_date": "2026-03-30",
       "end_date": "2026-04-05",
-      "target_km": 61.0,
+      "target_km": 68.0,
       "target_elevation": 650.0,
       "days": [
         {
@@ -245,8 +245,8 @@
         },
         {
           "day": "Fri",
-          "session": "Rest",
-          "target_km": null,
+          "session": "Easy run",
+          "target_km": 11.0,
           "target_elevation": null,
           "date": "2026-04-03"
         },
@@ -259,8 +259,8 @@
         },
         {
           "day": "Sun",
-          "session": "Long trail run + strength",
-          "target_km": 25.0,
+          "session": "Long trail run (shortened) + strength",
+          "target_km": 21.0,
           "target_elevation": 150.0,
           "date": "2026-04-05"
         }
@@ -271,13 +271,13 @@
       "phase": "Base Building",
       "start_date": "2026-04-06",
       "end_date": "2026-04-12",
-      "target_km": 45.0,
+      "target_km": 37.0,
       "target_elevation": null,
       "days": [
         {
           "day": "Mon",
-          "session": "Easy run + strength",
-          "target_km": 8.0,
+          "session": "Easy ride home (Easter, replaces easy run)",
+          "target_km": null,
           "target_elevation": null,
           "date": "2026-04-06"
         },
@@ -2064,7 +2064,7 @@
     ]
   },
   "plan_totals": {
-    "target_km": 892.0,
+    "target_km": 891.0,
     "target_elevation": 23819.0
   },
   "course_profile": {

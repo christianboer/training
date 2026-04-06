@@ -72,22 +72,24 @@ No riding this week — bike is at weekend home, in Rome Thu–Sun.
 | Tue | Dike repeats (500m vertical target) | 14 | 500m |
 | Wed | Easy run w/ tempo intervals (4x5 min) + strength | 12 | — |
 | Thu | **Rest** — mobility only | — | — |
-| Fri | Rest | — | — |
+| Fri | Easy run | 11 | — |
 | Sat | **Virtual ride — long climbing** (2.5–3h, 1,500m+ vert) | — | — |
-| Sun | Long trail run + strength | 25 | 150m |
-| **Total** | | **~61 km run** | **~650m** |
+| Sun | Long trail run (shortened) + strength | 21 | 150m |
+| **Total** | | **~68 km run** | **~650m** |
+
+Easter weekend: trail run shortened from 25→21 km. Added easy rides to visit family (57 km Sat afternoon + 66 km Sun morning, both ~130 bpm). Fri rest moved to a short easy run earlier in the week.
 
 ### Week 3 — Rotterdam HM (Apr 6–12)
 | Day | Session | km | Elev |
 |---|---|---|---|
-| Mon | Easy run + strength | 8 | — |
+| Mon | Easy ride home (Easter, replaces easy run) | — | — |
 | Tue | Easy run + strides (6x20 sec) | 10 | — |
 | Wed | Shakeout run + strength | 6 | — |
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Rest | — | — |
 | Sat | **Rotterdam Half Marathon** | 21 | — |
 | Sun | Rest or very easy jog | — | — |
-| **Total** | | **~45 km** (taper) | — |
+| **Total** | | **~37 km run** (taper) | — |
 
 Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 
