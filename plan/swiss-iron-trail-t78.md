@@ -10,7 +10,7 @@
 
 | Date | Event | Distance | Elevation | Role |
 |---|---|---|---|---|
-| Apr 12 | Half Marathon Rotterdam | 21 km | flat | Speed sharpener |
+| Apr 13 | Half Marathon Rotterdam | 21 km | flat | Speed sharpener |
 | May 22 | French Alps — Bourg d'Oisans | ~30 km run + 2 days cycling | ~3,000m | Mountain adaptation |
 | Jun 6 | Trail Godefroy, Bouillon | 50 km | 1,840m | Dress rehearsal |
 | **Jun 27** | **Swiss Iron Trail T78** | **78 km** | **~5,000m** | **A-race** |
@@ -79,16 +79,16 @@ No riding this week — bike is at weekend home, in Rome Thu–Sun.
 
 Easter weekend: trail run shortened from 25→21 km. Added easy rides to visit family (57 km Sat afternoon + 66 km Sun morning, both ~130 bpm). Fri rest moved to a short easy run earlier in the week.
 
-### Week 3 — Rotterdam HM (Apr 6–12)
+### Week 3 — Rotterdam HM (Apr 6–13)
 | Day | Session | km | Elev |
 |---|---|---|---|
 | Mon | Easy ride home (Easter, replaces easy run) | — | — |
 | Tue | Easy run + strides (6x20 sec) | 10 | — |
-| Wed | Shakeout run + strength | 6 | — |
+| Wed | Easy run + strength | 6 | — |
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Rest | — | — |
-| Sat | **Rotterdam Half Marathon** | 21 | — |
-| Sun | Rest or very easy jog | — | — |
+| Sat | Shakeout run + strides (6x20 sec) | 6 | — |
+| Sun | **Rotterdam Half Marathon** | 21 | — |
 | **Total** | | **~37 km run** (taper) | — |
 
 Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.

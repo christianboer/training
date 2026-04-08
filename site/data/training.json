@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-08T08:25:06",
+  "generated_at": "2026-04-08T10:06:56",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -290,7 +290,7 @@
         },
         {
           "day": "Wed",
-          "session": "Shakeout run + strength",
+          "session": "Easy run + strength",
           "target_km": 6.0,
           "target_elevation": null,
           "date": "2026-04-08"
@@ -311,15 +311,15 @@
         },
         {
           "day": "Sat",
-          "session": "Rotterdam Half Marathon",
-          "target_km": 21.0,
+          "session": "Shakeout run + strides (6x20 sec)",
+          "target_km": 6.0,
           "target_elevation": null,
           "date": "2026-04-11"
         },
         {
           "day": "Sun",
-          "session": "Rest or very easy jog",
-          "target_km": null,
+          "session": "Rotterdam Half Marathon",
+          "target_km": 21.0,
           "target_elevation": null,
           "date": "2026-04-12"
         }
