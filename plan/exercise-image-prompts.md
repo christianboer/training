@@ -172,7 +172,14 @@ A fit woman with medium-length wavy brown hair performing a slow eccentric step-
 
 ---
 
-### 23. Single-Leg Squat to Bench
+### 23. Quad Foam Roll
+**Slug:** `quad-foam-roll`
+
+A fit woman with medium-length wavy brown hair performing quad foam rolling on a light oak wood floor. She is lying face down, propped up on her forearms, with a cylindrical foam roller positioned under her right quadricep (front of thigh), halfway between hip and knee. Her left leg is bent out to the side with the knee at hip height for balance and to control pressure. Her body weight is pressing into the roller. She is looking down with a focused expression. She is wearing a matching Lululemon set: high-rise full-length leggings in a bold blue-and-white abstract floral watercolor print (deep navy, cobalt blue, soft white in large flowing petal-like shapes), with a matching scoop-neck cross-strap sports bra in the same print. No shoes. Smooth glossy Luxtreme fabric. A dark charcoal foam roller is clearly visible under her thigh. Setting: bright modern living room with large floor-to-ceiling windows overlooking a mountain landscape at golden hour. Clean minimal interior, light oak wood floors. Photorealistic fitness editorial style, 3/4 front angle, full body visible.
+
+---
+
+### 24. Single-Leg Squat to Bench
 **Slug:** `single-leg-squat-to-bench`
 
 A fit woman with medium-length wavy brown hair performing a single-leg squat to a low wooden bench behind her. She is standing on her left leg, right leg extended forward off the ground. She is lowering herself toward the bench with control, about halfway down, arms extended forward for balance. She is wearing a matching Lululemon set: high-rise full-length leggings in a bold blue-and-white abstract floral watercolor print (deep navy, cobalt blue, soft white in large flowing petal-like shapes), with a matching scoop-neck cross-strap sports bra in the same print. White low-top sneakers. Smooth glossy Luxtreme fabric. Setting: bright modern living room with large floor-to-ceiling windows overlooking a mountain landscape at golden hour. Clean minimal interior, light oak wood floors. Photorealistic fitness editorial style, 3/4 front angle, full body visible.
