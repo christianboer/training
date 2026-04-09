@@ -389,6 +389,7 @@ Three hill variants on the Barendrecht dike, each 13m elevation gain. The dike i
 - Couch stretch (rear foot on bench/wall) — 60 sec each side. Best hip flexor opener.
 - Deep squat hold — 60 sec. Ankles, hips, thoracic spine all at once.
 - Supine twist — 30 sec each side. Decompresses spine.
+- Quad foam roll — 60 sec each leg. Roll from hip to just above knee, pausing on tender spots. Relieves patellar tendon stress from descending.
 
 ### Strength (3x/week: Mon, Wed, Sat — 20 min)
 

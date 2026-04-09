@@ -323,6 +323,36 @@ const EXERCISE_SVGS = {
             <line x1="20" y1="95" x2="145" y2="95" stroke="currentColor" stroke-width="1" opacity="0.3"/>
         </svg>`,
 
+    'Quad foam roll': `
+        <svg viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Person face down, propped on elbows -->
+            <circle cx="35" cy="40" r="7" stroke="currentColor" stroke-width="2"/>
+            <!-- Torso angled down to elbows -->
+            <line x1="42" y1="42" x2="75" y2="52" stroke="currentColor" stroke-width="2"/>
+            <!-- Arms propping up (elbows on ground) -->
+            <line x1="55" y1="47" x2="45" y2="65" stroke="currentColor" stroke-width="2"/>
+            <line x1="55" y1="47" x2="60" y2="65" stroke="currentColor" stroke-width="2"/>
+            <!-- Hips -->
+            <line x1="75" y1="52" x2="95" y2="58" stroke="currentColor" stroke-width="2"/>
+            <!-- Quad on roller (front leg) -->
+            <line x1="95" y1="58" x2="125" y2="62" stroke="currentColor" stroke-width="2"/>
+            <line x1="125" y1="62" x2="140" y2="72" stroke="currentColor" stroke-width="2"/>
+            <!-- Other leg slightly raised -->
+            <line x1="95" y1="58" x2="120" y2="50" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+            <line x1="120" y1="50" x2="135" y2="45" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+            <!-- Foam roller (cylinder) -->
+            <rect x="105" y="64" width="30" height="10" rx="5" stroke="var(--accent)" stroke-width="2" fill="var(--accent)" opacity="0.15"/>
+            <!-- Quad highlight -->
+            <ellipse cx="110" cy="58" rx="18" ry="6" fill="var(--accent)" opacity="0.2"/>
+            <!-- Ground -->
+            <line x1="20" y1="90" x2="145" y2="90" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+            <!-- Rolling arrows -->
+            <path d="M112 80 L105 80" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+            <path d="M128 80 L135 80" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+            <path d="M105 80 L108 77 M105 80 L108 83" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+            <path d="M135 80 L132 77 M135 80 L132 83" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+        </svg>`,
+
     // ---- Strength ----
     'Single-leg glute bridge': `
         <svg viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg">

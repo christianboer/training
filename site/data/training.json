@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-09T08:18:28",
+  "generated_at": "2026-04-09T08:58:36",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -2051,6 +2051,11 @@
         "name": "Supine twist",
         "description": "30 sec each side. Decompresses spine.",
         "reps": "30 sec each side"
+      },
+      {
+        "name": "Quad foam roll",
+        "description": "60 sec each leg. Roll from hip to just above knee, pausing on tender spots. Relieves patellar tendon stress from descending.",
+        "reps": "60 sec each leg"
       }
     ],
     "strength": [
