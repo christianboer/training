@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-13T11:56:52",
+  "generated_at": "2026-04-14T09:04:50",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -330,21 +330,21 @@
       "phase": "Base Building",
       "start_date": "2026-04-13",
       "end_date": "2026-04-19",
-      "target_km": 72.0,
+      "target_km": 62.0,
       "target_elevation": 800.0,
       "days": [
         {
           "day": "Mon",
-          "session": "Recovery run + strength",
-          "target_km": 10.0,
+          "session": "Rest — mobility only",
+          "target_km": null,
           "target_elevation": null,
           "date": "2026-04-13"
         },
         {
           "day": "Tue",
-          "session": "Dike repeats (600m vertical target)",
-          "target_km": 14.0,
-          "target_elevation": 600.0,
+          "session": "Easy run",
+          "target_km": 10.0,
+          "target_elevation": null,
           "date": "2026-04-14"
         },
         {
@@ -356,9 +356,9 @@
         },
         {
           "day": "Thu",
-          "session": "Rest — mobility only",
-          "target_km": null,
-          "target_elevation": null,
+          "session": "Dike repeats (600m vertical target)",
+          "target_km": 14.0,
+          "target_elevation": 600.0,
           "date": "2026-04-16"
         },
         {
@@ -377,7 +377,7 @@
         },
         {
           "day": "Sun",
-          "session": "Long trail run + strength",
+          "session": "Long trail run",
           "target_km": 28.0,
           "target_elevation": 200.0,
           "date": "2026-04-19"
@@ -1334,12 +1334,12 @@
   "history": [
     {
       "week_start": "2025-04-14",
-      "run_km": 40.0,
-      "run_elevation": 413.0,
-      "run_hours": 4.0,
-      "total_km": 181.3,
-      "total_elevation": 597.0,
-      "activity_count": 5
+      "run_km": 29.5,
+      "run_elevation": 399.0,
+      "run_hours": 3.0,
+      "total_km": 170.8,
+      "total_elevation": 583.0,
+      "activity_count": 4
     },
     {
       "week_start": "2025-04-21",
@@ -1802,7 +1802,6 @@
     }
   ],
   "daily_runs": {
-    "2025-04-14": 10.5,
     "2025-04-15": 9.7,
     "2025-04-20": 19.8,
     "2025-04-21": 10.8,
@@ -2118,7 +2117,7 @@
     ]
   },
   "plan_totals": {
-    "target_km": 891.0,
+    "target_km": 881.0,
     "target_elevation": 23819.0
   },
   "course_profile": {

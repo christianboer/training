@@ -96,14 +96,16 @@ Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 ### Week 4 (Apr 13–19)
 | Day | Session | km | Elev |
 |---|---|---|---|
-| Mon | Recovery run + strength | 10 | — |
-| Tue | Dike repeats (600m vertical target) | 14 | 600m |
+| Mon | **Rest** — mobility only | — | — |
+| Tue | Easy run | 10 | — |
 | Wed | Easy run + strength | 10 | — |
-| Thu | **Rest** — mobility only | — | — |
+| Thu | Dike repeats (600m vertical target) | 14 | 600m |
 | Fri | Rest | — | — |
 | Sat | **Virtual ride — long climbing** (2.5–3h, 1,500m+ vert) | — | — |
-| Sun | Long trail run + strength | 28 | 200m |
-| **Total** | | **~72 km run** (rebound) | **~800m** |
+| Sun | Long trail run | 28 | 200m |
+| **Total** | | **~62 km run** (post-HM recovery) | **~800m** |
+
+Rotterdam HM (Apr 12) was raced hard: 1:41, 4:48/km, HR 150. Mon/Tue adjusted for 48h recovery before resuming intensity on Thursday.
 
 ---
 
