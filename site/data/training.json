@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T17:07:32",
+  "generated_at": "2026-04-17T13:12:37",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -370,16 +370,16 @@
         },
         {
           "day": "Sat",
-          "session": "Virtual ride — long climbing (2.5–3h, 1,500m+ vert)",
-          "target_km": null,
-          "target_elevation": null,
+          "session": "Long trail run",
+          "target_km": 28.0,
+          "target_elevation": 200.0,
           "date": "2026-04-18"
         },
         {
           "day": "Sun",
-          "session": "Long trail run",
-          "target_km": 28.0,
-          "target_elevation": 200.0,
+          "session": "Easy outdoor ride — flat (~60 km, recovery effort)",
+          "target_km": null,
+          "target_elevation": null,
           "date": "2026-04-19"
         }
       ]
@@ -1839,12 +1839,12 @@
     },
     {
       "week_start": "2026-04-13",
-      "run_km": 19.8,
-      "run_elevation": 134.0,
-      "run_hours": 1.9,
-      "total_km": 19.8,
-      "total_elevation": 134.0,
-      "activity_count": 2
+      "run_km": 35.6,
+      "run_elevation": 742.0,
+      "run_hours": 3.6,
+      "total_km": 35.6,
+      "total_elevation": 742.0,
+      "activity_count": 3
     }
   ],
   "daily_runs": {
@@ -2021,7 +2021,8 @@
     "2026-04-11": 7.2,
     "2026-04-12": 21.1,
     "2026-04-14": 10.0,
-    "2026-04-15": 9.8
+    "2026-04-15": 9.8,
+    "2026-04-16": 15.8
   },
   "exercises": {
     "morning": [
