@@ -481,33 +481,33 @@ def query_reference_races(conn):
     } for r in rows]
 
 
-GPX_PATH = os.path.expanduser(
-    '~/Downloads/t806176149_swiss irontrail t78-78.0(1).gpx'
-)
+GPX_PATH = os.path.join(BASE_DIR, 'plan', 't78-course.gpx')
+RACE_PLAN_PATH = os.path.join(BASE_DIR, 'plan', 't78-race-plan.json')
 
-# Key waypoints along the T78 course (name, approximate km)
+# Aid stations / waypoints anchored to GPX track-point indices.
+# Indices were identified from the named waypoints in the official Outdooractive
+# GPX, matched against the Verpflegungsplan running order.
 T78_WAYPOINTS = [
-    {"name": "Savognin", "type": "start"},
-    {"name": "Val d'Err", "type": "landmark"},
-    {"name": "Alp Flix", "type": "aid"},
-    {"name": "Fuorcla digl Leget", "type": "pass", "note": "Heaven's Gate"},
-    {"name": "La Veduta", "type": "aid"},
-    {"name": "Leg Grevasalvas", "type": "landmark"},
-    {"name": "Pass Lunghin", "type": "pass", "note": "Triple watershed"},
-    {"name": "Septimerpass", "type": "pass", "note": "Oldest Alpine crossing"},
-    {"name": "Uf da Flüe", "type": "peak", "note": "Highest point (2,775m)"},
-    {"name": "Fuorcla Valletta", "type": "pass"},
-    {"name": "Stallerberg", "type": "pass"},
-    {"name": "Bivio", "type": "aid"},
-    {"name": "Marmorera", "type": "landmark"},
-    {"name": "Sur", "type": "landmark"},
-    {"name": "Rona", "type": "landmark"},
-    {"name": "Savognin", "type": "finish"},
+    {"name": "Savognin (Start)",       "type": "start",    "idx": 0},
+    {"name": "Castelas",               "type": "aid",      "idx": 254},
+    {"name": "Val d'Err",              "type": "landmark", "idx": 485},
+    {"name": "Alp Flix",               "type": "aid",      "idx": 1119},
+    {"name": "Fuorcla digl Leget",     "type": "pass",     "idx": 1288, "note": "Heaven's Gate"},
+    {"name": "La Veduta",              "type": "aid",      "idx": 1390},
+    {"name": "Leg Grevasalvas",        "type": "landmark", "idx": 1568},
+    {"name": "Pass Lunghin",           "type": "pass",     "idx": 1989, "note": "Triple watershed"},
+    {"name": "Septimerpass",           "type": "aid",      "idx": 2158},
+    {"name": "Stallerberg",            "type": "pass",     "idx": 2594},
+    {"name": "Bivio",                  "type": "aid",      "idx": 2894},
+    {"name": "Sur",                    "type": "aid",      "idx": 3290},
+    {"name": "Rona",                   "type": "aid",      "idx": 3579},
+    {"name": "Savognin (Finish)",      "type": "finish",   "idx": -1},
 ]
 
 
 def parse_gpx_profile(gpx_path, num_points=100):
-    """Parse GPX file into a sampled elevation profile."""
+    """Parse GPX file into a sampled elevation profile and anchor waypoints to
+    track-point indices (so aid stations stay locked to the real course)."""
     if not os.path.exists(gpx_path):
         print(f"  Warning: GPX not found at {gpx_path}, using fallback profile")
         return None
@@ -526,11 +526,10 @@ def parse_gpx_profile(gpx_path, num_points=100):
              math.sin(dlon / 2) ** 2)
         return R * 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
 
-    prev = None
-    all_dist = []
+    all_dist = [0.0]
     all_ele = []
-    cum_dist = 0
-    total_up = 0
+    cum_up = [0.0]
+    prev = None
 
     for p in pts:
         lat = float(p.attrib['lat'])
@@ -539,15 +538,13 @@ def parse_gpx_profile(gpx_path, num_points=100):
         ele = float(ele_el.text) if ele_el is not None else 0
         if prev:
             d = haversine(prev[0], prev[1], lat, lon)
-            cum_dist += d
+            all_dist.append(all_dist[-1] + d)
             diff = ele - prev[2]
-            if diff > 0:
-                total_up += diff
-        all_dist.append(cum_dist)
+            cum_up.append(cum_up[-1] + (diff if diff > 0 else 0))
         all_ele.append(ele)
         prev = (lat, lon, ele)
 
-    # Sample evenly
+    # Sample evenly for profile chart
     step = max(1, len(pts) // num_points)
     profile = []
     for i in range(0, len(pts), step):
@@ -555,33 +552,105 @@ def parse_gpx_profile(gpx_path, num_points=100):
             "km": round(all_dist[i] / 1000, 1),
             "ele": round(all_ele[i]),
         })
-    # Always include last point
     if profile[-1]["km"] != round(all_dist[-1] / 1000, 1):
         profile.append({
             "km": round(all_dist[-1] / 1000, 1),
             "ele": round(all_ele[-1]),
         })
 
-    # Assign waypoints to nearest profile point by known approximate positions
-    # Aligned with GPX elevation features
-    waypoint_kms = [0, 8, 15, 22, 30, 38, 46, 50, 48, 53, 58, 62, 67, 72, 75, 78]
     waypoints = []
-    for wp, approx_km in zip(T78_WAYPOINTS, waypoint_kms):
-        # Find closest profile point
-        closest = min(profile, key=lambda p: abs(p["km"] - approx_km))
+    for wp in T78_WAYPOINTS:
+        idx = wp["idx"] if wp["idx"] != -1 else len(pts) - 1
         waypoints.append({
-            **wp,
-            "km": closest["km"],
-            "ele": closest["ele"],
+            **{k: v for k, v in wp.items() if k != "idx"},
+            "km": round(all_dist[idx] / 1000, 2),
+            "ele": round(all_ele[idx]),
+            "cum_gain_m": round(cum_up[idx]),
         })
+
+    for i in range(1, len(waypoints)):
+        waypoints[i]["leg_km"] = round(waypoints[i]["km"] - waypoints[i - 1]["km"], 2)
+        waypoints[i]["leg_gain_m"] = waypoints[i]["cum_gain_m"] - waypoints[i - 1]["cum_gain_m"]
+    waypoints[0]["leg_km"] = 0
+    waypoints[0]["leg_gain_m"] = 0
 
     return {
         "profile": profile,
         "waypoints": waypoints,
         "total_km": round(all_dist[-1] / 1000, 1),
-        "total_ascent": round(total_up),
+        "total_ascent": round(cum_up[-1]),
         "min_ele": round(min(all_ele)),
         "max_ele": round(max(all_ele)),
+    }
+
+
+def build_race_plan(course_profile):
+    """Merge course waypoints with the aid-station / personal-nutrition plan."""
+    if not course_profile or not os.path.exists(RACE_PLAN_PATH):
+        return None
+    with open(RACE_PLAN_PATH) as f:
+        plan = json.load(f)
+
+    availability = plan.get("stations_availability", {})
+    personal = plan.get("personal_plan", {})
+    targets = plan.get("race_targets", {})
+    staples = plan.get("staples", {})
+
+    # Only aid stations (waypoints tagged as aid/start/finish)
+    aid_types = {"aid", "start", "finish"}
+    aids = [w for w in course_profile["waypoints"] if w["type"] in aid_types]
+
+    target_hours = targets.get("target_finish_hours", 15.0)
+    carbs_per_hr = targets.get("carbs_per_hour_g", 60)
+    total_km = course_profile["total_km"]
+    total_ascent = course_profile["total_ascent"]
+    # Effort-weighted time split: 1 km flat == 100 m climb
+    total_effort = total_km + total_ascent / 100.0
+
+    legs = []
+    for i, stn in enumerate(aids):
+        name = stn["name"]
+        # Compute leg against the previous aid station (not the previous waypoint),
+        # otherwise landmarks like Val d'Err or Pass Lunghin distort the split.
+        if i == 0:
+            leg_km = 0
+            leg_gain = 0
+        else:
+            prev = aids[i - 1]
+            leg_km = round(stn["km"] - prev["km"], 2)
+            leg_gain = stn["cum_gain_m"] - prev["cum_gain_m"]
+        leg_effort = leg_km + leg_gain / 100.0
+        leg_minutes = (leg_effort / total_effort * target_hours * 60) if total_effort else 0
+        leg_carbs = round(leg_minutes / 60 * carbs_per_hr)
+
+        legs.append({
+            "name": name,
+            "km": stn["km"],
+            "elevation_m": stn["ele"],
+            "cum_gain_m": stn["cum_gain_m"],
+            "leg_km": leg_km,
+            "leg_gain_m": leg_gain,
+            "leg_minutes": round(leg_minutes),
+            "leg_carbs_g": leg_carbs,
+            "available": availability.get(name, {"drinks": [], "food": []}),
+            "personal": personal.get(name, {"carry_out": "", "consume_here": ""}),
+        })
+
+    # Cumulative running time (start + prior leg durations)
+    cum_min = 0
+    start_h, start_m = 4, 0  # 04:00 start
+    for leg in legs:
+        cum_min += leg["leg_minutes"]
+        total_min_of_day = start_h * 60 + start_m + cum_min
+        hh = (total_min_of_day // 60) % 24
+        mm = total_min_of_day % 60
+        leg["eta_clock"] = f"{hh:02d}:{mm:02d}"
+        leg["eta_race_minutes"] = cum_min
+
+    return {
+        "targets": targets,
+        "staples": staples,
+        "legs": legs,
     }
 
 
@@ -600,8 +669,9 @@ def main():
     reference_races = query_reference_races(conn)
     conn.close()
 
-    # Parse GPX course profile
+    # Parse GPX course profile + build the race plan (aid stations + nutrition)
     course_profile = parse_gpx_profile(GPX_PATH)
+    race_plan = build_race_plan(course_profile)
 
     # Calculate plan elevation target total
     plan_total_elevation = sum(w.get("target_elevation") or 0 for w in plan_weeks)
@@ -633,6 +703,7 @@ def main():
             "target_elevation": plan_total_elevation,
         },
         "course_profile": course_profile,
+        "race_plan": race_plan,
         "dike_training": DIKE_TRAINING,
         "prediction": {
             "reference_races": reference_races,

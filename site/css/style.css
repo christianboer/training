@@ -1703,6 +1703,219 @@ a:hover { color: var(--accent-light); }
     border-radius: 2px;
 }
 
+/* ---- Race Plan (aid stations + nutrition) ---- */
+
+.race-plan-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.race-plan-summary .summary-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.race-plan-summary .summary-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+.race-plan-summary .summary-value {
+    font-family: var(--font-mono);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.race-plan-summary .summary-sub {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+}
+
+.race-plan-legs {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.leg-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.leg-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    background: var(--bg-alt, rgba(255,255,255,0.02));
+    border-left: 3px solid var(--accent);
+    margin: 4px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.leg-from-to {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.leg-stats {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.leg-station {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-bottom: 6px;
+}
+
+.leg-station .station-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.leg-station .station-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-right: 10px;
+}
+
+.leg-station .station-eta {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent);
+    background: rgba(249, 115, 22, 0.12);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.leg-station .station-stats {
+    display: flex;
+    gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+}
+
+.station-plan {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 8px 0 10px 0;
+    padding: 10px 12px;
+    background: rgba(249, 115, 22, 0.05);
+    border-left: 2px solid var(--accent);
+    border-radius: 4px;
+}
+
+.plan-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 0.88rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.plan-row strong {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.plan-icon {
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+}
+
+.station-available {
+    margin-top: 8px;
+}
+
+.station-available summary {
+    cursor: pointer;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    padding: 4px 0;
+    user-select: none;
+}
+
+.station-available summary:hover {
+    color: var(--text-secondary);
+}
+
+.available-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 8px;
+    padding: 8px 0 4px 0;
+}
+
+@media (min-width: 640px) {
+    .available-grid {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.avail-label {
+    display: block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.chip {
+    display: inline-block;
+    font-size: 0.74rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-alt, rgba(255,255,255,0.03));
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.chip-drink {
+    border-color: rgba(59, 130, 246, 0.35);
+    color: #60a5fa;
+}
+
+.chip-food {
+    border-color: rgba(16, 185, 129, 0.35);
+    color: #34d399;
+}
+
 /* ---- Dike Training ---- */
 
 .section-subtitle {

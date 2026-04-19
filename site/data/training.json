@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-18T13:46:51",
+  "generated_at": "2026-04-19T21:30:23",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1386,9 +1386,9 @@
       "run_km": 19.8,
       "run_elevation": 370.0,
       "run_hours": 2.1,
-      "total_km": 153.8,
-      "total_elevation": 552.0,
-      "activity_count": 2
+      "total_km": 19.8,
+      "total_elevation": 370.0,
+      "activity_count": 1
     },
     {
       "week_start": "2025-04-21",
@@ -1851,12 +1851,12 @@
     },
     {
       "week_start": "2026-04-13",
-      "run_km": 35.6,
-      "run_elevation": 742.0,
-      "run_hours": 3.6,
-      "total_km": 35.6,
-      "total_elevation": 742.0,
-      "activity_count": 3
+      "run_km": 63.6,
+      "run_elevation": 833.0,
+      "run_hours": 6.4,
+      "total_km": 63.6,
+      "total_elevation": 833.0,
+      "activity_count": 4
     }
   ],
   "daily_runs": {
@@ -2034,7 +2034,8 @@
     "2026-04-12": 21.1,
     "2026-04-14": 10.0,
     "2026-04-15": 9.8,
-    "2026-04-16": 15.8
+    "2026-04-16": 15.8,
+    "2026-04-18": 28.0
   },
   "exercises": {
     "morning": [
@@ -2597,110 +2598,451 @@
     ],
     "waypoints": [
       {
-        "name": "Savognin",
+        "name": "Savognin (Start)",
         "type": "start",
         "km": 0.0,
-        "ele": 1179
+        "ele": 1179,
+        "cum_gain_m": 0,
+        "leg_km": 0,
+        "leg_gain_m": 0
+      },
+      {
+        "name": "Castelas",
+        "type": "aid",
+        "km": 6.48,
+        "ele": 1812,
+        "cum_gain_m": 746,
+        "leg_km": 6.48,
+        "leg_gain_m": 746
       },
       {
         "name": "Val d'Err",
         "type": "landmark",
-        "km": 7.6,
-        "ele": 1815
+        "km": 11.71,
+        "ele": 2143,
+        "cum_gain_m": 1175,
+        "leg_km": 5.23,
+        "leg_gain_m": 429
       },
       {
         "name": "Alp Flix",
         "type": "aid",
-        "km": 14.9,
-        "ele": 2400
+        "km": 20.8,
+        "ele": 1980,
+        "cum_gain_m": 1727,
+        "leg_km": 9.09,
+        "leg_gain_m": 552
       },
       {
         "name": "Fuorcla digl Leget",
         "type": "pass",
         "note": "Heaven's Gate",
-        "km": 22.1,
-        "ele": 2246
+        "km": 26.15,
+        "ele": 2712,
+        "cum_gain_m": 2531,
+        "leg_km": 5.35,
+        "leg_gain_m": 804
       },
       {
         "name": "La Veduta",
         "type": "aid",
-        "km": 29.8,
-        "ele": 2243
+        "km": 29.54,
+        "ele": 2206,
+        "cum_gain_m": 2537,
+        "leg_km": 3.39,
+        "leg_gain_m": 6
       },
       {
         "name": "Leg Grevasalvas",
         "type": "landmark",
-        "km": 37.9,
-        "ele": 2420
+        "km": 31.85,
+        "ele": 2391,
+        "cum_gain_m": 2801,
+        "leg_km": 2.31,
+        "leg_gain_m": 264
       },
       {
         "name": "Pass Lunghin",
         "type": "pass",
         "note": "Triple watershed",
-        "km": 46.2,
-        "ele": 2586
+        "km": 38.96,
+        "ele": 2481,
+        "cum_gain_m": 3360,
+        "leg_km": 7.11,
+        "leg_gain_m": 559
       },
       {
         "name": "Septimerpass",
-        "type": "pass",
-        "note": "Oldest Alpine crossing",
-        "km": 50.4,
-        "ele": 2470
-      },
-      {
-        "name": "Uf da Flüe",
-        "type": "peak",
-        "note": "Highest point (2,775m)",
-        "km": 48.1,
-        "ele": 2725
-      },
-      {
-        "name": "Fuorcla Valletta",
-        "type": "pass",
-        "km": 52.7,
-        "ele": 2208
+        "type": "aid",
+        "km": 41.31,
+        "ele": 2475,
+        "cum_gain_m": 3546,
+        "leg_km": 2.35,
+        "leg_gain_m": 186
       },
       {
         "name": "Stallerberg",
         "type": "pass",
-        "km": 57.7,
-        "ele": 1758
+        "km": 48.59,
+        "ele": 2681,
+        "cum_gain_m": 4222,
+        "leg_km": 7.28,
+        "leg_gain_m": 676
       },
       {
         "name": "Bivio",
         "type": "aid",
-        "km": 62.1,
-        "ele": 1623
-      },
-      {
-        "name": "Marmorera",
-        "type": "landmark",
-        "km": 66.4,
-        "ele": 1962
+        "km": 54.97,
+        "ele": 1768,
+        "cum_gain_m": 4238,
+        "leg_km": 6.38,
+        "leg_gain_m": 16
       },
       {
         "name": "Sur",
-        "type": "landmark",
-        "km": 71.5,
-        "ele": 1538
+        "type": "aid",
+        "km": 62.94,
+        "ele": 1608,
+        "cum_gain_m": 4521,
+        "leg_km": 7.97,
+        "leg_gain_m": 283
       },
       {
         "name": "Rona",
-        "type": "landmark",
-        "km": 74.6,
-        "ele": 1366
+        "type": "aid",
+        "km": 69.44,
+        "ele": 1845,
+        "cum_gain_m": 4995,
+        "leg_km": 6.5,
+        "leg_gain_m": 474
       },
       {
-        "name": "Savognin",
+        "name": "Savognin (Finish)",
         "type": "finish",
-        "km": 78.2,
-        "ele": 1181
+        "km": 78.3,
+        "ele": 1179,
+        "cum_gain_m": 5052,
+        "leg_km": 8.86,
+        "leg_gain_m": 57
       }
     ],
     "total_km": 78.3,
     "total_ascent": 5052,
     "min_ele": 1171,
     "max_ele": 2776
+  },
+  "race_plan": {
+    "targets": {
+      "target_finish_hours": 14.0,
+      "carbs_per_hour_g": 60,
+      "notes": [
+        "Target 14h finish (04:00 → ~18:00). Cutoff is 21h.",
+        "Carb target: 60 g/hour × 14h = ~840 g total.",
+        "No personal drop bags — all Maurten must be carried from the start."
+      ]
+    },
+    "staples": {
+      "bottle_ml": 500,
+      "carbs_per_bottle_g": 80,
+      "bar_carbs_g": 30,
+      "gel_carbs_g": 25,
+      "banana_carbs_g": 25,
+      "maurten_sachets_total": 7,
+      "maurten_sachets_in_race": 6,
+      "maurten_sachets_note": "1 pre-race + 2 pre-mixed in 500 ml soft flasks + 4 dry sachets carried in vest. Mix on the fly at aid stations with still water."
+    },
+    "legs": [
+      {
+        "name": "Savognin (Start)",
+        "km": 0.0,
+        "elevation_m": 1179,
+        "cum_gain_m": 0,
+        "leg_km": 0,
+        "leg_gain_m": 0,
+        "leg_minutes": 0,
+        "leg_carbs_g": 0,
+        "available": {
+          "drinks": [
+            "Still water",
+            "Isotonic"
+          ],
+          "food": []
+        },
+        "personal": {
+          "carry_out": "2× 500 ml flask pre-mixed Maurten 320 (= 2 sachets, 160 g) + 4 dry Maurten sachets in vest + 3 bars (~90 g) + 3 gels (~75 g)",
+          "consume_here": "Pre-race: 1 Maurten 320 bottle + banana + bread w/ honey"
+        },
+        "eta_clock": "04:00",
+        "eta_race_minutes": 0
+      },
+      {
+        "name": "Castelas",
+        "km": 6.48,
+        "elevation_m": 1812,
+        "cum_gain_m": 746,
+        "leg_km": 6.48,
+        "leg_gain_m": 746,
+        "leg_minutes": 91,
+        "leg_carbs_g": 91,
+        "available": {
+          "drinks": [
+            "Still water",
+            "Isotonic"
+          ],
+          "food": [
+            "Banana",
+            "Orange",
+            "Energy Gels"
+          ]
+        },
+        "personal": {
+          "carry_out": "Keep flasks + sachets as-is (first flask still half full)",
+          "consume_here": "Banana + 1 own gel. 1-min quick stop."
+        },
+        "eta_clock": "05:31",
+        "eta_race_minutes": 91
+      },
+      {
+        "name": "Alp Flix",
+        "km": 20.8,
+        "elevation_m": 1980,
+        "cum_gain_m": 1727,
+        "leg_km": 14.32,
+        "leg_gain_m": 981,
+        "leg_minutes": 157,
+        "leg_carbs_g": 157,
+        "available": {
+          "drinks": [
+            "Still water",
+            "Coca Cola",
+            "Isotonic",
+            "Ice Tea"
+          ],
+          "food": [
+            "Banana",
+            "Orange",
+            "Energy Bars",
+            "Energy Gels",
+            "Salted nuts",
+            "Dried fruit",
+            "Chocolate",
+            "Potatoes"
+          ]
+        },
+        "personal": {
+          "carry_out": "Mix dry sachet #1 in empty flask with still water (80 g refill)",
+          "consume_here": "Banana + orange + handful salted nuts. ~3 min stop."
+        },
+        "eta_clock": "08:08",
+        "eta_race_minutes": 248
+      },
+      {
+        "name": "La Veduta",
+        "km": 29.54,
+        "elevation_m": 2206,
+        "cum_gain_m": 2537,
+        "leg_km": 8.74,
+        "leg_gain_m": 810,
+        "leg_minutes": 110,
+        "leg_carbs_g": 110,
+        "available": {
+          "drinks": [
+            "Still water",
+            "Coca Cola",
+            "Isotonic",
+            "Ice Tea",
+            "Coffee"
+          ],
+          "food": [
+            "Banana",
+            "Orange",
+            "Energy Bars",
+            "Energy Liquid Watermelon",
+            "Energy Gels",
+            "Salted nuts",
+            "Dried fruit",
+            "Dried meat",
+            "Cheese",
+            "Bread",
+            "Biberli",
+            "Chocolate",
+            "Potatoes"
+          ]
+        },
+        "personal": {
+          "carry_out": "Mix dry sachet #2 in other empty flask (80 g refill)",
+          "consume_here": "Big refuel before Septimer push: potato + cheese + banana + 1 own gel."
+        },
+        "eta_clock": "09:58",
+        "eta_race_minutes": 358
+      },
+      {
+        "name": "Septimerpass",
+        "km": 41.31,
+        "elevation_m": 2475,
+        "cum_gain_m": 3546,
+        "leg_km": 11.77,
+        "leg_gain_m": 1009,
+        "leg_minutes": 143,
+        "leg_carbs_g": 143,
+        "available": {
+          "drinks": [
+            "Still water",
+            "Coca Cola",
+            "Isotonic",
+            "Ice Tea",
+            "Coffee",
+            "Vegetable bouillon"
+          ],
+          "food": []
+        },
+        "personal": {
+          "carry_out": "Mix dry sachet #3 in empty flask with still water (80 g for the long leg to Bivio)",
+          "consume_here": "Bouillon shot + 1 own gel. No food on station — eat a carried bar on the climb out."
+        },
+        "eta_clock": "12:21",
+        "eta_race_minutes": 501
+      },
+      {
+        "name": "Bivio",
+        "km": 54.97,
+        "elevation_m": 1768,
+        "cum_gain_m": 4238,
+        "leg_km": 13.66,
+        "leg_gain_m": 692,
+        "leg_minutes": 134,
+        "leg_carbs_g": 134,
+        "available": {
+          "drinks": [
+            "Still water",
+            "Coca Cola",
+            "Isotonic",
+            "Ice Tea",
+            "Coffee",
+            "Vegetable bouillon",
+            "Finisher Isotonic"
+          ],
+          "food": [
+            "Banana",
+            "Watermelon",
+            "Orange",
+            "Energy Bars",
+            "Energy Liquid Watermelon",
+            "Energy Gels",
+            "Salted nuts",
+            "Dried fruit",
+            "Dried meat",
+            "Cheese",
+            "Bread",
+            "Biberli",
+            "Chocolate",
+            "Potatoes",
+            "Pasta"
+          ]
+        },
+        "personal": {
+          "carry_out": "Mix dry sachet #4 (last sachet) in 1 flask — enough Maurten to reach the finish",
+          "consume_here": "PASTA stop — full plate + banana + bouillon + cola. Sit max 3 min."
+        },
+        "eta_clock": "14:35",
+        "eta_race_minutes": 635
+      },
+      {
+        "name": "Sur",
+        "km": 62.94,
+        "elevation_m": 1608,
+        "cum_gain_m": 4521,
+        "leg_km": 7.97,
+        "leg_gain_m": 283,
+        "leg_minutes": 70,
+        "leg_carbs_g": 70,
+        "available": {
+          "drinks": [
+            "Still water",
+            "Coca Cola",
+            "Isotonic",
+            "Ice Tea",
+            "Coffee"
+          ],
+          "food": [
+            "Banana",
+            "Orange",
+            "Energy Gels",
+            "Salted nuts",
+            "Dried fruit"
+          ]
+        },
+        "personal": {
+          "carry_out": "Top up 1 flask with isotonic (no Maurten left — use own gels/bars from here)",
+          "consume_here": "Banana + 1 own gel + cola shot."
+        },
+        "eta_clock": "15:45",
+        "eta_race_minutes": 705
+      },
+      {
+        "name": "Rona",
+        "km": 69.44,
+        "elevation_m": 1845,
+        "cum_gain_m": 4995,
+        "leg_km": 6.5,
+        "leg_gain_m": 474,
+        "leg_minutes": 73,
+        "leg_carbs_g": 73,
+        "available": {
+          "drinks": [
+            "Still water",
+            "Coca Cola",
+            "Isotonic",
+            "Ice Tea"
+          ],
+          "food": [
+            "Banana",
+            "Orange",
+            "Energy Bars",
+            "Energy Gels",
+            "Salted nuts",
+            "Dried fruit",
+            "Cheese",
+            "Bread",
+            "Biberli",
+            "Chocolate"
+          ]
+        },
+        "personal": {
+          "carry_out": "Top up 1 flask with cola or water (only 8.9 km left)",
+          "consume_here": "Cola + banana + cheese/bread slice."
+        },
+        "eta_clock": "16:58",
+        "eta_race_minutes": 778
+      },
+      {
+        "name": "Savognin (Finish)",
+        "km": 78.3,
+        "elevation_m": 1179,
+        "cum_gain_m": 5052,
+        "leg_km": 8.86,
+        "leg_gain_m": 57,
+        "leg_minutes": 61,
+        "leg_carbs_g": 61,
+        "available": {
+          "drinks": [
+            "Ice Tea",
+            "Vegetable bouillon",
+            "Finisher Isotonic"
+          ],
+          "food": [
+            "Watermelon",
+            "Pasta"
+          ]
+        },
+        "personal": {
+          "carry_out": "—",
+          "consume_here": "Finisher isotonic + pasta + watermelon."
+        },
+        "eta_clock": "17:59",
+        "eta_race_minutes": 839
+      }
+    ]
   },
   "dike_training": {
     "elevation_per_rep": 13,

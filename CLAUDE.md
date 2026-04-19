@@ -128,7 +128,11 @@ python3 scripts/sync_strava.py /tmp/strava_sync.json
 python3 scripts/export_dashboard_data.py
 ```
 
-The dashboard reads `site/data/training.json` which is generated from `db/training.db` and `plan/swiss-iron-trail-t78.md`. The plan markdown is the source of truth — editing it automatically updates the dashboard on next export.
+The dashboard reads `site/data/training.json` which is generated from `db/training.db`, `plan/swiss-iron-trail-t78.md`, `plan/t78-course.gpx`, and `plan/t78-race-plan.json`. Those source files are the source of truth — editing them automatically updates the dashboard on next export.
+
+### Race-day plan (aid stations + nutrition)
+
+`plan/t78-race-plan.json` holds the official aid station availability (from the Swiss Irontrail Verpflegungsplan PDF) and your personal nutrition/drink plan per station (carry out / consume here). The aid station distance + elevation come from `plan/t78-course.gpx` via track-point indices hardcoded in `scripts/export_dashboard_data.py` (`T78_WAYPOINTS`). Edit the JSON to adjust the plan; edit the indices if Outdooractive republishes the GPX.
 
 ### Structure
 

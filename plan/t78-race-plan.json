@@ -1,0 +1,97 @@
+{
+  "race_targets": {
+    "target_finish_hours": 14.0,
+    "carbs_per_hour_g": 60,
+    "notes": [
+      "Target 14h finish (04:00 → ~18:00). Cutoff is 21h.",
+      "Carb target: 60 g/hour × 14h = ~840 g total.",
+      "No personal drop bags — all Maurten must be carried from the start."
+    ]
+  },
+  "staples": {
+    "bottle_ml": 500,
+    "carbs_per_bottle_g": 80,
+    "bar_carbs_g": 30,
+    "gel_carbs_g": 25,
+    "banana_carbs_g": 25,
+    "maurten_sachets_total": 7,
+    "maurten_sachets_in_race": 6,
+    "maurten_sachets_note": "1 pre-race + 2 pre-mixed in 500 ml soft flasks + 4 dry sachets carried in vest. Mix on the fly at aid stations with still water."
+  },
+  "stations_availability": {
+    "Savognin (Start)": {
+      "drinks": ["Still water", "Isotonic"],
+      "food": []
+    },
+    "Castelas": {
+      "drinks": ["Still water", "Isotonic"],
+      "food": ["Banana", "Orange", "Energy Gels"]
+    },
+    "Alp Flix": {
+      "drinks": ["Still water", "Coca Cola", "Isotonic", "Ice Tea"],
+      "food": ["Banana", "Orange", "Energy Bars", "Energy Gels", "Salted nuts", "Dried fruit", "Chocolate", "Potatoes"]
+    },
+    "La Veduta": {
+      "drinks": ["Still water", "Coca Cola", "Isotonic", "Ice Tea", "Coffee"],
+      "food": ["Banana", "Orange", "Energy Bars", "Energy Liquid Watermelon", "Energy Gels", "Salted nuts", "Dried fruit", "Dried meat", "Cheese", "Bread", "Biberli", "Chocolate", "Potatoes"]
+    },
+    "Septimerpass": {
+      "drinks": ["Still water", "Coca Cola", "Isotonic", "Ice Tea", "Coffee", "Vegetable bouillon"],
+      "food": []
+    },
+    "Bivio": {
+      "drinks": ["Still water", "Coca Cola", "Isotonic", "Ice Tea", "Coffee", "Vegetable bouillon", "Finisher Isotonic"],
+      "food": ["Banana", "Watermelon", "Orange", "Energy Bars", "Energy Liquid Watermelon", "Energy Gels", "Salted nuts", "Dried fruit", "Dried meat", "Cheese", "Bread", "Biberli", "Chocolate", "Potatoes", "Pasta"]
+    },
+    "Sur": {
+      "drinks": ["Still water", "Coca Cola", "Isotonic", "Ice Tea", "Coffee"],
+      "food": ["Banana", "Orange", "Energy Gels", "Salted nuts", "Dried fruit"]
+    },
+    "Rona": {
+      "drinks": ["Still water", "Coca Cola", "Isotonic", "Ice Tea"],
+      "food": ["Banana", "Orange", "Energy Bars", "Energy Gels", "Salted nuts", "Dried fruit", "Cheese", "Bread", "Biberli", "Chocolate"]
+    },
+    "Savognin (Finish)": {
+      "drinks": ["Ice Tea", "Vegetable bouillon", "Finisher Isotonic"],
+      "food": ["Watermelon", "Pasta"]
+    }
+  },
+  "personal_plan": {
+    "Savognin (Start)": {
+      "carry_out": "2× 500 ml flask pre-mixed Maurten 320 (= 2 sachets, 160 g) + 4 dry Maurten sachets in vest + 3 bars (~90 g) + 3 gels (~75 g)",
+      "consume_here": "Pre-race: 1 Maurten 320 bottle + banana + bread w/ honey"
+    },
+    "Castelas": {
+      "carry_out": "Keep flasks + sachets as-is (first flask still half full)",
+      "consume_here": "Banana + 1 own gel. 1-min quick stop."
+    },
+    "Alp Flix": {
+      "carry_out": "Mix dry sachet #1 in empty flask with still water (80 g refill)",
+      "consume_here": "Banana + orange + handful salted nuts. ~3 min stop."
+    },
+    "La Veduta": {
+      "carry_out": "Mix dry sachet #2 in other empty flask (80 g refill)",
+      "consume_here": "Big refuel before Septimer push: potato + cheese + banana + 1 own gel."
+    },
+    "Septimerpass": {
+      "carry_out": "Mix dry sachet #3 in empty flask with still water (80 g for the long leg to Bivio)",
+      "consume_here": "Bouillon shot + 1 own gel. No food on station — eat a carried bar on the climb out."
+    },
+    "Bivio": {
+      "carry_out": "Mix dry sachet #4 (last sachet) in 1 flask — enough Maurten to reach the finish",
+      "consume_here": "PASTA stop — full plate + banana + bouillon + cola. Sit max 3 min."
+    },
+    "Sur": {
+      "carry_out": "Top up 1 flask with isotonic (no Maurten left — use own gels/bars from here)",
+      "consume_here": "Banana + 1 own gel + cola shot."
+    },
+    "Rona": {
+      "carry_out": "Top up 1 flask with cola or water (only 8.9 km left)",
+      "consume_here": "Cola + banana + cheese/bread slice."
+    },
+    "Savognin (Finish)": {
+      "carry_out": "—",
+      "consume_here": "Finisher isotonic + pasta + watermelon."
+    }
+  }
+}

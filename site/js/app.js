@@ -9,12 +9,13 @@ import { renderDikeTraining } from './dike.js';
 import { renderCompliance } from './compliance.js';
 import { renderElevationThermometer } from './elevation.js';
 import { renderCourseProfile } from './course.js';
+import { renderRacePlan } from './racePlan.js';
 import { initCoach } from './coach.js';
 
 // ---- Data Loading ----
 
 async function loadData() {
-    const resp = await fetch('data/training.json');
+    const resp = await fetch(`data/training.json?v=${Date.now()}`, { cache: 'no-store' });
     return resp.json();
 }
 
@@ -427,6 +428,9 @@ async function init() {
 
     // Course Profile
     renderCourseProfile(data);
+
+    // Race Plan (aid stations + personal nutrition)
+    renderRacePlan(data);
 
     // Charts
     renderCharts(data);
