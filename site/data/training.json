@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T21:30:23",
+  "generated_at": "2026-04-19T21:41:06",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1213,11 +1213,11 @@
       "week_number": 4,
       "start_date": "2026-04-13",
       "end_date": "2026-04-19",
-      "total_km": 63.6,
+      "total_km": 99.1,
       "run_km": 63.6,
-      "total_elevation": 833.0,
+      "total_elevation": 932.0,
       "run_elevation": 833.0,
-      "total_hours": 6.4,
+      "total_hours": 7.8,
       "activities": [
         {
           "date": "2026-04-14",
@@ -1266,6 +1266,18 @@
           "calories": 1889.0,
           "gear": "Salomon Speedcross 6 bw",
           "pace_min_km": 6.0
+        },
+        {
+          "date": "2026-04-19",
+          "name": "Morning Ride",
+          "type": "Ride",
+          "distance_km": 35.5,
+          "elevation_m": 99.0,
+          "moving_time_hours": 1.47,
+          "avg_hr": 107.9,
+          "calories": 736.0,
+          "gear": "Ridley Fenix SLiC LTD 2022",
+          "pace_min_km": null
         }
       ]
     },
