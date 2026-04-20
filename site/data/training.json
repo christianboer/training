@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T17:18:28",
+  "generated_at": "2026-04-20T17:43:28",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -389,8 +389,8 @@
       "phase": "Vertical Loading",
       "start_date": "2026-04-20",
       "end_date": "2026-04-26",
-      "target_km": 72.0,
-      "target_elevation": 2300.0,
+      "target_km": 86.0,
+      "target_elevation": 3100.0,
       "days": [
         {
           "day": "Mon",
@@ -436,9 +436,9 @@
         },
         {
           "day": "Sun",
-          "session": "Virtual ride — moderate climbing (1.5–2h, 1,000m vert)",
-          "target_km": null,
-          "target_elevation": null,
+          "session": "Dike repeats (800m vertical) — back-to-back vertical with Sat, absorbs Tue's session (Paris travel wk)",
+          "target_km": 14.0,
+          "target_elevation": 800.0,
           "date": "2026-04-26"
         }
       ]
@@ -448,28 +448,28 @@
       "phase": "Vertical Loading",
       "start_date": "2026-04-27",
       "end_date": "2026-05-03",
-      "target_km": 76.0,
-      "target_elevation": 3100.0,
+      "target_km": 62.0,
+      "target_elevation": 2200.0,
       "days": [
         {
           "day": "Mon",
-          "session": "Easy run + strength",
-          "target_km": 10.0,
+          "session": "Strength + mobility only (travel to Paris in evening)",
+          "target_km": null,
           "target_elevation": null,
           "date": "2026-04-27"
         },
         {
           "day": "Tue",
-          "session": "Dike repeats (800m vertical)",
-          "target_km": 14.0,
-          "target_elevation": 800.0,
+          "session": "Easy run along the Seine (Paris)",
+          "target_km": 10.0,
+          "target_elevation": null,
           "date": "2026-04-28"
         },
         {
           "day": "Wed",
-          "session": "Easy run + downhill repeats",
+          "session": "Easy run + Montmartre stair repeats (Rue Foyatier 222 steps × 4–6, Paris)",
           "target_km": 10.0,
-          "target_elevation": 300.0,
+          "target_elevation": 200.0,
           "date": "2026-04-29"
         },
         {
@@ -2194,7 +2194,7 @@
   },
   "plan_totals": {
     "target_km": 881.0,
-    "target_elevation": 23819.0
+    "target_elevation": 23719.0
   },
   "course_profile": {
     "profile": [
