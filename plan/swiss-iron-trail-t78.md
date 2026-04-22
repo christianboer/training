@@ -118,30 +118,30 @@ Rotterdam HM (Apr 12) was raced hard: 1:41, 4:48/km, HR 150. Mon/Tue adjusted fo
 |---|---|---|---|
 | Mon | Easy run + strength | 10 | — |
 | Tue | Dike repeats (700m vertical) | 14 | 700m |
-| Wed | Easy run + strength | 10 | — |
-| Thu | **Rest** — mobility only | — | — |
+| Wed | **Rest** — mobility + strength (late dinner, run shifted to Thu) | — | — |
+| Thu | Easy run (morning) | 10 | — |
 | Fri | Downhill repeats — fast descent reps on steepest dike, walk up | 8 | 400m |
 | Sat | Long run — max elevation (Trappenmarathon style) + strength | 30 | 1,200m |
-| Sun | **Dike repeats (800m vertical)** — back-to-back vertical with Sat, absorbs Tue's session (Paris travel wk) | 14 | 800m |
-| **Total** | | **~86 km run** | **~3,100m** |
+| Sun | **Flat endurance ride — outside** (2.5–3h, aerobic Z2) | — | — |
+| **Total** | | **~72 km run** | **~2,300m** |
 
-Sunday swapped from virtual ride to dike repeats: user is in Paris Tue/Wed (Week 6), so vertical work shifts to this Sunday. Creates intentional back-to-back vertical load (Sat long + Sun dike = 2,000m over 2 days) — aligned with Phase 2 goal of introducing back-to-back vertical days.
+Wed/Thu swap: late dinner Wed; easy run moved to Thu morning, rest moved to Wed. Sun is an outside flat endurance ride (replaces the planned virtual climbing ride) — longer duration compensates for the missing vertical; dike repeats move to Mon (Week 6) so legs are fresh for the vertical work after Sat long + Sun aerobic spin.
 
 ### Week 6 (Apr 27 – May 3)
 Paris travel week (Tue/Wed).
 
 | Day | Session | km | Elev |
 |---|---|---|---|
-| Mon | Strength + mobility only (travel to Paris in evening) | — | — |
+| Mon | **Dike repeats (800m vertical)** — Koningsdag morning, train to Paris afternoon | 14 | 800m |
 | Tue | Easy run along the Seine (Paris) | 10 | — |
 | Wed | Easy run + Montmartre stair repeats (Rue Foyatier 222 steps × 4–6, Paris) | 10 | ~200m |
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Easy run + dike (500m vertical) | 10 | 500m |
 | Sat | Long run — Trappenmarathon style (1,500m+) + strength | 32 | 1,500m |
 | Sun | **Virtual ride — moderate climbing** (1.5–2h, 1,000m vert) | — | — |
-| **Total** | | **~62 km run** | **~2,200m** |
+| **Total** | | **~76 km run** | **~3,000m** |
 
-Paris adjustments: Tue dike (800m) moved to previous Sunday. Wed downhill repeats (300m) replaced by Montmartre stairs (~200m, eccentric stress). Mon run dropped to protect legs after back-to-back vertical weekend + evening travel. Week 7 peak restores full load.
+Paris adjustments: Tue dike (800m) moved to Mon morning (Koningsdag free, train to Paris afternoon). Wed downhill repeats (300m) replaced by Montmartre stairs (~200m, eccentric stress). Week 7 peak restores full load.
 
 ### Week 7 — Peak Week (May 4–10)
 | Day | Session | km | Elev |

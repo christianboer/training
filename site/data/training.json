@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T08:58:39",
+  "generated_at": "2026-04-22T09:33:42",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -389,8 +389,8 @@
       "phase": "Vertical Loading",
       "start_date": "2026-04-20",
       "end_date": "2026-04-26",
-      "target_km": 86.0,
-      "target_elevation": 3100.0,
+      "target_km": 72.0,
+      "target_elevation": 2300.0,
       "days": [
         {
           "day": "Mon",
@@ -408,15 +408,15 @@
         },
         {
           "day": "Wed",
-          "session": "Easy run + strength",
-          "target_km": 10.0,
+          "session": "Rest — mobility + strength (late dinner, run shifted to Thu)",
+          "target_km": null,
           "target_elevation": null,
           "date": "2026-04-22"
         },
         {
           "day": "Thu",
-          "session": "Rest — mobility only",
-          "target_km": null,
+          "session": "Easy run (morning)",
+          "target_km": 10.0,
           "target_elevation": null,
           "date": "2026-04-23"
         },
@@ -436,9 +436,9 @@
         },
         {
           "day": "Sun",
-          "session": "Dike repeats (800m vertical) — back-to-back vertical with Sat, absorbs Tue's session (Paris travel wk)",
-          "target_km": 14.0,
-          "target_elevation": 800.0,
+          "session": "Flat endurance ride — outside (2.5–3h, aerobic Z2)",
+          "target_km": null,
+          "target_elevation": null,
           "date": "2026-04-26"
         }
       ]
@@ -448,14 +448,14 @@
       "phase": "Vertical Loading",
       "start_date": "2026-04-27",
       "end_date": "2026-05-03",
-      "target_km": 62.0,
-      "target_elevation": 2200.0,
+      "target_km": 76.0,
+      "target_elevation": 3000.0,
       "days": [
         {
           "day": "Mon",
-          "session": "Strength + mobility only (travel to Paris in evening)",
-          "target_km": null,
-          "target_elevation": null,
+          "session": "Dike repeats (800m vertical) — Koningsdag morning, train to Paris afternoon",
+          "target_km": 14.0,
+          "target_elevation": 800.0,
           "date": "2026-04-27"
         },
         {
