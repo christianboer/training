@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T14:46:23",
+  "generated_at": "2026-04-25T15:07:00",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1285,11 +1285,11 @@
       "week_number": 5,
       "start_date": "2026-04-20",
       "end_date": "2026-04-26",
-      "total_km": 40.2,
-      "run_km": 40.2,
-      "total_elevation": 1220.0,
-      "run_elevation": 1220.0,
-      "total_hours": 4.5,
+      "total_km": 70.6,
+      "run_km": 70.6,
+      "total_elevation": 2052.0,
+      "run_elevation": 2052.0,
+      "total_hours": 7.8,
       "activities": [
         {
           "date": "2026-04-20",
@@ -1338,6 +1338,18 @@
           "calories": 639.0,
           "gear": "Salomon Speedcross 6 bw",
           "pace_min_km": 7.8
+        },
+        {
+          "date": "2026-04-25",
+          "name": "Morning Trail Run",
+          "type": "Run",
+          "distance_km": 30.4,
+          "elevation_m": 832.0,
+          "moving_time_hours": 3.38,
+          "avg_hr": 136.0,
+          "calories": 2093.0,
+          "gear": "Salomon Speedcross 3 ora",
+          "pace_min_km": 6.7
         }
       ]
     },
@@ -1912,12 +1924,12 @@
     },
     {
       "week_start": "2026-04-20",
-      "run_km": 32.5,
-      "run_elevation": 811.0,
-      "run_hours": 3.5,
-      "total_km": 32.5,
-      "total_elevation": 811.0,
-      "activity_count": 3
+      "run_km": 40.2,
+      "run_elevation": 1220.0,
+      "run_hours": 4.5,
+      "total_km": 40.2,
+      "total_elevation": 1220.0,
+      "activity_count": 4
     }
   ],
   "daily_runs": {
@@ -2095,7 +2107,8 @@
     "2026-04-18": 28.0,
     "2026-04-20": 10.0,
     "2026-04-21": 13.0,
-    "2026-04-23": 9.5
+    "2026-04-23": 9.5,
+    "2026-04-24": 7.7
   },
   "exercises": {
     "morning": [
