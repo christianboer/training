@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T15:07:00",
+  "generated_at": "2026-04-27T11:31:12",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1285,11 +1285,11 @@
       "week_number": 5,
       "start_date": "2026-04-20",
       "end_date": "2026-04-26",
-      "total_km": 70.6,
+      "total_km": 180.0,
       "run_km": 70.6,
-      "total_elevation": 2052.0,
+      "total_elevation": 2285.0,
       "run_elevation": 2052.0,
-      "total_hours": 7.8,
+      "total_hours": 11.7,
       "activities": [
         {
           "date": "2026-04-20",
@@ -1350,6 +1350,30 @@
           "calories": 2093.0,
           "gear": "Salomon Speedcross 3 ora",
           "pace_min_km": 6.7
+        },
+        {
+          "date": "2026-04-25",
+          "name": "Afternoon Ride",
+          "type": "Ride",
+          "distance_km": 55.8,
+          "elevation_m": 118.0,
+          "moving_time_hours": 1.92,
+          "avg_hr": 120.9,
+          "calories": 1082.0,
+          "gear": "Ridley Fenix SLiC LTD 2022",
+          "pace_min_km": null
+        },
+        {
+          "date": "2026-04-26",
+          "name": "Morning Ride",
+          "type": "Ride",
+          "distance_km": 53.6,
+          "elevation_m": 115.0,
+          "moving_time_hours": 1.91,
+          "avg_hr": 117.1,
+          "calories": 1059.0,
+          "gear": "Ridley Fenix SLiC LTD 2022",
+          "pace_min_km": null
         }
       ]
     },
@@ -1357,12 +1381,25 @@
       "week_number": 6,
       "start_date": "2026-04-27",
       "end_date": "2026-05-03",
-      "total_km": 0,
-      "run_km": 0,
-      "total_elevation": 0,
-      "run_elevation": 0,
-      "total_hours": 0,
-      "activities": []
+      "total_km": 14.0,
+      "run_km": 14.0,
+      "total_elevation": 811.0,
+      "run_elevation": 811.0,
+      "total_hours": 1.9,
+      "activities": [
+        {
+          "date": "2026-04-27",
+          "name": "Morning Trail Run",
+          "type": "Run",
+          "distance_km": 14.0,
+          "elevation_m": 811.0,
+          "moving_time_hours": 1.86,
+          "avg_hr": 137.5,
+          "calories": 1093.0,
+          "gear": "Salomon Speedcross 3 ora",
+          "pace_min_km": 8.0
+        }
+      ]
     },
     {
       "week_number": 7,
@@ -1454,15 +1491,6 @@
     }
   ],
   "history": [
-    {
-      "week_start": "2025-04-21",
-      "run_km": 26.2,
-      "run_elevation": 1375.0,
-      "run_hours": 3.1,
-      "total_km": 116.8,
-      "total_elevation": 1535.0,
-      "activity_count": 2
-    },
     {
       "week_start": "2025-04-28",
       "run_km": 58.7,
@@ -1924,16 +1952,15 @@
     },
     {
       "week_start": "2026-04-20",
-      "run_km": 40.2,
-      "run_elevation": 1220.0,
-      "run_hours": 4.5,
-      "total_km": 40.2,
-      "total_elevation": 1220.0,
-      "activity_count": 4
+      "run_km": 70.6,
+      "run_elevation": 2052.0,
+      "run_hours": 7.8,
+      "total_km": 179.9,
+      "total_elevation": 2285.0,
+      "activity_count": 7
     }
   ],
   "daily_runs": {
-    "2025-04-26": 26.2,
     "2025-04-28": 10.6,
     "2025-04-29": 9.3,
     "2025-05-02": 9.8,
@@ -2108,7 +2135,8 @@
     "2026-04-20": 10.0,
     "2026-04-21": 13.0,
     "2026-04-23": 9.5,
-    "2026-04-24": 7.7
+    "2026-04-24": 7.7,
+    "2026-04-25": 30.4
   },
   "exercises": {
     "morning": [
