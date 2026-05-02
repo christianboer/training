@@ -138,10 +138,12 @@ Paris travel week (Tue/Wed).
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Easy run + dike (500m vertical) | 10 | 500m |
 | Sat | Long run — Trappenmarathon style (1,500m+) + strength | 32 | 1,500m |
-| Sun | **Virtual ride — moderate climbing** (1.5–2h, 1,000m vert) | — | — |
-| **Total** | | **~76 km run** | **~3,000m** |
+| Sun | Easy trail run with slower friend (HR 120–125, recovery effort) | 14 | ~200m |
+| **Total** | | **~90 km run** | **~3,200m** |
 
 Paris adjustments: Tue dike (800m) moved to Mon morning (Koningsdag free, train to Paris afternoon). Wed downhill repeats (300m) replaced by Montmartre stairs (~200m, eccentric stress). Week 7 peak restores full load.
+
+Sun (May 3) swap: virtual ride replaced by easy recovery trail run — Sat long run (33.4 km / 1,552m) already covered the planned vertical, so Sunday becomes pure recovery rather than additional climbing.
 
 ### Week 7 — Peak Week (May 4–10)
 | Day | Session | km | Elev |
