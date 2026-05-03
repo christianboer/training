@@ -138,8 +138,8 @@ Paris travel week (Tue/Wed).
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Easy run + dike (500m vertical) | 10 | 500m |
 | Sat | Long run — Trappenmarathon style (1,500m+) + strength | 32 | 1,500m |
-| Sun | Easy trail run with slower friend (HR 120–125, recovery effort) | 14 | ~200m |
-| **Total** | | **~90 km run** | **~3,200m** |
+| Sun | Easy trail run with slower friend (HR 120–125, recovery effort) | 8 | ~50m |
+| **Total** | | **~84 km run** | **~3,050m** |
 
 Paris adjustments: Tue dike (800m) moved to Mon morning (Koningsdag free, train to Paris afternoon). Wed downhill repeats (300m) replaced by Montmartre stairs (~200m, eccentric stress). Week 7 peak restores full load.
 

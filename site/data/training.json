@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-03T16:37:14",
+  "generated_at": "2026-05-03T16:38:50",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -448,8 +448,8 @@
       "phase": "Vertical Loading",
       "start_date": "2026-04-27",
       "end_date": "2026-05-03",
-      "target_km": 90.0,
-      "target_elevation": 3200.0,
+      "target_km": 84.0,
+      "target_elevation": 3050.0,
       "days": [
         {
           "day": "Mon",
@@ -496,8 +496,8 @@
         {
           "day": "Sun",
           "session": "Easy trail run with slower friend (HR 120–125, recovery effort)",
-          "target_km": 14.0,
-          "target_elevation": 200.0,
+          "target_km": 8.0,
+          "target_elevation": 50.0,
           "date": "2026-05-03"
         }
       ]
@@ -2349,8 +2349,8 @@
     ]
   },
   "plan_totals": {
-    "target_km": 895.0,
-    "target_elevation": 23919.0
+    "target_km": 889.0,
+    "target_elevation": 23769.0
   },
   "course_profile": {
     "profile": [
