@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-02T13:39:46",
+  "generated_at": "2026-05-03T16:37:14",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1381,11 +1381,11 @@
       "week_number": 6,
       "start_date": "2026-04-27",
       "end_date": "2026-05-03",
-      "total_km": 73.2,
-      "run_km": 73.2,
-      "total_elevation": 3010.0,
-      "run_elevation": 3010.0,
-      "total_hours": 9.1,
+      "total_km": 81.9,
+      "run_km": 81.9,
+      "total_elevation": 3063.0,
+      "run_elevation": 3063.0,
+      "total_hours": 10.1,
       "activities": [
         {
           "date": "2026-04-27",
@@ -1446,6 +1446,18 @@
           "calories": 2606.0,
           "gear": "Salomon Speedcross 3 ora",
           "pace_min_km": 7.8
+        },
+        {
+          "date": "2026-05-03",
+          "name": "Morning Trail Run",
+          "type": "Run",
+          "distance_km": 8.7,
+          "elevation_m": 53.0,
+          "moving_time_hours": 0.96,
+          "avg_hr": 122.8,
+          "calories": 559.0,
+          "gear": "Salomon Speedcross 3 ora",
+          "pace_min_km": 6.6
         }
       ]
     },
@@ -1541,12 +1553,12 @@
   "history": [
     {
       "week_start": "2025-04-28",
-      "run_km": 29.1,
-      "run_elevation": 1503.0,
-      "run_hours": 3.4,
-      "total_km": 105.1,
-      "total_elevation": 1659.0,
-      "activity_count": 2
+      "run_km": 0.0,
+      "run_elevation": 0,
+      "run_hours": 0.0,
+      "total_km": 76.0,
+      "total_elevation": 156.0,
+      "activity_count": 1
     },
     {
       "week_start": "2025-05-05",
@@ -2009,16 +2021,15 @@
     },
     {
       "week_start": "2026-04-27",
-      "run_km": 39.9,
-      "run_elevation": 1458.0,
-      "run_hours": 4.8,
-      "total_km": 39.9,
-      "total_elevation": 1458.0,
-      "activity_count": 4
+      "run_km": 73.3,
+      "run_elevation": 3010.0,
+      "run_hours": 9.1,
+      "total_km": 73.3,
+      "total_elevation": 3010.0,
+      "activity_count": 5
     }
   ],
   "daily_runs": {
-    "2025-05-03": 29.1,
     "2025-05-05": 24.7,
     "2025-05-09": 10.1,
     "2025-05-10": 29.5,
@@ -2194,7 +2205,8 @@
     "2026-04-27": 14.0,
     "2026-04-28": 9.3,
     "2026-04-29": 10.2,
-    "2026-05-01": 6.3
+    "2026-05-01": 6.3,
+    "2026-05-02": 33.4
   },
   "exercises": {
     "morning": [
