@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T14:10:07",
+  "generated_at": "2026-05-05T21:49:18",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1465,11 +1465,11 @@
       "week_number": 7,
       "start_date": "2026-05-04",
       "end_date": "2026-05-10",
-      "total_km": 10.0,
-      "run_km": 10.0,
-      "total_elevation": 43.0,
-      "run_elevation": 43.0,
-      "total_hours": 0.9,
+      "total_km": 24.0,
+      "run_km": 24.0,
+      "total_elevation": 869.0,
+      "run_elevation": 869.0,
+      "total_hours": 2.7,
       "activities": [
         {
           "date": "2026-05-04",
@@ -1482,6 +1482,18 @@
           "calories": 661.0,
           "gear": "HOKA Bondi 9 VCH",
           "pace_min_km": 5.6
+        },
+        {
+          "date": "2026-05-05",
+          "name": "Evening Trail Run",
+          "type": "Run",
+          "distance_km": 14.0,
+          "elevation_m": 826.0,
+          "moving_time_hours": 1.73,
+          "avg_hr": 140.6,
+          "calories": 1090.0,
+          "gear": "Salomon Speedcross 3 ora",
+          "pace_min_km": 7.4
         }
       ]
     },
@@ -1566,12 +1578,12 @@
   "history": [
     {
       "week_start": "2025-05-05",
-      "run_km": 64.3,
-      "run_elevation": 1613.0,
-      "run_hours": 6.8,
-      "total_km": 162.2,
-      "total_elevation": 1786.0,
-      "activity_count": 4
+      "run_km": 39.6,
+      "run_elevation": 1579.0,
+      "run_hours": 4.4,
+      "total_km": 137.5,
+      "total_elevation": 1752.0,
+      "activity_count": 3
     },
     {
       "week_start": "2025-05-12",
@@ -2031,10 +2043,18 @@
       "total_km": 82.0,
       "total_elevation": 3063.0,
       "activity_count": 6
+    },
+    {
+      "week_start": "2026-05-04",
+      "run_km": 10.0,
+      "run_elevation": 43.0,
+      "run_hours": 0.9,
+      "total_km": 10.0,
+      "total_elevation": 43.0,
+      "activity_count": 1
     }
   ],
   "daily_runs": {
-    "2025-05-05": 24.7,
     "2025-05-09": 10.1,
     "2025-05-10": 29.5,
     "2025-05-12": 10.0,
@@ -2211,7 +2231,8 @@
     "2026-04-29": 10.2,
     "2026-05-01": 6.3,
     "2026-05-02": 33.4,
-    "2026-05-03": 8.7
+    "2026-05-03": 8.7,
+    "2026-05-04": 10.0
   },
   "exercises": {
     "morning": [
