@@ -89,7 +89,7 @@ Easter weekend: trail run shortened from 25→21 km. Added easy rides to visit f
 | Fri | Rest | — | — |
 | Sat | Shakeout run + strides (6x20 sec) | 6 | — |
 | Sun | **Rotterdam Half Marathon** | 21 | — |
-| **Total** | | **~37 km run** (taper) | — |
+| **Total** | | **~43 km run** (taper) | — |
 
 Rotterdam strategy: controlled pace, not all-out. Use for leg turnover practice.
 
@@ -153,9 +153,11 @@ Sun (May 3) swap: virtual ride replaced by easy recovery trail run — Sat long 
 | Wed | Easy run + downhill repeats | 10 | 300m |
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Easy run + dike (500m vertical) | 10 | 500m |
-| Sat | **Long trail run (2,000m+ vert, 6–7 hours)** — Trappenmarathon-level effort + strength | 35 | 2,000m |
+| Sat | **Long trail run (2,000m+ vert, ~3,5 uur)** — race-density vertical (~71 m/km) op de dijk + strength | 28 | 2,000m |
 | Sun | **Virtual ride — easy spin** (1–1.5h, recovery effort) | — | — |
-| **Total** | | **~79 km run** | **~4,300m** ← peak |
+| **Total** | | **~72 km run** | **~3,600m** ← peak |
+
+Sat (May 9) adjustment: distance teruggeschaald van 35 → 28 km i.v.m. tijdsbeperking. Klimratio van 57 → 71 m/km (dichter bij race-density 64 m/km). Endurance time-on-feet wordt afgedekt door Alpen-dag (~7,5 u, 22 mei) en Trail Godefroy (~9 u, 6 jun).
 
 ### Week 8 — Deload (May 11–17)
 | Day | Session | km | Elev |
@@ -183,7 +185,7 @@ Sun (May 3) swap: virtual ride replaced by easy recovery trail run — Sat long 
 | Fri (May 22) | **Alps trail day** — 3 loops from hotel in Bourg d'Oisans. Most important training day of the plan. | 41 | 3,138m |
 | Sat (May 23) | Cycling day 1 — enjoy, moderate intensity | — | — |
 | Sun (May 24) | Cycling day 2 — enjoy, moderate intensity | — | — |
-| **Total** | | **~59 km run** | **~3,138m** |
+| **Total** | | **~61 km run** | **~3,138m** |
 
 **Alps day routes (Bourg d'Oisans → Villard):**
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-07T08:27:49",
+  "generated_at": "2026-05-07T16:22:52",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -271,7 +271,7 @@
       "phase": "Base Building",
       "start_date": "2026-04-06",
       "end_date": "2026-04-12",
-      "target_km": 37.0,
+      "target_km": 43.0,
       "target_elevation": null,
       "days": [
         {
@@ -507,8 +507,8 @@
       "phase": "Vertical Loading",
       "start_date": "2026-05-04",
       "end_date": "2026-05-10",
-      "target_km": 79.0,
-      "target_elevation": 4300.0,
+      "target_km": 72.0,
+      "target_elevation": 3600.0,
       "days": [
         {
           "day": "Mon",
@@ -547,8 +547,8 @@
         },
         {
           "day": "Sat",
-          "session": "Long trail run (2,000m+ vert, 6–7 hours) — Trappenmarathon-level effort + strength",
-          "target_km": 35.0,
+          "session": "Long trail run (2,000m+ vert, ~3,5 uur) — race-density vertical (~71 m/km) op de dijk + strength",
+          "target_km": 28.0,
           "target_elevation": 2000.0,
           "date": "2026-05-09"
         },
@@ -625,7 +625,7 @@
       "phase": "Mountain Specificity",
       "start_date": "2026-05-18",
       "end_date": "2026-05-24",
-      "target_km": 59.0,
+      "target_km": 61.0,
       "target_elevation": 3138.0,
       "days": [
         {
@@ -2389,8 +2389,8 @@
     ]
   },
   "plan_totals": {
-    "target_km": 889.0,
-    "target_elevation": 23769.0
+    "target_km": 890.0,
+    "target_elevation": 23069.0
   },
   "course_profile": {
     "profile": [
