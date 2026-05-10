@@ -163,13 +163,15 @@ Sat (May 9) adjustment: distance teruggeschaald van 35 → 28 km i.v.m. tijdsbep
 | Day | Session | km | Elev |
 |---|---|---|---|
 | Mon | Easy run + strength | 8 | — |
-| Tue | Easy run + dike (400m vertical) | 10 | 400m |
+| Tue | **Rest** — mobility only | — | — |
 | Wed | Easy run + strength | 8 | — |
-| Thu | **Rest** — mobility only | — | — |
+| Thu (Hemelvaart) | Easy run + dike (400m vertical) | 12 | 400m |
 | Fri | Rest | — | — |
 | Sat | **Virtual ride — easy climbing** (1.5–2h, moderate effort) | — | — |
 | Sun | Moderate long run | 22 | 300m |
-| **Total** | | **~48 km run** (deload) | **~700m** |
+| **Total** | | **~50 km run** (deload) | **~700m** |
+
+Tue/Thu swap: Hemelvaart (Thu May 14) is een vrije dag, dus dike-sessie verplaatst naar do. Di wordt rustdag — extra herstel na peak week. Dike-run iets langer (10 → 12 km) omdat er tijd voor is.
 
 ---
 
