@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T10:16:29",
+  "generated_at": "2026-05-14T12:36:49",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -3034,7 +3034,10 @@
       "banana_carbs_g": 25,
       "maurten_sachets_total": 7,
       "maurten_sachets_in_race": 6,
-      "maurten_sachets_note": "1 pre-race + 2 pre-mixed in 500 ml soft flasks + 4 dry sachets carried in vest. Mix on the fly at aid stations with still water."
+      "maurten_sachets_note": "1 pre-race + 2 pre-mixed in 500 ml soft flasks + 4 dry sachets carried in vest. Mix on the fly at aid stations with still water.",
+      "maurten_solid_160_carbs_g": 40,
+      "maurten_solids_in_race": 2,
+      "maurten_solids_note": "Per Maurten ultra guidance: reset taste buds every ~3 h with Solid. Carry 2× Solid 160 from start, eat one on the Septimer climb-out (~hour 7-8) and one on the climb out of Bivio (~hour 10-11)."
     },
     "legs": [
       {
@@ -3054,7 +3057,7 @@
           "food": []
         },
         "personal": {
-          "carry_out": "2× 500 ml flask pre-mixed Maurten 320 (= 2 sachets, 160 g) + 4 dry Maurten sachets in vest + 3 bars (~90 g) + 3 gels (~75 g)",
+          "carry_out": "2× 500 ml flask pre-mixed Maurten 320 (= 2 sachets, 160 g) + 4 dry Maurten sachets in vest + 2× Maurten Solid 160 (~80 g) + 1 bar (~30 g) + 3 gels (~75 g)",
           "consume_here": "Pre-race: 1 Maurten 320 bottle + banana + bread w/ honey"
         },
         "eta_clock": "04:00",
@@ -3183,7 +3186,7 @@
         },
         "personal": {
           "carry_out": "Mix dry sachet #3 in empty flask with still water (80 g for the long leg to Bivio)",
-          "consume_here": "Bouillon shot + 1 own gel. No food on station — eat a carried bar on the climb out."
+          "consume_here": "Bouillon shot + 1 own gel. No food on station — eat Maurten Solid 160 #1 on the climb out (taste reset)."
         },
         "eta_clock": "12:21",
         "eta_race_minutes": 501
@@ -3226,8 +3229,8 @@
           ]
         },
         "personal": {
-          "carry_out": "Mix dry sachet #4 (last sachet) in 1 flask — enough Maurten to reach the finish",
-          "consume_here": "PASTA stop — full plate + banana + bouillon + cola. Sit max 3 min."
+          "carry_out": "Mix dry sachet #4 (last sachet) in 1 flask — enough Maurten to reach the finish. Maurten Solid 160 #2 still in vest for the climb out.",
+          "consume_here": "PASTA stop — full plate + banana + bouillon + cola. Sit max 3 min. Eat Solid 160 #2 within 30-45 min after Bivio on the climb (second taste reset)."
         },
         "eta_clock": "14:35",
         "eta_race_minutes": 635

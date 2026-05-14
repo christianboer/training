@@ -203,6 +203,8 @@ Order: easiest first (via weg) as warm-up, then linksom, then rechtsom (steepest
 
 **Alps day nutrition plan:**
 
+**Avond ervoor (do 21 mei):** 1× Maurten Drink Mix 320 bovenop normale carb-rijke avondmaaltijd. Eerste test van het T78-protocol — als het op de maag valt, weet je dat 2 weken vóór Godefroy en 5 weken vóór T78.
+
 Target: 250–300 kcal/hour from the start. Estimated total time ~7:00–7:30 on trail + 2 hotel stops.
 
 | Phase | Duration | Nutrition | Kcal | Fluid |
@@ -266,6 +268,8 @@ Warm weather adjustment (>20°C valley): add 500ml plain water per loop alongsid
 | — | 53.5 | Finish — Bouillon Castle | Done! |
 
 **Godefroy nutrition plan:**
+
+**Avond ervoor (vr 5 jun):** 1× Maurten Drink Mix 320 bovenop carb-rijke avondmaaltijd, conform T78-protocol. Bevestiging na de Alpen-test — exact zoals je het op 26 jun gaat doen.
 
 Combi approach: Maurten Drink Mix 320 for isotonic energy + bars for solid fuel at aid stations.
 
