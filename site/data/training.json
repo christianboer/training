@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T12:36:49",
+  "generated_at": "2026-05-17T12:14:53",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1549,11 +1549,11 @@
       "week_number": 8,
       "start_date": "2026-05-11",
       "end_date": "2026-05-17",
-      "total_km": 27.9,
-      "run_km": 27.9,
-      "total_elevation": 375.0,
-      "run_elevation": 375.0,
-      "total_hours": 2.6,
+      "total_km": 126.8,
+      "run_km": 50.0,
+      "total_elevation": 810.0,
+      "run_elevation": 674.0,
+      "total_hours": 7.8,
       "activities": [
         {
           "date": "2026-05-11",
@@ -1590,6 +1590,30 @@
           "calories": 832.0,
           "gear": "HOKA Bondi 9 VCH",
           "pace_min_km": 5.9
+        },
+        {
+          "date": "2026-05-16",
+          "name": "Morning Ride",
+          "type": "Ride",
+          "distance_km": 76.8,
+          "elevation_m": 136.0,
+          "moving_time_hours": 2.9,
+          "avg_hr": 117.3,
+          "calories": 1747.0,
+          "gear": "Ridley Fenix SLiC LTD 2022",
+          "pace_min_km": null
+        },
+        {
+          "date": "2026-05-17",
+          "name": "Morning Trail Run",
+          "type": "Run",
+          "distance_km": 22.1,
+          "elevation_m": 299.0,
+          "moving_time_hours": 2.2,
+          "avg_hr": 132.1,
+          "calories": 1538.0,
+          "gear": "Salomon Speedcross 3 ora",
+          "pace_min_km": 6.0
         }
       ]
     },
@@ -1663,12 +1687,12 @@
   "history": [
     {
       "week_start": "2025-05-12",
-      "run_km": 38.2,
-      "run_elevation": 840.0,
-      "run_hours": 4.2,
-      "total_km": 104.8,
-      "total_elevation": 906.0,
-      "activity_count": 6
+      "run_km": 8.4,
+      "run_elevation": 158.0,
+      "run_hours": 0.9,
+      "total_km": 21.7,
+      "total_elevation": 167.0,
+      "activity_count": 2
     },
     {
       "week_start": "2025-05-19",
@@ -2131,17 +2155,15 @@
     },
     {
       "week_start": "2026-05-11",
-      "run_km": 16.0,
-      "run_elevation": 66.0,
-      "run_hours": 1.5,
-      "total_km": 16.0,
-      "total_elevation": 66.0,
-      "activity_count": 2
+      "run_km": 27.9,
+      "run_elevation": 375.0,
+      "run_hours": 2.7,
+      "total_km": 104.7,
+      "total_elevation": 511.0,
+      "activity_count": 4
     }
   ],
   "daily_runs": {
-    "2025-05-15": 19.3,
-    "2025-05-17": 10.5,
     "2025-05-18": 8.4,
     "2025-05-19": 9.7,
     "2025-05-21": 10.1,
@@ -2320,7 +2342,8 @@
     "2026-05-08": 6.4,
     "2026-05-09": 28.3,
     "2026-05-11": 7.7,
-    "2026-05-13": 8.4
+    "2026-05-13": 8.4,
+    "2026-05-14": 11.8
   },
   "exercises": {
     "morning": [
