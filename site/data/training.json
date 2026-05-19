@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-17T12:14:53",
+  "generated_at": "2026-05-19T08:19:43",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1621,12 +1621,25 @@
       "week_number": 9,
       "start_date": "2026-05-18",
       "end_date": "2026-05-24",
-      "total_km": 0,
-      "run_km": 0,
-      "total_elevation": 0,
-      "run_elevation": 0,
-      "total_hours": 0,
-      "activities": []
+      "total_km": 10.0,
+      "run_km": 10.0,
+      "total_elevation": 28.0,
+      "run_elevation": 28.0,
+      "total_hours": 0.9,
+      "activities": [
+        {
+          "date": "2026-05-18",
+          "name": "Evening Run",
+          "type": "Run",
+          "distance_km": 10.0,
+          "elevation_m": 28.0,
+          "moving_time_hours": 0.95,
+          "avg_hr": 125.0,
+          "calories": 628.0,
+          "gear": "HOKA Bondi 9 VCH",
+          "pace_min_km": 5.7
+        }
+      ]
     },
     {
       "week_number": 10,
@@ -1686,22 +1699,13 @@
   ],
   "history": [
     {
-      "week_start": "2025-05-12",
-      "run_km": 8.4,
-      "run_elevation": 158.0,
-      "run_hours": 0.9,
-      "total_km": 21.7,
-      "total_elevation": 167.0,
-      "activity_count": 2
-    },
-    {
       "week_start": "2025-05-19",
-      "run_km": 77.9,
-      "run_elevation": 547.0,
-      "run_hours": 7.5,
-      "total_km": 77.9,
-      "total_elevation": 547.0,
-      "activity_count": 5
+      "run_km": 68.3,
+      "run_elevation": 318.0,
+      "run_hours": 6.5,
+      "total_km": 68.3,
+      "total_elevation": 318.0,
+      "activity_count": 4
     },
     {
       "week_start": "2025-05-26",
@@ -2155,17 +2159,24 @@
     },
     {
       "week_start": "2026-05-11",
-      "run_km": 27.9,
-      "run_elevation": 375.0,
-      "run_hours": 2.7,
-      "total_km": 104.7,
-      "total_elevation": 511.0,
-      "activity_count": 4
+      "run_km": 50.0,
+      "run_elevation": 674.0,
+      "run_hours": 4.9,
+      "total_km": 126.8,
+      "total_elevation": 810.0,
+      "activity_count": 5
+    },
+    {
+      "week_start": "2026-05-18",
+      "run_km": 10.0,
+      "run_elevation": 28.0,
+      "run_hours": 0.9,
+      "total_km": 10.0,
+      "total_elevation": 28.0,
+      "activity_count": 1
     }
   ],
   "daily_runs": {
-    "2025-05-18": 8.4,
-    "2025-05-19": 9.7,
     "2025-05-21": 10.1,
     "2025-05-23": 10.0,
     "2025-05-24": 16.1,
@@ -2343,7 +2354,9 @@
     "2026-05-09": 28.3,
     "2026-05-11": 7.7,
     "2026-05-13": 8.4,
-    "2026-05-14": 11.8
+    "2026-05-14": 11.8,
+    "2026-05-17": 22.1,
+    "2026-05-18": 10.0
   },
   "exercises": {
     "morning": [
