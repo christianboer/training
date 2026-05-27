@@ -476,6 +476,11 @@ Three hill variants on the Barendrecht dike, each 13m elevation gain. The dike i
 | SCT | 2024 | 83.2 | 3,284m | 10h30 | 313 m/hr | 7:35/km |
 | SCT | 2025 | 83.8 | 3,485m | 12h03 | 290 m/hr | 8:37/km |
 | Trappenmarathon | 2025 | 47.2 | 3,090m | 6h20 | 488 m/hr | 8:04/km |
+| Alpen training | 2026 | 43.2 | 3,086m | 6h51* | 450 m/hr | 9:31/km |
+
+\* Moving time (May 22). Elapsed was 7h25 but inflated by hotel refuel stops every loop — not representative of race aid time.
+
+**Best single T78 proxy to date.** Climb density 71 m/km (vs T78's 64 m/km) and temperature profile (14→27 °C, matching expected Savognin) make this a near half-scale T78 simulation, run at HR 149 — right in the 2024 sweet spot. Followed by a back-to-back block (May 23: 118 km / 2,970m ride; May 24: 102 km / 2,387m ride), totalling **8,443m climbing over 17.5h in 3 days — more vertical than a full T78 — with full recovery and no lingering fatigue.** Strong evidence that cardiovascular recovery and fatigue resistance are no longer limiters.
 
 ### Prediction for T78 (78 km, ~5,000m D+)
 
@@ -485,12 +490,18 @@ The key difference vs SCT: ~1,700m additional climbing at similar distance.
 
 **Method 2 — vertical rate decay:** Climbing rate degrades with duration. At 14–16h effort, expect ~260–280 m/hr. Blending flat pace (6:00–6:30/km) with fatigued climbing → **13h30–15h00**
 
+**Method 3 — Alpen-run scaling (most reliable, May 2026):** The Alpen training run matches T78 climb density (71 vs 64 m/km), so it scales cleanly. Using km-effort (distance + D+/100): the run was 74 km-effort in 6h51 moving = **5:33 / km-effort**, comparable to SCT 2024's total pace of 5:26 — i.e. at or above his best-ever race fitness. Scaling to T78's 128 km-effort with an ultra fatigue factor (Riegel ~1.08, 7h→13h) → **~12h20–12h40 moving**; adding realistic aid-station time (8 posts, no hotel stops) of 45–90 min → **13h15–14h00 elapsed**.
+
+The May 22–24 recovery block (8,443m / 17.5h over 3 days) confirms fatigue resistance is no longer a limiter, pulling the estimate toward the optimistic end (**~13h30**).
+
 | Scenario | Time | Conditions |
 |---|---|---|
-| Optimistic | ~13h30 | 2024-level fitness, strong execution, good weather |
-| **Target** | **~14h00** | **Solid prep, pacing discipline, no major issues** |
-| Realistic | ~14h30 | Some unknowns, altitude adjustment |
-| Conservative | ~15h30 | If stiffness returns or weather is bad |
+| Optimistic | ~13h15 | At/above 2024 fitness (Alpen run confirms), strong execution |
+| **Target** | **~13h30** | **Solid prep, pacing discipline, no major issues** |
+| Realistic | ~14h00 | Altitude (>2,300m) + continuous duration beyond hour 7–8 |
+| Conservative | ~14h30+ | If quads collapse on descent or heat bites late |
+
+**Residual unknowns (the only things that push toward 14h+):** (1) eccentric quad load of 5,000m descending — *not* tested by the back-to-back rides, which are concentric; (2) continuous effort beyond hour 7–8 (longest is still SCT 2025's 12h); (3) altitude above ~2,300m. Fitness and recovery are no longer the question.
 
 **Cutoff (21h) is comfortable in all scenarios.**
 

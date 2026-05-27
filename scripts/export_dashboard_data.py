@@ -708,10 +708,10 @@ def main():
         "prediction": {
             "reference_races": reference_races,
             "scenarios": [
-                {"label": "Optimistic", "hours": 13.5, "conditions": "2024-level fitness, strong execution, good weather"},
-                {"label": "Target", "hours": 14.0, "conditions": "Solid prep, pacing discipline, no major issues"},
-                {"label": "Realistic", "hours": 14.5, "conditions": "Some unknowns, altitude adjustment"},
-                {"label": "Conservative", "hours": 15.5, "conditions": "Stiffness issues or bad weather"},
+                {"label": "Optimistic", "hours": 13.25, "conditions": "At/above 2024 fitness (Alpen run confirms), strong execution"},
+                {"label": "Target", "hours": 13.5, "conditions": "Solid prep, pacing discipline, no major issues"},
+                {"label": "Realistic", "hours": 14.0, "conditions": "Altitude (>2,300m) + continuous duration beyond hour 7–8"},
+                {"label": "Conservative", "hours": 14.5, "conditions": "Quads collapse on descent or heat bites late"},
             ],
             "cutoff_hours": 21,
             "key_factors": [
