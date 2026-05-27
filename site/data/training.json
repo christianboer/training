@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T08:18:02",
+  "generated_at": "2026-05-27T08:18:03",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1693,12 +1693,25 @@
       "week_number": 10,
       "start_date": "2026-05-25",
       "end_date": "2026-05-31",
-      "total_km": 0,
-      "run_km": 0,
-      "total_elevation": 0,
-      "run_elevation": 0,
-      "total_hours": 0,
-      "activities": []
+      "total_km": 10.3,
+      "run_km": 10.3,
+      "total_elevation": 26.0,
+      "run_elevation": 26.0,
+      "total_hours": 1.0,
+      "activities": [
+        {
+          "date": "2026-05-26",
+          "name": "Evening Run",
+          "type": "Run",
+          "distance_km": 10.3,
+          "elevation_m": 26.0,
+          "moving_time_hours": 0.98,
+          "avg_hr": 139.4,
+          "calories": 682.0,
+          "gear": "HOKA Bondi 9 VCH",
+          "pace_min_km": 5.7
+        }
+      ]
     },
     {
       "week_number": 11,
@@ -2213,6 +2226,15 @@
       "total_km": 274.3,
       "total_elevation": 8498.0,
       "activity_count": 5
+    },
+    {
+      "week_start": "2026-05-25",
+      "run_km": 10.3,
+      "run_elevation": 26.0,
+      "run_hours": 1.0,
+      "total_km": 10.3,
+      "total_elevation": 26.0,
+      "activity_count": 1
     }
   ],
   "daily_runs": {
@@ -2392,7 +2414,8 @@
     "2026-05-17": 22.1,
     "2026-05-18": 10.0,
     "2026-05-22": 43.2,
-    "2026-05-24": 0.8
+    "2026-05-24": 0.8,
+    "2026-05-26": 10.3
   },
   "exercises": {
     "morning": [
