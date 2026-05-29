@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28T16:44:06",
+  "generated_at": "2026-05-29T13:37:08",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1693,11 +1693,11 @@
       "week_number": 10,
       "start_date": "2026-05-25",
       "end_date": "2026-05-31",
-      "total_km": 20.3,
-      "run_km": 20.3,
-      "total_elevation": 50.0,
-      "run_elevation": 50.0,
-      "total_hours": 1.9,
+      "total_km": 28.4,
+      "run_km": 28.4,
+      "total_elevation": 84.0,
+      "run_elevation": 84.0,
+      "total_hours": 2.7,
       "activities": [
         {
           "date": "2026-05-26",
@@ -1722,6 +1722,18 @@
           "calories": 667.0,
           "gear": "HOKA Bondi 9 VCH",
           "pace_min_km": 5.7
+        },
+        {
+          "date": "2026-05-29",
+          "name": "Middagloop",
+          "type": "Run",
+          "distance_km": 8.1,
+          "elevation_m": 34.0,
+          "moving_time_hours": 0.79,
+          "avg_hr": 135.5,
+          "calories": 545.0,
+          "gear": "HOKA Bondi 9 VCH",
+          "pace_min_km": 5.9
         }
       ]
     },
@@ -1776,9 +1788,9 @@
       "run_km": 9.8,
       "run_elevation": 472.0,
       "run_hours": 1.4,
-      "total_km": 348.6,
-      "total_elevation": 7233.0,
-      "activity_count": 4
+      "total_km": 226.2,
+      "total_elevation": 4693.0,
+      "activity_count": 3
     },
     {
       "week_start": "2025-06-02",
@@ -2241,12 +2253,12 @@
     },
     {
       "week_start": "2026-05-25",
-      "run_km": 10.3,
-      "run_elevation": 26.0,
-      "run_hours": 1.0,
-      "total_km": 10.3,
-      "total_elevation": 26.0,
-      "activity_count": 1
+      "run_km": 20.2,
+      "run_elevation": 50.0,
+      "run_hours": 1.9,
+      "total_km": 20.2,
+      "total_elevation": 50.0,
+      "activity_count": 2
     }
   ],
   "daily_runs": {
@@ -2427,7 +2439,8 @@
     "2026-05-18": 10.0,
     "2026-05-22": 43.2,
     "2026-05-24": 0.8,
-    "2026-05-26": 10.3
+    "2026-05-26": 10.3,
+    "2026-05-28": 10.0
   },
   "exercises": {
     "morning": [
