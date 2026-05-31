@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T11:31:43",
+  "generated_at": "2026-05-31T21:22:22",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1693,11 +1693,11 @@
       "week_number": 10,
       "start_date": "2026-05-25",
       "end_date": "2026-05-31",
-      "total_km": 44.5,
-      "run_km": 44.5,
-      "total_elevation": 392.0,
-      "run_elevation": 392.0,
-      "total_hours": 4.3,
+      "total_km": 70.4,
+      "run_km": 61.9,
+      "total_elevation": 458.0,
+      "run_elevation": 447.0,
+      "total_hours": 8.1,
       "activities": [
         {
           "date": "2026-05-26",
@@ -1746,6 +1746,30 @@
           "calories": 1149.0,
           "gear": "New Balance 880L12",
           "pace_min_km": 6.1
+        },
+        {
+          "date": "2026-05-30",
+          "name": "Namiddagsessie kajakken",
+          "type": "Kayaking",
+          "distance_km": 8.5,
+          "elevation_m": 11.0,
+          "moving_time_hours": 1.99,
+          "avg_hr": 111.9,
+          "calories": 722.0,
+          "gear": null,
+          "pace_min_km": null
+        },
+        {
+          "date": "2026-05-31",
+          "name": "Ochtendloop",
+          "type": "Run",
+          "distance_km": 17.4,
+          "elevation_m": 55.0,
+          "moving_time_hours": 1.74,
+          "avg_hr": 124.7,
+          "calories": 1165.0,
+          "gear": "HOKA Bondi 9 VCH",
+          "pace_min_km": 6.0
         }
       ]
     },
@@ -1800,9 +1824,9 @@
       "run_km": 9.8,
       "run_elevation": 472.0,
       "run_hours": 1.4,
-      "total_km": 88.1,
-      "total_elevation": 1754.0,
-      "activity_count": 2
+      "total_km": 9.8,
+      "total_elevation": 472.0,
+      "activity_count": 1
     },
     {
       "week_start": "2025-06-02",
@@ -2265,12 +2289,12 @@
     },
     {
       "week_start": "2026-05-25",
-      "run_km": 28.3,
-      "run_elevation": 84.0,
-      "run_hours": 2.7,
-      "total_km": 28.3,
-      "total_elevation": 84.0,
-      "activity_count": 3
+      "run_km": 44.5,
+      "run_elevation": 392.0,
+      "run_hours": 4.4,
+      "total_km": 53.0,
+      "total_elevation": 403.0,
+      "activity_count": 5
     }
   ],
   "daily_runs": {
@@ -2453,7 +2477,8 @@
     "2026-05-24": 0.8,
     "2026-05-26": 10.3,
     "2026-05-28": 10.0,
-    "2026-05-29": 8.1
+    "2026-05-29": 8.1,
+    "2026-05-30": 16.1
   },
   "exercises": {
     "morning": [
