@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T20:39:34",
+  "generated_at": "2026-06-06T21:05:17",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -790,7 +790,7 @@
         },
         {
           "day": "Sun",
-          "session": "Easy recovery ride (flat, HR <120, ~50 km)",
+          "session": "Easy recovery ride (flat, HR <120, ~40 km)",
           "target_km": null,
           "target_elevation": null,
           "date": "2026-06-07"
