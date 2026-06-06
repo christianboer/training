@@ -248,7 +248,7 @@ Warm weather adjustment (>20°C valley): add 500ml plain water per loop alongsid
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Travel to Bouillon | — | — |
 | Sat (Jun 6) | **Trail Godefroy 53 km** — dress rehearsal | 53 | 1,960m |
-| Sun | Rest | — | — |
+| Sun | Easy recovery ride (flat, HR <120, ~50 km) | — | — |
 | **Total** | | **~77 km** | **~1,960m** |
 
 **Godefroy strategy:** dress rehearsal, NOT a race effort. Run at projected T78 pace/effort. Practice exact nutrition plan, gear, pacing. Target a comfortable finish — save legs for 3 weeks later.
