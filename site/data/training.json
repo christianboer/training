@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T21:05:17",
+  "generated_at": "2026-06-08T10:21:07",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1777,11 +1777,11 @@
       "week_number": 11,
       "start_date": "2026-06-01",
       "end_date": "2026-06-07",
-      "total_km": 72.0,
+      "total_km": 114.0,
       "run_km": 72.0,
-      "total_elevation": 1933.0,
+      "total_elevation": 2012.0,
       "run_elevation": 1933.0,
-      "total_hours": 7.9,
+      "total_hours": 9.5,
       "activities": [
         {
           "date": "2026-06-02",
@@ -1818,6 +1818,18 @@
           "calories": 4034.0,
           "gear": "Salomon Speedcross 3 ora",
           "pace_min_km": 6.8
+        },
+        {
+          "date": "2026-06-07",
+          "name": "Ochtendrit",
+          "type": "Ride",
+          "distance_km": 42.0,
+          "elevation_m": 79.0,
+          "moving_time_hours": 1.65,
+          "avg_hr": 106.7,
+          "calories": 816.0,
+          "gear": "Ridley Fenix SLiC LTD 2022",
+          "pace_min_km": null
         }
       ]
     },
@@ -1856,15 +1868,6 @@
     }
   ],
   "history": [
-    {
-      "week_start": "2025-06-02",
-      "run_km": 83.8,
-      "run_elevation": 3485.0,
-      "run_hours": 12.0,
-      "total_km": 83.8,
-      "total_elevation": 3485.0,
-      "activity_count": 1
-    },
     {
       "week_start": "2025-06-09",
       "run_km": 12.6,
@@ -2326,16 +2329,15 @@
     },
     {
       "week_start": "2026-06-01",
-      "run_km": 18.9,
-      "run_elevation": 74.0,
-      "run_hours": 1.8,
-      "total_km": 18.9,
-      "total_elevation": 74.0,
-      "activity_count": 2
+      "run_km": 72.0,
+      "run_elevation": 1933.0,
+      "run_hours": 7.9,
+      "total_km": 114.0,
+      "total_elevation": 2012.0,
+      "activity_count": 4
     }
   ],
   "daily_runs": {
-    "2025-06-07": 83.8,
     "2025-06-15": 12.6,
     "2025-06-17": 10.2,
     "2025-06-18": 5.5,
@@ -2515,7 +2517,8 @@
     "2026-05-30": 16.1,
     "2026-05-31": 17.4,
     "2026-06-02": 10.3,
-    "2026-06-03": 8.6
+    "2026-06-03": 8.6,
+    "2026-06-06": 53.1
   },
   "exercises": {
     "morning": [
