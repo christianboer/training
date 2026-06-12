@@ -66,11 +66,22 @@ def import_collection(conn):
         full_name = f"{item['brand']} {item['type']} {item['color']}"
         locations = ', '.join(item.get('locations', []))
 
+        # ON CONFLICT UPDATE (not INSERT OR REPLACE) so legging_id stays stable
+        # across runs — legging_wears rows reference it.
         conn.execute("""
-            INSERT OR REPLACE INTO leggings
+            INSERT INTO leggings
             (slug, type_slug, color_slug, type_name, color_name, full_name,
              print_description, primary_color, location)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(slug) DO UPDATE SET
+                type_slug=excluded.type_slug,
+                color_slug=excluded.color_slug,
+                type_name=excluded.type_name,
+                color_name=excluded.color_name,
+                full_name=excluded.full_name,
+                print_description=excluded.print_description,
+                primary_color=excluded.primary_color,
+                location=excluded.location
         """, (
             slug,
             item['typeSlug'],
@@ -190,11 +201,15 @@ def match_notes(conn):
                 matched += 1
                 found_legging = True
 
-        # Check if note likely references a legging but we couldn't match
+        # Check if note likely references a legging but we couldn't match.
+        # Skip activities that already have a (manually resolved) wear row.
         if not found_legging:
             note_lower = note.lower()
             has_type_keyword = any(kw in note_lower for kw in TYPE_KEYWORDS)
-            if has_type_keyword:
+            already_resolved = conn.execute(
+                "SELECT 1 FROM legging_wears WHERE activity_id = ?", (activity_id,)
+            ).fetchone()
+            if has_type_keyword and not already_resolved:
                 unmatched.append((activity_id, activity_date, note))
 
     conn.commit()
