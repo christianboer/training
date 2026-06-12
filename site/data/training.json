@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T16:13:39",
+  "generated_at": "2026-06-12T16:41:31",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -802,7 +802,7 @@
       "phase": "Race Rehearsal & Taper",
       "start_date": "2026-06-08",
       "end_date": "2026-06-14",
-      "target_km": 52.0,
+      "target_km": 40.0,
       "target_elevation": 500.0,
       "days": [
         {
@@ -835,22 +835,22 @@
         },
         {
           "day": "Fri",
-          "session": "Easy run",
-          "target_km": 8.0,
+          "session": "Rest",
+          "target_km": null,
           "target_elevation": null,
           "date": "2026-06-12"
         },
         {
           "day": "Sat",
           "session": "Moderate run + dike (500m vert)",
-          "target_km": 18.0,
+          "target_km": 22.0,
           "target_elevation": 500.0,
           "date": "2026-06-13"
         },
         {
           "day": "Sun",
-          "session": "Easy run",
-          "target_km": 8.0,
+          "session": "2× easy recovery ride (52 km out + 52 km back, HR ≤115)",
+          "target_km": null,
           "target_elevation": null,
           "date": "2026-06-14"
         }
@@ -2697,7 +2697,7 @@
     ]
   },
   "plan_totals": {
-    "target_km": 892.0,
+    "target_km": 880.0,
     "target_elevation": 23069.0
   },
   "course_profile": {

@@ -297,10 +297,12 @@ Target: ~280 kcal/hour across ~9:00–9:30. Carry 6× Maurten 320 sachets + 3 ba
 | Tue | Easy run | 8 | — |
 | Wed | Easy run + strength | 10 | — |
 | Thu | **Rest** — mobility only | — | — |
-| Fri | Easy run | 8 | — |
-| Sat | Moderate run + dike (500m vert) | 18 | 500m |
-| Sun | Easy run | 8 | — |
-| **Total** | | **~52 km** | **~500m** |
+| Fri | Rest | — | — |
+| Sat | Moderate run + dike (500m vert) | 22 | 500m |
+| Sun | 2× easy recovery ride (52 km out + 52 km back, HR ≤115) | — | — |
+| **Total** | | **~40 km run** | **~500m** |
+
+Fri 8 km dropped (work fatigue) — Sat extended 18→22 km instead. Sun 8 km easy run swapped for two low-HR recovery rides (no eccentric load this close to race). Hip flexor/quad mobility after the rides.
 
 ### Week 13 — Taper (Jun 15–21)
 | Day | Session | km | Elev |
