@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T16:41:31",
+  "generated_at": "2026-06-13T16:58:36",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1837,11 +1837,11 @@
       "week_number": 12,
       "start_date": "2026-06-08",
       "end_date": "2026-06-14",
-      "total_km": 17.4,
-      "run_km": 17.4,
-      "total_elevation": 60.0,
-      "run_elevation": 60.0,
-      "total_hours": 1.6,
+      "total_km": 40.0,
+      "run_km": 40.0,
+      "total_elevation": 637.0,
+      "run_elevation": 637.0,
+      "total_hours": 4.2,
       "activities": [
         {
           "date": "2026-06-09",
@@ -1866,6 +1866,18 @@
           "calories": 619.0,
           "gear": "HOKA Bondi 9 VCH",
           "pace_min_km": 5.5
+        },
+        {
+          "date": "2026-06-13",
+          "name": "Ochtendsessie trailrunning",
+          "type": "Run",
+          "distance_km": 22.6,
+          "elevation_m": 577.0,
+          "moving_time_hours": 2.53,
+          "avg_hr": 136.6,
+          "calories": 1635.0,
+          "gear": "Salomon Speedcross 3 ora",
+          "pace_min_km": 6.7
         }
       ]
     },
