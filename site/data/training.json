@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-13T16:58:36",
+  "generated_at": "2026-06-16T21:57:23",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1837,11 +1837,11 @@
       "week_number": 12,
       "start_date": "2026-06-08",
       "end_date": "2026-06-14",
-      "total_km": 40.0,
+      "total_km": 145.5,
       "run_km": 40.0,
-      "total_elevation": 637.0,
+      "total_elevation": 975.0,
       "run_elevation": 637.0,
-      "total_hours": 4.2,
+      "total_hours": 8.1,
       "activities": [
         {
           "date": "2026-06-09",
@@ -1878,6 +1878,30 @@
           "calories": 1635.0,
           "gear": "Salomon Speedcross 3 ora",
           "pace_min_km": 6.7
+        },
+        {
+          "date": "2026-06-14",
+          "name": "Lunch Ride",
+          "type": "Ride",
+          "distance_km": 56.1,
+          "elevation_m": 138.0,
+          "moving_time_hours": 1.91,
+          "avg_hr": 114.8,
+          "calories": 1056.0,
+          "gear": "Ridley Fenix SLiC LTD 2022",
+          "pace_min_km": null
+        },
+        {
+          "date": "2026-06-14",
+          "name": "Avondrit",
+          "type": "Ride",
+          "distance_km": 49.4,
+          "elevation_m": 200.0,
+          "moving_time_hours": 2.0,
+          "avg_hr": 116.1,
+          "calories": 1140.0,
+          "gear": "Ridley Fenix SLiC LTD 2022",
+          "pace_min_km": null
         }
       ]
     },
@@ -1885,12 +1909,37 @@
       "week_number": 13,
       "start_date": "2026-06-15",
       "end_date": "2026-06-21",
-      "total_km": 0,
-      "run_km": 0,
-      "total_elevation": 0,
-      "run_elevation": 0,
-      "total_hours": 0,
-      "activities": []
+      "total_km": 18.5,
+      "run_km": 18.5,
+      "total_elevation": 169.0,
+      "run_elevation": 169.0,
+      "total_hours": 1.8,
+      "activities": [
+        {
+          "date": "2026-06-15",
+          "name": "Middagloop",
+          "type": "Run",
+          "distance_km": 9.0,
+          "elevation_m": 17.0,
+          "moving_time_hours": 0.88,
+          "avg_hr": 126.6,
+          "calories": 585.0,
+          "gear": "HOKA Bondi 9 VCH",
+          "pace_min_km": 5.9
+        },
+        {
+          "date": "2026-06-16",
+          "name": "Avondloop",
+          "type": "Run",
+          "distance_km": 9.5,
+          "elevation_m": 152.0,
+          "moving_time_hours": 0.94,
+          "avg_hr": 129.7,
+          "calories": 668.0,
+          "gear": "HOKA Bondi 9 VCH",
+          "pace_min_km": 6.0
+        }
+      ]
     },
     {
       "week_number": 14,
@@ -1905,15 +1954,6 @@
     }
   ],
   "history": [
-    {
-      "week_start": "2025-06-09",
-      "run_km": 12.6,
-      "run_elevation": 30.0,
-      "run_hours": 1.2,
-      "total_km": 46.3,
-      "total_elevation": 82.0,
-      "activity_count": 2
-    },
     {
       "week_start": "2025-06-16",
       "run_km": 15.7,
@@ -2375,16 +2415,24 @@
     },
     {
       "week_start": "2026-06-08",
-      "run_km": 17.4,
-      "run_elevation": 60.0,
-      "run_hours": 1.6,
-      "total_km": 17.4,
-      "total_elevation": 60.0,
-      "activity_count": 2
+      "run_km": 40.0,
+      "run_elevation": 637.0,
+      "run_hours": 4.2,
+      "total_km": 145.5,
+      "total_elevation": 975.0,
+      "activity_count": 5
+    },
+    {
+      "week_start": "2026-06-15",
+      "run_km": 9.0,
+      "run_elevation": 17.0,
+      "run_hours": 0.9,
+      "total_km": 9.0,
+      "total_elevation": 17.0,
+      "activity_count": 1
     }
   ],
   "daily_runs": {
-    "2025-06-15": 12.6,
     "2025-06-17": 10.2,
     "2025-06-18": 5.5,
     "2025-06-23": 10.4,
@@ -2566,7 +2614,9 @@
     "2026-06-03": 8.6,
     "2026-06-06": 53.1,
     "2026-06-09": 7.4,
-    "2026-06-10": 10.0
+    "2026-06-10": 10.0,
+    "2026-06-13": 22.6,
+    "2026-06-15": 9.0
   },
   "exercises": {
     "morning": [
