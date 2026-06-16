@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T21:57:23",
+  "generated_at": "2026-06-16T22:09:48",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -861,8 +861,8 @@
       "phase": "Race Rehearsal & Taper",
       "start_date": "2026-06-15",
       "end_date": "2026-06-21",
-      "target_km": 42.0,
-      "target_elevation": 400.0,
+      "target_km": 40.0,
+      "target_elevation": 200.0,
       "days": [
         {
           "day": "Mon",
@@ -901,15 +901,15 @@
         },
         {
           "day": "Sat",
-          "session": "Trail run (keep legs moving)",
-          "target_km": 12.0,
-          "target_elevation": 200.0,
+          "session": "Rest",
+          "target_km": null,
+          "target_elevation": null,
           "date": "2026-06-20"
         },
         {
           "day": "Sun",
-          "session": "Rest",
-          "target_km": null,
+          "session": "Easy run (keep legs moving)",
+          "target_km": 10.0,
           "target_elevation": null,
           "date": "2026-06-21"
         }
@@ -920,28 +920,28 @@
       "phase": "Race Rehearsal & Taper",
       "start_date": "2026-06-22",
       "end_date": "2026-06-28",
-      "target_km": 88.0,
-      "target_elevation": 5000.0,
+      "target_km": 95.0,
+      "target_elevation": 5600.0,
       "days": [
         {
           "day": "Mon",
-          "session": "Easy run",
-          "target_km": 6.0,
+          "session": "Travel Barendrecht → Heidelberg (no run)",
+          "target_km": null,
           "target_elevation": null,
           "date": "2026-06-22"
         },
         {
           "day": "Tue",
-          "session": "Shakeout + strides",
-          "target_km": 4.0,
+          "session": "AM shakeout run (Heidelberg) + travel Heidelberg → Savognin",
+          "target_km": 5.0,
           "target_elevation": null,
           "date": "2026-06-23"
         },
         {
           "day": "Wed",
-          "session": "Rest — mobility only",
-          "target_km": null,
-          "target_elevation": null,
+          "session": "Easy trail hike — T78 recon from hotel (poles, controlled descent)",
+          "target_km": 12.0,
+          "target_elevation": 613.0,
           "date": "2026-06-24"
         },
         {
@@ -953,7 +953,7 @@
         },
         {
           "day": "Fri",
-          "session": "Rest — travel to Savognin",
+          "session": "Rest — mobility only",
           "target_km": null,
           "target_elevation": null,
           "date": "2026-06-26"
@@ -2759,8 +2759,8 @@
     ]
   },
   "plan_totals": {
-    "target_km": 880.0,
-    "target_elevation": 23069.0
+    "target_km": 885.0,
+    "target_elevation": 23469.0
   },
   "course_profile": {
     "profile": [

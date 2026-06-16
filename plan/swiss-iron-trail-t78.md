@@ -312,20 +312,22 @@ Fri 8 km dropped (work fatigue) — Sat extended 18→22 km instead. Sun 8 km ea
 | Wed | Easy run + strength (light) | 8 | — |
 | Thu | **Rest** — mobility only | — | — |
 | Fri | Easy run | 6 | — |
-| Sat | Trail run (keep legs moving) | 12 | 200m |
-| Sun | Rest | — | — |
-| **Total** | | **~42 km** | **~400m** |
+| Sat | **Rest** | — | — |
+| Sun | Easy run (keep legs moving) | 10 | — |
+| **Total** | | **~40 km** | **~200m** |
 
 ### Week 14 — Race Week (Jun 22–27)
 | Day | Session | km | Elev |
 |---|---|---|---|
-| Mon | Easy run | 6 | — |
-| Tue | Shakeout + strides | 4 | — |
-| Wed | Rest — mobility only | — | — |
+| Mon | Travel Barendrecht → Heidelberg (no run) | — | — |
+| Tue | AM shakeout run (Heidelberg) + travel Heidelberg → Savognin | 5 | — |
+| Wed | Easy trail hike — T78 recon from hotel (poles, controlled descent) | 12 | 613m |
 | Thu | **Rest** — mobility only | — | — |
-| Fri | Rest — travel to Savognin | — | — |
+| Fri | **Rest** — mobility only | — | — |
 | Sat (Jun 27) | **SWISS IRON TRAIL T78 — 04:00 start** | 78 | 5,000m |
-| **Total** | | **~88 km** | **~5,000m** |
+| **Total** | | **~95 km** | **~5,600m** |
+
+Travel-week adjustments: Mon drive Barendrecht→Heidelberg (overnight), no run. Tue easy AM shakeout in Heidelberg, then relaxed drive Heidelberg→Savognin. Wed easy T78-route recon hike straight from the hotel (12 km / 613 hm) — kept easy with poles and a controlled descent for course familiarity + altitude exposure; Thu/Fri full rest give a 2.5-day buffer before the race.
 
 ---
 
