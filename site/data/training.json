@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T22:09:48",
+  "generated_at": "2026-06-17T16:56:58",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1909,11 +1909,11 @@
       "week_number": 13,
       "start_date": "2026-06-15",
       "end_date": "2026-06-21",
-      "total_km": 18.5,
-      "run_km": 18.5,
-      "total_elevation": 169.0,
-      "run_elevation": 169.0,
-      "total_hours": 1.8,
+      "total_km": 24.7,
+      "run_km": 24.7,
+      "total_elevation": 191.0,
+      "run_elevation": 191.0,
+      "total_hours": 2.4,
       "activities": [
         {
           "date": "2026-06-15",
@@ -1938,6 +1938,18 @@
           "calories": 668.0,
           "gear": "HOKA Bondi 9 VCH",
           "pace_min_km": 6.0
+        },
+        {
+          "date": "2026-06-17",
+          "name": "Middagloop",
+          "type": "Run",
+          "distance_km": 6.2,
+          "elevation_m": 22.0,
+          "moving_time_hours": 0.6,
+          "avg_hr": 127.2,
+          "calories": 398.0,
+          "gear": "HOKA Bondi 9 VCH",
+          "pace_min_km": 5.8
         }
       ]
     },
@@ -1956,12 +1968,12 @@
   "history": [
     {
       "week_start": "2025-06-16",
-      "run_km": 15.7,
-      "run_elevation": 50.0,
-      "run_hours": 1.5,
-      "total_km": 126.0,
-      "total_elevation": 246.0,
-      "activity_count": 3
+      "run_km": 5.5,
+      "run_elevation": 27.0,
+      "run_hours": 0.5,
+      "total_km": 115.8,
+      "total_elevation": 223.0,
+      "activity_count": 2
     },
     {
       "week_start": "2025-06-23",
@@ -2424,16 +2436,15 @@
     },
     {
       "week_start": "2026-06-15",
-      "run_km": 9.0,
-      "run_elevation": 17.0,
-      "run_hours": 0.9,
-      "total_km": 9.0,
-      "total_elevation": 17.0,
-      "activity_count": 1
+      "run_km": 18.5,
+      "run_elevation": 169.0,
+      "run_hours": 1.8,
+      "total_km": 18.5,
+      "total_elevation": 169.0,
+      "activity_count": 2
     }
   ],
   "daily_runs": {
-    "2025-06-17": 10.2,
     "2025-06-18": 5.5,
     "2025-06-23": 10.4,
     "2025-06-25": 9.4,
@@ -2616,7 +2627,8 @@
     "2026-06-09": 7.4,
     "2026-06-10": 10.0,
     "2026-06-13": 22.6,
-    "2026-06-15": 9.0
+    "2026-06-15": 9.0,
+    "2026-06-16": 9.5
   },
   "exercises": {
     "morning": [
