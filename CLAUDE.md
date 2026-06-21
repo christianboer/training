@@ -47,17 +47,21 @@ There is also an `activities_raw` table with all 101 original CSV columns stored
 
 ## Syncing New Activities from Strava MCP
 
-To add activities newer than the export:
-
-1. Call `get-all-activities` with `startDate` after the last DB entry
-2. Call `get-activity-details` for each new activity
-3. Write the data as JSON to a temp file (array of objects with Strava API field names: `id`, `start_date`, `name`, `type`, `distance`, `moving_time`, `elapsed_time`, `total_elevation_gain`, `average_speed`, `max_speed`, `average_heartrate`, `max_heartrate`, `average_watts`, `calories`, `average_cadence`, `gear_name`, etc.)
-4. Run: `python3 scripts/sync_strava.py /tmp/strava_sync.json`
+Uses the **official Strava MCP connector** (`mcp.strava.com`, server `strava-mcp`, tools `mcp__strava-mcp__*`). Read-only, returns structured metric JSON. The `/strava-sync` slash command (`.claude/commands/strava-sync.md`) automates the full flow; the steps below are the manual equivalent.
 
 Check the latest activity date before syncing:
 ```bash
 sqlite3 db/training.db "SELECT MAX(activity_date) FROM activities"
 ```
+
+To add activities newer than the export:
+
+1. Call `mcp__strava-mcp__list_activities` with `range_start` set to the last DB timestamp (ISO **local** time, no `Z`), `ordering: StartDateLocalAsc`, `first: 100`. Dedupe returned `id`s against the DB.
+2. For each new activity, call `mcp__strava-mcp__get_activity_performance` for HR/watts, and resolve `gear_id` → name via `mcp__strava-mcp__get_gear` (`"{brand} {model_name}"`).
+3. Write the data as JSON to a temp file using **Strava API field names**: `id`, `start_date` (from `start_local`), `name`, `type` (from `sport_type`), `distance`, `moving_time`, `elapsed_time`, `total_elevation_gain` (from `elevation_gain`), `average_speed`, `max_speed`, `average_heartrate`, `max_heartrate`, `average_watts`, `calories` (from `total_calories`), `average_cadence`, `suffer_score` (from `relative_effort`), `gear_name`.
+4. Run: `python3 scripts/sync_strava.py /tmp/strava_sync.json`
+
+**Note:** This connector does not expose `private_note` (only the public `description`), so legging-wear auto-matching won't fire for newly synced activities — record those manually in `legging_wears` if needed.
 
 **Important:** Always run `python3 scripts/export_dashboard_data.py` after syncing new activities. This updates `site/data/training.json` (including the "Last updated" timestamp shown in the dashboard footer). Then **commit and push** the updated `site/data/training.json` so the change is reflected in the remote repository.
 
