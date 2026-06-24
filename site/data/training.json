@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-24T08:58:47",
+  "generated_at": "2026-06-24T18:41:19",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1981,11 +1981,11 @@
       "week_number": 14,
       "start_date": "2026-06-22",
       "end_date": "2026-06-28",
-      "total_km": 5.3,
+      "total_km": 18.0,
       "run_km": 5.3,
-      "total_elevation": 154.0,
+      "total_elevation": 754.0,
       "run_elevation": 154.0,
-      "total_hours": 0.6,
+      "total_hours": 3.5,
       "activities": [
         {
           "date": "2026-06-23",
@@ -1998,6 +1998,18 @@
           "calories": 385.0,
           "gear": "HOKA Bondi 9 VCH",
           "pace_min_km": 7.3
+        },
+        {
+          "date": "2026-06-24",
+          "name": "Lunch Hike",
+          "type": "Hike",
+          "distance_km": 12.7,
+          "elevation_m": 600.0,
+          "moving_time_hours": 2.87,
+          "avg_hr": 117.724,
+          "calories": 1238.0,
+          "gear": null,
+          "pace_min_km": null
         }
       ]
     }
