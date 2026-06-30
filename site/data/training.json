@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-24T18:41:19",
+  "generated_at": "2026-06-30T12:44:15",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -1981,11 +1981,11 @@
       "week_number": 14,
       "start_date": "2026-06-22",
       "end_date": "2026-06-28",
-      "total_km": 18.0,
-      "run_km": 5.3,
-      "total_elevation": 754.0,
-      "run_elevation": 154.0,
-      "total_hours": 3.5,
+      "total_km": 80.0,
+      "run_km": 63.3,
+      "total_elevation": 4738.0,
+      "run_elevation": 4036.0,
+      "total_hours": 16.2,
       "activities": [
         {
           "date": "2026-06-23",
@@ -2010,28 +2010,43 @@
           "calories": 1238.0,
           "gear": null,
           "pace_min_km": null
+        },
+        {
+          "date": "2026-06-26",
+          "name": "Ochtendhike",
+          "type": "Hike",
+          "distance_km": 4.0,
+          "elevation_m": 102.0,
+          "moving_time_hours": 0.87,
+          "avg_hr": 110.71,
+          "calories": 442.0,
+          "gear": null,
+          "pace_min_km": null
+        },
+        {
+          "date": "2026-06-27",
+          "name": "Wäge em Gwitter is dr Trail abbroche worde.",
+          "type": "TrailRun",
+          "distance_km": 58.0,
+          "elevation_m": 3882.0,
+          "moving_time_hours": 11.78,
+          "avg_hr": 135.414,
+          "calories": 5149.0,
+          "gear": "Salomon Speedcross 3 ora",
+          "pace_min_km": 12.2
         }
       ]
     }
   ],
   "history": [
     {
-      "week_start": "2025-06-23",
-      "run_km": 19.3,
-      "run_elevation": 108.0,
-      "run_hours": 1.8,
-      "total_km": 128.5,
-      "total_elevation": 266.0,
-      "activity_count": 3
-    },
-    {
       "week_start": "2025-06-30",
-      "run_km": 58.3,
-      "run_elevation": 501.0,
-      "run_hours": 5.6,
-      "total_km": 166.9,
-      "total_elevation": 776.0,
-      "activity_count": 6
+      "run_km": 48.3,
+      "run_elevation": 464.0,
+      "run_hours": 4.7,
+      "total_km": 156.8,
+      "total_elevation": 739.0,
+      "activity_count": 5
     },
     {
       "week_start": "2025-07-07",
@@ -2485,18 +2500,15 @@
     },
     {
       "week_start": "2026-06-22",
-      "run_km": 5.3,
-      "run_elevation": 154.0,
-      "run_hours": 0.6,
-      "total_km": 5.3,
-      "total_elevation": 154.0,
-      "activity_count": 1
+      "run_km": 63.3,
+      "run_elevation": 4036.0,
+      "run_hours": 12.4,
+      "total_km": 80.0,
+      "total_elevation": 4738.0,
+      "activity_count": 4
     }
   ],
   "daily_runs": {
-    "2025-06-25": 9.4,
-    "2025-06-27": 9.9,
-    "2025-06-30": 10.0,
     "2025-07-01": 10.0,
     "2025-07-02": 10.0,
     "2025-07-04": 10.0,
@@ -2678,7 +2690,8 @@
     "2026-06-16": 9.5,
     "2026-06-17": 6.2,
     "2026-06-21": 11.0,
-    "2026-06-23": 5.3
+    "2026-06-23": 5.3,
+    "2026-06-27": 58.0
   },
   "exercises": {
     "morning": [
