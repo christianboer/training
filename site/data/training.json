@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T12:44:15",
+  "generated_at": "2026-07-05T15:39:56",
   "race": {
     "name": "Swiss Iron Trail T78",
     "date": "2026-06-27",
@@ -2041,12 +2041,12 @@
   "history": [
     {
       "week_start": "2025-06-30",
-      "run_km": 48.3,
-      "run_elevation": 464.0,
-      "run_hours": 4.7,
-      "total_km": 156.8,
-      "total_elevation": 739.0,
-      "activity_count": 5
+      "run_km": 18.2,
+      "run_elevation": 368.0,
+      "run_hours": 2.0,
+      "total_km": 18.2,
+      "total_elevation": 368.0,
+      "activity_count": 1
     },
     {
       "week_start": "2025-07-07",
@@ -2506,12 +2506,18 @@
       "total_km": 80.0,
       "total_elevation": 4738.0,
       "activity_count": 4
+    },
+    {
+      "week_start": "2026-06-29",
+      "run_km": 0.0,
+      "run_elevation": 0,
+      "run_hours": 0.0,
+      "total_km": 80.4,
+      "total_elevation": 128.0,
+      "activity_count": 1
     }
   ],
   "daily_runs": {
-    "2025-07-01": 10.0,
-    "2025-07-02": 10.0,
-    "2025-07-04": 10.0,
     "2025-07-06": 18.2,
     "2025-07-07": 9.7,
     "2025-07-09": 10.0,
