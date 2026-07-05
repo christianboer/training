@@ -7,7 +7,7 @@ export function renderElevationThermometer(data) {
     if (!container) return;
 
     // Calculate cumulative actual elevation across all plan weeks so far
-    const currentWeek = getCurrentWeekNum(data.plan_start);
+    const currentWeek = getCurrentWeekNum(data.plan_start, data.plan.length);
     let cumActual = 0;
     let cumPlanned = 0;
 
@@ -23,15 +23,14 @@ export function renderElevationThermometer(data) {
         }
     });
 
-    const totalTarget = data.plan_totals ? data.plan_totals.target_elevation : 25000;
+    const totalTarget = data.plan_totals ? data.plan_totals.target_elevation : 8300;
 
     // Landmarks
     const landmarks = [
-        { ele: 5000,  label: '1x T78', icon: '⛰' },
-        { ele: 8849,  label: 'Everest', icon: '🏔' },
-        { ele: 10000, label: '2x T78', icon: '⛰⛰' },
-        { ele: 15000, label: '3x T78', icon: '⛰⛰⛰' },
-        { ele: 20000, label: '4x T78', icon: '🌍' },
+        { ele: 1000, label: 'Rebuild done', icon: '🦶' },
+        { ele: 3189, label: '1x 4-Day', icon: '🇬🇧' },
+        { ele: 5000, label: '4-Day + stairs', icon: '🪜' },
+        { ele: 8279, label: '+ Trappenmarathon', icon: '⛰' },
     ];
 
     // SVG dimensions
@@ -143,10 +142,10 @@ export function renderElevationThermometer(data) {
     container.innerHTML = svg;
 }
 
-function getCurrentWeekNum(planStart) {
+function getCurrentWeekNum(planStart, totalWeeks = 13) {
     const now = new Date();
     const start = new Date(planStart);
     const diffDays = Math.floor((now - start) / (1000 * 60 * 60 * 24));
     if (diffDays < 0) return 0;
-    return Math.min(Math.floor(diffDays / 7) + 1, 14);
+    return Math.min(Math.floor(diffDays / 7) + 1, totalWeeks);
 }

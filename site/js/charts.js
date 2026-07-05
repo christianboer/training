@@ -1,5 +1,5 @@
 /**
- * T78 Training Dashboard — Chart.js Charts
+ * Training Dashboard — Chart.js Charts
  */
 
 const PHASE_COLORS = {
@@ -316,7 +316,7 @@ function renderMetrics(data) {
         <div class="metric-item">
             <div class="metric-label">Longest run (52w)</div>
             <div class="metric-value">${getLongestRun(data)} km</div>
-            <div class="metric-sub">race: 78 km</div>
+            <div class="metric-sub">longest stage: 51.1 km</div>
         </div>
     `;
 }

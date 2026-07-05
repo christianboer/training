@@ -6,7 +6,7 @@ Usage:
 
 Reads:
     - db/training.db (activity data)
-    - plan/swiss-iron-trail-t78.md (structured training plan)
+    - plan/pilgrims-way-4day.md (structured training plan)
 
 Writes:
     - site/data/training.json
@@ -22,52 +22,26 @@ from datetime import datetime, timedelta
 
 BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
 DB_PATH = os.path.join(BASE_DIR, 'db', 'training.db')
-PLAN_PATH = os.path.join(BASE_DIR, 'plan', 'swiss-iron-trail-t78.md')
+PLAN_PATH = os.path.join(BASE_DIR, 'plan', 'pilgrims-way-4day.md')
 OUTPUT_PATH = os.path.join(BASE_DIR, 'site', 'data', 'training.json')
 
-PLAN_START = '2026-03-23'  # Week 1 Monday
-RACE_DATE = '2026-06-27'
+PLAN_START = '2026-07-06'  # Week 1 Monday
+RACE_DATE = '2026-09-03'   # Stage 1 of the England 4-Day
 
 EVENTS = [
-    {"date": "2026-04-12", "name": "Rotterdam Half Marathon", "distance_km": 21, "elevation_m": 0, "role": "Speed sharpener"},
-    {"date": "2026-05-22", "name": "French Alps — Bourg d'Oisans", "distance_km": 41, "elevation_m": 3138, "role": "Mountain adaptation",
-     "routes": [
-         {"name": "Villard via weg omhoog", "km": 14.6, "elevation_m": 1008, "max_alt_m": 1671, "url": "https://www.strava.com/routes/3457828796816278982"},
-         {"name": "Villard steil linksom", "km": 13.9, "elevation_m": 1000, "max_alt_m": 1671, "url": "https://www.strava.com/routes/3457840458426864014"},
-         {"name": "Villard steil rechtsom", "km": 12.2, "elevation_m": 1130, "max_alt_m": 1833, "url": "https://www.strava.com/routes/3457826669002961350"},
-     ],
-     "nutrition": {
-         "product": "Maurten Drink Mix 320",
-         "per_loop": "2× soft flask 500ml = 640 kcal",
-         "hotel_stop": "Banana + bread w/ honey (~200 kcal) + 500ml water",
-         "total_kcal": 2320,
-         "total_fluid_l": 4,
-         "heat_note": ">20°C: add 500ml plain water per loop alongside Maurten"
-     }},
-    {"date": "2026-06-06", "name": "Trail Godefroy", "distance_km": 53, "elevation_m": 1960, "role": "Dress rehearsal",
-     "aid_stations": [
-         {"name": "R1", "km": 9, "action": "Top up flasks, ½ bar"},
-         {"name": "R2", "km": 18, "action": "Full refuel: flask + bar + fruit"},
-         {"name": "R3 — Bouillon", "km": 27, "action": "Key stop: Maurten sachet + bar + fruit"},
-         {"name": "R4", "km": 36, "action": "Top up flasks, ½ bar"},
-         {"name": "R5", "km": 45, "action": "Full refuel: flask + bar + fruit"},
-     ],
-     "nutrition": {
-         "product": "Maurten 320 + bars",
-         "strategy": "1× Maurten 320 per segment + ½ bar from R1, fruit at R2/R3/R5",
-         "total_kcal": 2620,
-         "total_fluid_l": 3.75,
-         "carry": "6× Maurten 320 sachets + 3 bars (~200 kcal each)",
-         "heat_note": ">25°C: extra water at aid stations + electrolyte tab"
-     }},
-    {"date": "2026-06-27", "name": "Swiss Iron Trail T78", "distance_km": 78, "elevation_m": 5000, "role": "A-race"},
+    {"date": "2026-09-03", "name": "Stage 1: Guildford → Bletchingley", "distance_km": 51.1, "elevation_m": 1213, "role": "Queen stage — longest & hilliest"},
+    {"date": "2026-09-04", "name": "Stage 2: Bletchingley → Maidstone", "distance_km": 44.4, "elevation_m": 990, "role": "4-Day"},
+    {"date": "2026-09-05", "name": "Stage 3: Maidstone → Charing Heath", "distance_km": 41.0, "elevation_m": 639, "role": "4-Day"},
+    {"date": "2026-09-06", "name": "Stage 4: Charing Heath → Canterbury", "distance_km": 32.2, "elevation_m": 347, "role": "Victory lap into Canterbury"},
+    {"date": "2026-10-03", "name": "Trappenmarathon", "distance_km": 47, "elevation_m": 3090, "role": "Stair-repeat marathon"},
 ]
 
 PHASES = [
-    {"name": "Base Building", "weeks": [1, 2, 3, 4], "color": "#3b82f6"},
-    {"name": "Vertical Loading", "weeks": [5, 6, 7, 8], "color": "#8b5cf6"},
-    {"name": "Mountain Specificity", "weeks": [9, 10], "color": "#10b981"},
-    {"name": "Race Rehearsal & Taper", "weeks": [11, 12, 13, 14], "color": "#f59e0b"},
+    {"name": "Recovery & Rehab", "weeks": [1, 2], "color": "#ef4444"},
+    {"name": "Rebuild", "weeks": [3, 4, 5], "color": "#3b82f6"},
+    {"name": "Event Specific", "weeks": [6, 7], "color": "#8b5cf6"},
+    {"name": "Taper & Event", "weeks": [8, 9], "color": "#f59e0b"},
+    {"name": "Stair Block", "weeks": [10, 11, 12, 13], "color": "#10b981"},
 ]
 
 DAY_NAMES = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -304,7 +278,7 @@ DIKE_TRAINING = {
             "variant": "A",
             "repeats": "8–12",
             "elevation": "100–160 hm",
-            "description": "Steady effort up, easy jog down. Builds cardiac endurance for sustained T78 climbs.",
+            "description": "Steady effort up, easy jog down. Builds cardiac endurance for the rolling North Downs profile.",
         },
         {
             "id": "B",
@@ -312,7 +286,7 @@ DIKE_TRAINING = {
             "variant": "B",
             "repeats": "10–15",
             "elevation": "130–195 hm",
-            "description": "Power hike up with strong arm drive. Controlled descent, focus on technique.",
+            "description": "The Trappenmarathon key session: stair rhythm with strong arm drive. Controlled descent, focus on technique.",
         },
         {
             "id": "C",
@@ -320,7 +294,7 @@ DIKE_TRAINING = {
             "variant": "C",
             "repeats": "6–10",
             "elevation": "80–130 hm",
-            "description": "Easy uphill, progressively faster downhill. Builds eccentric quad strength for 5,000m descent.",
+            "description": "Easy uphill, progressively faster downhill. Builds eccentric quad strength and ankle stability. Skip until week 6 — grass camber is the re-sprain scenario.",
             "recovery_note": "Allow 10–14 days between sessions",
         },
         {
@@ -333,10 +307,10 @@ DIKE_TRAINING = {
         },
     ],
     "periodization": [
-        {"phase": "Base (Wk 1–4)", "focus": "A + B rotation 1x/week, C every 2 weeks"},
-        {"phase": "Vertical (Wk 5–8)", "focus": "All sessions 1–2x/week, C every 10–14 days"},
-        {"phase": "Mountain (Wk 9–10)", "focus": "Light session A only"},
-        {"phase": "Taper (Wk 11–14)", "focus": "Session A only, no C after week 11"},
+        {"phase": "Recovery/Rebuild (Wk 1–4)", "focus": "No dike work — flat, even surfaces only; rehab is the hill session"},
+        {"phase": "Event Specific (Wk 5–7)", "focus": "A light in week 5, then A+B 1x/week; no C before week 6"},
+        {"phase": "Taper/Event (Wk 8–10)", "focus": "None — Kent provides the hills"},
+        {"phase": "Stair Block (Wk 11–13)", "focus": "Session B is the priority, 1–2x/week — Trappenmarathon prep"},
     ],
 }
 
@@ -481,33 +455,29 @@ def query_reference_races(conn):
     } for r in rows]
 
 
-GPX_PATH = os.path.join(BASE_DIR, 'plan', 't78-course.gpx')
-RACE_PLAN_PATH = os.path.join(BASE_DIR, 'plan', 't78-race-plan.json')
-
-# Aid stations / waypoints anchored to GPX track-point indices.
-# Indices were identified from the named waypoints in the official Outdooractive
-# GPX, matched against the Verpflegungsplan running order.
-T78_WAYPOINTS = [
-    {"name": "Savognin (Start)",       "type": "start",    "idx": 0},
-    {"name": "Castelas",               "type": "aid",      "idx": 254},
-    {"name": "Val d'Err",              "type": "landmark", "idx": 485},
-    {"name": "Alp Flix",               "type": "aid",      "idx": 1119},
-    {"name": "Fuorcla digl Leget",     "type": "pass",     "idx": 1288, "note": "Heaven's Gate"},
-    {"name": "La Veduta",              "type": "aid",      "idx": 1390},
-    {"name": "Leg Grevasalvas",        "type": "landmark", "idx": 1568},
-    {"name": "Pass Lunghin",           "type": "pass",     "idx": 1989, "note": "Triple watershed"},
-    {"name": "Septimerpass",           "type": "aid",      "idx": 2158},
-    {"name": "Stallerberg",            "type": "pass",     "idx": 2594},
-    {"name": "Bivio",                  "type": "aid",      "idx": 2894},
-    {"name": "Sur",                    "type": "aid",      "idx": 3290},
-    {"name": "Rona",                   "type": "aid",      "idx": 3579},
-    {"name": "Savognin (Finish)",      "type": "finish",   "idx": -1},
+# The four stages of the England 4-Day (Pilgrims' Way / North Downs Way).
+# GPX files are Strava route exports in plan/stages/.
+STAGES = [
+    {"stage": 1, "date": "2026-09-03", "name": "Guildford → Bletchingley",
+     "gpx": "stage1-guildford-bletchingley.gpx", "planned_hours": 6.72,
+     "start": "Guildford", "finish": "Bletchingley"},
+    {"stage": 2, "date": "2026-09-04", "name": "Bletchingley → Maidstone",
+     "gpx": "stage2-bletchingley-maidstone.gpx", "planned_hours": 5.72,
+     "start": "Bletchingley", "finish": "Maidstone"},
+    {"stage": 3, "date": "2026-09-05", "name": "Maidstone → Charing Heath",
+     "gpx": "stage3-maidstone-charing-heath.gpx", "planned_hours": 5.18,
+     "start": "Maidstone", "finish": "Charing Heath"},
+    {"stage": 4, "date": "2026-09-06", "name": "Charing Heath → Canterbury",
+     "gpx": "stage4-charing-heath-canterbury.gpx", "planned_hours": 3.95,
+     "start": "Charing Heath", "finish": "Canterbury"},
 ]
+STAGES_DIR = os.path.join(BASE_DIR, 'plan', 'stages')
 
 
-def parse_gpx_profile(gpx_path, num_points=100):
-    """Parse GPX file into a sampled elevation profile and anchor waypoints to
-    track-point indices (so aid stations stay locked to the real course)."""
+def parse_gpx_profile(gpx_path, num_points=100, waypoint_defs=None):
+    """Parse GPX file into a sampled elevation profile. Optional waypoint_defs
+    ({name, type, idx} with idx -1 meaning last point) are anchored to
+    track-point indices."""
     if not os.path.exists(gpx_path):
         print(f"  Warning: GPX not found at {gpx_path}, using fallback profile")
         return None
@@ -559,7 +529,7 @@ def parse_gpx_profile(gpx_path, num_points=100):
         })
 
     waypoints = []
-    for wp in T78_WAYPOINTS:
+    for wp in (waypoint_defs or []):
         idx = wp["idx"] if wp["idx"] != -1 else len(pts) - 1
         waypoints.append({
             **{k: v for k, v in wp.items() if k != "idx"},
@@ -571,8 +541,9 @@ def parse_gpx_profile(gpx_path, num_points=100):
     for i in range(1, len(waypoints)):
         waypoints[i]["leg_km"] = round(waypoints[i]["km"] - waypoints[i - 1]["km"], 2)
         waypoints[i]["leg_gain_m"] = waypoints[i]["cum_gain_m"] - waypoints[i - 1]["cum_gain_m"]
-    waypoints[0]["leg_km"] = 0
-    waypoints[0]["leg_gain_m"] = 0
+    if waypoints:
+        waypoints[0]["leg_km"] = 0
+        waypoints[0]["leg_gain_m"] = 0
 
     return {
         "profile": profile,
@@ -584,73 +555,76 @@ def parse_gpx_profile(gpx_path, num_points=100):
     }
 
 
-def build_race_plan(course_profile):
-    """Merge course waypoints with the aid-station / personal-nutrition plan."""
-    if not course_profile or not os.path.exists(RACE_PLAN_PATH):
+def build_stage_profiles():
+    """Parse each stage GPX into an elevation profile with start/finish waypoints."""
+    stages = []
+    for s in STAGES:
+        gpx_path = os.path.join(STAGES_DIR, s["gpx"])
+        wp_defs = [
+            {"name": s["start"], "type": "start", "idx": 0},
+            {"name": s["finish"], "type": "finish", "idx": -1},
+        ]
+        profile = parse_gpx_profile(gpx_path, num_points=80, waypoint_defs=wp_defs)
+        if not profile:
+            continue
+        stages.append({
+            "stage": s["stage"],
+            "date": s["date"],
+            "name": s["name"],
+            "planned_hours": s["planned_hours"],
+            **profile,
+        })
+    if not stages:
         return None
-    with open(RACE_PLAN_PATH) as f:
-        plan = json.load(f)
+    return {
+        "stages": stages,
+        "total_km": round(sum(s["total_km"] for s in stages), 1),
+        "total_ascent": round(sum(s["total_ascent"] for s in stages)),
+    }
 
-    availability = plan.get("stations_availability", {})
-    personal = plan.get("personal_plan", {})
-    targets = plan.get("race_targets", {})
-    staples = plan.get("staples", {})
 
-    # Only aid stations (waypoints tagged as aid/start/finish)
-    aid_types = {"aid", "start", "finish"}
-    aids = [w for w in course_profile["waypoints"] if w["type"] in aid_types]
+def build_stage_plan(course_profile, carbs_per_hr=60, fluid_l_per_hr=0.5):
+    """Per-stage logistics plan: planned time, pace, fuel and fluid budget."""
+    if not course_profile:
+        return None
 
-    target_hours = targets.get("target_finish_hours", 15.0)
-    carbs_per_hr = targets.get("carbs_per_hour_g", 60)
-    total_km = course_profile["total_km"]
-    total_ascent = course_profile["total_ascent"]
-    # Effort-weighted time split: 1 km flat == 100 m climb
-    total_effort = total_km + total_ascent / 100.0
-
-    legs = []
-    for i, stn in enumerate(aids):
-        name = stn["name"]
-        # Compute leg against the previous aid station (not the previous waypoint),
-        # otherwise landmarks like Val d'Err or Pass Lunghin distort the split.
-        if i == 0:
-            leg_km = 0
-            leg_gain = 0
-        else:
-            prev = aids[i - 1]
-            leg_km = round(stn["km"] - prev["km"], 2)
-            leg_gain = stn["cum_gain_m"] - prev["cum_gain_m"]
-        leg_effort = leg_km + leg_gain / 100.0
-        leg_minutes = (leg_effort / total_effort * target_hours * 60) if total_effort else 0
-        leg_carbs = round(leg_minutes / 60 * carbs_per_hr)
-
-        legs.append({
-            "name": name,
-            "km": stn["km"],
-            "elevation_m": stn["ele"],
-            "cum_gain_m": stn["cum_gain_m"],
-            "leg_km": leg_km,
-            "leg_gain_m": leg_gain,
-            "leg_minutes": round(leg_minutes),
-            "leg_carbs_g": leg_carbs,
-            "available": availability.get(name, {"drinks": [], "food": []}),
-            "personal": personal.get(name, {"carry_out": "", "consume_here": ""}),
+    stages = []
+    for s in course_profile["stages"]:
+        hours = s["planned_hours"]
+        h = int(hours)
+        m = round((hours - h) * 60)
+        pace_min = hours * 60 / s["total_km"]
+        stages.append({
+            "stage": s["stage"],
+            "date": s["date"],
+            "name": s["name"],
+            "km": s["total_km"],
+            "ascent_m": s["total_ascent"],
+            "planned_time": f"{h}h{m:02d}",
+            "planned_hours": hours,
+            "pace_min_km": round(pace_min, 2),
+            "carbs_g": round(hours * carbs_per_hr),
+            "fluid_l": round(hours * fluid_l_per_hr, 1),
         })
 
-    # Cumulative running time (start + prior leg durations)
-    cum_min = 0
-    start_h, start_m = 4, 0  # 04:00 start
-    for leg in legs:
-        cum_min += leg["leg_minutes"]
-        total_min_of_day = start_h * 60 + start_m + cum_min
-        hh = (total_min_of_day // 60) % 24
-        mm = total_min_of_day % 60
-        leg["eta_clock"] = f"{hh:02d}:{mm:02d}"
-        leg["eta_race_minutes"] = cum_min
-
+    total_hours = sum(s["planned_hours"] for s in stages)
+    th = int(total_hours)
+    tm = round((total_hours - th) * 60)
     return {
-        "targets": targets,
-        "staples": staples,
-        "legs": legs,
+        "targets": {
+            "carbs_per_hour_g": carbs_per_hr,
+            "fluid_l_per_hour": fluid_l_per_hr,
+            "planned_total_time": f"{th}h{tm:02d}",
+            "planned_total_hours": round(total_hours, 2),
+            "hr_cap": 135,
+        },
+        "recovery_routine": [
+            "Within 30 min of finishing: 60–80g carbs + 20g protein",
+            "Legs up 20 min, then shower, then short walk before dinner",
+            "500ml electrolytes through the evening",
+            "Next morning: ankle rehab block + 5 min mobility before breakfast",
+        ],
+        "stages": stages,
     }
 
 
@@ -663,15 +637,15 @@ def main():
 
     # Query database
     conn = sqlite3.connect(DB_PATH)
-    actual_weeks = query_actuals(conn, PLAN_START)
+    actual_weeks = query_actuals(conn, PLAN_START, num_weeks=len(plan_weeks) or 13)
     history = query_history(conn)
     daily_runs = query_daily_runs(conn)
     reference_races = query_reference_races(conn)
     conn.close()
 
-    # Parse GPX course profile + build the race plan (aid stations + nutrition)
-    course_profile = parse_gpx_profile(GPX_PATH)
-    race_plan = build_race_plan(course_profile)
+    # Parse stage GPX profiles + build the per-stage plan
+    course_profile = build_stage_profiles()
+    race_plan = build_stage_plan(course_profile)
 
     # Calculate plan elevation target total
     plan_total_elevation = sum(w.get("target_elevation") or 0 for w in plan_weeks)
@@ -681,14 +655,20 @@ def main():
     data = {
         "generated_at": datetime.now().isoformat(timespec='seconds'),
         "race": {
-            "name": "Swiss Iron Trail T78",
+            "name": "Pilgrims' Way 4-Day",
             "date": RACE_DATE,
-            "distance_km": 78,
-            "elevation_m": 5000,
-            "cutoff_hours": 21,
-            "start_time": "04:00",
-            "location": "Savognin, Switzerland",
-            "url": "https://www.irontrail.ch/en/races-info/runs/t78-savognin",
+            "end_date": "2026-09-06",
+            "distance_km": 168.7,
+            "elevation_m": 3189,
+            "days": 4,
+            "start_time": "09:00",
+            "location": "Guildford → Canterbury, England",
+            "second_target": {
+                "name": "Trappenmarathon",
+                "date": "2026-10-03",
+                "distance_km": 47,
+                "elevation_m": 3090,
+            },
         },
         "events": EVENTS,
         "phases": PHASES,
@@ -707,18 +687,26 @@ def main():
         "dike_training": DIKE_TRAINING,
         "prediction": {
             "reference_races": reference_races,
+            "reference_4day": {
+                "name": "England 4-Day 2025 (Arundel → Dymchurch)",
+                "distance_km": 159.0,
+                "elevation_m": 2163,
+                "moving_hours": 18.2,
+                "pace_min_km": 6.87,
+            },
             "scenarios": [
-                {"label": "Optimistic", "hours": 13.25, "conditions": "At/above 2024 fitness (Alpen run confirms), strong execution"},
-                {"label": "Target", "hours": 13.5, "conditions": "Solid prep, pacing discipline, no major issues"},
-                {"label": "Realistic", "hours": 14.0, "conditions": "Altitude (>2,300m) + continuous duration beyond hour 7–8"},
-                {"label": "Conservative", "hours": 14.5, "conditions": "Quads collapse on descent or heat bites late"},
+                {"label": "Optimistic", "hours": 19.75, "conditions": "Ankle fully settled, 2025 pace holds (6:55–7:00/km)"},
+                {"label": "Target", "hours": 20.5, "conditions": "Solid prep, ankle managed, walk breaks on schedule"},
+                {"label": "Realistic", "hours": 21.5, "conditions": "Matches the 21h34 route estimate — extra walking on rough ground"},
+                {"label": "Conservative", "hours": 23.0, "conditions": "Ankle forces walk-heavy stages — still finishes, just longer days"},
             ],
-            "cutoff_hours": 21,
+            "cutoff_hours": 26,
+            "cutoff_label": "4× daylight budget",
             "key_factors": [
-                "Descending speed — 5,000m of descent is where time is won or lost",
-                "Vertical endurance — sustaining 280+ m/hr climbing rate beyond hour 10",
-                "Back-to-back fatigue resistance — running vertical on pre-fatigued legs",
-                "Race execution — eat from km 1, hold HR 140–145, power-hike efficiently",
+                "Ankle stability on uneven ground — rehab compliance in weeks 1–6 decides it",
+                "Back-to-back recovery routine — eat within 30 min, legs up, sleep",
+                "Stage 1 discipline — hardest stage on day 1; going out too fast taxes days 2–4",
+                "Stair economy — variant B sessions in weeks 11–12 set up the Trappenmarathon",
             ],
         },
     }

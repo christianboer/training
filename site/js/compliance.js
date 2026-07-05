@@ -6,7 +6,7 @@ export function renderCompliance(data) {
     const container = document.getElementById('compliance-grid');
     if (!container || !data.plan || !data.actual) return;
 
-    const currentWeek = getCurrentWeekNum(data.plan_start);
+    const currentWeek = getCurrentWeekNum(data.plan_start, data.plan.length);
     const weekProgress = getCurrentWeekProgress(data.plan_start);
 
     // Calculate overall adherence
@@ -113,12 +113,12 @@ export function renderCompliance(data) {
     }).join('');
 }
 
-function getCurrentWeekNum(planStart) {
+function getCurrentWeekNum(planStart, totalWeeks = 13) {
     const now = new Date();
     const start = new Date(planStart);
     const diffDays = Math.floor((now - start) / (1000 * 60 * 60 * 24));
     if (diffDays < 0) return 0;
-    return Math.min(Math.floor(diffDays / 7) + 1, 14);
+    return Math.min(Math.floor(diffDays / 7) + 1, totalWeeks);
 }
 
 // Returns fraction of current week elapsed (0..1), e.g. Monday = 1/7, Sunday = 1.0

@@ -1,21 +1,25 @@
 /**
- * T78 Training Dashboard — This Week View with Week Navigation
+ * Training Dashboard — This Week View with Week Navigation
  */
 
 let _data = null;
 let _displayWeek = null;
+
+function totalWeeks() {
+    return _data ? _data.plan.length : 13;
+}
 
 function getCurrentWeek(planStart) {
     const now = new Date();
     const start = new Date(planStart);
     const diffDays = Math.floor((now - start) / (1000 * 60 * 60 * 24));
     if (diffDays < 0) return 0;
-    return Math.min(Math.floor(diffDays / 7) + 1, 14);
+    return Math.min(Math.floor(diffDays / 7) + 1, totalWeeks());
 }
 
 export function renderWeek(data, currentWeek) {
     _data = data;
-    _displayWeek = currentWeek <= 0 ? 1 : Math.min(currentWeek, 14);
+    _displayWeek = currentWeek <= 0 ? 1 : Math.min(currentWeek, totalWeeks());
 
     // Add week navigation if not already present
     const section = document.getElementById('week');
@@ -43,7 +47,7 @@ export function renderWeek(data, currentWeek) {
 }
 
 function navigateWeek(delta) {
-    _displayWeek = Math.max(1, Math.min(14, _displayWeek + delta));
+    _displayWeek = Math.max(1, Math.min(totalWeeks(), _displayWeek + delta));
     renderWeekContent();
 }
 
@@ -60,7 +64,7 @@ function renderWeekContent() {
 
     // Update nav
     prevBtn.disabled = week <= 1;
-    nextBtn.disabled = week >= 14;
+    nextBtn.disabled = week >= totalWeeks();
     todayBtn.style.display = week === (currentWeek || 1) ? 'none' : '';
 
     const planWeek = _data.plan[week - 1];
@@ -130,7 +134,7 @@ function renderWeekContent() {
         <div class="summary-card" style="border-left: 3px solid ${phaseColor}">
             <div class="value" style="font-size: 1rem">${phaseName}</div>
             <div class="label">phase</div>
-            <div class="sub">Week ${week} of 14</div>
+            <div class="sub">Week ${week} of ${totalWeeks()}</div>
         </div>
     `;
 

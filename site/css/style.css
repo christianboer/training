@@ -2491,3 +2491,38 @@ footer {
 
     .coach-toggle { bottom: 16px; right: 16px; }
 }
+
+/* ---- Stage Profiles (4-Day) ---- */
+
+.stage-block {
+    margin-bottom: 20px;
+}
+
+.stage-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.stage-num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.stage-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.stage-stats {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-left: auto;
+}

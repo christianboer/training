@@ -116,7 +116,7 @@ GROUP BY l.legging_id ORDER BY wears DESC;
 
 ## Training Dashboard
 
-Static HTML/CSS/JS site in `site/`. Displays the 14-week training plan, progress charts, time prediction, exercise library, and race day reference.
+Static HTML/CSS/JS site in `site/`. Displays the 13-week training plan for the **Pilgrims' Way 4-Day** (Sep 3–6, 2026, Guildford → Canterbury, 168.7 km / ~3,189m over 4 stages) and the **Trappenmarathon** (Oct 3, 2026), with progress charts, stage profiles, time prediction, exercise library, and event day reference. (The previous Swiss Irontrail T78 plan lives on in `plan/swiss-iron-trail-t78.md` as an archive; T78 ended at km 48 in a storm DNF + ankle sprain on Jun 27, 2026.)
 
 ### Serving locally
 
@@ -132,11 +132,11 @@ python3 scripts/sync_strava.py /tmp/strava_sync.json
 python3 scripts/export_dashboard_data.py
 ```
 
-The dashboard reads `site/data/training.json` which is generated from `db/training.db`, `plan/swiss-iron-trail-t78.md`, `plan/t78-course.gpx`, and `plan/t78-race-plan.json`. Those source files are the source of truth — editing them automatically updates the dashboard on next export.
+The dashboard reads `site/data/training.json` which is generated from `db/training.db`, `plan/pilgrims-way-4day.md`, and the four stage GPX files in `plan/stages/`. Those source files are the source of truth — editing them automatically updates the dashboard on next export.
 
-### Race-day plan (aid stations + nutrition)
+### Stage plan (4-Day logistics)
 
-`plan/t78-race-plan.json` holds the official aid station availability (from the Swiss Irontrail Verpflegungsplan PDF) and your personal nutrition/drink plan per station (carry out / consume here). The aid station distance + elevation come from `plan/t78-course.gpx` via track-point indices hardcoded in `scripts/export_dashboard_data.py` (`T78_WAYPOINTS`). Edit the JSON to adjust the plan; edit the indices if Outdooractive republishes the GPX.
+The four stages (dates, GPX filenames, planned hours) are defined in the `STAGES` list in `scripts/export_dashboard_data.py`. Each stage GPX (Strava route export) is parsed into an elevation profile with start/finish waypoints; the per-stage plan (planned time, pace, carbs/fluid budget) is derived from the planned hours at 60 g carbs + 0.5 L fluid per hour. Edit `STAGES` to change dates or planned times; drop replacement GPX files in `plan/stages/` if routes change.
 
 ### Structure
 

@@ -1,5 +1,5 @@
 /**
- * T78 Training Dashboard — Main Application
+ * Pilgrims' Way 4-Day Training Dashboard — Main Application
  */
 
 import { renderWeek } from './plan.js';
@@ -23,7 +23,7 @@ async function loadData() {
 
 function updateCountdown(raceDate) {
     const now = new Date();
-    const race = new Date(raceDate + 'T04:00:00+02:00'); // CEST start time
+    const race = new Date(raceDate + 'T09:00:00+01:00'); // BST start time, Stage 1
     const diff = race - now;
 
     if (diff <= 0) {
@@ -44,16 +44,17 @@ function updateCountdown(raceDate) {
 
 // ---- Phase Badge & Progress ----
 
-function getCurrentWeek(planStart) {
+function getCurrentWeek(planStart, totalWeeks) {
     const now = new Date();
     const start = new Date(planStart);
     const diffDays = Math.floor((now - start) / (1000 * 60 * 60 * 24));
     if (diffDays < 0) return 0;
-    return Math.min(Math.floor(diffDays / 7) + 1, 14);
+    return Math.min(Math.floor(diffDays / 7) + 1, totalWeeks);
 }
 
 function renderPhaseProgress(data) {
-    const currentWeek = getCurrentWeek(data.plan_start);
+    const totalWeeks = data.plan.length;
+    const currentWeek = getCurrentWeek(data.plan_start, totalWeeks);
     const badge = document.getElementById('phase-badge');
     const progress = document.getElementById('phase-progress');
     const meta = document.getElementById('hero-meta');
@@ -74,7 +75,7 @@ function renderPhaseProgress(data) {
 
     // Week dots
     progress.innerHTML = '';
-    for (let w = 1; w <= 14; w++) {
+    for (let w = 1; w <= totalWeeks; w++) {
         const dot = document.createElement('div');
         dot.className = 'week-dot';
         const p = data.phases.find(ph => ph.weeks.includes(w));
@@ -85,8 +86,8 @@ function renderPhaseProgress(data) {
     }
 
     meta.textContent = currentWeek > 0
-        ? `Week ${currentWeek} of 14 · ${14 - currentWeek} weeks to go`
-        : 'Training starts March 23';
+        ? `Week ${currentWeek} of ${totalWeeks} · ${totalWeeks - currentWeek} weeks to go`
+        : 'Training starts July 6';
 }
 
 // ---- Event Timeline ----
@@ -201,30 +202,29 @@ function renderHeatmap(dailyRuns) {
 // ---- Gear Checklist ----
 
 const GEAR_ITEMS = [
-    { name: 'Running shoes (tested, aggressive tread)', mandatory: true },
-    { name: 'Headlamp + spare battery', mandatory: true },
-    { name: 'Rain jacket (waterproof)', mandatory: true },
-    { name: 'Warm layer (fleece/puffy)', mandatory: true },
-    { name: 'Emergency blanket', mandatory: true },
-    { name: 'First aid supplies', mandatory: true },
-    { name: 'Phone (fully charged)', mandatory: true },
-    { name: 'Race vest/pack', mandatory: false },
+    { name: 'Running shoes (tested on long back-to-backs)', mandatory: true },
+    { name: 'Ankle brace or tape kit', mandatory: true },
+    { name: 'Race vest/pack', mandatory: true },
     { name: 'Hydration (min 1L capacity)', mandatory: true },
-    { name: 'Gels/nutrition (for between aid stations)', mandatory: false },
+    { name: 'Phone + power bank (navigation all day)', mandatory: true },
+    { name: 'GPX routes loaded on watch + phone', mandatory: true },
+    { name: 'Card/cash for village shops & cafés', mandatory: true },
+    { name: 'Rain jacket (packable)', mandatory: true },
+    { name: 'Gels/bars for between resupply points', mandatory: true },
     { name: 'Electrolyte tabs', mandatory: false },
-    { name: 'Gloves', mandatory: false },
-    { name: 'Buff/beanie', mandatory: false },
-    { name: 'Sunglasses', mandatory: false },
+    { name: 'Blister kit (tape, Compeed, needle)', mandatory: true },
+    { name: 'Anti-chafe (Vaseline/BodyGlide)', mandatory: true },
+    { name: 'Spare socks (mid-stage change on wet days)', mandatory: false },
+    { name: 'Cap + sunglasses', mandatory: false },
     { name: 'Sunscreen', mandatory: false },
-    { name: 'Anti-chafe (Vaseline/BodyGlide)', mandatory: false },
-    { name: 'Spare socks', mandatory: false },
-    { name: 'Cash/card for aid stations', mandatory: false },
-    { name: 'Bib number + safety pins', mandatory: true },
+    { name: 'Recovery shake powder (evenings)', mandatory: false },
+    { name: 'Evening compression socks', mandatory: false },
+    { name: 'Train tickets / accommodation confirmations', mandatory: true },
 ];
 
 function renderGearChecklist() {
     const container = document.getElementById('gear-checklist');
-    const saved = JSON.parse(localStorage.getItem('t78-gear') || '{}');
+    const saved = JSON.parse(localStorage.getItem('pw4-gear') || '{}');
 
     container.innerHTML = GEAR_ITEMS.map((item, i) => `
         <label class="${item.mandatory ? 'mandatory' : ''}">
@@ -235,9 +235,9 @@ function renderGearChecklist() {
 
     container.addEventListener('change', (e) => {
         if (e.target.type === 'checkbox') {
-            const saved = JSON.parse(localStorage.getItem('t78-gear') || '{}');
+            const saved = JSON.parse(localStorage.getItem('pw4-gear') || '{}');
             saved[e.target.dataset.idx] = e.target.checked;
-            localStorage.setItem('t78-gear', JSON.stringify(saved));
+            localStorage.setItem('pw4-gear', JSON.stringify(saved));
         }
     });
 }
@@ -277,10 +277,10 @@ function renderPrediction(prediction) {
         .join('');
 
     // Reference race chart
-    renderReferenceChart(prediction.reference_races, prediction.scenarios);
+    renderReferenceChart(prediction.reference_races, prediction.scenarios, prediction.reference_4day);
 }
 
-function renderReferenceChart(races, scenarios) {
+function renderReferenceChart(races, scenarios, reference4day) {
     const ctx = document.getElementById('chart-reference');
     if (!ctx || !races.length) return;
 
@@ -288,25 +288,36 @@ function renderReferenceChart(races, scenarios) {
     const textColor = isDark ? '#94a3b8' : '#475569';
     const gridColor = isDark ? '#1e293b' : '#e2e8f0';
 
-    // Filter to mountain ultras (>40km, >2000m)
-    const filtered = races.filter(r => r.distance_km > 40 && r.elevation_m > 2000);
+    // Long efforts as distance vs time (>40 km single efforts)
+    const filtered = races.filter(r => r.distance_km > 40);
 
-    // Add T78 prediction point
     const targetScenario = scenarios.find(s => s.label === 'Target');
 
     const datasets = [{
-        label: 'Past races',
-        data: filtered.map(r => ({ x: r.elevation_m, y: r.time_hours, name: r.name, date: r.date.slice(0, 4) })),
+        label: 'Past long efforts',
+        data: filtered.map(r => ({ x: r.distance_km, y: r.time_hours, name: r.name, date: r.date.slice(0, 4) })),
         backgroundColor: '#3b82f6',
         borderColor: '#3b82f6',
         pointRadius: 6,
         pointHoverRadius: 8,
     }];
 
+    if (reference4day) {
+        datasets.push({
+            label: '4-Day 2025 (total)',
+            data: [{ x: reference4day.distance_km, y: reference4day.moving_hours, name: reference4day.name }],
+            backgroundColor: '#10b981',
+            borderColor: '#10b981',
+            pointRadius: 8,
+            pointStyle: 'rectRot',
+            pointHoverRadius: 10,
+        });
+    }
+
     if (targetScenario) {
         datasets.push({
-            label: 'T78 target',
-            data: [{ x: 5000, y: targetScenario.hours, name: 'Swiss Iron Trail T78' }],
+            label: '4-Day 2026 target',
+            data: [{ x: 168.7, y: targetScenario.hours, name: "Pilgrims' Way 4-Day" }],
             backgroundColor: '#f97316',
             borderColor: '#f97316',
             pointRadius: 10,
@@ -329,14 +340,14 @@ function renderReferenceChart(races, scenarios) {
                             const p = ctx.raw;
                             const h = Math.floor(p.y);
                             const m = Math.round((p.y - h) * 60);
-                            return `${p.name}${p.date ? ' (' + p.date + ')' : ''}: ${h}h${String(m).padStart(2,'0')} — ${p.x}m D+`;
+                            return `${p.name}${p.date ? ' (' + p.date + ')' : ''}: ${h}h${String(m).padStart(2,'0')} — ${p.x} km`;
                         }
                     }
                 }
             },
             scales: {
                 x: {
-                    title: { display: true, text: 'Elevation gain (m)', color: textColor },
+                    title: { display: true, text: 'Distance (km)', color: textColor },
                     ticks: { color: textColor, font: { size: 11 } },
                     grid: { color: gridColor },
                 },
@@ -352,26 +363,27 @@ function renderReferenceChart(races, scenarios) {
 
 // ---- Pace Calculator ----
 
-function initPaceCalc() {
+function initPaceCalc(data) {
     const input = document.getElementById('pace-input');
     const display = document.getElementById('pace-display');
     const result = document.getElementById('pace-result');
+    const distanceKm = (data && data.race && data.race.distance_km) || 168.7;
 
     function update() {
         const hours = parseFloat(input.value);
         display.textContent = hours + 'h';
         const totalMin = hours * 60;
-        const paceMin = totalMin / 78;
+        const paceMin = totalMin / distanceKm;
         const paceM = Math.floor(paceMin);
         const paceS = Math.round((paceMin - paceM) * 60);
-        result.textContent = `Average pace: ${paceM}:${String(paceS).padStart(2, '0')}/km · ${Math.round(78 / hours * 10) / 10} km/h`;
+        result.textContent = `Average pace: ${paceM}:${String(paceS).padStart(2, '0')}/km · ${Math.round(distanceKm / hours * 10) / 10} km/h (total over 4 days)`;
 
         // Nutrition total
         const nutritionEl = document.getElementById('nutrition-total');
         if (nutritionEl) {
             const kcal = Math.round(hours * 275);
             const fluid = Math.round(hours * 0.5 * 10) / 10;
-            nutritionEl.textContent = `Total: ~${kcal} kcal · ~${fluid}L fluid (for ${hours}h)`;
+            nutritionEl.textContent = `On-the-move total: ~${kcal} kcal · ~${fluid}L fluid (for ${hours}h across 4 stages)`;
         }
     }
 
@@ -419,7 +431,7 @@ async function init() {
     renderPhaseProgress(data);
 
     // This Week
-    const currentWeek = getCurrentWeek(data.plan_start);
+    const currentWeek = getCurrentWeek(data.plan_start, data.plan.length);
     renderWeek(data, currentWeek);
 
     // Plan vs Actual
@@ -452,7 +464,7 @@ async function init() {
 
     // Race Day
     renderGearChecklist();
-    initPaceCalc();
+    initPaceCalc(data);
 
     // AI Coach
     initCoach(data);

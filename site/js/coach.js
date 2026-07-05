@@ -1,8 +1,8 @@
 /**
- * T78 Training Coach — AI chat panel
+ * Training Coach — AI chat panel
  */
 
-const STORAGE_KEY = 't78-coach-history';
+const STORAGE_KEY = 'pw4-coach-history';
 const MAX_MESSAGES = 40;
 const SUGGESTIONS = [
     'How is my training going this week?',
@@ -39,7 +39,7 @@ function createPanel() {
         </button>
         <div class="coach-window" id="coach-window">
             <div class="coach-header">
-                <h3>T78 Coach</h3>
+                <h3>Training Coach</h3>
                 <div class="coach-actions">
                     <button id="coach-clear" class="coach-action-btn" title="Clear history">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
@@ -92,7 +92,7 @@ function renderWelcome() {
     const welcome = document.createElement('div');
     welcome.className = 'coach-welcome';
     welcome.innerHTML = `
-        <p>I'm your T78 training coach. I have your full 14-week plan, Strava activities, course profile, and race details. Ask me anything.</p>
+        <p>I'm your training coach for the Pilgrims' Way 4-Day and the Trappenmarathon. I have your full 13-week plan, Strava activities, stage profiles, and event details. Ask me anything.</p>
         <div class="coach-suggestions">
             ${SUGGESTIONS.map(s => `<button class="coach-suggestion">${s}</button>`).join('')}
         </div>
