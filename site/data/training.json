@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T16:08:12",
+  "generated_at": "2026-07-13T16:07:07",
   "race": {
     "name": "Pilgrims' Way 4-Day",
     "date": "2026-09-03",
@@ -44,6 +44,13 @@
       "distance_km": 32.2,
       "elevation_m": 347,
       "role": "Victory lap into Canterbury"
+    },
+    {
+      "date": "2026-09-27",
+      "name": "Euromast Trappenloop",
+      "distance_km": 0.6,
+      "elevation_m": 100,
+      "role": "Sharpener — 589 steps"
     },
     {
       "date": "2026-10-03",
@@ -754,8 +761,8 @@
       "phase": "Stair Block",
       "start_date": "2026-09-21",
       "end_date": "2026-09-27",
-      "target_km": 52.0,
-      "target_elevation": 600.0,
+      "target_km": 45.0,
+      "target_elevation": 700.0,
       "days": [
         {
           "day": "Mon",
@@ -781,29 +788,29 @@
         {
           "day": "Thu",
           "session": "Easy run",
-          "target_km": 10.0,
+          "target_km": 8.0,
           "target_elevation": null,
           "date": "2026-09-24"
         },
         {
           "day": "Fri",
-          "session": "Rest",
-          "target_km": null,
-          "target_elevation": null,
+          "session": "Long run, stair-heavy",
+          "target_km": 18.0,
+          "target_elevation": 400.0,
           "date": "2026-09-25"
         },
         {
           "day": "Sat",
-          "session": "Long run, stair-heavy",
-          "target_km": 18.0,
-          "target_elevation": 400.0,
+          "session": "Rest + mobility",
+          "target_km": null,
+          "target_elevation": null,
           "date": "2026-09-26"
         },
         {
           "day": "Sun",
-          "session": "Recovery run",
-          "target_km": 6.0,
-          "target_elevation": null,
+          "session": "Euromast Trappenloop — 589 treden, max effort",
+          "target_km": 1.0,
+          "target_elevation": 100.0,
           "date": "2026-09-27"
         }
       ]
@@ -1014,24 +1021,6 @@
     }
   ],
   "history": [
-    {
-      "week_start": "2025-06-30",
-      "run_km": 18.2,
-      "run_elevation": 368.0,
-      "run_hours": 2.0,
-      "total_km": 18.2,
-      "total_elevation": 368.0,
-      "activity_count": 1
-    },
-    {
-      "week_start": "2025-07-07",
-      "run_km": 45.7,
-      "run_elevation": 141.0,
-      "run_hours": 4.5,
-      "total_km": 82.6,
-      "total_elevation": 191.0,
-      "activity_count": 4
-    },
     {
       "week_start": "2025-07-14",
       "run_km": 47.3,
@@ -1487,16 +1476,12 @@
       "run_km": 0.0,
       "run_elevation": 0,
       "run_hours": 0.0,
-      "total_km": 80.4,
-      "total_elevation": 128.0,
-      "activity_count": 1
+      "total_km": 177.2,
+      "total_elevation": 280.0,
+      "activity_count": 2
     }
   ],
   "daily_runs": {
-    "2025-07-06": 18.2,
-    "2025-07-07": 9.7,
-    "2025-07-09": 10.0,
-    "2025-07-13": 26.0,
     "2025-07-14": 9.9,
     "2025-07-18": 10.1,
     "2025-07-20": 27.3,
@@ -1839,8 +1824,8 @@
     ]
   },
   "plan_totals": {
-    "target_km": 662.0,
-    "target_elevation": 8279.0
+    "target_km": 655.0,
+    "target_elevation": 8379.0
   },
   "course_profile": {
     "stages": [

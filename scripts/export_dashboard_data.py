@@ -33,6 +33,7 @@ EVENTS = [
     {"date": "2026-09-04", "name": "Stage 2: Bletchingley → Maidstone", "distance_km": 44.4, "elevation_m": 990, "role": "4-Day"},
     {"date": "2026-09-05", "name": "Stage 3: Maidstone → Charing Heath", "distance_km": 41.0, "elevation_m": 639, "role": "4-Day"},
     {"date": "2026-09-06", "name": "Stage 4: Charing Heath → Canterbury", "distance_km": 32.2, "elevation_m": 347, "role": "Victory lap into Canterbury"},
+    {"date": "2026-09-27", "name": "Euromast Trappenloop", "distance_km": 0.6, "elevation_m": 100, "role": "Sharpener — 589 steps"},
     {"date": "2026-10-03", "name": "Trappenmarathon", "distance_km": 47, "elevation_m": 3090, "role": "Stair-repeat marathon"},
 ]
 

@@ -15,6 +15,7 @@
 | **Sep 4** | **Stage 2: Bletchingley → Maidstone** | **44.4 km** | **990m** | |
 | **Sep 5** | **Stage 3: Maidstone → Charing Heath** | **41.0 km** | **639m** | |
 | **Sep 6** | **Stage 4: Charing Heath → Canterbury** | **32.2 km** | **347m** | Victory lap into Canterbury |
+| **Sep 27** | **Euromast Trappenloop** (Rotterdam) | **589 treden** | **~100m** | Sharpener / dress rehearsal for Trappenmarathon |
 | **Oct 3** | **Trappenmarathon** | **47 km** | **~3,090m** | Stair-repeat marathon (same format as 2025: 6h20) |
 
 Planned stage times (route estimates): 6h43 / 5h43 / 5h11 / 3h57 — 21h34 total.
@@ -210,11 +211,13 @@ Practice the full event routine this weekend: same shoes + vest + nutrition, eat
 | Mon | Rest + mobility | — | — |
 | Tue | Easy run | 8 | — |
 | Wed | Dike session B+D — stair emphasis (15 reps) + strength | 10 | 200m |
-| Thu | Easy run | 10 | — |
-| Fri | Rest | — | — |
-| Sat | Long run, stair-heavy | 18 | 400m |
-| Sun | Recovery run | 6 | — |
-| **Total** | | **~52 km** | **~600m** |
+| Thu | Easy run | 8 | — |
+| Fri | Long run, stair-heavy | 18 | 400m |
+| Sat | Rest + mobility | — | — |
+| Sun | **Euromast Trappenloop** — 589 treden, max effort | 1 | 100m |
+| **Total** | | **~45 km** | **~700m** |
+
+The long run moves to Friday so the Trappenloop is raced on fresh legs. It doubles as the dress rehearsal and benchmark for the Trappenmarathon six days later — a ~5-minute max effort that costs no recovery. Lift down; no descending load.
 
 ### Week 13 — Trappenmarathon (Sep 28 – Oct 4)
 | Day | Session | km | Elev |
