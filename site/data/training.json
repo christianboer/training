@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T16:07:07",
+  "generated_at": "2026-07-16T10:14:29",
   "race": {
     "name": "Pilgrims' Way 4-Day",
     "date": "2026-09-03",
@@ -880,23 +880,85 @@
       "week_number": 1,
       "start_date": "2026-07-06",
       "end_date": "2026-07-12",
-      "total_km": 0,
-      "run_km": 0,
-      "total_elevation": 0,
-      "run_elevation": 0,
-      "total_hours": 0,
-      "activities": []
+      "total_km": 167.1,
+      "run_km": 16.4,
+      "total_elevation": 482.0,
+      "run_elevation": 50.0,
+      "total_hours": 7.0,
+      "activities": [
+        {
+          "date": "2026-07-07",
+          "name": "Avondrit",
+          "type": "Ride",
+          "distance_km": 46.3,
+          "elevation_m": 249.0,
+          "moving_time_hours": 1.87,
+          "avg_hr": 118.451,
+          "calories": 805.0,
+          "gear": null,
+          "pace_min_km": null
+        },
+        {
+          "date": "2026-07-11",
+          "name": "Morning Ride",
+          "type": "Ride",
+          "distance_km": 104.4,
+          "elevation_m": 183.0,
+          "moving_time_hours": 3.41,
+          "avg_hr": 140.529,
+          "calories": 2357.0,
+          "gear": null,
+          "pace_min_km": null
+        },
+        {
+          "date": "2026-07-12",
+          "name": "Morning Run",
+          "type": "Run",
+          "distance_km": 16.4,
+          "elevation_m": 50.0,
+          "moving_time_hours": 1.67,
+          "avg_hr": 130.173,
+          "calories": 1098.0,
+          "gear": "HOKA Bondi 9 VCH",
+          "pace_min_km": 6.1
+        }
+      ]
     },
     {
       "week_number": 2,
       "start_date": "2026-07-13",
       "end_date": "2026-07-19",
-      "total_km": 0,
-      "run_km": 0,
-      "total_elevation": 0,
-      "run_elevation": 0,
-      "total_hours": 0,
-      "activities": []
+      "total_km": 19.7,
+      "run_km": 19.7,
+      "total_elevation": 89.0,
+      "run_elevation": 89.0,
+      "total_hours": 2.0,
+      "activities": [
+        {
+          "date": "2026-07-14",
+          "name": "Avondloop",
+          "type": "Run",
+          "distance_km": 10.0,
+          "elevation_m": 40.0,
+          "moving_time_hours": 1.01,
+          "avg_hr": 134.483,
+          "calories": 679.0,
+          "gear": "New Balance 880E12",
+          "pace_min_km": 6.0
+        },
+        {
+          "date": "2026-07-15",
+          "name": "Avondloop",
+          "type": "Run",
+          "distance_km": 9.7,
+          "elevation_m": 49.0,
+          "moving_time_hours": 1.0,
+          "avg_hr": 133.343,
+          "calories": 669.0,
+          "gear": "HOKA Bondi 9 VCH",
+          "pace_min_km": 6.2
+        }
+      ]
     },
     {
       "week_number": 3,
@@ -1023,12 +1085,12 @@
   "history": [
     {
       "week_start": "2025-07-14",
-      "run_km": 47.3,
-      "run_elevation": 380.0,
-      "run_hours": 4.6,
-      "total_km": 97.3,
-      "total_elevation": 466.0,
-      "activity_count": 4
+      "run_km": 37.4,
+      "run_elevation": 298.0,
+      "run_hours": 3.6,
+      "total_km": 87.4,
+      "total_elevation": 384.0,
+      "activity_count": 3
     },
     {
       "week_start": "2025-07-21",
@@ -1479,10 +1541,27 @@
       "total_km": 177.2,
       "total_elevation": 280.0,
       "activity_count": 2
+    },
+    {
+      "week_start": "2026-07-06",
+      "run_km": 16.4,
+      "run_elevation": 50.0,
+      "run_hours": 1.7,
+      "total_km": 167.1,
+      "total_elevation": 482.0,
+      "activity_count": 3
+    },
+    {
+      "week_start": "2026-07-13",
+      "run_km": 19.7,
+      "run_elevation": 89.0,
+      "run_hours": 2.0,
+      "total_km": 19.7,
+      "total_elevation": 89.0,
+      "activity_count": 2
     }
   ],
   "daily_runs": {
-    "2025-07-14": 9.9,
     "2025-07-18": 10.1,
     "2025-07-20": 27.3,
     "2025-07-21": 10.0,
@@ -1657,7 +1736,10 @@
     "2026-06-17": 6.2,
     "2026-06-21": 11.0,
     "2026-06-23": 5.3,
-    "2026-06-27": 58.0
+    "2026-06-27": 58.0,
+    "2026-07-12": 16.4,
+    "2026-07-14": 10.0,
+    "2026-07-15": 9.7
   },
   "exercises": {
     "morning": [
