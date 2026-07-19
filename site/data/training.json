@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T10:14:29",
+  "generated_at": "2026-07-19T14:01:03",
   "race": {
     "name": "Pilgrims' Way 4-Day",
     "date": "2026-09-03",
@@ -928,11 +928,11 @@
       "week_number": 2,
       "start_date": "2026-07-13",
       "end_date": "2026-07-19",
-      "total_km": 19.7,
-      "run_km": 19.7,
-      "total_elevation": 89.0,
-      "run_elevation": 89.0,
-      "total_hours": 2.0,
+      "total_km": 61.0,
+      "run_km": 61.0,
+      "total_elevation": 221.0,
+      "run_elevation": 221.0,
+      "total_hours": 6.1,
       "activities": [
         {
           "date": "2026-07-14",
@@ -957,6 +957,30 @@
           "calories": 669.0,
           "gear": "HOKA Bondi 9 VCH",
           "pace_min_km": 6.2
+        },
+        {
+          "date": "2026-07-18",
+          "name": "Ochtendloop",
+          "type": "Run",
+          "distance_km": 25.2,
+          "elevation_m": 79.0,
+          "moving_time_hours": 2.52,
+          "avg_hr": 135.09,
+          "calories": 1713.0,
+          "gear": "HOKA Bondi 9 VCH",
+          "pace_min_km": 6.0
+        },
+        {
+          "date": "2026-07-19",
+          "name": "Ochtendloop",
+          "type": "Run",
+          "distance_km": 16.1,
+          "elevation_m": 53.0,
+          "moving_time_hours": 1.61,
+          "avg_hr": 128.609,
+          "calories": 1067.0,
+          "gear": "HOKA Bondi 9 VCH",
+          "pace_min_km": 6.0
         }
       ]
     },
@@ -1085,12 +1109,12 @@
   "history": [
     {
       "week_start": "2025-07-14",
-      "run_km": 37.4,
-      "run_elevation": 298.0,
-      "run_hours": 3.6,
-      "total_km": 87.4,
-      "total_elevation": 384.0,
-      "activity_count": 3
+      "run_km": 27.3,
+      "run_elevation": 54.0,
+      "run_hours": 2.6,
+      "total_km": 27.3,
+      "total_elevation": 54.0,
+      "activity_count": 1
     },
     {
       "week_start": "2025-07-21",
@@ -1553,16 +1577,15 @@
     },
     {
       "week_start": "2026-07-13",
-      "run_km": 19.7,
-      "run_elevation": 89.0,
-      "run_hours": 2.0,
-      "total_km": 19.7,
-      "total_elevation": 89.0,
-      "activity_count": 2
+      "run_km": 44.9,
+      "run_elevation": 168.0,
+      "run_hours": 4.5,
+      "total_km": 44.9,
+      "total_elevation": 168.0,
+      "activity_count": 3
     }
   ],
   "daily_runs": {
-    "2025-07-18": 10.1,
     "2025-07-20": 27.3,
     "2025-07-21": 10.0,
     "2025-07-22": 10.2,
@@ -1739,7 +1762,8 @@
     "2026-06-27": 58.0,
     "2026-07-12": 16.4,
     "2026-07-14": 10.0,
-    "2026-07-15": 9.7
+    "2026-07-15": 9.7,
+    "2026-07-18": 25.2
   },
   "exercises": {
     "morning": [
