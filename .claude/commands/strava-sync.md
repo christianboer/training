@@ -2,10 +2,10 @@
 
 Fetch the latest Strava activities, sync them to the database, export dashboard data, and commit+push.
 
-Uses the **official Strava MCP connector** (`mcp.strava.com`, server name `strava-mcp`, tools prefixed `mcp__strava-mcp__`). It is read-only and returns structured metric JSON. If the tools aren't loaded, fetch their schemas first:
+Uses the **official claude.ai Strava connector** (server name `Strava`, tools prefixed `mcp__claude_ai_Strava__`). It is read-only and returns structured metric JSON. If the tools aren't loaded, fetch their schemas first:
 
 ```
-ToolSearch query: select:mcp__strava-mcp__list_activities,mcp__strava-mcp__get_activity_performance,mcp__strava-mcp__get_gear
+ToolSearch query: select:mcp__claude_ai_Strava__list_activities,mcp__claude_ai_Strava__get_activity_performance,mcp__claude_ai_Strava__get_gear
 ```
 
 ## Steps
@@ -20,7 +20,7 @@ Use this timestamp as the lower bound for fetching new activities.
 
 ### 2. Fetch new activities from Strava
 
-Call `mcp__strava-mcp__list_activities` with:
+Call `mcp__claude_ai_Strava__list_activities` with:
 - `range_start`: the timestamp from step 1 (ISO LocalDateTime, e.g. `2026-06-17T13:00:00` — note this connector filters on **local** time, no `Z`)
 - `ordering`: `StartDateLocalAsc`
 - `first`: `100`
@@ -39,8 +39,8 @@ If no genuinely new activities remain, inform the user and stop.
 
 For each new activity:
 
-- **Heart rate / power** — call `mcp__strava-mcp__get_activity_performance` with `activity_id` to get `average_heartrate`, `max_heartrate`, `average_watts` (only present when `has_device_watts`/`has_heartrate`).
-- **Gear name** — if the activity has a `gear_id`, resolve it to a name. Call `mcp__strava-mcp__get_gear` once (cache the result) and map `gear_id` → `"{brand} {model_name}"` (e.g. `28504914` → `HOKA Bondi 9 VCH`). Rides often have no `gear_id`; leave gear empty then.
+- **Heart rate / power** — call `mcp__claude_ai_Strava__get_activity_performance` with `activity_id` to get `average_heartrate`, `max_heartrate`, `average_watts` (only present when `has_device_watts`/`has_heartrate`).
+- **Gear name** — if the activity has a `gear_id`, resolve it to a name. Call `mcp__claude_ai_Strava__get_gear` once (cache the result) and match the activity's `gear_id` string against each returned item's `gear_id.id`, then map to `"{brand} {model_name}"` (e.g. `28504914` → `HOKA Bondi 9 VCH`). Rides often have no `gear_id`; leave gear empty then.
 
 **Known limitation:** This connector does **not** expose `private_note`. It returns the public `description` instead (often empty). Legging-wear matching (step 6) depends on `private_note`, so it will not auto-match new activities — note this to the user; it is not a regression (the old community server didn't expose it either). If a run's leggings need recording, add them manually via `legging_wears`.
 

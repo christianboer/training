@@ -47,7 +47,7 @@ There is also an `activities_raw` table with all 101 original CSV columns stored
 
 ## Syncing New Activities from Strava MCP
 
-Uses the **official Strava MCP connector** (`mcp.strava.com`, server `strava-mcp`, tools `mcp__strava-mcp__*`). Read-only, returns structured metric JSON. The `/strava-sync` slash command (`.claude/commands/strava-sync.md`) automates the full flow; the steps below are the manual equivalent.
+Uses the **official claude.ai Strava connector** (server `Strava`, tools `mcp__claude_ai_Strava__*`). Read-only, returns structured metric JSON. The `/strava-sync` slash command (`.claude/commands/strava-sync.md`) automates the full flow; the steps below are the manual equivalent.
 
 Check the latest activity date before syncing:
 ```bash
@@ -56,8 +56,8 @@ sqlite3 db/training.db "SELECT MAX(activity_date) FROM activities"
 
 To add activities newer than the export:
 
-1. Call `mcp__strava-mcp__list_activities` with `range_start` set to the last DB timestamp (ISO **local** time, no `Z`), `ordering: StartDateLocalAsc`, `first: 100`. Dedupe returned `id`s against the DB.
-2. For each new activity, call `mcp__strava-mcp__get_activity_performance` for HR/watts, and resolve `gear_id` → name via `mcp__strava-mcp__get_gear` (`"{brand} {model_name}"`).
+1. Call `mcp__claude_ai_Strava__list_activities` with `range_start` set to the last DB timestamp (ISO **local** time, no `Z`), `ordering: StartDateLocalAsc`, `first: 100`. Dedupe returned `id`s against the DB.
+2. For each new activity, call `mcp__claude_ai_Strava__get_activity_performance` for HR/watts, and resolve `gear_id` → name via `mcp__claude_ai_Strava__get_gear` (match `gear_id` to `gear_id.id`, format `"{brand} {model_name}"`).
 3. Write the data as JSON to a temp file using **Strava API field names**: `id`, `start_date` (from `start_local`), `name`, `type` (from `sport_type`), `distance`, `moving_time`, `elapsed_time`, `total_elevation_gain` (from `elevation_gain`), `average_speed`, `max_speed`, `average_heartrate`, `max_heartrate`, `average_watts`, `calories` (from `total_calories`), `average_cadence`, `suffer_score` (from `relative_effort`), `gear_name`.
 4. Run: `python3 scripts/sync_strava.py /tmp/strava_sync.json`
 
