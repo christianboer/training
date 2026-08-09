@@ -2,7 +2,7 @@
 
 **Target event:** England 4-Day (self-organized, with brother), September 3–6, 2026
 **Route:** Guildford → Canterbury along the Pilgrims' Way / North Downs Way
-**Total:** 168.7 km | ~3,189m D+ over 4 consecutive days
+**Total:** 170.0 km | ~2,270m D+ over 4 consecutive days
 **Second target:** Trappenmarathon, October 3, 2026 — 47 km | ~3,090m of stair repeats
 
 ---
@@ -11,14 +11,27 @@
 
 | Date | Event | Distance | Elevation | Role |
 |---|---|---|---|---|
-| **Sep 3** | **Stage 1: Guildford → Bletchingley** | **51.1 km** | **1,213m** | **Queen stage — longest & hilliest** |
-| **Sep 4** | **Stage 2: Bletchingley → Maidstone** | **44.4 km** | **990m** | |
-| **Sep 5** | **Stage 3: Maidstone → Charing Heath** | **41.0 km** | **639m** | |
-| **Sep 6** | **Stage 4: Charing Heath → Canterbury** | **32.2 km** | **347m** | Victory lap into Canterbury |
+| **Sep 3** | **Stage 1: Guildford → Bletchingley** | **44.7 km** | **786m** | **Queen stage — hilliest of the four** |
+| **Sep 4** | **Stage 2: Bletchingley → Maidstone** | **44.4 km** | **728m** | |
+| **Sep 5** | **Stage 3: Maidstone → Charing Heath** | **44.9 km** | **417m** | Longest by distance, but the flattest of the three |
+| **Sep 6** | **Stage 4: Charing Heath → Canterbury** | **36.0 km** | **336m** | Victory lap into Canterbury |
 | **Sep 27** | **Euromast Trappenloop** (Rotterdam) | **589 treden** | **~100m** | Sharpener / dress rehearsal for Trappenmarathon |
 | **Oct 3** | **Trappenmarathon** | **47 km** | **~3,090m** | Stair-repeat marathon (same format as 2025: 6h20) |
 
-Planned stage times (route estimates): 6h43 / 5h43 / 5h11 / 3h57 — 21h34 total.
+Planned stage times: 5h41 / 5h37 / 5h28 / 4h23 — 21h09 total. Three near-equal 44–45 km days, then a 36 km run-in to Canterbury.
+
+### Refill points (course POIs in the GPX)
+
+| Stage | Stop | At km | Longest carry |
+|---|---|---|---|
+| 1 | Ryka's Cafe | 22.9 | 22.9 km |
+| 2 | Ide Hill Community Shop | 22.5 | 22.5 km |
+| 3 | Hulppost (unnamed) | 20.6 | 24.3 km |
+| 4 | The Church Mouse Tea Rooms / The White Horse Inn | 24.3 | 24.3 km |
+
+Each stage has exactly one mid-route stop, all within 20–25 km of the start. So every day is two ~22 km carries: plan for ~1.5 L of fluid and ~3 hours of food between refills, and treat the stop as the fixed reset point rather than an optional extra.
+
+*Route revision (Aug 9, 2026): the stages were rebalanced — Stage 1 shortened from 51.1 km, Stage 4 lengthened from 32.2 km, Stage 3 from 41.0 km. The elevation figures also dropped because Strava re-issued the courses on a smoother elevation model: Stage 2 is the identical route and its D+ went from 990m to 728m. Roughly two-thirds of the drop from ~3,189m to ~2,270m is that change of basis, not flatter terrain — treat the old and new D+ numbers as measured on different rulers.*
 
 ---
 
@@ -171,11 +184,11 @@ Practice the full event routine this weekend: same shoes + vest + nutrition, eat
 | Mon | Easy run + mobility | 6 | — |
 | Tue | Easy run + 4× strides | 5 | — |
 | Wed | Travel to Guildford — rest, walk, hydrate | — | — |
-| Thu | **Stage 1: Guildford → Bletchingley** | 51.1 | 1,213m |
-| Fri | **Stage 2: Bletchingley → Maidstone** | 44.4 | 990m |
-| Sat | **Stage 3: Maidstone → Charing Heath** | 41.0 | 639m |
-| Sun | **Stage 4: Charing Heath → Canterbury** | 32.2 | 347m |
-| **Total** | | **~180 km** | **~3,189m** |
+| Thu | **Stage 1: Guildford → Bletchingley** | 44.7 | 786m |
+| Fri | **Stage 2: Bletchingley → Maidstone** | 44.4 | 728m |
+| Sat | **Stage 3: Maidstone → Charing Heath** | 44.9 | 417m |
+| Sun | **Stage 4: Charing Heath → Canterbury** | 36.0 | 336m |
+| **Total** | | **~181 km** | **~2,270m** |
 
 ## Phase 5: Stair Block — Weeks 10–13 (Sep 7 – Oct 4)
 
@@ -368,7 +381,7 @@ Three hill variants on the Barendrecht dike, each 13m elevation gain. In this bl
 | Recovery & Rehab | 1–2 | 0–13 | — | 3x/wk — the engine room | Bike carries the fitness while the ankle heals |
 | Rebuild | 3–5 | 22–48 | 0–100m | 2x/wk | Terrain: tarmac → gravel → light trail |
 | Event Specific | 6–7 | 69–78 | 280–460m | None | Back-to-back weekends, full kit |
-| Taper & Event | 8–9 | 46 + event | 100m + 3,189m | None | 168.7 km over 4 days |
+| Taper & Event | 8–9 | 46 + event | 100m + 2,270m | None | 170.0 km over 4 days |
 | Stair Block | 10–13 | 13–61 | 0–3,140m | Recovery rides | Variant B stairs → Trappenmarathon |
 
 ---
@@ -383,15 +396,15 @@ Three hill variants on the Barendrecht dike, each 13m elevation gain. In this bl
 | Trappenmarathon | 2025 | 47.2 | 3,090m | 6h20 | 8:04/km | — |
 | Swiss Irontrail T78 (to km 58, storm DNF) | 2026 | 58.0 | 3,882m | 11h47 | 12:11/km | — |
 
-### Prediction for the 4-Day (168.7 km, ~3,189m)
+### Prediction for the 4-Day (170.0 km, ~2,270m)
 
-Versus 2025: +9.7 km and +1,026m, but the same format and similar terrain. At 2025 pace with an elevation adjustment (+1 min per 100m D+), the extra distance and climb add roughly 1h20–1h40.
+Versus 2025: +11 km, and nominally about the same climb — but the 2025 figure is recorded GPS/barometric data while the 2026 figure comes from Strava's smoothed route model, which reads roughly 25–30% lower on this terrain (see the route-revision note above). Expect the recorded D+ on the day to land nearer 3,000m, i.e. genuinely more climbing than 2025 as well as more distance. At 2025 pace with an elevation adjustment (+1 min per 100m D+), that adds roughly 1h20–1h40.
 
 | Scenario | Total moving time | Conditions |
 |---|---|---|
 | Optimistic | ~19h45 | Ankle fully settled, 2025 pace holds (6:55–7:00/km) |
 | **Target** | **~20h30** | **Solid prep, ankle managed, walk breaks on schedule** |
-| Realistic | ~21h30 | Matches the 21h34 route estimate — extra walking on rough ground |
+| Realistic | ~21h10 | Matches the 21h09 route estimate — extra walking on rough ground |
 | Conservative | ~23h00 | Ankle forces walk-heavy stages — still finishes, just longer days |
 
 All scenarios fit comfortably in daylight (sunrise ~06:20, sunset ~19:45 in early September).
@@ -400,5 +413,5 @@ All scenarios fit comfortably in daylight (sunrise ~06:20, sunset ~19:45 in earl
 
 1. **Ankle stability on uneven ground** — the single biggest variable; rehab compliance weeks 1–6 decides it
 2. **Back-to-back recovery routine** — eat within 30 min, legs up, sleep; 2025 showed the format works
-3. **Stage 1 discipline** — hardest stage on day 1; going out too fast taxes days 2–4
+3. **Stage 1 discipline** — hilliest stage on day 1, with two more 44 km days behind it; going out too fast taxes days 2–4
 4. **Stair economy (Trappenmarathon)** — variant B sessions in weeks 11–12 are the difference between 6h15 and 6h45

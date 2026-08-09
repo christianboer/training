@@ -2,6 +2,8 @@
  * Stage Plan — per-stage logistics for the 4-day: planned time, pace, fuel, recovery.
  */
 
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
 function formatPace(paceMinKm) {
     const mins = Math.floor(paceMinKm);
     const secs = Math.round((paceMinKm - mins) * 60);
@@ -46,6 +48,12 @@ export function renderRacePlan(data) {
 
     const stagesHtml = stages.map(st => {
         const dateStr = new Date(st.date + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+        const aid = st.aid_stations || [];
+        const aidHtml = aid.length ? `
+                    <div class="station-aid">
+                        ${aid.map(a => `<span class="aid-chip">☕ ${esc(a.name)} · km ${a.km.toFixed(1)}</span>`).join('')}
+                        <span class="aid-carry">longest carry ${st.longest_carry_km} km</span>
+                    </div>` : '';
         return `
             <div class="leg-block">
                 <div class="leg-header">
@@ -63,7 +71,7 @@ export function renderRacePlan(data) {
                             <span>~${st.carbs_g}g carbs</span>
                             <span>~${st.fluid_l}L fluid</span>
                         </div>
-                    </div>
+                    </div>${aidHtml}
                 </div>
             </div>
         `;

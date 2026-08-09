@@ -24,6 +24,7 @@ export function renderCourseProfile(data) {
         <span class="course-legend-item"><span class="course-swatch" style="background: #f59e0b"></span>Moderate (3–8%)</span>
         <span class="course-legend-item"><span class="course-swatch" style="background: #3b82f6"></span>Flat</span>
         <span class="course-legend-item"><span class="course-swatch" style="background: #a78bfa"></span>Descent</span>
+        <span class="course-legend-item"><span class="course-swatch" style="background: var(--aid); transform: rotate(45deg)"></span>Refill point</span>
     </div>`;
 
     stages.forEach((stage, i) => {
@@ -82,15 +83,33 @@ function renderStageProfile(container, stage, idx) {
         return `<stop offset="${pct.toFixed(1)}%" stop-color="${color}"/>`;
     }).join('\n');
 
+    const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
     const waypointsSvg = waypoints.map(wp => {
         const px = x(wp.km);
         const py = y(wp.ele);
+        const isEnd = wp.type === 'start' || wp.type === 'finish';
+        if (!isEnd) {
+            // Course POI (aid station / refill) — marker below the line, labelled with its km
+            const my = padT + chartH - 12;
+            return `
+        <g class="course-waypoint course-waypoint-aid">
+            <line x1="${px}" y1="${py}" x2="${px}" y2="${my}"
+                  stroke="var(--aid)" stroke-width="1" stroke-dasharray="2 2" opacity="0.7"/>
+            <path d="M ${px} ${my - 5} L ${px + 5} ${my} L ${px} ${my + 5} L ${px - 5} ${my} Z"
+                  fill="var(--aid)" stroke="var(--bg-card)" stroke-width="1.5"/>
+            <text x="${px}" y="${my - 9}" text-anchor="middle" class="course-wp-name course-wp-aid">
+                ${esc(wp.name.split(' / ')[0])} · ${wp.km.toFixed(1)} km
+                <title>${esc(wp.name)}</title>
+            </text>
+        </g>`;
+        }
         const anchor = wp.type === 'start' ? 'start' : 'end';
         const tx = wp.type === 'start' ? px + 6 : px - 6;
         return `
         <g class="course-waypoint">
             <circle cx="${px}" cy="${py}" r="4" fill="var(--accent)" stroke="var(--bg-card)" stroke-width="2"/>
-            <text x="${tx}" y="${py - 10}" text-anchor="${anchor}" class="course-wp-name">${wp.name}</text>
+            <text x="${tx}" y="${py - 10}" text-anchor="${anchor}" class="course-wp-name">${esc(wp.name)}</text>
         </g>`;
     }).join('');
 

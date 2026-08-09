@@ -23,14 +23,14 @@ export function renderElevationThermometer(data) {
         }
     });
 
-    const totalTarget = data.plan_totals ? data.plan_totals.target_elevation : 8300;
+    const totalTarget = data.plan_totals ? data.plan_totals.target_elevation : 7460;
 
-    // Landmarks
+    // Landmarks — the top one tracks the plan total so it stays on the mountain
     const landmarks = [
         { ele: 1000, label: 'Rebuild done', icon: '🦶' },
-        { ele: 3189, label: '1x 4-Day', icon: '🇬🇧' },
+        { ele: 2270, label: '1x 4-Day', icon: '🇬🇧' },
         { ele: 5000, label: '4-Day + stairs', icon: '🪜' },
-        { ele: 8279, label: '+ Trappenmarathon', icon: '⛰' },
+        { ele: Math.round(totalTarget), label: '+ Trappenmarathon', icon: '⛰' },
     ];
 
     // SVG dimensions

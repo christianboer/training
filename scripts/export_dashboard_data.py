@@ -29,10 +29,10 @@ PLAN_START = '2026-07-06'  # Week 1 Monday
 RACE_DATE = '2026-09-03'   # Stage 1 of the England 4-Day
 
 EVENTS = [
-    {"date": "2026-09-03", "name": "Stage 1: Guildford → Bletchingley", "distance_km": 51.1, "elevation_m": 1213, "role": "Queen stage — longest & hilliest"},
-    {"date": "2026-09-04", "name": "Stage 2: Bletchingley → Maidstone", "distance_km": 44.4, "elevation_m": 990, "role": "4-Day"},
-    {"date": "2026-09-05", "name": "Stage 3: Maidstone → Charing Heath", "distance_km": 41.0, "elevation_m": 639, "role": "4-Day"},
-    {"date": "2026-09-06", "name": "Stage 4: Charing Heath → Canterbury", "distance_km": 32.2, "elevation_m": 347, "role": "Victory lap into Canterbury"},
+    {"date": "2026-09-03", "name": "Stage 1: Guildford → Bletchingley", "distance_km": 44.7, "elevation_m": 786, "role": "Queen stage — hilliest of the four"},
+    {"date": "2026-09-04", "name": "Stage 2: Bletchingley → Maidstone", "distance_km": 44.4, "elevation_m": 728, "role": "4-Day"},
+    {"date": "2026-09-05", "name": "Stage 3: Maidstone → Charing Heath", "distance_km": 44.9, "elevation_m": 417, "role": "4-Day — longest, but flattest of the three"},
+    {"date": "2026-09-06", "name": "Stage 4: Charing Heath → Canterbury", "distance_km": 36.0, "elevation_m": 336, "role": "Victory lap into Canterbury"},
     {"date": "2026-09-27", "name": "Euromast Trappenloop", "distance_km": 0.6, "elevation_m": 100, "role": "Sharpener — 589 steps"},
     {"date": "2026-10-03", "name": "Trappenmarathon", "distance_km": 47, "elevation_m": 3090, "role": "Stair-repeat marathon"},
 ]
@@ -460,16 +460,16 @@ def query_reference_races(conn):
 # GPX files are Strava route exports in plan/stages/.
 STAGES = [
     {"stage": 1, "date": "2026-09-03", "name": "Guildford → Bletchingley",
-     "gpx": "stage1-guildford-bletchingley.gpx", "planned_hours": 6.72,
+     "gpx": "stage1-guildford-bletchingley.gpx", "planned_hours": 5.68,
      "start": "Guildford", "finish": "Bletchingley"},
     {"stage": 2, "date": "2026-09-04", "name": "Bletchingley → Maidstone",
-     "gpx": "stage2-bletchingley-maidstone.gpx", "planned_hours": 5.72,
+     "gpx": "stage2-bletchingley-maidstone.gpx", "planned_hours": 5.62,
      "start": "Bletchingley", "finish": "Maidstone"},
     {"stage": 3, "date": "2026-09-05", "name": "Maidstone → Charing Heath",
-     "gpx": "stage3-maidstone-charing-heath.gpx", "planned_hours": 5.18,
+     "gpx": "stage3-maidstone-charing-heath.gpx", "planned_hours": 5.47,
      "start": "Maidstone", "finish": "Charing Heath"},
     {"stage": 4, "date": "2026-09-06", "name": "Charing Heath → Canterbury",
-     "gpx": "stage4-charing-heath-canterbury.gpx", "planned_hours": 3.95,
+     "gpx": "stage4-charing-heath-canterbury.gpx", "planned_hours": 4.38,
      "start": "Charing Heath", "finish": "Canterbury"},
 ]
 STAGES_DIR = os.path.join(BASE_DIR, 'plan', 'stages')
@@ -478,7 +478,8 @@ STAGES_DIR = os.path.join(BASE_DIR, 'plan', 'stages')
 def parse_gpx_profile(gpx_path, num_points=100, waypoint_defs=None):
     """Parse GPX file into a sampled elevation profile. Optional waypoint_defs
     ({name, type, idx} with idx -1 meaning last point) are anchored to
-    track-point indices."""
+    track-point indices. Any <wpt> elements in the file (Strava course POIs,
+    e.g. aid stations) are snapped to the nearest track point and merged in."""
     if not os.path.exists(gpx_path):
         print(f"  Warning: GPX not found at {gpx_path}, using fallback profile")
         return None
@@ -529,9 +530,30 @@ def parse_gpx_profile(gpx_path, num_points=100, waypoint_defs=None):
             "ele": round(all_ele[-1]),
         })
 
+    # Course POIs (<wpt>): Strava truncates <name> to 15 chars, so prefer <cmt>
+    coords = [(float(p.attrib['lat']), float(p.attrib['lon'])) for p in pts]
+    poi_defs = []
+    for w in root.findall('.//gpx:wpt', ns):
+        wlat, wlon = float(w.attrib['lat']), float(w.attrib['lon'])
+        name_el, cmt_el, type_el = (w.find('gpx:name', ns), w.find('gpx:cmt', ns),
+                                    w.find('gpx:type', ns))
+        label = next((el.text.strip() for el in (cmt_el, name_el)
+                      if el is not None and el.text and el.text.strip()), 'Waypoint')
+        # Strava comments can hold several alternatives on separate lines
+        label = ' / '.join(line.strip() for line in label.splitlines() if line.strip())
+        wp_type = (type_el.text.strip().lower().replace(' ', '_')
+                   if type_el is not None and type_el.text else 'poi')
+        nearest = min(range(len(coords)),
+                      key=lambda i: haversine(wlat, wlon, coords[i][0], coords[i][1]))
+        poi_defs.append({"name": label, "type": wp_type, "idx": nearest})
+
+    resolved = [{**wp, "idx": wp["idx"] if wp["idx"] != -1 else len(pts) - 1}
+                for wp in list(waypoint_defs or []) + poi_defs]
+    resolved.sort(key=lambda wp: wp["idx"])
+
     waypoints = []
-    for wp in (waypoint_defs or []):
-        idx = wp["idx"] if wp["idx"] != -1 else len(pts) - 1
+    for wp in resolved:
+        idx = wp["idx"]
         waypoints.append({
             **{k: v for k, v in wp.items() if k != "idx"},
             "km": round(all_dist[idx] / 1000, 2),
@@ -595,6 +617,11 @@ def build_stage_plan(course_profile, carbs_per_hr=60, fluid_l_per_hr=0.5):
         h = int(hours)
         m = round((hours - h) * 60)
         pace_min = hours * 60 / s["total_km"]
+        # Refill points from the course POIs; the longest gap is what you carry for
+        aid = [{"name": w["name"], "km": w["km"], "ele": w["ele"]}
+               for w in s.get("waypoints", []) if w.get("type") not in ("start", "finish")]
+        splits = [0.0] + [a["km"] for a in aid] + [s["total_km"]]
+        carries = [round(b - a, 1) for a, b in zip(splits, splits[1:])]
         stages.append({
             "stage": s["stage"],
             "date": s["date"],
@@ -606,6 +633,9 @@ def build_stage_plan(course_profile, carbs_per_hr=60, fluid_l_per_hr=0.5):
             "pace_min_km": round(pace_min, 2),
             "carbs_g": round(hours * carbs_per_hr),
             "fluid_l": round(hours * fluid_l_per_hr, 1),
+            "aid_stations": aid,
+            "carry_legs_km": carries,
+            "longest_carry_km": max(carries),
         })
 
     total_hours = sum(s["planned_hours"] for s in stages)
@@ -659,8 +689,8 @@ def main():
             "name": "Pilgrims' Way 4-Day",
             "date": RACE_DATE,
             "end_date": "2026-09-06",
-            "distance_km": 168.7,
-            "elevation_m": 3189,
+            "distance_km": 170.0,
+            "elevation_m": 2270,
             "days": 4,
             "start_time": "09:00",
             "location": "Guildford → Canterbury, England",
@@ -698,7 +728,7 @@ def main():
             "scenarios": [
                 {"label": "Optimistic", "hours": 19.75, "conditions": "Ankle fully settled, 2025 pace holds (6:55–7:00/km)"},
                 {"label": "Target", "hours": 20.5, "conditions": "Solid prep, ankle managed, walk breaks on schedule"},
-                {"label": "Realistic", "hours": 21.5, "conditions": "Matches the 21h34 route estimate — extra walking on rough ground"},
+                {"label": "Realistic", "hours": 21.17, "conditions": "Matches the 21h09 route estimate — extra walking on rough ground"},
                 {"label": "Conservative", "hours": 23.0, "conditions": "Ankle forces walk-heavy stages — still finishes, just longer days"},
             ],
             "cutoff_hours": 26,
@@ -706,7 +736,7 @@ def main():
             "key_factors": [
                 "Ankle stability on uneven ground — rehab compliance in weeks 1–6 decides it",
                 "Back-to-back recovery routine — eat within 30 min, legs up, sleep",
-                "Stage 1 discipline — hardest stage on day 1; going out too fast taxes days 2–4",
+                "Stage 1 discipline — hilliest stage on day 1, with two more 44 km days behind it; going out too fast taxes days 2–4",
                 "Stair economy — variant B sessions in weeks 11–12 set up the Trappenmarathon",
             ],
         },

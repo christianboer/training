@@ -116,7 +116,7 @@ GROUP BY l.legging_id ORDER BY wears DESC;
 
 ## Training Dashboard
 
-Static HTML/CSS/JS site in `site/`. Displays the 13-week training plan for the **Pilgrims' Way 4-Day** (Sep 3–6, 2026, Guildford → Canterbury, 168.7 km / ~3,189m over 4 stages) and the **Trappenmarathon** (Oct 3, 2026), with progress charts, stage profiles, time prediction, exercise library, and event day reference. (The previous Swiss Irontrail T78 plan lives on in `plan/swiss-iron-trail-t78.md` as an archive; T78 ended at km 48 in a storm DNF + ankle sprain on Jun 27, 2026.)
+Static HTML/CSS/JS site in `site/`. Displays the 13-week training plan for the **Pilgrims' Way 4-Day** (Sep 3–6, 2026, Guildford → Canterbury, 170.0 km / ~2,270m over 4 stages) and the **Trappenmarathon** (Oct 3, 2026), with progress charts, stage profiles, time prediction, exercise library, and event day reference. (The previous Swiss Irontrail T78 plan lives on in `plan/swiss-iron-trail-t78.md` as an archive; T78 ended at km 48 in a storm DNF + ankle sprain on Jun 27, 2026.)
 
 ### Serving locally
 
@@ -136,7 +136,9 @@ The dashboard reads `site/data/training.json` which is generated from `db/traini
 
 ### Stage plan (4-Day logistics)
 
-The four stages (dates, GPX filenames, planned hours) are defined in the `STAGES` list in `scripts/export_dashboard_data.py`. Each stage GPX (Strava route export) is parsed into an elevation profile with start/finish waypoints; the per-stage plan (planned time, pace, carbs/fluid budget) is derived from the planned hours at 60 g carbs + 0.5 L fluid per hour. Edit `STAGES` to change dates or planned times; drop replacement GPX files in `plan/stages/` if routes change.
+The four stages (dates, GPX filenames, planned hours) are defined in the `STAGES` list in `scripts/export_dashboard_data.py`. Each stage GPX (Strava route export) is parsed into an elevation profile with start/finish waypoints. Any `<wpt>` elements in the GPX (Strava course POIs — aid stations, cafés) are snapped to the nearest track point and merged into the waypoint list automatically, so adding a POI to the Strava route and re-exporting the GPX is enough to get it on the dashboard; the label comes from `<cmt>` (falling back to the 15-char-truncated `<name>`). The per-stage plan (planned time, pace, carbs/fluid budget) is derived from the planned hours at 60 g carbs + 0.5 L fluid per hour, plus the longest carry between refill points.
+
+Edit `STAGES` to change dates or planned times; drop replacement GPX files in `plan/stages/` if routes change.
 
 ### Structure
 

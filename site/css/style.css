@@ -17,6 +17,7 @@
     --accent: #f97316;
     --accent-light: #fb923c;
     --accent-glow: rgba(249, 115, 22, 0.15);
+    --aid: #fbbf24;          /* course POIs / refill points */
 
     /* Phase colors */
     --phase-base: #3b82f6;
@@ -1656,8 +1657,18 @@ a:hover { color: var(--accent-light); }
     fill: var(--text-muted);
 }
 
+.course-svg .course-wp-aid {
+    font-size: 8px;
+    fill: var(--aid);
+}
+
 .course-svg .course-waypoint:hover .course-wp-name {
     fill: var(--accent);
+}
+
+.course-svg .course-waypoint-aid:hover .course-wp-aid {
+    fill: var(--aid);
+    font-size: 9px;
 }
 
 .course-svg .course-hover-zone {
@@ -1817,6 +1828,31 @@ a:hover { color: var(--accent-light); }
     font-size: 0.78rem;
     color: var(--text-muted);
     flex-wrap: wrap;
+}
+
+.station-aid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+}
+
+.station-aid .aid-chip {
+    font-size: 0.78rem;
+    color: var(--aid);
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.25);
+    border-radius: 999px;
+    padding: 2px 10px;
+}
+
+.station-aid .aid-carry {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
 }
 
 .station-plan {
