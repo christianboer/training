@@ -16,8 +16,15 @@ NS = {'gpx': 'http://www.topografix.com/GPX/1/1'}
 
 def profile(gpx_path, n=240):
     root = ET.parse(gpx_path).getroot()
-    pts = [(float(p.attrib['lat']), float(p.attrib['lon']),
-            float(p.find('gpx:ele', NS).text)) for p in root.findall('.//gpx:trkpt', NS)]
+    # Not every GPX carries elevation on every point — carry the last known value
+    # forward rather than dropping to sea level and drawing a cliff.
+    pts = []
+    last_ele = 0.0
+    for p in root.findall('.//gpx:trkpt', NS):
+        el = p.find('gpx:ele', NS)
+        if el is not None and el.text:
+            last_ele = float(el.text)
+        pts.append((float(p.attrib['lat']), float(p.attrib['lon']), last_ele))
 
     def hav(a, b, c, d):
         R = 6371000
@@ -34,14 +41,23 @@ def profile(gpx_path, n=240):
            [(dist[-1] / 1000, pts[-1][2])]
 
 
-def main():
-    gpx, photodir, title = sys.argv[1], sys.argv[2], sys.argv[3]
+def run(gpx, photodir, title):
     photos = json.load(open(os.path.join(photodir, 'manifest.json')))
-    photos = [p for p in photos if os.path.exists(os.path.join(photodir, p['file']))]
+    # Prefer the downloaded file; fall back to Strava's CDN when it isn't there,
+    # so the sheet still works after the images have been cleaned up.
+    local = 0
+    for p in photos:
+        if os.path.exists(os.path.join(photodir, p.get('file', ''))):
+            p['_src'] = p['file']
+            local += 1
+        else:
+            p['_src'] = p.get('url') or p.get('full_url', '')
+    photos = [p for p in photos if p['_src']]
     prof = profile(gpx)
     max_km = prof[-1][0]
     eles = [e for _, e in prof]
     lo, hi = min(eles) - 15, max(eles) + 25
+    flat = max(eles) - min(eles) < 1  # GPX without elevation: say so, don't fake a profile
 
     W, H = 1200, 170
     px = lambda km: 40 + km / max_km * (W - 70)
@@ -65,7 +81,7 @@ def main():
         date = (datetime.datetime.fromtimestamp(int(ts) / 1000).strftime('%b %Y')
                 if ts else '')
         cards.append(f'''<figure class="card" id="p{i}">
-  <img src="{html.escape(p['file'])}" alt="Route photo at km {p['route_km']}" loading="lazy">
+  <img src="{html.escape(p['_src'])}" alt="Route photo at km {p['route_km']}" loading="lazy">
   <figcaption><span class="km">km {p['route_km']:.1f}</span>
   <span class="meta">{html.escape(date)} · {p['offset_m']} m van de route</span></figcaption>
 </figure>''')
@@ -108,8 +124,8 @@ def main():
 </style></head><body>
 <header>
   <h1>{html.escape(title)}</h1>
-  <div class="sub">{len(photos)} foto's langs de route · hoogste Strava-score per 250 m ·
-  allemaal binnen 25 m van het pad</div>
+  <div class="sub">{len(photos)} foto's langs de route · hoogste Strava-score per bucket ·
+  allemaal vlak langs het pad{' · geen hoogtedata in deze GPX, de lijn is dus vlak' if flat else ''}</div>
 </header>
 <div class="profile">
 <svg viewBox="0 0 {W} {H}" preserveAspectRatio="xMidYMid meet">
@@ -145,7 +161,14 @@ def main():
 
     out = os.path.join(photodir, 'index.html')
     open(out, 'w').write(doc)
-    print(f'wrote {out} ({len(photos)} photos)')
+    src = 'local files' if local == len(photos) else \
+          f'{local} local, {len(photos) - local} from Strava\'s CDN'
+    print(f'wrote {out} ({len(photos)} photos, {src})')
+    return out
+
+
+def main():
+    run(sys.argv[1], sys.argv[2], sys.argv[3])
 
 
 if __name__ == '__main__':

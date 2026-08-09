@@ -6,6 +6,7 @@ Only metadata is exported. The dashboard links straight to Strava's CDN, so the
 images themselves stay out of the repo and out of the Docker image — they are
 other people's photos and we are not redistributing them.
 """
+import glob
 import json
 import os
 import sys
@@ -20,10 +21,13 @@ def main():
     out = sys.argv[2] if len(sys.argv) > 2 else DEFAULT_OUT
 
     stages = {}
-    for n in (1, 2, 3, 4):
-        manifest = os.path.join(src, f'stage{n}', 'manifest.json')
-        if not os.path.exists(manifest):
-            print(f'  stage {n}: no manifest, skipped')
+    found = sorted(glob.glob(os.path.join(src, 'stage*', 'manifest.json')))
+    if not found:
+        print(f'  no stage manifests under {src} — nothing to export')
+    for manifest in found:
+        stage_dir = os.path.basename(os.path.dirname(manifest))
+        n = stage_dir.replace('stage', '')
+        if not n.isdigit():
             continue
         photos = json.load(open(manifest))
         stages[str(n)] = [{

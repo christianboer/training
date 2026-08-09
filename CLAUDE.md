@@ -113,36 +113,60 @@ GROUP BY l.legging_id ORDER BY wears DESC;
 - `scripts/sync_strava.py` — Insert activities from a JSON file (Strava API format). Marks them with `source = 'strava_api'`.
 - `scripts/index_leggings.py` — Import leggings collection and auto-match private notes to legging wears. Re-runnable (idempotent). Reports unmatched for manual review.
 - `scripts/export_dashboard_data.py` — Export SQLite + plan markdown to `site/data/training.json` for the dashboard. Re-run after every Strava sync.
-- `scripts/route_photos/` — Pull Strava community photos that sit on a stage route (see below).
+- `scripts/route_photos/route_photos.py` — Given any GPX, find the Strava community photos along that route and build a contact sheet (see below).
 
 ## Route Photos
 
 Strava's map shows community photos as blue dots. They come from a public vector-tile
-endpoint, `https://www.strava.com/tiles/photos/{z}/{x}/{y}` — no login and no route ID
-needed, just the stage GPX. Three steps:
+endpoint, `https://www.strava.com/tiles/photos/{z}/{x}/{y}` — no login, no API key and
+no route ID needed. All it takes is a GPX.
+
+### Any route, one command
+
+```bash
+python3 scripts/route_photos/route_photos.py <route.gpx>
+```
+
+Harvests the tiles along the route, keeps the photos within 25 m of the path, thins
+them to the best-scoring one per 250 m, downloads the 768px renditions and writes a
+contact sheet to `route-photos/<gpx name>/index.html`. The heading comes from the
+route name inside the GPX.
+
+```bash
+--no-images            # manifest + contact sheet only; images stay on Strava's CDN
+--bucket 500           # one photo per 500 m instead of 250
+--max-offset 50        # allow photos up to 50 m off the route
+--out DIR --title "…"  # override the defaults
+--zoom 15              # coarser tiles; 16 is what declusters into single photos
+```
+
+`--no-images` is usually what you want for a quick look — the contact sheet falls back
+to the CDN for any photo it can't find on disk, so it works either way.
+
+### The four Pilgrims' Way stages
+
+Those live in `route-photos/stage{1,2,3,4}/` and feed the dashboard:
 
 ```bash
 cd scripts/route_photos
-# 1. Harvest metadata for every photo within 300 m of the route (z16 tiles)
-python3 harvest.py ../../plan/stages/stage1-guildford-bletchingley.gpx /tmp/stage1.json 16
-# 2. Thin to the best photo per 250 m; downloads the 768px files and writes manifest.json
-python3 select_download.py /tmp/stage1.json ../../route-photos/stage1 250 25
-# 3. Publish to the dashboard — writes site/data/route-photos.json from the manifests
-python3 export_dashboard_photos.py
-# Optional: a standalone contact sheet, needs the downloaded jpgs to still be present
-python3 build_overview.py ../../plan/stages/stage1-guildford-bletchingley.gpx \
-    ../../route-photos/stage1 "Etappe 1 — Guildford → Bletchingley"
+python3 route_photos.py ../../plan/stages/stage1-guildford-bletchingley.gpx \
+    --out ../../route-photos/stage1
+python3 export_dashboard_photos.py   # every route-photos/stage*/ -> site/data/route-photos.json
 ```
 
-`select_download.py` takes `<bucket_m> <max_offset_m>` — 250 m buckets, 25 m maximum
-distance from the route. It ranks candidates by Strava's own `score`, then by proximity.
-Re-running skips files already on disk.
+`export_dashboard_photos.py` only picks up directories named `stage<number>`; anything
+else under `route-photos/` is ignored, so scratch routes can live there safely.
 
-**`route-photos/stage*/manifest.json` is the durable part; the jpgs are disposable.**
-The dashboard hot-links Strava's CDN, so the downloaded images are only needed for the
-standalone contact sheet — they were deleted after the first run (25 MB). The manifests
-(130 KB) stay, so `export_dashboard_photos.py` keeps working without a re-harvest.
-Re-run step 2 against the same manifest directory to get the jpgs back.
+The individual steps (`harvest.py`, `select_download.py`, `build_overview.py`) still
+work standalone and each exposes a `run()` for scripting. Selection ranks candidates
+by Strava's own `score`, then by proximity to the route; re-running skips files
+already on disk.
+
+**`manifest.json` is the durable part; the jpgs are disposable.** The dashboard
+hot-links Strava's CDN, so downloaded images only matter for offline use — the 25 MB
+from the first run was deleted. The manifests (130 KB) stay, so
+`export_dashboard_photos.py` keeps working without a re-harvest. Re-run with
+`--out` pointing at the same directory to get the jpgs back.
 
 `mvt.py` is a hand-rolled Mapbox Vector Tile decoder (no third-party dependency); it
 was verified against the browser's own decoding of the same tile. Note the tiles arrive

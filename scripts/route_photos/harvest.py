@@ -84,13 +84,16 @@ def fetch_tile(z, x, y):
     return data
 
 
-def main():
-    gpx, out_path = sys.argv[1], sys.argv[2]
-    z = int(sys.argv[3]) if len(sys.argv) > 3 else 16
+def run(gpx, out_path=None, z=16, quiet=False):
+    """Harvest every community photo within MAX_OFFSET_M of the route in `gpx`.
+
+    Returns the photo list (sorted by route_km); writes it to out_path if given.
+    """
+    say = (lambda *a: None) if quiet else print
     route = read_route(gpx)
     cum = cumulative_km(route)
     ts = tiles_for(route, z)
-    print(f'{gpx}: {len(route)} pts, {cum[-1]:.1f} km, {len(ts)} tiles at z{z}')
+    say(f'{gpx}: {len(route)} pts, {cum[-1]:.1f} km, {len(ts)} tiles at z{z}')
 
     photos = {}
     errors = 0
@@ -141,12 +144,19 @@ def main():
             kept.append(ph)
     kept.sort(key=lambda p: p['route_km'])
 
-    json.dump(kept, open(out_path, 'w'), indent=1)
-    bands = [(25, 0), (50, 0), (100, 0), (300, 0)]
-    print(f'  {len(photos)} unique photos in tiles, {errors} tile errors')
-    for limit, _ in bands:
-        print(f'  <= {limit:3d} m from route: {sum(1 for p in kept if p["offset_m"] <= limit)}')
-    print(f'  written to {out_path}')
+    say(f'  {len(photos)} unique photos in tiles, {errors} tile errors')
+    for limit in (25, 50, 100, 300):
+        say(f'  <= {limit:3d} m from route: '
+            f'{sum(1 for p in kept if p["offset_m"] <= limit)}')
+    if out_path:
+        json.dump(kept, open(out_path, 'w'), indent=1)
+        say(f'  written to {out_path}')
+    return kept
+
+
+def main():
+    run(sys.argv[1], sys.argv[2],
+        int(sys.argv[3]) if len(sys.argv) > 3 else 16)
 
 
 if __name__ == '__main__':
