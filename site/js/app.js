@@ -8,7 +8,7 @@ import { renderExercises } from './exercises.js';
 import { renderDikeTraining } from './dike.js';
 import { renderCompliance } from './compliance.js';
 import { renderElevationThermometer } from './elevation.js';
-import { renderCourseProfile, renderStagePhotos } from './course.js';
+import { renderCourseProfile, renderStagePhotos, renderStageFacts } from './course.js';
 import { renderRacePlan } from './racePlan.js';
 import { initCoach } from './coach.js';
 
@@ -22,8 +22,18 @@ async function loadData() {
 // Route photos live in their own file — metadata only, images come from
 // Strava's CDN. Missing file is fine; the stage profiles just render without them.
 async function loadRoutePhotos() {
+    return loadOptional('data/route-photos.json');
+}
+
+// Wikipedia snippets about what you pass, harvested per stage. Text only,
+// so unlike the photos this one does ship in the repo.
+async function loadRouteFacts() {
+    return loadOptional('data/route-facts.json');
+}
+
+async function loadOptional(url) {
     try {
-        const resp = await fetch('data/route-photos.json');
+        const resp = await fetch(url);
         return resp.ok ? await resp.json() : null;
     } catch (e) {
         return null;
@@ -452,6 +462,7 @@ async function init() {
     // Course Profile
     renderCourseProfile(data);
     loadRoutePhotos().then(photos => photos && renderStagePhotos(photos));
+    loadRouteFacts().then(facts => facts && renderStageFacts(facts));
 
     // Race Plan (aid stations + personal nutrition)
     renderRacePlan(data);

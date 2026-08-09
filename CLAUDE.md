@@ -114,6 +114,7 @@ GROUP BY l.legging_id ORDER BY wears DESC;
 - `scripts/index_leggings.py` — Import leggings collection and auto-match private notes to legging wears. Re-runnable (idempotent). Reports unmatched for manual review.
 - `scripts/export_dashboard_data.py` — Export SQLite + plan markdown to `site/data/training.json` for the dashboard. Re-run after every Strava sync.
 - `scripts/route_photos/route_photos.py` — Given any GPX, find the Strava community photos along that route and build a contact sheet (see below).
+- `scripts/route_facts/route_facts.py` — Given any GPX, find the Wikipedia articles about the things you pass and write short snippets with source links (see below).
 
 ## Route Photos
 
@@ -184,6 +185,69 @@ redistributing anyone's photos. The strip loads the 128px thumbnails (≈3 KB ea
 lazily) and only fetches the 768px version when a photo is tapped open, which keeps
 it cheap on mobile data. If `route-photos.json` is missing the stage profiles simply
 render without strips.
+
+## Route Facts
+
+Short "did you know" snippets about the things you actually pass, from Wikipedia's
+geosearch API — open, no key, no login. All it takes is a GPX.
+
+### Any route, one command
+
+```bash
+python3 scripts/route_facts/route_facts.py <route.gpx>
+```
+
+Samples the route every 1.5 km, asks Wikipedia what is nearby, then measures each
+article's real perpendicular distance to the path and keeps what is within 250 m.
+**That offset filter is ours, not the source's** — it is what turns "articles about
+this region" into "things you walk past". Writes `route-facts/<gpx name>/facts.json`
+plus a readable `index.html`.
+
+```bash
+--max-offset 400       # cast a wider net (Canterbury Cathedral sits 372 m off stage 4, so 250 misses it)
+--bucket 3 --cap 8     # fewer facts, further apart
+--lang nl              # a different Wikipedia (en has far better coverage of Surrey/Kent)
+--reselect             # re-rank harvest.json on disk without touching the API
+```
+
+Wikimedia rate-limits anonymous callers hard (HTTP 429 with a plain-text body, not
+JSON), so `wiki.py` paces every request 1.2 s apart, retries with backoff and sends a
+descriptive User-Agent. A full stage is ~30 calls, about a minute. As with the photo
+tiles, fetches shell out to `curl` because this environment's TLS proxy breaks
+python's `urllib`.
+
+`selection.py` does the ranking: proximity dominates, article size is a rough
+notability proxy, heritage categories get a bonus and regions (National Landscape,
+SSSI, civil parish) and infrastructure (schools, stations, power stations) get a
+penalty. `MIN_SCORE` means a dull stretch yields *nothing* rather than filler. One
+winner per `BUCKET_KM`, near-duplicate titles deduped ("St Martha's Hill" vs
+"St Martha's Hill and Colyer's Hanger").
+
+**`harvest.json` is the durable part** — it holds every on-route article with its
+extract, so `--reselect` can re-tune the ranking for free. Only re-harvest when the
+route changes.
+
+### The four Pilgrims' Way stages
+
+```bash
+cd scripts/route_facts
+python3 route_facts.py ../../plan/stages/stage1-guildford-bletchingley.gpx \
+    --out ../../route-facts/stage1
+python3 export_dashboard_facts.py   # every route-facts/stage*/ -> site/data/route-facts.json
+```
+
+Like the photo exporter, only directories named `stage<number>` are picked up, so
+scratch routes can live under `route-facts/` safely.
+
+**Unlike `route-photos/`, `route-facts/` is committed.** The text is Wikipedia's under
+CC BY-SA 4.0, which permits publishing — the condition is attribution, so every item
+keeps its article link and the dashboard names the source and licence. Don't strip
+either; that is the licence term, not decoration.
+
+**On the dashboard** the facts sit in a collapsed `<details>` block under each stage's
+photo strip (`renderStageFacts` in `site/js/course.js`), fed by
+`site/data/route-facts.json` (~16 KB). Collapsed by default because four stages ×
+~12 facts would bury the profiles on a phone. Missing file → stages render without it.
 
 ## Training Dashboard
 

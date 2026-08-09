@@ -17,6 +17,7 @@ export function renderCourseProfile(data) {
             </div>
             <div class="course-profile-wrap stage-profile" id="stage-profile-${i}"></div>
             <div class="stage-photos" id="stage-photos-${stage.stage}"></div>
+            <div class="stage-facts" id="stage-facts-${stage.stage}"></div>
         </div>
     `).join('') + `
     <div class="course-legend">
@@ -146,6 +147,46 @@ function setupLightbox(byStage, caption) {
     });
 }
 
+/**
+ * Wetenswaardigheden per etappe, in volgorde van de kilometerstand.
+ *
+ * Ingeklapt: vier etappes × ~12 punten maakt de pagina anders eindeloos op een
+ * telefoon. De tekst komt uit Wikipedia (CC BY-SA 4.0) — vandaar de link per
+ * kaartje en de bronvermelding onderaan het blok; die twee zijn de licentie-
+ * voorwaarde, niet cosmetisch.
+ */
+export function renderStageFacts(factData) {
+    const byStage = (factData && factData.stages) || {};
+    const credit = `${factData.source || 'Wikipedia'} · ${factData.license || 'CC BY-SA 4.0'}`;
+
+    Object.entries(byStage).forEach(([stageNum, facts]) => {
+        const el = document.getElementById(`stage-facts-${stageNum}`);
+        if (!el || !facts.length) return;
+
+        const cards = facts.map(f => `
+            <li class="fact">
+                <span class="fact-km">${f.km.toFixed(1)} km</span>
+                <h4><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.title)}</a></h4>
+                <p>${esc(f.text)}</p>
+            </li>`).join('');
+
+        el.innerHTML = `
+            <details class="facts-box">
+                <summary>
+                    <span class="facts-title">Wetenswaardig onderweg</span>
+                    <span class="facts-count">${facts.length} punten</span>
+                </summary>
+                <ul class="fact-list">${cards}</ul>
+                <p class="facts-credit">Bron: ${esc(credit)}</p>
+            </details>`;
+    });
+}
+
+function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 function formatHours(hours) {
     const h = Math.floor(hours);
     const m = Math.round((hours - h) * 60);
@@ -196,8 +237,6 @@ function renderStageProfile(container, stage, idx) {
         }
         return `<stop offset="${pct.toFixed(1)}%" stop-color="${color}"/>`;
     }).join('\n');
-
-    const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
     const waypointsSvg = waypoints.map(wp => {
         const px = x(wp.km);
