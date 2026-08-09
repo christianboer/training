@@ -113,10 +113,52 @@ GROUP BY l.legging_id ORDER BY wears DESC;
 - `scripts/sync_strava.py` — Insert activities from a JSON file (Strava API format). Marks them with `source = 'strava_api'`.
 - `scripts/index_leggings.py` — Import leggings collection and auto-match private notes to legging wears. Re-runnable (idempotent). Reports unmatched for manual review.
 - `scripts/export_dashboard_data.py` — Export SQLite + plan markdown to `site/data/training.json` for the dashboard. Re-run after every Strava sync.
+- `scripts/route_photos/` — Pull Strava community photos that sit on a stage route (see below).
+
+## Route Photos
+
+Strava's map shows community photos as blue dots. They come from a public vector-tile
+endpoint, `https://www.strava.com/tiles/photos/{z}/{x}/{y}` — no login and no route ID
+needed, just the stage GPX. Three steps:
+
+```bash
+cd scripts/route_photos
+# 1. Harvest metadata for every photo within 300 m of the route (z16 tiles)
+python3 harvest.py ../../plan/stages/stage1-guildford-bletchingley.gpx /tmp/stage1.json 16
+# 2. Thin to the best photo per 250 m and download the 768px rendition
+python3 select_download.py /tmp/stage1.json ../../route-photos/stage1 250 25
+# 3. Build the standalone contact sheet (photo markers on the elevation profile)
+python3 build_overview.py ../../plan/stages/stage1-guildford-bletchingley.gpx \
+    ../../route-photos/stage1 "Etappe 1 — Guildford → Bletchingley"
+# 4. Publish to the dashboard — writes site/data/route-photos.json for all four stages
+python3 export_dashboard_photos.py
+```
+
+`select_download.py` takes `<bucket_m> <max_offset_m>` — 250 m buckets, 25 m maximum
+distance from the route. It ranks candidates by Strava's own `score`, then by proximity.
+Re-running skips files already on disk.
+
+`mvt.py` is a hand-rolled Mapbox Vector Tile decoder (no third-party dependency); it
+was verified against the browser's own decoding of the same tile. Note the tiles arrive
+gzipped and this environment's TLS proxy breaks python's `urllib`, so fetches shell out
+to `curl --compressed`.
+
+**`route-photos/` is gitignored on purpose** — the images belong to other Strava users
+and are kept locally for route recon only. Don't commit them and don't publish the
+overview as an artifact.
+
+**On the dashboard** the photos appear as a horizontally scrolling strip under each
+stage profile (`renderStagePhotos` in `site/js/course.js`), fed by
+`site/data/route-photos.json`. That file holds metadata only — the images are
+hot-linked from Strava's CDN, so the Docker image stays small and we are not
+redistributing anyone's photos. The strip loads the 128px thumbnails (≈3 KB each,
+lazily) and only fetches the 768px version when a photo is tapped open, which keeps
+it cheap on mobile data. If `route-photos.json` is missing the stage profiles simply
+render without strips.
 
 ## Training Dashboard
 
-Static HTML/CSS/JS site in `site/`. Displays the 13-week training plan for the **Pilgrims' Way 4-Day** (Sep 3–6, 2026, Guildford → Canterbury, 170.0 km / ~2,270m over 4 stages) and the **Trappenmarathon** (Oct 3, 2026), with progress charts, stage profiles, time prediction, exercise library, and event day reference. (The previous Swiss Irontrail T78 plan lives on in `plan/swiss-iron-trail-t78.md` as an archive; T78 ended at km 48 in a storm DNF + ankle sprain on Jun 27, 2026.)
+Static HTML/CSS/JS site in `site/`. Displays the 13-week training plan for the **Pilgrims' Way 4-Day** (Sep 3–6, 2026, Guildford → Canterbury, 170.0 km / ~2,470m over 4 stages) and the **Trappenmarathon** (Oct 3, 2026), with progress charts, stage profiles, time prediction, exercise library, and event day reference. (The previous Swiss Irontrail T78 plan lives on in `plan/swiss-iron-trail-t78.md` as an archive; T78 ended at km 48 in a storm DNF + ankle sprain on Jun 27, 2026.)
 
 ### Serving locally
 

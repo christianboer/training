@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-09T15:14:10",
+  "generated_at": "2026-08-09T16:38:58",
   "race": {
     "name": "Pilgrims' Way 4-Day",
     "date": "2026-09-03",
     "end_date": "2026-09-06",
     "distance_km": 170.0,
-    "elevation_m": 2270,
+    "elevation_m": 2472,
     "days": 4,
     "start_time": "09:00",
     "location": "Guildford → Canterbury, England",
@@ -21,7 +21,7 @@
       "date": "2026-09-03",
       "name": "Stage 1: Guildford → Bletchingley",
       "distance_km": 44.7,
-      "elevation_m": 786,
+      "elevation_m": 991,
       "role": "Queen stage — hilliest of the four"
     },
     {
@@ -585,7 +585,7 @@
       "start_date": "2026-08-31",
       "end_date": "2026-09-06",
       "target_km": 181.0,
-      "target_elevation": 2270.0,
+      "target_elevation": 2470.0,
       "days": [
         {
           "day": "Mon",
@@ -612,7 +612,7 @@
           "day": "Thu",
           "session": "Stage 1: Guildford → Bletchingley",
           "target_km": 44.7,
-          "target_elevation": 786.0,
+          "target_elevation": 991.0,
           "date": "2026-09-03"
         },
         {
@@ -2088,7 +2088,7 @@
   },
   "plan_totals": {
     "target_km": 656.0,
-    "target_elevation": 7460.0
+    "target_elevation": 7660.0
   },
   "course_profile": {
     "stages": [
@@ -2096,7 +2096,8 @@
         "stage": 1,
         "date": "2026-09-03",
         "name": "Guildford → Bletchingley",
-        "planned_hours": 5.68,
+        "planned_hours": 5.82,
+        "ascent_source": "Strava",
         "profile": [
           {
             "km": 0.0,
@@ -2465,15 +2466,17 @@
           }
         ],
         "total_km": 44.6,
-        "total_ascent": 786,
+        "total_ascent": 991,
         "min_ele": 32,
-        "max_ele": 238
+        "max_ele": 238,
+        "total_ascent_gpx": 786
       },
       {
         "stage": 2,
         "date": "2026-09-04",
         "name": "Bletchingley → Maidstone",
         "planned_hours": 5.62,
+        "ascent_source": "Garmin course export",
         "profile": [
           {
             "km": 0.0,
@@ -2855,6 +2858,7 @@
         "date": "2026-09-05",
         "name": "Maidstone → Charing Heath",
         "planned_hours": 5.47,
+        "ascent_source": "Garmin course export",
         "profile": [
           {
             "km": 0.0,
@@ -3224,6 +3228,7 @@
         "date": "2026-09-06",
         "name": "Charing Heath → Canterbury",
         "planned_hours": 4.38,
+        "ascent_source": "Garmin course export",
         "profile": [
           {
             "km": 0.0,
@@ -3594,14 +3599,14 @@
       }
     ],
     "total_km": 169.9,
-    "total_ascent": 2267
+    "total_ascent": 2472
   },
   "race_plan": {
     "targets": {
       "carbs_per_hour_g": 60,
       "fluid_l_per_hour": 0.5,
-      "planned_total_time": "21h09",
-      "planned_total_hours": 21.15,
+      "planned_total_time": "21h17",
+      "planned_total_hours": 21.29,
       "hr_cap": 135
     },
     "recovery_routine": [
@@ -3616,12 +3621,12 @@
         "date": "2026-09-03",
         "name": "Guildford → Bletchingley",
         "km": 44.6,
-        "ascent_m": 786,
-        "planned_time": "5h41",
-        "planned_hours": 5.68,
-        "pace_min_km": 7.64,
-        "carbs_g": 341,
-        "fluid_l": 2.8,
+        "ascent_m": 991,
+        "planned_time": "5h49",
+        "planned_hours": 5.82,
+        "pace_min_km": 7.83,
+        "carbs_g": 349,
+        "fluid_l": 2.9,
         "aid_stations": [
           {
             "name": "Ryka's Cafe",
@@ -3910,8 +3915,8 @@
       },
       {
         "label": "Realistic",
-        "hours": 21.17,
-        "conditions": "Matches the 21h09 route estimate — extra walking on rough ground"
+        "hours": 21.33,
+        "conditions": "Matches the 21h17 route estimate — extra walking on rough ground"
       },
       {
         "label": "Conservative",

@@ -29,7 +29,7 @@ PLAN_START = '2026-07-06'  # Week 1 Monday
 RACE_DATE = '2026-09-03'   # Stage 1 of the England 4-Day
 
 EVENTS = [
-    {"date": "2026-09-03", "name": "Stage 1: Guildford → Bletchingley", "distance_km": 44.7, "elevation_m": 786, "role": "Queen stage — hilliest of the four"},
+    {"date": "2026-09-03", "name": "Stage 1: Guildford → Bletchingley", "distance_km": 44.7, "elevation_m": 991, "role": "Queen stage — hilliest of the four"},
     {"date": "2026-09-04", "name": "Stage 2: Bletchingley → Maidstone", "distance_km": 44.4, "elevation_m": 728, "role": "4-Day"},
     {"date": "2026-09-05", "name": "Stage 3: Maidstone → Charing Heath", "distance_km": 44.9, "elevation_m": 417, "role": "4-Day — longest, but flattest of the three"},
     {"date": "2026-09-06", "name": "Stage 4: Charing Heath → Canterbury", "distance_km": 36.0, "elevation_m": 336, "role": "Victory lap into Canterbury"},
@@ -459,9 +459,13 @@ def query_reference_races(conn):
 # The four stages of the England 4-Day (Pilgrims' Way / North Downs Way).
 # GPX files are Strava route exports in plan/stages/.
 STAGES = [
+    # ascent_override_m: the Garmin course export reads ~20-25% low on this
+    # terrain. Where the route also exists on Strava, prefer Strava's figure —
+    # it is the basis the pace model and the 2025 reference were built on.
     {"stage": 1, "date": "2026-09-03", "name": "Guildford → Bletchingley",
-     "gpx": "stage1-guildford-bletchingley.gpx", "planned_hours": 5.68,
-     "start": "Guildford", "finish": "Bletchingley"},
+     "gpx": "stage1-guildford-bletchingley.gpx", "planned_hours": 5.82,
+     "start": "Guildford", "finish": "Bletchingley",
+     "ascent_override_m": 991, "ascent_source": "Strava"},
     {"stage": 2, "date": "2026-09-04", "name": "Bletchingley → Maidstone",
      "gpx": "stage2-bletchingley-maidstone.gpx", "planned_hours": 5.62,
      "start": "Bletchingley", "finish": "Maidstone"},
@@ -590,11 +594,16 @@ def build_stage_profiles():
         profile = parse_gpx_profile(gpx_path, num_points=80, waypoint_defs=wp_defs)
         if not profile:
             continue
+        if s.get("ascent_override_m"):
+            # Keep the GPX profile shape, but report the ascent on the stated basis
+            profile["total_ascent_gpx"] = profile["total_ascent"]
+            profile["total_ascent"] = s["ascent_override_m"]
         stages.append({
             "stage": s["stage"],
             "date": s["date"],
             "name": s["name"],
             "planned_hours": s["planned_hours"],
+            "ascent_source": s.get("ascent_source", "Garmin course export"),
             **profile,
         })
     if not stages:
@@ -690,7 +699,7 @@ def main():
             "date": RACE_DATE,
             "end_date": "2026-09-06",
             "distance_km": 170.0,
-            "elevation_m": 2270,
+            "elevation_m": 2472,
             "days": 4,
             "start_time": "09:00",
             "location": "Guildford → Canterbury, England",
@@ -728,7 +737,7 @@ def main():
             "scenarios": [
                 {"label": "Optimistic", "hours": 19.75, "conditions": "Ankle fully settled, 2025 pace holds (6:55–7:00/km)"},
                 {"label": "Target", "hours": 20.5, "conditions": "Solid prep, ankle managed, walk breaks on schedule"},
-                {"label": "Realistic", "hours": 21.17, "conditions": "Matches the 21h09 route estimate — extra walking on rough ground"},
+                {"label": "Realistic", "hours": 21.33, "conditions": "Matches the 21h17 route estimate — extra walking on rough ground"},
                 {"label": "Conservative", "hours": 23.0, "conditions": "Ankle forces walk-heavy stages — still finishes, just longer days"},
             ],
             "cutoff_hours": 26,

@@ -1830,6 +1830,166 @@ a:hover { color: var(--accent-light); }
     flex-wrap: wrap;
 }
 
+/* Route photos — filmstrip under each stage profile */
+.stage-photos {
+    margin-top: 14px;
+}
+
+.stage-photos-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.photos-title {
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.photos-count {
+    color: var(--text-muted);
+    font-size: .75rem;
+}
+
+.photo-strip {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+}
+
+.photo-strip .shot {
+    position: relative;
+    flex: 0 0 auto;
+    width: 150px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg-card);
+    cursor: zoom-in;
+    scroll-snap-align: start;
+}
+
+.photo-strip .shot img {
+    display: block;
+    width: 150px;
+    height: 112px;
+    object-fit: cover;
+    background: var(--bg-card);
+}
+
+.photo-strip .shot-km {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 1px 6px;
+    font-family: var(--font-mono);
+    font-size: .7rem;
+    color: #fff;
+    background: rgba(0, 0, 0, .6);
+    border-top-right-radius: 6px;
+}
+
+.photo-lightbox {
+    border: none;
+    background: transparent;
+    padding: 0;
+    /* inset + auto margins: centre the dialog in both axes */
+    inset: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    max-width: 96vw;
+    max-height: 96vh;
+}
+
+.photo-lightbox::backdrop {
+    background: rgba(0, 0, 0, .88);
+}
+
+.photo-lightbox .lb-frame {
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+}
+
+.photo-lightbox img {
+    max-width: 96vw;
+    max-height: 84vh;
+    border-radius: 8px;
+    display: block;
+    touch-action: pan-y;
+}
+
+.photo-lightbox .lb-nav,
+.photo-lightbox .lb-close {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, .25);
+    background: rgba(15, 23, 42, .65);
+    color: #fff;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: background .15s, opacity .15s;
+}
+
+.photo-lightbox .lb-nav {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 64px;
+    border-radius: 8px;
+    font-size: 1.9rem;
+    line-height: 1;
+    padding-bottom: 4px;
+}
+
+.photo-lightbox .lb-prev { left: 10px; }
+.photo-lightbox .lb-next { right: 10px; }
+
+.photo-lightbox .lb-nav:hover:not(:disabled),
+.photo-lightbox .lb-close:hover {
+    background: rgba(249, 115, 22, .85);
+}
+
+.photo-lightbox .lb-nav:disabled {
+    opacity: .25;
+    cursor: default;
+}
+
+.photo-lightbox .lb-close {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+/* On a phone the arrows would sit on top of the photo — swipe instead.
+   Keyed on width, not pointer type: touchscreen laptops and automated
+   browsers report a coarse pointer and would wrongly lose the arrows. */
+@media (max-width: 640px) {
+    .photo-lightbox .lb-nav { display: none; }
+}
+
+.photo-lightbox .lb-cap {
+    margin: 10px 0 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: .8rem;
+    line-height: 1.4;
+}
+
 .station-aid {
     display: flex;
     gap: 10px;

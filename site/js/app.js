@@ -8,7 +8,7 @@ import { renderExercises } from './exercises.js';
 import { renderDikeTraining } from './dike.js';
 import { renderCompliance } from './compliance.js';
 import { renderElevationThermometer } from './elevation.js';
-import { renderCourseProfile } from './course.js';
+import { renderCourseProfile, renderStagePhotos } from './course.js';
 import { renderRacePlan } from './racePlan.js';
 import { initCoach } from './coach.js';
 
@@ -17,6 +17,17 @@ import { initCoach } from './coach.js';
 async function loadData() {
     const resp = await fetch(`data/training.json?v=${Date.now()}`, { cache: 'no-store' });
     return resp.json();
+}
+
+// Route photos live in their own file — metadata only, images come from
+// Strava's CDN. Missing file is fine; the stage profiles just render without them.
+async function loadRoutePhotos() {
+    try {
+        const resp = await fetch('data/route-photos.json');
+        return resp.ok ? await resp.json() : null;
+    } catch (e) {
+        return null;
+    }
 }
 
 // ---- Countdown ----
@@ -440,6 +451,7 @@ async function init() {
 
     // Course Profile
     renderCourseProfile(data);
+    loadRoutePhotos().then(photos => photos && renderStagePhotos(photos));
 
     // Race Plan (aid stations + personal nutrition)
     renderRacePlan(data);

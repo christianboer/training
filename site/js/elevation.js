@@ -25,11 +25,15 @@ export function renderElevationThermometer(data) {
 
     const totalTarget = data.plan_totals ? data.plan_totals.target_elevation : 7460;
 
-    // Landmarks — the top one tracks the plan total so it stays on the mountain
+    // Landmarks — derived from the data so they don't go stale when the
+    // stage elevations are re-based (see ascent_override_m in the exporter)
+    const fourDay = (data.race && data.race.elevation_m) || 2472;
+    const stairs = (data.race && data.race.second_target &&
+                    data.race.second_target.elevation_m) || 3090;
     const landmarks = [
         { ele: 1000, label: 'Rebuild done', icon: '🦶' },
-        { ele: 2270, label: '1x 4-Day', icon: '🇬🇧' },
-        { ele: 5000, label: '4-Day + stairs', icon: '🪜' },
+        { ele: fourDay, label: '1x 4-Day', icon: '🇬🇧' },
+        { ele: fourDay + stairs, label: '4-Day + stairs', icon: '🪜' },
         { ele: Math.round(totalTarget), label: '+ Trappenmarathon', icon: '⛰' },
     ];
 

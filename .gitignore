@@ -1,3 +1,10 @@
 /tmp/
 .DS_Store
 .env
+
+# Community photos harvested from Strava's route tiles — other people's
+# images, kept locally for route recon only. Not ours to redistribute.
+/route-photos/
+
+__pycache__/
+*.pyc

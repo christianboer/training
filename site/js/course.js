@@ -16,6 +16,7 @@ export function renderCourseProfile(data) {
                 <span class="stage-stats">${stage.total_km} km · ${stage.total_ascent}m D+ · plan ${formatHours(stage.planned_hours)}</span>
             </div>
             <div class="course-profile-wrap stage-profile" id="stage-profile-${i}"></div>
+            <div class="stage-photos" id="stage-photos-${stage.stage}"></div>
         </div>
     `).join('') + `
     <div class="course-legend">
@@ -29,6 +30,119 @@ export function renderCourseProfile(data) {
 
     stages.forEach((stage, i) => {
         renderStageProfile(document.getElementById(`stage-profile-${i}`), stage, i);
+    });
+}
+
+/**
+ * Filmstrip of community photos under each stage profile. Metadata comes from
+ * data/route-photos.json; the images themselves are hot-linked from Strava's
+ * CDN, so nothing is stored or served by us.
+ */
+export function renderStagePhotos(photoData) {
+    const byStage = (photoData && photoData.stages) || {};
+
+    const caption = p => {
+        const date = p.ts
+            ? new Date(p.ts).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })
+            : '';
+        return `km ${p.km.toFixed(1)}${date ? ' · ' + date : ''}`;
+    };
+
+    Object.entries(byStage).forEach(([stageNum, photos]) => {
+        const el = document.getElementById(`stage-photos-${stageNum}`);
+        if (!el || !photos.length) return;
+
+        const shots = photos.map((p, i) => `
+            <button class="shot" data-stage="${stageNum}" data-i="${i}" aria-label="Foto op ${caption(p)}">
+                <!-- thumb only (≈3 KB): the strip is viewed on mobile data.
+                     Full quality is one tap away in the lightbox. -->
+                <img src="${p.thumb}" loading="lazy" decoding="async" alt="">
+                <span class="shot-km">${p.km.toFixed(1)}</span>
+            </button>`).join('');
+
+        el.innerHTML = `
+            <div class="stage-photos-head">
+                <span class="photos-title">Onderweg</span>
+                <span class="photos-count">${photos.length} foto's · community photos van Strava</span>
+            </div>
+            <div class="photo-strip">${shots}</div>`;
+    });
+
+    setupLightbox(byStage, caption);
+}
+
+/**
+ * One lightbox for the whole page. Browse the stage you opened with the on-screen
+ * arrows, the left/right keys, or a swipe — the three are the same `step()` call.
+ */
+function setupLightbox(byStage, caption) {
+    const shots = document.querySelectorAll('.photo-strip .shot');
+    if (!shots.length) return;
+
+    const box = document.createElement('dialog');
+    box.className = 'photo-lightbox';
+    box.innerHTML = `
+        <div class="lb-frame">
+            <img alt="">
+            <button class="lb-nav lb-prev" aria-label="Vorige foto">&#8249;</button>
+            <button class="lb-nav lb-next" aria-label="Volgende foto">&#8250;</button>
+            <button class="lb-close" aria-label="Sluiten">&times;</button>
+        </div>
+        <p class="lb-cap"></p>`;
+    document.body.appendChild(box);
+
+    const img = box.querySelector('img');
+    const cap = box.querySelector('.lb-cap');
+    const prev = box.querySelector('.lb-prev');
+    const next = box.querySelector('.lb-next');
+    let list = [];
+    let idx = 0;
+
+    function show(i) {
+        idx = Math.max(0, Math.min(list.length - 1, i));
+        const p = list[idx];
+        img.src = p.url;
+        cap.textContent = `${caption(p)}  ·  ${idx + 1} / ${list.length}`;
+        prev.disabled = idx === 0;
+        next.disabled = idx === list.length - 1;
+        // Warm the neighbours so stepping through feels instant
+        [list[idx - 1], list[idx + 1]].forEach(n => { if (n) new Image().src = n.url; });
+    }
+
+    const step = d => show(idx + d);
+
+    prev.addEventListener('click', e => { e.stopPropagation(); step(-1); });
+    next.addEventListener('click', e => { e.stopPropagation(); step(1); });
+    box.querySelector('.lb-close').addEventListener('click', () => box.close());
+
+    // Backdrop clicks land on the dialog itself; clicks on the photo must not close it
+    box.addEventListener('click', e => { if (e.target === box) box.close(); });
+
+    document.addEventListener('keydown', e => {
+        if (!box.open) return;
+        if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+    });
+
+    // Swipe — horizontal only, so vertical scrolling still works
+    let sx = 0, sy = 0;
+    box.addEventListener('touchstart', e => {
+        sx = e.changedTouches[0].clientX;
+        sy = e.changedTouches[0].clientY;
+    }, { passive: true });
+    box.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - sx;
+        const dy = e.changedTouches[0].clientY - sy;
+        if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) step(dx < 0 ? 1 : -1);
+    }, { passive: true });
+
+    shots.forEach(btn => {
+        btn.addEventListener('click', () => {
+            list = byStage[btn.dataset.stage] || [];
+            if (!list.length) return;
+            show(Number(btn.dataset.i));
+            box.showModal();
+        });
     });
 }
 
