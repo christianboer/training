@@ -125,27 +125,32 @@ needed, just the stage GPX. Three steps:
 cd scripts/route_photos
 # 1. Harvest metadata for every photo within 300 m of the route (z16 tiles)
 python3 harvest.py ../../plan/stages/stage1-guildford-bletchingley.gpx /tmp/stage1.json 16
-# 2. Thin to the best photo per 250 m and download the 768px rendition
+# 2. Thin to the best photo per 250 m; downloads the 768px files and writes manifest.json
 python3 select_download.py /tmp/stage1.json ../../route-photos/stage1 250 25
-# 3. Build the standalone contact sheet (photo markers on the elevation profile)
+# 3. Publish to the dashboard — writes site/data/route-photos.json from the manifests
+python3 export_dashboard_photos.py
+# Optional: a standalone contact sheet, needs the downloaded jpgs to still be present
 python3 build_overview.py ../../plan/stages/stage1-guildford-bletchingley.gpx \
     ../../route-photos/stage1 "Etappe 1 — Guildford → Bletchingley"
-# 4. Publish to the dashboard — writes site/data/route-photos.json for all four stages
-python3 export_dashboard_photos.py
 ```
 
 `select_download.py` takes `<bucket_m> <max_offset_m>` — 250 m buckets, 25 m maximum
 distance from the route. It ranks candidates by Strava's own `score`, then by proximity.
 Re-running skips files already on disk.
 
+**`route-photos/stage*/manifest.json` is the durable part; the jpgs are disposable.**
+The dashboard hot-links Strava's CDN, so the downloaded images are only needed for the
+standalone contact sheet — they were deleted after the first run (25 MB). The manifests
+(130 KB) stay, so `export_dashboard_photos.py` keeps working without a re-harvest.
+Re-run step 2 against the same manifest directory to get the jpgs back.
+
 `mvt.py` is a hand-rolled Mapbox Vector Tile decoder (no third-party dependency); it
 was verified against the browser's own decoding of the same tile. Note the tiles arrive
 gzipped and this environment's TLS proxy breaks python's `urllib`, so fetches shell out
 to `curl --compressed`.
 
-**`route-photos/` is gitignored on purpose** — the images belong to other Strava users
-and are kept locally for route recon only. Don't commit them and don't publish the
-overview as an artifact.
+**`route-photos/` is gitignored on purpose** — the photos belong to other Strava users.
+Don't commit the images and don't publish the contact sheet as an artifact.
 
 **On the dashboard** the photos appear as a horizontally scrolling strip under each
 stage profile (`renderStagePhotos` in `site/js/course.js`), fed by
