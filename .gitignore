@@ -8,3 +8,8 @@
 
 __pycache__/
 *.pyc
+
+# The routebook PDF and its assets: it embeds the same Strava community photos
+# as route-photos/, so it is ours to print for the crew, not ours to publish.
+/routebook/
+/scripts/routebook/cache/

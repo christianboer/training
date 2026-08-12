@@ -42,6 +42,13 @@
   "url": "https://en.wikipedia.org/wiki/Julliberrie%27s_Grave"
  },
  {
+  "km": 26.95,
+  "off": 365,
+  "title": "Broadham Down",
+  "text": "Broadham Down is a 16-hectare (40-acre) nature reserve east of Chilham and west of Canterbury in Kent. It is managed by the Kent Wildlife Trust.",
+  "url": "https://en.wikipedia.org/wiki/Broadham_Down"
+ },
+ {
   "km": 29.82,
   "off": 9,
   "title": "Church of St Mary, Chartham",
@@ -61,5 +68,12 @@
   "title": "Westgate, Canterbury",
   "text": "The Westgate is a medieval gatehouse in Canterbury, Kent, England. This 60-foot (18 m) high western gate of the city wall is the largest surviving city gate in England.",
   "url": "https://en.wikipedia.org/wiki/Westgate,_Canterbury"
+ },
+ {
+  "km": 36.02,
+  "off": 199,
+  "title": "Kingsmead Stadium",
+  "text": "Kingsmead Stadium was a greyhound racing and motorcycle speedway track and Association football ground in Canterbury. It was host to Canterbury City F.C. and the Canterbury Crusaders speedway team.",
+  "url": "https://en.wikipedia.org/wiki/Kingsmead_Stadium"
  }
 ]

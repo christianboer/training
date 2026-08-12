@@ -103,6 +103,24 @@
   ]
  },
  {
+  "pageid": 2496342,
+  "title": "Eastwell Park",
+  "lat": 51.1917,
+  "lon": 0.8842,
+  "offset_m": 360,
+  "route_km": 10.03,
+  "extract": "Eastwell Park is a large area of parkland and a country estate in the civil parish of Eastwell, adjoining Ashford, Kent, in England. It was owned by the Earls of Winchilsea for more than three centuries.",
+  "bytes": 26593,
+  "url": "https://en.wikipedia.org/wiki/Eastwell_Park",
+  "categories": [
+   "Category:Borough of Ashford",
+   "Category:Buildings and structures demolished in 1926",
+   "Category:Country houses in Kent",
+   "Category:Grade II listed buildings in Kent",
+   "Category:Royal residences in the United Kingdom"
+  ]
+ },
+ {
   "pageid": 36367263,
   "title": "Saint Christopher's Church, Boughton Lees",
   "lat": 51.18722222222222,
@@ -183,6 +201,23 @@
   ]
  },
  {
+  "pageid": 6297218,
+  "title": "Molash",
+  "lat": 51.2266,
+  "lon": 0.9012,
+  "offset_m": 375,
+  "route_km": 17.77,
+  "extract": "Molash is a civil parish and village in Kent, South East England. It contains a small part of an Area of Outstanding Natural Beauty (AONB) - the North Downs - and is on the A252 road between Canterbury, Ashford and Faversham.",
+  "bytes": 3948,
+  "url": "https://en.wikipedia.org/wiki/Molash",
+  "categories": [
+   "Category:Civil parishes in Ashford, Kent",
+   "Category:Kent geography stubs",
+   "Category:Villages in Kent",
+   "Category:Villages in the Borough of Ashford"
+  ]
+ },
+ {
   "pageid": 8176157,
   "title": "Chilham Castle",
   "lat": 51.243,
@@ -216,6 +251,26 @@
   ]
  },
  {
+  "pageid": 1758143,
+  "title": "Chilham railway station",
+  "lat": 51.245,
+  "lon": 0.976,
+  "offset_m": 292,
+  "route_km": 25.22,
+  "extract": "Chilham railway station is a railway station in Chilham, Kent. It is on the Ashford to Ramsgate line between Ashford International and Canterbury West.",
+  "bytes": 6624,
+  "url": "https://en.wikipedia.org/wiki/Chilham_railway_station",
+  "categories": [
+   "Category:1846 establishments in England",
+   "Category:DfT Category F2 stations",
+   "Category:Former South Eastern Railway (UK) stations",
+   "Category:Railway stations in Great Britain opened in 1846",
+   "Category:Railway stations in Kent",
+   "Category:Railway stations served by Southeastern",
+   "Category:Transport in the Borough of Ashford"
+  ]
+ },
+ {
   "pageid": 1448426,
   "title": "Julliberrie's Grave",
   "lat": 51.24016,
@@ -232,6 +287,20 @@
    "Category:Buildings and structures in Kent",
    "Category:Megalithic monuments in England",
    "Category:Stone Age sites in Kent"
+  ]
+ },
+ {
+  "pageid": 56240483,
+  "title": "Broadham Down",
+  "lat": 51.245,
+  "lon": 0.986,
+  "offset_m": 365,
+  "route_km": 26.95,
+  "extract": "Broadham Down is a  16-hectare (40-acre) nature reserve east of Chilham and west of Canterbury in Kent. It is managed by the Kent Wildlife Trust.",
+  "bytes": 1448,
+  "url": "https://en.wikipedia.org/wiki/Broadham_Down",
+  "categories": [
+   "Category:Kent Wildlife Trust"
   ]
  },
  {
@@ -287,6 +356,23 @@
   ]
  },
  {
+  "pageid": 10021689,
+  "title": "Thanington",
+  "lat": 51.26861,
+  "lon": 1.0548,
+  "offset_m": 350,
+  "route_km": 33.31,
+  "extract": "Thanington is a civil parish on the west edge of Canterbury, Kent, United Kingdom. It extends to the south-west of A2 from Wincheap to the Milton Bridge in Chartham.",
+  "bytes": 3505,
+  "url": "https://en.wikipedia.org/wiki/Thanington",
+  "categories": [
+   "Category:City of Canterbury",
+   "Category:Civil parishes in Kent",
+   "Category:Kent geography stubs",
+   "Category:Villages in Kent"
+  ]
+ },
+ {
   "pageid": 65854834,
   "title": "Canterbury Parkway railway station",
   "lat": 51.276,
@@ -316,6 +402,24 @@
   ]
  },
  {
+  "pageid": 17656662,
+  "title": "Canterbury Academy",
+  "lat": 51.27856,
+  "lon": 1.06316,
+  "offset_m": 376,
+  "route_km": 34.31,
+  "extract": "The Canterbury Academy is a co-educational 11-19 academy school in Canterbury, Kent, England. It is a specialist Sports College and 15% of its 1081 pupils are selected on musical aptitude.",
+  "bytes": 9680,
+  "url": "https://en.wikipedia.org/wiki/Canterbury_Academy",
+  "categories": [
+   "Category:2010 establishments in England",
+   "Category:Academies in Kent",
+   "Category:Educational institutions in the United Kingdom established in 2010",
+   "Category:Schools in Canterbury",
+   "Category:Secondary schools in Kent"
+  ]
+ },
+ {
   "pageid": 6124587,
   "title": "Whitehall Dyke",
   "lat": 51.2774,
@@ -330,6 +434,100 @@
    "Category:England river stubs",
    "Category:Kent geography stubs",
    "Category:Rivers of Kent"
+  ]
+ },
+ {
+  "pageid": 3817776,
+  "title": "Canterbury Castle",
+  "lat": 51.275686,
+  "lon": 1.074618,
+  "offset_m": 352,
+  "route_km": 34.68,
+  "extract": "Canterbury Castle is a ruined Norman castle in Canterbury, Kent, England (grid reference TR14545743). It is a five-minute walk from Canterbury East Station and the main bus station around City Wall.",
+  "bytes": 6292,
+  "url": "https://en.wikipedia.org/wiki/Canterbury_Castle",
+  "categories": [
+   "Category:Buildings and structures in Canterbury",
+   "Category:Castles in Kent",
+   "Category:Grade I listed buildings in Kent",
+   "Category:Ruins in Kent",
+   "Category:Tourist attractions in Kent"
+  ]
+ },
+ {
+  "pageid": 49489719,
+  "title": "St Mildred's Church, Canterbury",
+  "lat": 51.276666666666664,
+  "lon": 1.0741666666666667,
+  "offset_m": 256,
+  "route_km": 34.72,
+  "extract": "The Church of Saint Mildred is a partly Anglo-Saxon stone church in Canterbury probably dating from the 11th century. It has been a Grade I listed building since 1949.",
+  "bytes": 3944,
+  "url": "https://en.wikipedia.org/wiki/St_Mildred%27s_Church,_Canterbury",
+  "categories": [
+   "Category:Anglo-Catholic church buildings in Kent",
+   "Category:Buildings and structures in Canterbury",
+   "Category:Churches with elements of Anglo-Saxon work",
+   "Category:Grade I listed churches in Kent"
+  ]
+ },
+ {
+  "pageid": 3995842,
+  "title": "St. Dunstan's, Canterbury",
+  "lat": 51.28365833333333,
+  "lon": 1.070813888888889,
+  "offset_m": 373,
+  "route_km": 35.1,
+  "extract": "St. Dunstan's is an Anglican church in Canterbury, Kent, at the junction of London Road and Whitstable Road.",
+  "bytes": 5501,
+  "url": "https://en.wikipedia.org/wiki/St._Dunstan%27s,_Canterbury",
+  "categories": [
+   "Category:Buildings and structures in Canterbury",
+   "Category:Church of England church buildings in Kent",
+   "Category:Diocese of Canterbury",
+   "Category:Grade I listed churches in Kent"
+  ]
+ },
+ {
+  "pageid": 27330389,
+  "title": "Greyfriars, Canterbury",
+  "lat": 51.2789712,
+  "lon": 1.0768211,
+  "offset_m": 262,
+  "route_km": 35.17,
+  "extract": "Greyfriars in Canterbury was the first Franciscan friary in England.",
+  "bytes": 7976,
+  "url": "https://en.wikipedia.org/wiki/Greyfriars,_Canterbury",
+  "categories": [
+   "Category:1538 disestablishments in England",
+   "Category:Buildings and structures in Canterbury",
+   "Category:Christian monasteries established in the 1220s",
+   "Category:Franciscan monasteries in England",
+   "Category:Monasteries in Kent"
+  ]
+ },
+ {
+  "pageid": 17383114,
+  "title": "Canterbury Heritage Museum",
+  "lat": 51.27861111111111,
+  "lon": 1.0775,
+  "offset_m": 321,
+  "route_km": 35.17,
+  "extract": "The Canterbury Heritage Museum (formerly the Museum of Canterbury) was a museum in Stour Street, Canterbury, South East England, telling the history of the city. It was housed in the 12th-century Poor Priests' Hospital next to the River Stour.",
+  "bytes": 19810,
+  "url": "https://en.wikipedia.org/wiki/Canterbury_Heritage_Museum",
+  "categories": [
+   "Category:1987 establishments in England",
+   "Category:Buildings and structures in Canterbury",
+   "Category:Children's museums in the United Kingdom",
+   "Category:Grade II listed buildings in Kent",
+   "Category:History museums in Kent",
+   "Category:History of Canterbury",
+   "Category:Local museums in Kent",
+   "Category:Mass media museums in the United Kingdom",
+   "Category:Museums established in 1987",
+   "Category:Museums in Canterbury",
+   "Category:Rupert Bear"
   ]
  },
  {
@@ -409,6 +607,46 @@
    "Category:Prison museums in the United Kingdom",
    "Category:Scheduled monuments in Kent",
    "Category:Town gates in England"
+  ]
+ },
+ {
+  "pageid": 71579041,
+  "title": "Fleur de Lis Hotel",
+  "lat": 51.279444444444444,
+  "lon": 1.0791666666666666,
+  "offset_m": 333,
+  "route_km": 35.23,
+  "extract": "Fleur de Lis Hotel was a 13th century hotel in the city of Canterbury, Kent, England. It is recorded that Charles Dickens stayed there.",
+  "bytes": 4172,
+  "url": "https://en.wikipedia.org/wiki/Fleur_de_Lis_Hotel",
+  "categories": [
+   "Category:Buildings and structures demolished in 1958",
+   "Category:Buildings and structures in Canterbury",
+   "Category:Demolished hotels in the United Kingdom",
+   "Category:Hotels in Kent",
+   "Category:Listed buildings in Kent"
+  ]
+ },
+ {
+  "pageid": 26274297,
+  "title": "Beaney House of Art and Knowledge",
+  "lat": 51.279444444444444,
+  "lon": 1.0791666666666666,
+  "offset_m": 333,
+  "route_km": 35.23,
+  "extract": "The Beaney House of Art and Knowledge is the central museum, library and art gallery of the city of Canterbury, Kent, England. It is housed in a Grade II listed building.",
+  "bytes": 26259,
+  "url": "https://en.wikipedia.org/wiki/Beaney_House_of_Art_and_Knowledge",
+  "categories": [
+   "Category:1899 establishments in England",
+   "Category:Art museums and galleries in Kent",
+   "Category:Grade II listed buildings in Kent",
+   "Category:Grade II listed museum buildings",
+   "Category:Libraries in Kent",
+   "Category:Museums established in 1899",
+   "Category:Museums in Canterbury",
+   "Category:Tudor Revival architecture in England",
+   "Category:Victorian architecture in England"
   ]
  },
  {
@@ -493,7 +731,7 @@
   "offset_m": 168,
   "route_km": 35.39,
   "extract": "The Marlowe Theatre is a 1,200-seat theatre in Canterbury named after playwright Christopher Marlowe, who was born and attended school in the city. It was named a Stage Awards, 2022 UK Theatre of the Year.",
-  "bytes": 30630,
+  "bytes": 30656,
   "url": "https://en.wikipedia.org/wiki/Marlowe_Theatre",
   "categories": [
    "Category:1984 establishments in England",
@@ -519,6 +757,97 @@
    "Category:Grade I listed buildings in Kent",
    "Category:History of Canterbury",
    "Category:Monasteries in Kent"
+  ]
+ },
+ {
+  "pageid": 770401,
+  "title": "East Kent",
+  "lat": 51.2793,
+  "lon": 1.0797,
+  "offset_m": 368,
+  "route_km": 35.65,
+  "extract": "East Kent is a planned unitary authority area in Kent, England. It is planned to be formed on 1 April 2028.",
+  "bytes": 10679,
+  "url": "https://en.wikipedia.org/wiki/East_Kent",
+  "categories": [
+   "Category:2028 establishments in England",
+   "Category:Geography of Kent",
+   "Category:Non-metropolitan districts of Kent",
+   "Category:Unitary authority districts of England"
+  ]
+ },
+ {
+  "pageid": 59133594,
+  "title": "Siege of Canterbury",
+  "lat": 51.28,
+  "lon": 1.08,
+  "offset_m": 289,
+  "route_km": 35.65,
+  "extract": "The siege of Canterbury was a major Viking raid on the city of Canterbury that occurred between 8 and 29 September 1011, fought between a Viking army led by Thorkell the Tall and the Anglo-Saxon defenders. The details of the siege are largely unknown, and most of the known events were recorded in the Anglo-Saxon Chronicle.",
+  "bytes": 5360,
+  "url": "https://en.wikipedia.org/wiki/Siege_of_Canterbury",
+  "categories": [
+   "Category:1011 conflicts",
+   "Category:Canterbury",
+   "Category:Vikings"
+  ]
+ },
+ {
+  "pageid": 48274,
+  "title": "Canterbury",
+  "lat": 51.28,
+  "lon": 1.08,
+  "offset_m": 289,
+  "route_km": 35.65,
+  "extract": "Canterbury (  KAN-tər-bər-ee or  -⁠berr-ee) is a city and UNESCO World Heritage Site in the Canterbury district, county of Kent, England; it was a county borough until 1974. Lying on the River Stour not far from its mouth on the Strait of Dover, the city has a mild oceanic climate.",
+  "bytes": 96276,
+  "url": "https://en.wikipedia.org/wiki/Canterbury",
+  "categories": [
+   "Category:Canterbury",
+   "Category:Cities in South East England",
+   "Category:City of Canterbury",
+   "Category:Coloniae (Roman)",
+   "Category:Former civil parishes in Kent",
+   "Category:Holy cities",
+   "Category:Market towns in Kent",
+   "Category:Unparished areas in Kent"
+  ]
+ },
+ {
+  "pageid": 629190,
+  "title": "City of Canterbury",
+  "lat": 51.28,
+  "lon": 1.08,
+  "offset_m": 289,
+  "route_km": 35.65,
+  "extract": "Canterbury (  KAN-tər-bər-ee or  -⁠berr-ee), also known as the City of Canterbury, is a local government district with city status in Kent, England. It is named after its largest settlement, Canterbury, where the council is based.",
+  "bytes": 32272,
+  "url": "https://en.wikipedia.org/wiki/City_of_Canterbury",
+  "categories": [
+   "Category:Boroughs in England",
+   "Category:Cities in South East England",
+   "Category:City of Canterbury",
+   "Category:Non-metropolitan districts of Kent"
+  ]
+ },
+ {
+  "pageid": 37595906,
+  "title": "Old Palace, Canterbury",
+  "lat": 51.2803,
+  "lon": 1.0817,
+  "offset_m": 269,
+  "route_km": 35.65,
+  "extract": "The Old Palace, also referred to as the Archbishop's Palace, is a historic building situated within the precincts of Canterbury Cathedral. It is the main residence of the Archbishop of Canterbury when in Canterbury.",
+  "bytes": 3748,
+  "url": "https://en.wikipedia.org/wiki/Old_Palace,_Canterbury",
+  "categories": [
+   "Category:Anglicanism stubs",
+   "Category:Buildings and structures in Canterbury",
+   "Category:Buildings by W. D. Caröe",
+   "Category:Clergy houses in England",
+   "Category:Episcopal palaces of archbishops of Canterbury",
+   "Category:Grade I listed houses in Kent",
+   "Category:Kent building and structure stubs"
   ]
  },
  {
@@ -551,6 +880,109 @@
   ]
  },
  {
+  "pageid": 72241,
+  "title": "Reginald Pole",
+  "lat": 51.27995,
+  "lon": 1.08248,
+  "offset_m": 327,
+  "route_km": 35.65,
+  "extract": "Reginald Pole (12 March 1500 – 17 November 1558) was an English cardinal and the last Catholic Archbishop of Canterbury, holding the office from 1556 to 1558 during the Marian Restoration of Catholicism.",
+  "bytes": 33867,
+  "url": "https://en.wikipedia.org/wiki/Reginald_Pole",
+  "categories": [
+   "Category:1500 births",
+   "Category:1558 deaths",
+   "Category:16th-century English cardinals",
+   "Category:Alumni of Magdalen College, Oxford",
+   "Category:Archbishops of Canterbury",
+   "Category:Burials at Canterbury Cathedral",
+   "Category:Chancellors of the University of Cambridge",
+   "Category:Counter-Reformation",
+   "Category:Deans of Exeter",
+   "Category:Diplomats for the Holy See",
+   "Category:English Roman Catholic writers",
+   "Category:English male non-fiction writers",
+   "Category:English religious writers",
+   "Category:Fellows of Corpus Christi College, Oxford",
+   "Category:History of Catholicism in England",
+   "Category:Participants in the Council of Trent",
+   "Category:Spirituali",
+   "Category:Younger sons of earls"
+  ]
+ },
+ {
+  "pageid": 12043545,
+  "title": "Chair of St Augustine",
+  "lat": 51.27972,
+  "lon": 1.08306,
+  "offset_m": 368,
+  "route_km": 35.65,
+  "extract": "The Chair of St Augustine or Cathedra Augustini (Latin) is the ceremonial enthronement cathedra of the archbishop of Canterbury in Canterbury Cathedral, Kent.",
+  "bytes": 4502,
+  "url": "https://en.wikipedia.org/wiki/Chair_of_St_Augustine",
+  "categories": [
+   "Category:Canterbury Cathedral",
+   "Category:Individual thrones",
+   "Category:Marble sculptures in the United Kingdom"
+  ]
+ },
+ {
+  "pageid": 72987,
+  "title": "Canterbury Cathedral",
+  "lat": 51.2797,
+  "lon": 1.0831,
+  "offset_m": 372,
+  "route_km": 35.65,
+  "extract": "Canterbury Cathedral is the cathedral of the archbishop of Canterbury, the spiritual leader of the Church of England and symbolic leader of the worldwide Anglican Communion. Located in Canterbury, Kent, it is on the site of one of the oldest Christian structures in England and forms part of a World Heritage Site.",
+  "bytes": 91692,
+  "url": "https://en.wikipedia.org/wiki/Canterbury_Cathedral",
+  "categories": [
+   "Category:11th-century church buildings in England",
+   "Category:590s establishments",
+   "Category:597 establishments",
+   "Category:Anglican cathedrals in England",
+   "Category:Anglican pilgrimage sites",
+   "Category:Anglo-Saxon cathedrals",
+   "Category:Basilicas (Church of England)",
+   "Category:Benedictine monasteries in England",
+   "Category:Buildings and structures completed in 1077",
+   "Category:Canterbury Cathedral",
+   "Category:Catholic pilgrimage sites",
+   "Category:Christianity in Kent",
+   "Category:Church of England church buildings in Kent",
+   "Category:Churches completed in the 1070s",
+   "Category:Churches completed in the 6th century",
+   "Category:English Gothic architecture in Kent",
+   "Category:English churches with Norman architecture",
+   "Category:Episcopacy in Anglicanism",
+   "Category:Grade I listed buildings in Kent",
+   "Category:Grade I listed cathedrals",
+   "Category:Pilgrimage churches",
+   "Category:Pre-Reformation Roman Catholic cathedrals",
+   "Category:Tourist attractions in Kent",
+   "Category:World Heritage Sites in England"
+  ]
+ },
+ {
+  "pageid": 1916875,
+  "title": "Diocese of Canterbury",
+  "lat": 51.27972222222222,
+  "lon": 1.0833333333333333,
+  "offset_m": 378,
+  "route_km": 35.65,
+  "extract": "The Diocese of Canterbury also referred to as the See of Canterbury is a Church of England diocese covering eastern Kent which was founded by St Augustine of Canterbury in 597. The diocese is centred on Canterbury Cathedral and is the oldest see of the Church of England.",
+  "bytes": 64578,
+  "url": "https://en.wikipedia.org/wiki/Diocese_of_Canterbury",
+  "categories": [
+   "Category:597 establishments",
+   "Category:6th-century establishments in England",
+   "Category:Culture in Canterbury",
+   "Category:Diocese of Canterbury",
+   "Category:Dioceses established in the 6th century",
+   "Category:Dioceses of the Church of England"
+  ]
+ },
+ {
   "pageid": 47124,
   "title": "The King's School, Canterbury",
   "lat": 51.281671,
@@ -558,7 +990,7 @@
   "offset_m": 190,
   "route_km": 35.65,
   "extract": "The King's School is a public school in Canterbury, Kent, England for pupils aged 13-18. It is a member of the Headmasters' and Headmistresses' Conference and the Eton Group.",
-  "bytes": 37413,
+  "bytes": 37608,
   "url": "https://en.wikipedia.org/wiki/The_King%27s_School,_Canterbury",
   "categories": [
    "Category:597 establishments",
@@ -571,6 +1003,45 @@
    "Category:Private schools in Kent",
    "Category:Schools in Canterbury",
    "Category:Schools with a royal charter"
+  ]
+ },
+ {
+  "pageid": 74098877,
+  "title": "Tomb of Edward, the Black Prince",
+  "lat": 51.27965,
+  "lon": 1.08366,
+  "offset_m": 397,
+  "route_km": 35.65,
+  "extract": "The tomb of Edward, the Black Prince, was built in the 14th century for Edward of Woodstock (d. 1376).",
+  "bytes": 14847,
+  "url": "https://en.wikipedia.org/wiki/Tomb_of_Edward,_the_Black_Prince",
+  "categories": [
+   "Category:Buildings and structures completed in the 14th century",
+   "Category:Canterbury Cathedral",
+   "Category:Edward the Black Prince",
+   "Category:Memento mori",
+   "Category:Tomb effigies",
+   "Category:Tombs in the United Kingdom"
+  ]
+ },
+ {
+  "pageid": 12005123,
+  "title": "Trinity Chapel",
+  "lat": 51.2797,
+  "lon": 1.0837,
+  "offset_m": 394,
+  "route_km": 35.65,
+  "extract": "Trinity Chapel at the east end of Canterbury Cathedral forms part of a UNESCO World Heritage Site. It was built under the supervision of the master-masons William of Sens and William the Englishman as a shrine for the relics of the martyred Archbishop of Canterbury Thomas Becket.",
+  "bytes": 8011,
+  "url": "https://en.wikipedia.org/wiki/Trinity_Chapel",
+  "categories": [
+   "Category:12th-century church buildings in England",
+   "Category:Buildings and structures completed in 1184",
+   "Category:Buildings and structures in Canterbury",
+   "Category:Canterbury Cathedral",
+   "Category:Church of England church buildings in Kent",
+   "Category:Culture in Canterbury",
+   "Category:Gothic architecture in England"
   ]
  },
  {
@@ -602,6 +1073,24 @@
    "Category:Coal-fired power stations in England",
    "Category:Demolished power stations in the United Kingdom",
    "Category:Former power stations in England"
+  ]
+ },
+ {
+  "pageid": 34177218,
+  "title": "Kingsmead Stadium",
+  "lat": 51.286,
+  "lon": 1.086,
+  "offset_m": 199,
+  "route_km": 36.02,
+  "extract": "Kingsmead Stadium was a greyhound racing and motorcycle speedway track and Association football ground in Canterbury. It was host to Canterbury City F.C. and the Canterbury Crusaders speedway team.",
+  "bytes": 8072,
+  "url": "https://en.wikipedia.org/wiki/Kingsmead_Stadium",
+  "categories": [
+   "Category:Buildings and structures in Canterbury",
+   "Category:Defunct greyhound racing venues in the United Kingdom",
+   "Category:Defunct speedway venues in England",
+   "Category:Sport in Canterbury",
+   "Category:Sports venues in Kent"
   ]
  }
 ]

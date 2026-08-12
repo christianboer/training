@@ -1,0 +1,633 @@
+/* Pilgrims' Way routeboek — print stylesheet, A4 portrait.
+ *
+ * Two typefaces with one rule between them: the serif carries words, the
+ * condensed sans carries numbers and labels. Both ship with macOS, which is
+ * what makes an all-local render possible.
+ *
+ * Palette is chalk downland: warm paper, warm near-black ink, a downland green
+ * for the terrain and one terracotta for the route — the colour of the pilgrim
+ * badges people wore to Canterbury. Nothing else is allowed to be saturated,
+ * which is what makes the route line findable on every map.
+ */
+
+:root {
+    --paper: #faf7f0;
+    --paper-deep: #f2ede1;
+    --ink: #23201b;
+    --ink-soft: #554f45;
+    --ink-mute: #877e6d;
+    --rule: #ded5c4;
+    --rule-soft: #ebe4d6;
+    --route: #b4472e;
+    --route-deep: #8f3320;
+    --green: #3f5c3a;
+    --green-soft: #c8d5c0;
+
+    --serif: Baskerville, "Times New Roman", serif;
+    --sans: "Avenir Next Condensed", "Avenir Next", "Helvetica Neue", sans-serif;
+}
+
+@page {
+    size: A4 portrait;
+    margin: 0;
+}
+
+* { box-sizing: border-box; }
+
+html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 9.6pt;
+    line-height: 1.42;
+    text-rendering: geometricPrecision;
+}
+
+.page {
+    position: relative;
+    width: 210mm;
+    height: 297mm;
+    padding: 16mm 15mm 12mm;
+    overflow: hidden;
+    background: var(--paper);
+    page-break-after: always;
+    break-after: page;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+.page.bleed { padding: 0; }
+
+/* --- shared type ------------------------------------------------------- */
+
+.label {
+    font-family: var(--sans);
+    font-size: 6.4pt;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+}
+
+.folio {
+    position: absolute;
+    bottom: 7mm;
+    font-family: var(--sans);
+    font-size: 7pt;
+    letter-spacing: 0.1em;
+    color: var(--ink-mute);
+}
+.folio.left  { left: 15mm; }
+.folio.right { right: 15mm; }
+
+.rule {
+    height: 0;
+    border-top: 0.4pt solid var(--rule);
+    margin: 3mm 0;
+}
+.rule.strong { border-top-width: 1pt; border-top-color: var(--ink); }
+
+/* --- cover ------------------------------------------------------------- */
+
+.cover { color: var(--paper); background: #1a1713; }
+.cover img.bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.8) brightness(0.82);
+}
+.cover .scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(18, 16, 13, 0.62) 0%,
+        rgba(18, 16, 13, 0.18) 32%,
+        rgba(18, 16, 13, 0.52) 62%,
+        rgba(14, 12, 10, 0.93) 100%);
+}
+.cover .inner {
+    position: absolute;
+    inset: 0;
+    padding: 24mm 22mm 22mm;
+    display: flex;
+    flex-direction: column;
+}
+.cover .eyebrow {
+    font-family: var(--sans);
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: rgba(250, 247, 240, 0.82);
+}
+.cover .acorn { margin-top: auto; }
+.cover h1 {
+    font-size: 46pt;
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.005em;
+    margin: 4mm 0 0;
+}
+.cover h1 em {
+    display: block;
+    font-style: italic;
+    font-size: 27pt;
+    letter-spacing: 0.01em;
+    color: rgba(250, 247, 240, 0.9);
+    margin-top: 2mm;
+}
+.cover .hair {
+    width: 26mm;
+    border-top: 1pt solid var(--route);
+    margin: 7mm 0 5mm;
+}
+.cover .meta {
+    font-family: var(--sans);
+    font-size: 9.5pt;
+    letter-spacing: 0.05em;
+    line-height: 1.65;
+    color: rgba(250, 247, 240, 0.88);
+}
+.cover .meta strong { font-weight: 600; letter-spacing: 0.1em; }
+.cover .credit {
+    position: absolute;
+    bottom: 9mm;
+    right: 22mm;
+    font-family: var(--sans);
+    font-size: 6pt;
+    letter-spacing: 0.08em;
+    color: rgba(250, 247, 240, 0.5);
+}
+
+/* --- overview ---------------------------------------------------------- */
+
+.title-block h2 {
+    font-size: 22pt;
+    font-weight: 400;
+    margin: 1mm 0 0;
+    letter-spacing: -0.005em;
+}
+.title-block .sub {
+    font-size: 10pt;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-top: 1.5mm;
+}
+
+/* Fixed layout on both tables. Without it a long aid-station name ("The Church
+ * Mouse Tea Rooms / The White Horse Inn") steals the width from the numeric
+ * columns and the figures run into each other — which is how "24,3  24,3  283"
+ * prints as "24,324,3283". */
+.days {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2mm;
+    table-layout: fixed;
+}
+.days th:nth-child(1), .days td:nth-child(1) { width: 7%; }
+.days th:nth-child(2), .days td:nth-child(2) { width: 34%; }
+.days th:nth-child(3), .days td:nth-child(3) { width: 8%; }
+.days th:nth-child(4), .days td:nth-child(4) { width: 9%; }
+.days th:nth-child(5), .days td:nth-child(5) { width: 13%; }
+.days th:nth-child(6), .days td:nth-child(6) { width: 29%; padding-left: 5mm; }
+/* Numbers must not wrap; the aid-station name in the last column must, or it
+ * runs off the page edge. */
+.days td:nth-child(n+3):nth-child(-n+5) { white-space: nowrap; }
+.days th {
+    font-family: var(--sans);
+    font-size: 6.4pt;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    text-align: right;
+    padding: 0 0 1.6mm;
+    border-bottom: 0.6pt solid var(--ink);
+}
+.days th:first-child, .days td:first-child { text-align: left; }
+.days th.name, .days td.name { text-align: left; }
+.days td {
+    padding: 2.4mm 0;
+    border-bottom: 0.4pt solid var(--rule-soft);
+    text-align: right;
+    font-family: var(--sans);
+    font-size: 9.5pt;
+}
+.days td.name { font-family: var(--serif); font-size: 10pt; }
+.days td .day {
+    font-family: var(--sans);
+    font-size: 6.6pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    display: block;
+}
+.days .num {
+    font-family: var(--serif);
+    font-size: 13pt;
+    color: var(--route);
+    width: 8mm;
+    text-align: left;
+}
+.days tfoot td {
+    border-bottom: none;
+    border-top: 1pt solid var(--ink);
+    font-weight: 600;
+    padding-top: 2.4mm;
+}
+
+.legend {
+    display: flex;
+    gap: 7mm;
+    flex-wrap: wrap;
+    margin-top: 3mm;
+}
+.legend div {
+    display: flex;
+    align-items: center;
+    gap: 1.8mm;
+    font-family: var(--sans);
+    font-size: 7.4pt;
+    color: var(--ink-soft);
+}
+
+.prose { font-size: 9.4pt; line-height: 1.5; color: var(--ink-soft); }
+.prose p { margin: 0 0 2.5mm; }
+.prose strong { color: var(--ink); font-weight: 600; }
+
+/* --- stage page (verso) ------------------------------------------------ */
+
+.stage-head { display: flex; align-items: flex-start; gap: 6mm; }
+.stage-head .numeral {
+    font-size: 40pt;
+    line-height: 0.8;
+    color: var(--route);
+    font-weight: 400;
+}
+.stage-head .who { flex: 1; }
+.stage-head h2 {
+    font-size: 21pt;
+    font-weight: 400;
+    margin: 0.5mm 0 0;
+    letter-spacing: -0.005em;
+}
+.stage-head .date {
+    font-family: var(--sans);
+    font-size: 8pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+}
+.stage-head .role {
+    font-size: 9.4pt;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-top: 1.5mm;
+}
+
+.stats {
+    display: flex;
+    gap: 0;
+    margin: 4mm 0 4mm;
+    border-top: 1pt solid var(--ink);
+    border-bottom: 0.4pt solid var(--rule);
+}
+.stats div {
+    flex: 1;
+    padding: 2.6mm 0 2.8mm;
+    border-right: 0.4pt solid var(--rule-soft);
+}
+.stats div:last-child { border-right: none; }
+.stats .v {
+    font-size: 15pt;
+    line-height: 1.1;
+    display: block;
+    margin-top: 0.8mm;
+}
+.stats .v small { font-size: 8.5pt; color: var(--ink-soft); }
+
+/* map + profile */
+
+.mapbox {
+    position: relative;
+    width: 100%;
+    border: 0.4pt solid var(--rule);
+    background: var(--paper-deep);
+    overflow: hidden;
+}
+.mapbox img { display: block; width: 100%; height: auto; }
+.mapbox svg.overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+.mapbox .attrib {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0.9mm 1.6mm;
+    background: rgba(250, 247, 240, 0.82);
+    font-family: var(--sans);
+    font-size: 5.4pt;
+    letter-spacing: 0.03em;
+    color: var(--ink-soft);
+}
+
+/* The route and everything drawn over the map.
+ *
+ * Deliberately no stroke-width or font-size here: those are emitted inline by
+ * build.py, computed from how many image pixels land on a millimetre of paper.
+ * A CSS value would override the attribute and silently undo that. Colour is
+ * this file's business; scale is not. */
+.overlay .track-case { fill: none; stroke: #fffdf7; stroke-opacity: 0.85;
+                       stroke-linejoin: round; stroke-linecap: round; }
+.overlay .track      { fill: none; stroke: var(--route);
+                       stroke-linejoin: round; stroke-linecap: round; }
+.overlay .pin circle { stroke: #fffdf7; }
+.overlay .pin.start circle  { fill: var(--green); }
+.overlay .pin.finish circle { fill: var(--ink); }
+.overlay .pin.aid circle    { fill: #2f6c8c; }
+.overlay .pin text {
+    font-family: "Avenir Next Condensed", sans-serif;
+    font-weight: 600;
+    fill: var(--ink);
+    paint-order: stroke;
+    stroke: rgba(255, 253, 247, 0.92);
+    stroke-linejoin: round;
+}
+.overlay .fact circle { fill: var(--route); stroke: #fffdf7; }
+.overlay .fact text {
+    font-family: "Avenir Next Condensed", sans-serif;
+    font-weight: 700;
+    fill: #fffdf7;
+    text-anchor: middle;
+}
+.overlay .shot rect { fill: none; stroke: #fffdf7; }
+.overlay .shot rect.core { fill: var(--ink); stroke: none; }
+.overlay .shot text {
+    font-family: "Avenir Next Condensed", sans-serif;
+    font-weight: 700;
+    fill: #fffdf7;
+    text-anchor: middle;
+}
+.overlay .scalebar line, .overlay .scalebar path { stroke: var(--ink); fill: none; }
+.overlay .scalebar text {
+    font-family: "Avenir Next Condensed", sans-serif;
+    fill: var(--ink);
+    paint-order: stroke;
+    stroke: rgba(250, 247, 240, 0.9);
+}
+.overlay .north path { fill: var(--ink); }
+.overlay .north text {
+    font-family: "Avenir Next Condensed", sans-serif;
+    font-weight: 700;
+    fill: var(--ink);
+    paint-order: stroke;
+    stroke: rgba(250, 247, 240, 0.9);
+}
+
+.profilebox { margin-top: 4mm; }
+.profilebox svg.profile { display: block; width: 100%; height: 34mm; }
+.profilebox.whole svg.profile { height: 62mm; }
+.profile .prof-band rect { fill: none; }
+.profile .prof-band.odd rect { fill: rgba(0, 0, 0, 0.028); }
+.profile .prof-band text {
+    font-family: Baskerville, serif;
+    font-size: 20px;
+    fill: var(--route);
+    text-anchor: middle;
+}
+.profile .prof-grid line { stroke: var(--rule); stroke-width: 0.8; }
+.profile .prof-grid line.base { stroke: var(--ink-mute); stroke-width: 1; }
+/* Sizes below are viewBox units, and the profile viewBox is 1000 wide over a
+ * printed 180 mm — so 5.56 units is a millimetre and 13 units lands at about
+ * 6.6 pt on paper. Screen pixels are not the unit here. */
+.profile .prof-ylabel, .profile .prof-xlabel {
+    font-family: "Avenir Next Condensed", sans-serif;
+    font-size: 13px;
+    fill: var(--ink-mute);
+}
+.profile .prof-ylabel { text-anchor: end; }
+.profile .prof-xlabel { text-anchor: middle; }
+.profile .prof-ticks line { stroke: var(--ink-mute); stroke-width: 0.8; }
+.profile .prof-area { fill: var(--green-soft); }
+.profile .prof-line { fill: none; stroke: var(--green); stroke-width: 1.6; }
+.profile .prof-wpt line { stroke: var(--ink-mute); stroke-width: 0.7; stroke-dasharray: 2 2; }
+.profile .prof-wpt circle { fill: var(--route); stroke: var(--paper); stroke-width: 1.2; }
+.profile .prof-wpt.aid_station circle { fill: #2f6c8c; }
+.profile .prof-wpt.start circle { fill: var(--green); }
+.profile .prof-wpt.finish circle { fill: var(--ink); }
+.profile .prof-wpt text {
+    font-family: "Avenir Next Condensed", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    fill: var(--ink);
+}
+.profile .prof-marker circle { fill: var(--route); }
+.profile .prof-marker text {
+    font-family: "Avenir Next Condensed", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    fill: #fffdf7;
+    text-anchor: middle;
+}
+.axis-note {
+    font-family: var(--sans);
+    font-size: 6.2pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5mm;
+}
+
+/* legs + supply table */
+.twocol { display: flex; gap: 7mm; margin-top: 4mm; }
+.twocol > * { flex: 1; }
+
+table.mini { width: 100%; border-collapse: collapse; table-layout: fixed; }
+table.mini th:first-child, table.mini td:first-child { width: 43%; }
+table.mini th:not(:first-child), table.mini td:not(:first-child) {
+    width: 19%;
+    white-space: nowrap;
+}
+table.mini caption {
+    font-family: var(--sans);
+    font-size: 6.4pt;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    text-align: left;
+    padding-bottom: 1.4mm;
+}
+table.mini th {
+    font-family: var(--sans);
+    font-size: 6.2pt;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    text-align: right;
+    padding: 0 0 1.2mm;
+    border-bottom: 0.6pt solid var(--ink);
+}
+table.mini th:first-child { text-align: left; }
+table.mini td {
+    font-family: var(--sans);
+    font-size: 8.6pt;
+    text-align: right;
+    padding: 1.7mm 0;
+    border-bottom: 0.4pt solid var(--rule-soft);
+}
+table.mini td:first-child { text-align: left; font-family: var(--serif); font-size: 9.2pt; }
+table.mini tr:last-child td { border-bottom: none; }
+
+.notebox {
+    background: var(--paper-deep);
+    border-left: 1.4pt solid var(--route);
+    padding: 3mm 3.4mm;
+    font-size: 9pt;
+    line-height: 1.45;
+    color: var(--ink-soft);
+}
+.notebox strong { color: var(--ink); }
+.notebox .label { display: block; margin-bottom: 1.2mm; }
+
+/* --- stage page (recto): photos + facts -------------------------------- */
+
+.recto-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1pt solid var(--ink);
+    padding-bottom: 1.6mm;
+}
+.recto-head h3 {
+    font-size: 13pt;
+    font-weight: 400;
+    margin: 0;
+}
+.recto-head .of { font-family: var(--sans); font-size: 7pt; letter-spacing: 0.14em;
+                  text-transform: uppercase; color: var(--ink-mute); }
+
+.shots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3mm;
+    margin-top: 3.5mm;
+}
+.shot-fig { margin: 0; position: relative; }
+.shot-fig img {
+    display: block;
+    width: 100%;
+    height: 38mm;
+    object-fit: cover;
+    border: 0.4pt solid var(--rule);
+}
+.shot-fig figcaption {
+    font-family: var(--sans);
+    font-size: 6.6pt;
+    letter-spacing: 0.06em;
+    color: var(--ink-mute);
+    margin-top: 1.1mm;
+    display: flex;
+    justify-content: space-between;
+}
+.shot-fig .tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--sans);
+    font-size: 7pt;
+    font-weight: 700;
+    padding: 0.6mm 1.5mm;
+}
+
+.facts { margin-top: 5mm; }
+.facts-grid { column-count: 2; column-gap: 6mm; }
+.fact-item {
+    break-inside: avoid;
+    margin-bottom: 3.4mm;
+    padding-left: 6.2mm;
+    position: relative;
+}
+.fact-item .n {
+    position: absolute;
+    left: 0;
+    top: 0.2mm;
+    width: 4.4mm;
+    height: 4.4mm;
+    border-radius: 50%;
+    background: var(--route);
+    color: #fffdf7;
+    font-family: var(--sans);
+    font-size: 7pt;
+    font-weight: 700;
+    text-align: center;
+    line-height: 4.4mm;
+}
+.fact-item h4 {
+    font-size: 9.6pt;
+    font-weight: 600;
+    margin: 0 0 0.6mm;
+    line-height: 1.25;
+}
+.fact-item .km {
+    font-family: var(--sans);
+    font-size: 6.4pt;
+    letter-spacing: 0.1em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+}
+.fact-item p { margin: 0.8mm 0 0; font-size: 8.7pt; line-height: 1.4; color: var(--ink-soft); }
+.fact-item .src {
+    font-family: var(--sans);
+    font-size: 6pt;
+    color: var(--ink-mute);
+    word-break: break-all;
+}
+
+.pinned {
+    break-inside: avoid;
+    margin-top: 2mm;
+    padding: 4mm;
+    background: var(--paper-deep);
+    border: 0.4pt solid var(--rule);
+    border-top: 1.6pt solid var(--route);
+}
+.pinned .label { color: var(--route); }
+.pinned h4 { font-size: 13pt; font-weight: 400; margin: 1.4mm 0 1mm; }
+.pinned p { margin: 0; font-size: 9pt; line-height: 1.45; color: var(--ink-soft); }
+.pinned .src { font-family: var(--sans); font-size: 6pt; color: var(--ink-mute); margin-top: 1.6mm;
+               display: block; word-break: break-all; padding-right: 12mm; }
+
+/* --- colophon ---------------------------------------------------------- */
+
+.sources { margin-top: 4mm; }
+.sources dt {
+    font-family: var(--sans);
+    font-size: 6.6pt;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-top: 4mm;
+}
+.sources dd {
+    margin: 1.2mm 0 0;
+    font-size: 9pt;
+    line-height: 1.45;
+    color: var(--ink-soft);
+}
+.sources dd a, .sources dd code { font-family: var(--sans); font-size: 8.4pt; color: var(--ink); }

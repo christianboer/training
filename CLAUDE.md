@@ -249,6 +249,65 @@ photo strip (`renderStageFacts` in `site/js/course.js`), fed by
 `site/data/route-facts.json` (~16 KB). Collapsed by default because four stages ×
 ~12 facts would bury the profiles on a phone. Missing file → stages render without it.
 
+## Routeboek (print PDF)
+
+A 12-page A4 routebook for the support crew, built from data already in the repo —
+the stage figures, the GPX geometry, the Wikipedia facts and the Strava photo
+manifests. One command:
+
+```bash
+python3 scripts/routebook/build.py          # ~2 min cold, ~30 s warm
+python3 scripts/routebook/build.py --no-maps --open   # reuse basemaps, open the PDF
+```
+
+Output goes to `routebook/` at the repo root: `pilgrims-way-routeboek.pdf` plus the
+HTML it was rendered from. **`routebook/` is gitignored and the PDF must never be
+published or shared outside the crew** — it embeds the same community photos as
+`route-photos/`, and that restriction travels with them. The Wikipedia text and the
+map attribution on the colophon page are licence terms, not decoration.
+
+### How it fits together
+
+| File | Does |
+|---|---|
+| `build.py` | Assembles the pages, renders via headless Chrome `--print-to-pdf` |
+| `tiles.py` | Slippy-map maths, cached tile fetch, PIL stitching, projection sidecar |
+| `gpxread.py` | Track geometry + course POIs (the dashboard exporter only keeps elevation) |
+| `profile_svg.py` | Elevation profiles as inline SVG |
+| `photos.py` | Picks and fetches the handful of Strava photos the layout uses |
+| `style.css` | Print stylesheet — Baskerville for words, Avenir Next Condensed for numbers |
+
+**Only the basemap is raster.** The route line, markers, labels, scale bar and north
+arrow are SVG drawn over the image, so they stay vector-crisp in print. That works
+because `build_basemap` writes a JSON sidecar with the projection and the image is
+cropped to exactly the requested bbox — `projector(meta)` then maps a coordinate
+straight to image pixels. **Sizes for the overlay are computed in `build.py`, never in
+CSS:** a stroke width only means something once you know how many image pixels land on
+a millimetre of paper (`u = meta['width'] / mm_width`). A CSS `stroke-width` would
+override the attribute and silently undo that, so the overlay rules carry colour only.
+
+**Two tile sources, on purpose.** The four stage maps use OpenTopoMap for its contour
+lines; the overview uses standard OSM, because at 170 km across contours read as noise
+and several OpenTopoMap tiles in that region are permanently broken — the parent-tile
+fallback left visible patches. Tiles cache under `scripts/routebook/cache/tiles/`
+(also gitignored). A tile that fails gets a `.failed` marker next to it so later builds
+skip it instead of paying the timeout twice per run; **delete the markers to retry.**
+Fetches shell out to `curl` (the TLS proxy breaks urllib) four at a time, since about a
+fifth of OpenTopoMap's tiles hold the connection open until it times out.
+
+### Editorial decisions that live in the code
+
+- `PINNED` in `build.py` — Canterbury Cathedral sits 372 m off the route, so proximity
+  ranking never selects it. It gets a featured block as the walk's destination.
+- `FACT_BLOCKLIST` — geosearch is indifferent to whether a thing is interesting.
+- `thin_facts()` — keeps 8 facts *spread along* the stage; a plain slice would drop the
+  whole back half of the day.
+- `EXCLUDE` in `photos.py` — vetoed photos by uuid prefix. Strava's score ranks
+  popularity, not whether a photo is a landscape or a stranger's selfie.
+- **Page parity matters.** Printed double-sided, facing pairs are (2,3), (4,5), … so a
+  stage's map page must land on an even folio for its photo page to sit beside it. The
+  overview fills pages 2–3 to push stage 1 onto page 4; `build_html` asserts this.
+
 ## Training Dashboard
 
 Static HTML/CSS/JS site in `site/`. Displays the 13-week training plan for the **Pilgrims' Way 4-Day** (Sep 3–6, 2026, Guildford → Canterbury, 170.0 km / ~2,470m over 4 stages) and the **Trappenmarathon** (Oct 3, 2026), with progress charts, stage profiles, time prediction, exercise library, and event day reference. (The previous Swiss Irontrail T78 plan lives on in `plan/swiss-iron-trail-t78.md` as an archive; T78 ended at km 48 in a storm DNF + ankle sprain on Jun 27, 2026.)
