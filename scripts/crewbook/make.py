@@ -82,7 +82,8 @@ HOTELS = [
      'tel': None,
      'q': 'Whyte Harte Hotel, 11-21 High Street, Bletchingley, RH1 4PB',
      'note': 'Staat aan de High Street, op een paar honderd meter van waar de '
-             'lopers die dag binnenkomen. Zelf een 16e-eeuwse herberg.'},
+             'lopers die dag binnenkomen. Zelf een middeleeuwse herberg: het '
+             'uithangbord zegt 1388, al is daar wat discussie over.'},
     {'night': 'vrijdag 4 september', 'photo': None,
      'slug': 'wrotham', 'at': (51.2998, 0.3400),
      'name': 'Holiday Inn Maidstone–Sevenoaks',
@@ -136,8 +137,9 @@ DAYS = [
             {'n': None, 'name': 'Bletchingley zelf',
              'meta': 'de voordeur uit · gratis',
              'lines': ['Het hotel staat aan de High Street. Beschermd '
-                       'dorpsgezicht, middeleeuwse gebouwen, een 13e-eeuwse '
-                       'kerk.'],
+                       'dorpsgezicht, middeleeuwse gebouwen, en een kerk met een '
+                       'Normandische toren van rond 1090 — de rest is grotendeels '
+                       '15e-eeuws.'],
              'access': 'vlak, en zo lang of kort als je wil'},
             {'n': None, 'name': 'Godstone',
              'meta': '± 5 min · gratis',
@@ -145,7 +147,7 @@ DAYS = [
                        'een wandelingetje en een kop thee.'],
              'access': 'vlak'},
             {'n': None, 'name': 'Reigate',
-             'meta': '± 10 min · winkels tot ± 17:30',
+             'meta': '± 10 min · winkels en cafés',
              'lines': ['Een echt stadje met winkelstraten, cafés en een park, '
                        'als er zin is in meer dan een dorp.']},
         ],
@@ -199,9 +201,12 @@ DAYS = [
              'lines': ['Een echt winkelstadje: de steegjes tussen High Street, '
                        'The Shambles, Bank Street en Brewery Lane zitten vol '
                        'boetieks, juweliers en cafés.',
-                       'Naast het stadje ligt Knole Park, een middeleeuws '
-                       'hertenpark van duizend hectare waar je vrij mag '
-                       'wandelen. Er is een café bij het huis.'],
+                       'Naast het stadje ligt Knole Park, het laatste '
+                       'middeleeuwse hertenpark van Kent: duizend acre — ruim '
+                       'vierhonderd hectare — met zo’n 350 vrij lopende '
+                       'damherten. Te voet is de toegang gratis; parkeren gaat '
+                       'via een entreekaartje, dus makkelijker is de '
+                       'parkeergarage in Sevenoaks en dan het park in lopen.'],
              'access': 'het park is groot en rustig van reliëf; je bepaalt zelf '
                        'hoe ver'},
         ],
@@ -229,7 +234,7 @@ DAYS = [
         'n': 3, 'date': '2026-09-05', 'title': 'Wrotham Heath → Charing Heath',
         'stage': 3, 'map': True,
         'lead': 'De rijkste dag van de vier. Een gratis klooster waar de lopers '
-                'langskomen, een grafmonument van vijfduizend jaar oud, een '
+                'langskomen, een grafmonument van zesduizend jaar oud, een '
                 'kasteel in een meer — en als het regent of als er zin is in '
                 'winkelen, een outlet op twintig minuten.',
         'stops': [
@@ -251,11 +256,12 @@ DAYS = [
             {'n': 2, 'name': "Kit's Coty House",
              'meta': '± 8 min van Aylesford · gratis · altijd',
              'lines': ['Een megalithisch grafmonument van rond 4000 v.Chr., pal '
-                       'langs de weg. Vijf minuten kijken, vijfduizend jaar '
-                       'oud. Ligt naast de hulppost bij Bluebell Hill.'],
+                       'langs de weg — dus zo’n zesduizend jaar oud. Vijf '
+                       'minuten kijken. Beheerd door English Heritage, en het '
+                       'ligt naast de hulppost bij Bluebell Hill.'],
              'access': 'korte vlakke aanloop'},
             {'n': 3, 'name': 'Leeds Castle',
-             'meta': '± 20 min · £ 34,50 online (£ 38,50 aan de poort)',
+             'meta': '± 20 min · £ 34,50 online (£ 38,50 aan de poort) · park tot 18:00, kasteel tot 17:00, laatste toegang 16:00',
              'lines': ['Een kasteel op een eiland in een meer, met tweehonderd '
                        'hectare park, tuinen, een doolhof, zwarte zwanen en '
                        'meerdere eetgelegenheden. Een halve dag als je wil.'],
@@ -274,7 +280,7 @@ DAYS = [
         'far': [
             {'n': None, 'name': 'Ashford Designer Outlet',
              'meta': '± 20 min van The Red Lion · 80 tot 100 winkels · '
-                     'za tot 19:00',
+                     'za 09:00 – 21:00, zo 10:00 – 18:00',
              'lines': ['Als er gewinkeld moet worden, of als het regent. Het ligt '
                        'dichter bij het hotel van zaterdag dan je zou denken.'],
              'access': 'alles binnen en gelijkvloers'},
@@ -781,7 +787,7 @@ def page_day3_places(ph, folio, day=None):
     {photo_card(ph.get('aylesford'), 'Aylesford Priory',
                 'De binnenhof. Gratis, vlak en stil — en het ligt op hun route.')}
     {photo_card(ph.get('kits_coty'), "Kit's Coty House",
-                'Drie staande stenen en een deksteen, ruim vijfduizend jaar oud.')}
+                'Drie staande stenen en een deksteen, zo’n zesduizend jaar oud.')}
   </div>
   {far_block(day) if day else ''}
   <div class="folio right">{folio}</div>
@@ -909,8 +915,9 @@ def build_html(days, maps, ov, ph):
     thursday_extra = f'''
   <div class="photo-grid" style="margin-top:6mm">
     {photo_card(ph.get('whyte_harte'), 'The Whyte Harte, Bletchingley',
-                'Een 16e-eeuwse herberg aan de High Street. Hier komen de lopers '
-                'aan het eind van hun eerste dag binnen.')}
+                'Een van de oudste herbergen van Engeland — het uithangbord '
+                'zegt 1388. Hier komen de lopers aan het eind van hun eerste '
+                'dag binnen.')}
     {photo_card(ph.get('charing'), 'Wat er de komende dagen aankomt',
                 'Het Archbishop’s Palace in Charing, zondagochtend. Achthonderd '
                 'jaar lang stopten pelgrims hier op weg naar Canterbury.')}

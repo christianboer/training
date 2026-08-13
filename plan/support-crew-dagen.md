@@ -63,7 +63,8 @@ Reisdag. De lopers zijn 's ochtends uit Guildford vertrokken en komen naar
 verwachting tussen **13:15 en 14:15** bij de Whyte Harte binnen.
 
 Als er tijd en zin is: **Bletchingley** is een dorp met een beschermd dorpsgezicht,
-middeleeuwse gebouwen en een 13e-eeuwse kerk, en het hotel staat aan de High
+middeleeuwse gebouwen en een kerk met een Normandische toren van rond 1090
+(de rest is grotendeels 15e-eeuws), en het hotel staat aan de High
 Street — dus dit is letterlijk de voordeur uit. **Godstone** ligt vijf minuten
 verderop en heeft een dorpsgroen met vijver en een paar pubs.
 
@@ -129,8 +130,9 @@ wie wil wandelen.
 
 **11:15 – 11:45 · Kit's Coty House** (± 8 min)
 Een megalithisch grafmonument van rond 4000 v.Chr., pal langs de weg, gratis,
-korte vlakke aanloop. Vijf minuten kijken, vijfduizend jaar oud. Ligt naast de
-hulppost bij Bluebell Hill, dus met geluk vangen ze de lopers hier een tweede keer.
+korte vlakke aanloop. Vijf minuten kijken, zo'n zesduizend jaar oud — beheerd door
+English Heritage. Ligt naast de hulppost bij Bluebell Hill, dus met geluk vangen ze
+de lopers hier een tweede keer.
 
 **12:05 – 15:40 · Leeds Castle** (± 20 min)
 Een kasteel op een eiland in een meer, met 200 hectare park, tuinen, een doolhof,
