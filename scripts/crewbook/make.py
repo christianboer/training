@@ -44,7 +44,7 @@ from tiles import build_basemap, projector
 
 OUT = os.path.join(REPO, 'crewbook')
 MAP_MM = 180.0
-DAY_MAP_ASPECT = 2.0
+DAY_MAP_ASPECT = 2.6   # shallower than the routebook's: the list needs the page
 
 # --- the material ---------------------------------------------------------
 #
@@ -117,129 +117,229 @@ WINDOWS = [
     ('zo', 'de finish in Canterbury', '36,0', '12:30 – 13:00', True),
 ]
 
-# Each day: the stops that get a numbered pin on the map, in order.
+# Each day: the places on offer, and the pins that mark them on the map.
+#
+# No times and no order — that is the whole point. The booklet says what is
+# nearby, how far it is, when it is open and what it costs, and they choose. The
+# only clock times in the book are the windows in which the walkers pass, which
+# live on their own page because those are not theirs to pick.
+
 DAYS = [
     {
         'n': 1, 'date': '2026-09-03', 'title': 'Aankomst in Bletchingley',
         'stage': 1, 'map': False,
-        'lead': 'Een reisdag. De lopers zijn ’s ochtends uit Guildford vertrokken '
-                'en komen naar verwachting tussen 13:15 en 14:15 bij de Whyte '
-                'Harte binnen.',
+        'lead': 'Een reisdag. De lopers komen in de loop van de middag bij de '
+                'Whyte Harte binnen — ergens tussen kwart over een en kwart over '
+                'twee. Meer dan aankomen hoeft deze dag niet.',
         'stops': [],
-        'slots': [
-            ('in de middag', None, None, 'Aankomst bij The Whyte Harte',
-             ['Bagage naar binnen, en dan is het wachten op twee bezwete '
-              'wandelaars. Reken op ergens tussen 13:15 en 14:15.']),
-            ('als er zin is', None, None, 'Een rondje Bletchingley',
-             ['Het hotel staat aan de High Street, dus dit is de voordeur uit. '
-              'Beschermd dorpsgezicht, middeleeuwse gebouwen, een 13e-eeuwse '
-              'kerk.',
-              'Godstone ligt vijf minuten verderop en heeft een dorpsgroen met '
-              'een vijver en een paar pubs.']),
+        'options': [
+            {'n': None, 'name': 'Bletchingley zelf',
+             'meta': 'de voordeur uit · gratis',
+             'lines': ['Het hotel staat aan de High Street. Beschermd '
+                       'dorpsgezicht, middeleeuwse gebouwen, een 13e-eeuwse '
+                       'kerk.'],
+             'access': 'vlak, en zo lang of kort als je wil'},
+            {'n': None, 'name': 'Godstone',
+             'meta': '± 5 min · gratis',
+             'lines': ['Dorpsgroen met een vijver en een paar pubs. Goed voor '
+                       'een wandelingetje en een kop thee.'],
+             'access': 'vlak'},
+            {'n': None, 'name': 'Reigate',
+             'meta': '± 10 min · winkels tot ± 17:30',
+             'lines': ['Een echt stadje met winkelstraten, cafés en een park, '
+                       'als er zin is in meer dan een dorp.']},
         ],
     },
     {
         'n': 2, 'date': '2026-09-04', 'title': 'Bletchingley → Wrotham Heath',
         'stage': 2, 'map': True,
-        'lead': 'Van west naar oost, dezelfde richting als de lopers. Ruim een '
-                'uur rijden over de hele dag, dus de dag wordt begrensd door wat '
-                'je wilt zien, niet door de afstand.',
+        'lead': 'Van west naar oost, dezelfde richting als de lopers, en nergens '
+                'meer dan een half uur rijden. Ruim genoeg voor twee of drie van '
+                'deze; alles op één dag is te veel.',
         'stops': [
             ('Westerham', 51.2681, 0.0739),
             ('Ide Hill', 51.2457, 0.1312),
             ('Chartwell', 51.2447, 0.0872),
-            ('Holiday Inn, Wrotham Heath', 51.2998, 0.3400),
+            ('Sevenoaks', 51.2720, 0.1900),
+            ('Ightham Mote', 51.2761, 0.2786),
+            ('West Malling', 51.2925, 0.4090),
         ],
-        'slots': [
-            ('09:30', None, None, 'Vertrek uit Bletchingley',
-             ['Bagage in de auto.']),
-            ('10:00 – 10:30', '± 25 min', 1, 'Westerham',
-             ['Een dorp met een groen, een standbeeld van Churchill en een rij '
-              'zelfstandige winkels en antiekzaken. Vlak, en goed voor een '
-              'eerste koffie.']),
-            ('10:45 – 11:20', '± 12 min', 2, 'Ide Hill — hier zien jullie ze',
-             ['Dorpsplein met wat veel mensen het mooiste uitzicht van Kent '
-              'vinden, en de dorpswinkel waar de lopers hun hulppost hebben.',
-              'Reken op 10:30 – 11:15.']),
-            ('11:35 – 14:15', '± 10 min', 3, 'Chartwell',
-             ['Het huis waar Winston Churchill veertig jaar woonde. Huis open '
-              'vanaf 11:00, laatste toegang 15:40, en er is een restaurant voor '
-              'de lunch.',
-              'De wandeling langs de meren onder het huis is een goed uur en '
-              'aanzienlijk vlakker dan de tuin zelf.']),
-            ('14:45', '± 30 min', 4, 'Naar het hotel',
-             ['Rond 15:15 binnen bij het Holiday Inn in Wrotham Heath.']),
+        'options': [
+            {'n': 2, 'name': 'Ide Hill', 'walkers': True,
+             'meta': '<b>hier komen de lopers langs</b> · gratis',
+             'lines': ['Dorpsplein met wat veel mensen het mooiste uitzicht van '
+                       'Kent vinden, en de dorpswinkel waar de lopers hun '
+                       'hulppost hebben. Koffie op het groen.']},
+            {'n': 1, 'name': 'Westerham',
+             'meta': '± 25 min van Bletchingley · gratis',
+             'lines': ['Marktplein met een standbeeld van Churchill, '
+                       'zelfstandige winkels, antiekzaken en cafés.'],
+             'access': 'vlak'},
+            {'n': 3, 'name': 'Chartwell',
+             'meta': '± 10 min van Ide Hill · £ 21,60 · huis vanaf 11:00, '
+                     'laatste toegang 15:40',
+             'lines': ['Het huis waar Winston Churchill veertig jaar woonde, met '
+                       'het uitzicht over de Weald waar hij zijn schilderijen '
+                       'maakte. Er is een restaurant.',
+                       'Alleen de tuin kan ook: £ 15,30.'],
+             'access': '250 m van de parkeerplaats via een steil pad met 24 '
+                       'treden. Er rijdt een busje, maar niet elke dag — vraag '
+                       'het bij aankomst, of vraag om "drive and drop". De '
+                       'wandeling langs de meren onder het huis is vlakker dan '
+                       'de tuin, en een goed uur.'},
+            {'n': 5, 'name': 'Ightham Mote',
+             'meta': '± 10 min van het hotel · £ 19,00 · huis vanaf 11:00',
+             'lines': ['Een 14e-eeuws huis met een slotgracht, een van de meest '
+                       'complete middeleeuwse huizen van Engeland. Rustiger dan '
+                       'Chartwell en dichter bij het hotel.'],
+             'access': 'ingang en café volledig gelijkvloers. Rolstoel en '
+                       'tramper te leen, vooraf reserveren'},
+            {'n': 4, 'name': 'Sevenoaks, met Knole Park',
+             'meta': '± 15 min · stadje gratis · park gratis',
+             'lines': ['Een echt winkelstadje: de steegjes tussen High Street, '
+                       'The Shambles, Bank Street en Brewery Lane zitten vol '
+                       'boetieks, juweliers en cafés.',
+                       'Naast het stadje ligt Knole Park, een middeleeuws '
+                       'hertenpark van duizend hectare waar je vrij mag '
+                       'wandelen. Er is een café bij het huis.'],
+             'access': 'het park is groot en rustig van reliëf; je bepaalt zelf '
+                       'hoe ver'},
+        ],
+        'far_label': 'Ook nog in de buurt van het hotel',
+        'far': [
+            {'n': 6, 'name': 'West Malling',
+             'meta': '± 10 min van het hotel · gratis',
+             'lines': ['Een van de mooiste High Streets van Kent: Georgian en '
+                       'Victoriaanse panden, zelfstandige boetieks, antiek, '
+                       'interieurwinkels en een paar goede koffiezaken. Er staat '
+                       'een Normandische toren uit de vroege 12e eeuw.',
+                       'Fijn voor laat in de middag, als de koffers al binnen '
+                       'zijn.'],
+             'access': 'vlak'},
+            {'n': None, 'name': 'Emmetts Garden',
+             'meta': '1 km van Ide Hill · National Trust · 7 dagen open',
+             'lines': ['Een tuin met uitzicht, voor wie liever een tuin dan een '
+                       'huis wil.'],
+             'access': 'steile hellingen en treden. Er is een buggy voor het '
+                       'steilste stuk, maar die rijdt op vrijwilligers — dezelfde '
+                       'dag bellen'},
         ],
     },
     {
         'n': 3, 'date': '2026-09-05', 'title': 'Wrotham Heath → Charing Heath',
         'stage': 3, 'map': True,
-        'lead': 'De rustigste dag qua rijden en de rijkste qua bezoek. Een gratis '
-                'klooster, een grafmonument van vijfduizend jaar oud, en ’s '
-                'middags een kasteel in een meer.',
+        'lead': 'De rijkste dag van de vier. Een gratis klooster waar de lopers '
+                'langskomen, een grafmonument van vijfduizend jaar oud, een '
+                'kasteel in een meer — en als het regent of als er zin is in '
+                'winkelen, een outlet op twintig minuten.',
         'stops': [
             ('Aylesford Priory', 51.2972, 0.4722),
-            ("Kit's Coty House", 51.3172, 0.5006),
+            ("Kit's Coty", 51.3172, 0.5006),
             ('Leeds Castle', 51.2486, 0.6300),
-            ('The Red Lion, Charing Heath', 51.2085, 0.7570),
+            ('Lenham', 51.2415, 0.7180),
         ],
-        'slots': [
-            ('09:15', None, None, 'Vertrek uit Wrotham Heath', []),
-            ('09:30 – 11:00', '± 15 min', 1,
-             'Aylesford Priory — hier zien jullie ze',
-             ['Een 13e-eeuws karmelietenklooster. Gratis, 365 dagen open, '
-              'terrein dag en nacht toegankelijk. Theetuin vanaf 10:00, een '
-              'cadeauwinkel en een werkende pottenbakkerij.',
-              'Het klooster ligt óp de route, bij kilometer 13,4: wie er om '
-              '09:30 is, ziet de lopers langskomen en gaat daarna theedrinken. '
-              'Reken op 09:30 – 09:50.']),
-            ('11:15 – 11:45', '± 8 min', 2, "Kit's Coty House",
-             ['Een megalithisch grafmonument van rond 4000 v.Chr., pal langs de '
-              'weg, gratis, met een korte vlakke aanloop. Vijf minuten kijken, '
-              'vijfduizend jaar oud.',
-              'Het ligt naast de hulppost bij Bluebell Hill, dus met een beetje '
-              'geluk vangen jullie de lopers hier een tweede keer — reken op '
-              '10:25 – 10:50.']),
-            ('12:05 – 15:40', '± 20 min', 3, 'Leeds Castle',
-             ['Een kasteel op een eiland in een meer, met tweehonderd hectare '
-              'park, tuinen, een doolhof, zwarte zwanen en meerdere '
-              'eetgelegenheden.',
-              'Van alles in dit boekje het best geregeld voor wie niet ver of '
-              'niet steil wil lopen — zie de laatste pagina. Het park is groot '
-              'en rustig van reliëf: een uur wandelen kan hier makkelijk.']),
-            ('15:45', '± 18 min', 4, 'Naar The Red Lion',
-             ['Rond 16:00 binnen.']),
+        'options': [
+            {'n': 1, 'name': 'Aylesford Priory (The Friars)', 'walkers': True,
+             'meta': '<b>hier komen de lopers langs</b> · ± 15 min · gratis · '
+                     '365 dagen open',
+             'lines': ['Een 13e-eeuws karmelietenklooster. Terrein dag en nacht '
+                       'toegankelijk, theetuin vanaf 10:00, een cadeauwinkel en '
+                       'een werkende pottenbakkerij.',
+                       'Het klooster ligt óp hun route, dus dit is de plek waar '
+                       'jullie ze het vroegst kunnen zien.'],
+             'access': 'vlak en stil. Er loopt ook een pad langs de Medway'},
+            {'n': 2, 'name': "Kit's Coty House",
+             'meta': '± 8 min van Aylesford · gratis · altijd',
+             'lines': ['Een megalithisch grafmonument van rond 4000 v.Chr., pal '
+                       'langs de weg. Vijf minuten kijken, vijfduizend jaar '
+                       'oud. Ligt naast de hulppost bij Bluebell Hill.'],
+             'access': 'korte vlakke aanloop'},
+            {'n': 3, 'name': 'Leeds Castle',
+             'meta': '± 20 min · £ 34,50 online (£ 38,50 aan de poort)',
+             'lines': ['Een kasteel op een eiland in een meer, met tweehonderd '
+                       'hectare park, tuinen, een doolhof, zwarte zwanen en '
+                       'meerdere eetgelegenheden. Een halve dag als je wil.'],
+             'access': 'het best geregeld van alles in dit boekje. Een gratis '
+                       'toegankelijk busje rijdt de hele dag, invalidenparkeren '
+                       'ligt op maximaal 100 m daarvan, en rolstoelen zijn '
+                       'gratis te leen. Het treintje is niet '
+                       'rolstoeltoegankelijk, het busje wel'},
+            {'n': 4, 'name': 'Lenham',
+             'meta': '± 10 min van The Red Lion · gratis',
+             'lines': ['Schilderachtig dorpsplein met een herberg uit 1602, een '
+                       'tithe barn, een Grade I-kerk, een theewinkel en wat '
+                       'antiek. Fijn voor laat in de middag.'],
+             'access': 'vlak'},
+        ],
+        'far': [
+            {'n': None, 'name': 'Ashford Designer Outlet',
+             'meta': '± 20 min van The Red Lion · 80 tot 100 winkels · '
+                     'za tot 19:00',
+             'lines': ['Als er gewinkeld moet worden, of als het regent. Het ligt '
+                       'dichter bij het hotel van zaterdag dan je zou denken.'],
+             'access': 'alles binnen en gelijkvloers'},
+            {'n': None, 'name': 'Faversham',
+             'meta': '± 25 min · gratis · zaterdagmarkt',
+             'lines': ['Het oudste marktstadje van Kent, aan een getijdenkreek, '
+                       'met zelfstandige winkels en Shepherd Neame — de oudste '
+                       'brouwerij van Engeland, sinds 1698 op dezelfde plek.',
+                       'Op zaterdag is er charter-markt, en op de eerste '
+                       'zaterdag van de maand ook een ambachtenmarkt. Even '
+                       'checken of dat deze zaterdag zo is.'],
+             'access': 'vlak; er lopen rustige kadepaden langs de kreek'},
+            {'n': None, 'name': 'Rochester',
+             'meta': '± 25 min van het hotel · kathedraal op donatiebasis',
+             'lines': ['Kathedraal, Normandisch kasteel en een High Street vol '
+                       'Dickens, als er zin is in een stad in plaats van een '
+                       'kasteel.']},
         ],
     },
     {
         'n': 4, 'date': '2026-09-06', 'title': 'Charing Heath → Canterbury → naar huis',
         'stage': 4, 'map': True,
-        'lead': 'De dag van de finish, en daarna door naar de tunnel. Alles gaat '
-                'bij het uitchecken de auto in — ook de bagage van de lopers, '
-                'want die stappen in Canterbury in.',
+        'lead': 'De dag van de finish. Alles gaat bij het uitchecken de auto in — '
+                'ook de bagage van de lopers, want die stappen in Canterbury in. '
+                'Daarna rijden jullie samen door naar Folkestone.',
         'stops': [
             ('Charing', 51.2089, 0.7906),
+            ('Lenham', 51.2415, 0.7180),
             ('Chilham', 51.2444, 0.9611),
-            ('Canterbury, Westgate', 51.2777, 1.0740),
+            ('Canterbury', 51.2777, 1.0740),
         ],
-        'slots': [
-            ('09:30 – 10:00', '± 5 min', 1, 'Charing',
-             ['Naast het hotel, aan de Pilgrims’ Way. De ruïne van het '
-              'Archbishop’s Palace gaat terug tot de achtste eeuw en was een '
-              'pleisterplaats voor pelgrims op weg naar Canterbury — precies de '
-              'rol die jullie deze week vervullen.']),
-            ('10:25 – 11:25', '± 20 min', 2, 'Chilham — hier zien jullie ze',
-             ['Een middeleeuws dorpsplein met Tudor-vakwerkhuizen, een '
-              '16e-eeuwse kerk en het kasteel. Aan het plein zit The Church '
-              'Mouse Tea Rooms, de hulppost van de lopers: open 09:30 – 16:30. '
-              'Koffie met scones terwijl zij door het dorp komen.',
-              'Reken op 10:45 – 11:20. De kasteeltuinen zijn alleen op dinsdag '
-              'en donderdag open, dus vandaag niet. En vier smalle, steile '
-              'straatjes klimmen naar het plein: parkeer zo dicht bij het plein '
-              'als het kan.']),
-            ('11:45', '± 18 min', 3, 'Naar Canterbury',
-             ['Parkeren bij Westgate. En dan het mooiste van de week — zie de '
-              'volgende pagina.']),
+        'options': [
+            {'n': 3, 'name': 'Chilham', 'walkers': True,
+             'meta': '<b>hier komen de lopers langs</b> · ± 20 min · gratis · '
+                     'theehuis 09:30 – 16:30',
+             'lines': ['Een middeleeuws dorpsplein met Tudor-vakwerkhuizen, een '
+                       '16e-eeuwse kerk en het kasteel. Aan het plein zit The '
+                       'Church Mouse Tea Rooms, de hulppost van de lopers: '
+                       'koffie met scones terwijl zij door het dorp komen.',
+                       'De kasteeltuinen zijn alleen op dinsdag en donderdag '
+                       'open, dus vandaag niet.'],
+             'access': 'vier smalle, steile straatjes klimmen naar het plein — '
+                       'parkeer zo dicht bij het plein als het kan'},
+            {'n': 1, 'name': 'Charing',
+             'meta': 'naast het hotel · gratis',
+             'lines': ['Aan de Pilgrims’ Way. De ruïne van het Archbishop’s '
+                       'Palace gaat terug tot de achtste eeuw en was een '
+                       'pleisterplaats voor pelgrims op weg naar Canterbury — '
+                       'precies de rol die jullie deze week vervullen.'],
+             'access': 'vlak'},
+            {'n': 2, 'name': 'Lenham',
+             'meta': '± 10 min · gratis',
+             'lines': ['Als Charing te klein voelt: het dorpsplein van Lenham '
+                       'met de theewinkel. Let op dat zondagse openingstijden '
+                       'kort zijn.'],
+             'access': 'vlak'},
+            {'n': 4, 'name': 'Canterbury',
+             'meta': 'kathedraal £ 19,50 · zondag: kerk vanaf 12:30, laatste '
+                     'toegang 16:00',
+             'lines': ['De kathedraal waar dit pad achthonderd jaar naartoe '
+                       'loopt, de oude straatjes voor het winkelen, de Westgate '
+                       'Towers, en punteren over de Stour.',
+                       'Kaartjes voor de kathedraal kunnen aan de deur.'],
+             'access': 'grotendeels gelijkvloers; de krypte en de trap naar het '
+                       'koor hebben treden'},
         ],
     },
 ]
@@ -457,14 +557,16 @@ def page_overview(ov, ph):
     </tbody>
   </table>
   <div class="prose" style="margin-top:5mm">
-    <p><strong>Elke dag hetzelfde ritme.</strong> Een rustige ochtend, ergens
-    onderweg de lopers zien, ’s middags één grotere bezienswaardigheid, en om
-    16:00 in het volgende hotel. Op zondag geldt dat laatste niet: dan gaat het
-    na de finish door naar Folkestone.</p>
-    <p>De genummerde bolletjes op de dagkaarten komen terug in het programma
-    ernaast. Er staat geen autoroute op de kaart getekend — die verzint een weg
-    die er misschien niet is; de nummers wijzen de plekken aan, de navigatie doet
-    de rest.</p>
+    <p><strong>Dit is geen programma.</strong> Per dag staat een handvol plekken
+    waar jullie uit kunnen kiezen, met hoe ver het is, wanneer het open is en wat
+    het kost. Twee of drie op een dag is ruim; alles is te veel. Wat jullie
+    overslaan, slaan jullie over.</p>
+    <p>Het enige dat wel vastligt: de bagage moet ’s middags bij het volgende
+    hotel zijn, en op zondag rijden we na de finish samen door naar Folkestone.</p>
+    <p>De genummerde bolletjes op de dagkaarten komen terug in de lijst ernaast.
+    Er staat geen autoroute op de kaart — die zou een weg verzinnen die er
+    misschien niet is; de nummers wijzen de plekken aan, de navigatie doet de
+    rest.</p>
   </div>
   <div class="folio left">2</div>
 </section>'''
@@ -537,7 +639,8 @@ def page_windows():
   <div class="title-block">
     <div class="label">Waar en wanneer</div>
     <h2>Zo vinden jullie ze onderweg</h2>
-    <div class="sub">Een venster, geen tijdstip — en eerder vroeg dan laat.</div>
+    <div class="sub">Alleen als jullie ze willen zien. Een venster, geen
+      tijdstip — en eerder vroeg dan laat.</div>
   </div>
   <table class="windows">
     <thead><tr><th></th><th>Plek</th><th class="r">Bij km</th>
@@ -545,9 +648,10 @@ def page_windows():
     <tbody>{rows}</tbody>
   </table>
   <div class="prose" style="margin-top:6mm">
-    <p>Deze tijden gaan uit van <strong>vertrek om 8:00</strong> en zijn de
-    looptijd volgens het plan, met wat marge voor pauzes. Vertrekken ze later,
-    schuift alles even ver mee.</p>
+    <p>Dit is de enige pagina met klokken erop, en die zijn niet van jullie maar
+    van hen. Ze gaan uit van <strong>vertrek om 8:00</strong> en zijn de looptijd
+    volgens het plan, met wat marge voor pauzes. Vertrekken ze later, schuift
+    alles even ver mee.</p>
     <p><strong>Reken op vroeg.</strong> De geplande tijden zijn ruim genomen:
     vorig jaar deden ze hun vierdaagse bijna twee uur sneller dan hetzelfde model
     voorspelde. De kans dat jullie staan te wachten is dus groter dan de kans dat
@@ -570,19 +674,43 @@ def page_windows():
 </section>'''
 
 
-def page_day(day, m, ph, folio, extra=''):
-    slots = []
-    for when, drive, n, head, paras in day['slots']:
-        num = (f'<div class="n">{n}</div>' if n
-               else '<div class="n blank"></div>')
-        body = ''.join(f'<p>{p}</p>' for p in paras)
-        dr = f'<div class="drive">{drive} rijden</div>' if drive else ''
-        slots.append(f'''
-    <div class="slot">
-      <div class="when">{when}{f'<small>{drive}</small>' if drive else ''}</div>
+def render_options(opts):
+    """The menu markup, shared by the day pages and the 'further afield' blocks."""
+    items = []
+    for opt in opts:
+        num = (f'<div class="n">{opt["n"]}</div>' if opt.get('n')
+               else '<div class="n blank">&middot;</div>')
+        body = ''.join(f'<p>{p}</p>' for p in opt['lines'])
+        access = (f'<div class="access">{opt["access"]}</div>'
+                  if opt.get('access') else '')
+        items.append(f'''
+    <div class="option{' walkers' if opt.get('walkers') else ''}">
       {num}
-      <div class="what"><h4>{esc(head)}</h4>{body}</div>
+      <div class="what">
+        <h4>{esc(opt['name'])}</h4>
+        <div class="meta">{opt['meta']}</div>
+        {body}{access}
+      </div>
     </div>''')
+    return ''.join(items)
+
+
+def far_block(day):
+    """Options that are a real detour live on the facing page: on the day page
+    they would push the list off the bottom, and they are not on the corridor the
+    map shows anyway."""
+    if not day.get('far'):
+        return ''
+    return f'''
+  <div class="label" style="margin-top:6mm">{esc(day.get('far_label',
+      'Verder weg, voor een grotere dag'))}</div>
+  <div class="options">{render_options(day['far'])}</div>'''
+
+
+def page_day(day, m, ph, folio, extra=''):
+    """One day as a menu. The walkers' stop is listed first and shaded, because
+    it is the only item with a moment attached to it."""
+    items = render_options(day['options'])
 
     mapbox = ''
     if m:
@@ -604,83 +732,63 @@ def page_day(day, m, ph, folio, extra=''):
     </div>
   </div>
   {mapbox}
-  <div class="timeline">{''.join(slots)}</div>
+  <div class="label" style="margin-top:5mm">Waar je uit kunt kiezen</div>
+  <div class="options">{items}</div>
   {extra}
   <div class="folio {'left' if folio % 2 == 0 else 'right'}">{folio}</div>
 </section>'''
 
 
-def page_day2_places(ph, folio):
+def page_day2_places(ph, folio, day=None):
     return f'''
 <section class="page">
   <div class="recto-head">
-    <h3>Vrijdag &middot; wat jullie zien</h3>
+    <h3>Vrijdag &middot; hoe het eruitziet</h3>
     <span class="of">Bletchingley &rarr; Wrotham Heath</span>
   </div>
   <div class="photo-grid">
     {photo_card(ph.get('westerham'), 'Westerham',
-                'Marktplein met een standbeeld van Churchill, zelfstandige '
-                'winkels en antiekzaken. Vlak, en een prettige eerste stop.')}
+                'Het marktplein, met de Tudor-panden en de winkels erachter.')}
     {photo_card(ph.get('chartwell'), 'Chartwell',
-                'Churchills huis, veertig jaar lang. Huis vanaf 11:00, laatste '
-                'toegang 15:40, restaurant voor de lunch.')}
+                'Het huis gezien over de tuinterrassen. Onder de tuin liggen de '
+                'meren, met een vlakker pad eromheen.')}
   </div>
   <div class="callout">
-    <span class="label">Eén keuze op deze dag</span>
-    <h3>Chartwell, of Ightham Mote</h3>
-    <p>Twee huizen op één dag kost samen ruim tachtig pond en dat hoeft niet.
-    <strong>Chartwell</strong> is het bezoek waar jullie het over gaan hebben —
-    dat is mijn advies.</p>
-    <p>Maar kies <strong>Ightham Mote</strong> als een dag zonder gedoe zwaarder
-    weegt: een 14e-eeuws huis met slotgracht, gelijkvloerse ingang, gelijkvloers
-    café, tien minuten van het hotel, en iets goedkoper. Bij Chartwell is het
-    250 meter van de parkeerplaats naar het huis over een steil pad met 24
-    treden — er rijdt een busje, maar niet elke dag.</p>
+    <span class="label">Als jullie er één uitkiezen</span>
+    <h3>Chartwell of Ightham Mote</h3>
+    <p>Twee huizen op één dag kost samen ruim tachtig pond, en dat hoeft niet.
+    Chartwell is het bezoek waar je het over gaat hebben; Ightham Mote is
+    rustiger, gelijkvloers en tien minuten van het hotel. Beide staan op de
+    vorige pagina met wat ze kosten en hoe het lopen is.</p>
+    <p>En als er die dag helemaal geen huis in zit: Westerham, Sevenoaks en
+    West Malling zijn gratis, en met Knole Park heb je zo een uur gewandeld.</p>
   </div>
-  <div class="prose" style="margin-top:5mm">
-    <p><strong>De wandeling van deze dag.</strong> Onder Chartwell liggen de
-    meren, met een pad eromheen: een goed uur, en veel vlakker dan de tuin op de
-    helling. Wie liever een tuin dan een huis wil: <strong>Emmetts
-    Garden</strong> ligt op één kilometer van Ide Hill, zeven dagen per week
-    open — maar met steile hellingen en treden.</p>
-  </div>
+  {far_block(day) if day else ''}
   <div class="folio right">{folio}</div>
 </section>'''
 
 
-def page_day3_places(ph, folio):
+def page_day3_places(ph, folio, day=None):
     return f'''
 <section class="page">
   <div class="recto-head">
-    <h3>Zaterdag &middot; wat jullie zien</h3>
+    <h3>Zaterdag &middot; hoe het eruitziet</h3>
     <span class="of">Wrotham Heath &rarr; Charing Heath</span>
   </div>
   <div class="photo-grid">
-    {photo_card(ph.get('leeds'), 'Leeds Castle', 'Een kasteel op een eiland in '
-                'een meer, met tweehonderd hectare park, een doolhof en zwarte '
-                'zwanen. De hele middag waard.', wide=True)}
+    {photo_card(ph.get('leeds'), 'Leeds Castle', 'Op een eiland in het meer, met '
+                'tweehonderd hectare park eromheen.', wide=True)}
     {photo_card(ph.get('aylesford'), 'Aylesford Priory',
-                'Karmelietenklooster uit de 13e eeuw. Gratis, vlak, stil — en '
-                'het ligt op hun route, dus jullie zien ze hier langskomen.')}
+                'De binnenhof. Gratis, vlak en stil — en het ligt op hun route.')}
     {photo_card(ph.get('kits_coty'), "Kit's Coty House",
-                'Een grafmonument van rond 4000 v.Chr., pal langs de weg. Vijf '
-                'minuten kijken, vijfduizend jaar oud.')}
+                'Drie staande stenen en een deksteen, ruim vijfduizend jaar oud.')}
   </div>
-  <div class="callout">
-    <span class="label">Leeds Castle &middot; zonder ver of steil te lopen</span>
-    <h3>Hier is het goed geregeld</h3>
-    <p>Er rijdt de hele dag een <strong>gratis toegankelijk busje</strong> over
-    het terrein, vanaf de kassa. Invalidenparkeren ligt op maximaal honderd meter
-    daarvan, en <strong>rolstoelen zijn gratis te leen</strong> bij het
-    bezoekerscentrum, zolang de voorraad strekt.</p>
-    <p>Er rijdt ook een treintje van de ingang naar het kasteel, maar dat is
-    níet rolstoeltoegankelijk — het busje wel.</p>
-  </div>
+  {far_block(day) if day else ''}
   <div class="folio right">{folio}</div>
 </section>'''
 
 
-def page_day4_places(ph, folio):
+def page_day4_places(ph, folio, day=None):
     return f'''
 <section class="page">
   <div class="recto-head">
@@ -688,32 +796,34 @@ def page_day4_places(ph, folio):
     <span class="of">Charing Heath &rarr; Canterbury</span>
   </div>
   <div class="callout" style="margin-top:4mm">
-    <span class="label">Het mooiste van de hele week</span>
+    <span class="label">Als jullie één ding uit dit boekje doen</span>
     <h3>Loop de laatste kilometers mee</h3>
     <p>Vanaf <strong>Westgate Gardens</strong> loopt de <strong>Great Stour
-    Way</strong> langs de rivier de stad uit — vlak en verhard. En de lopers
-    komen precies over dat pad binnen, via Chartham.</p>
-    <p>Dus: parkeer bij Westgate, loop rond <strong>12:05</strong> het pad op
-    langs het water, kom ze tussen <strong>12:15 en 12:45</strong> tegen bij
-    Tannery Field of Bingley Island, en loop met ze de laatste twee of drie
-    kilometer de stad in. Voor jullie is dat vijf à zes kilometer over vlak,
-    verhard pad — en dan komt iedereen samen te voet in Canterbury aan, na 170
-    kilometer.</p>
+    Way</strong> langs de rivier de stad uit — vlak en verhard. En de lopers komen
+    precies over dat pad binnen, via Chartham.</p>
+    <p>Dus: parkeer bij Westgate, loop het pad op langs het water, en kom ze
+    tegemoet. Ze zijn daar tussen <strong>kwart over twaalf en kwart voor
+    een</strong>. Loop dan met ze de laatste twee of drie kilometer de stad in —
+    voor jullie is dat vijf à zes kilometer over vlak pad, en dan komt iedereen
+    samen te voet in Canterbury aan, na 170 kilometer.</p>
     <p>Liever niet wandelen? Ga bij de <strong>Westgate Towers</strong> staan en
     wacht ze daar op.</p>
   </div>
   <div class="photo-grid">
     {photo_card(ph.get('stour'), 'De Great Stour bij Canterbury',
-                'Het pad waarover ze binnenkomen. Verhard, vlak, langs het '
-                'water.')}
+                'Het pad waarover ze binnenkomen.')}
     {photo_card(ph.get('cathedral'), 'De kathedraal',
-                'Op zondag: terrein vanaf 11:30, de kerk zelf vanaf 12:30, '
-                'laatste toegang 16:00. Kaartjes kunnen aan de deur.')}
+                'Op zondag gaat de kerk zelf om 12:30 open, dus dat valt mooi '
+                'achter de finish.')}
   </div>
-  <div class="prose" style="margin-top:4mm">
-    <p><strong>De rest van de dag.</strong> Rond 13:00 samen de kathedraal in —
-    anderhalf uur is genoeg om het goed te zien. Om ongeveer 15:00 weg, en dan
-    rond 15:35 bij de terminal in Folkestone. Thuis rond half elf.</p>
+  <div class="callout" style="margin-top:4mm">
+    <span class="label">Het enige waar de klok wel telt</span>
+    <h3>De trein naar huis</h3>
+    <p>Inchecken kan tot uiterlijk een uur voor vertrek, en op een zomerse zondag
+    is anderhalf uur verstandiger. Vanuit Canterbury is het ongeveer 35 minuten
+    naar de terminal. Reken dus terug vanaf de trein die geboekt is — en vul de
+    <strong>Advance Passenger Information</strong> uiterlijk 24 uur vooraf in,
+    want zonder dat mag je niet mee.</p>
   </div>
   <div class="folio right">{folio}</div>
 </section>'''
@@ -818,7 +928,7 @@ def build_html(days, maps, ov, ph):
                         (days[3], page_day4_places)):
         assert folio % 2 == 0, f'dag {day["n"]} kaartpagina op recto {folio}'
         pages.append(page_day(day, maps.get(day['n']), ph, folio))
-        pages.append(places(ph, folio + 1))
+        pages.append(places(ph, folio + 1, day=day))
         folio += 2
     pages.append(page_practical(ph, folio))
 

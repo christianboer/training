@@ -323,7 +323,21 @@ cannot be confused with the routebook's — by python's imports or by `pgrep`.
 
 It is deliberately the routebook's sibling: it imports `../routebook/style.css`,
 `tiles.py`, `gpxread.py` and a few helpers from `routebook/build.py`, and adds
-`crew.css` for its own components (hotel cards, day timeline, photo cards).
+`crew.css` for its own components (hotel cards, the day menu, photo cards).
+
+**It is a menu, not a schedule — on purpose.** `plan/support-crew-dagen.md` is the
+working document and does carry times, so the days can be checked for fit. The
+booklet drops them: each day lists a handful of places with distance from that
+day's hotel, opening hours, price and a note on how far you have to walk, and they
+choose. **The only clock times in the booklet are the windows in which the walkers
+pass**, on their own page, because those are not theirs to pick. Don't reintroduce
+a timed programme.
+
+Options that are a real detour go in a day's `far` list, which renders on the
+facing page under `far_label`. That is a layout constraint as much as an editorial
+one: with the map band, about five entries fit a day page before the list runs off
+the bottom — `.page` has `overflow: hidden`, so anything past that is silently
+lost. Check the last item on every day page after adding one.
 
 **The licence difference is the point.** Every photograph comes from Wikimedia
 Commons under CC BY-SA, CC BY or CC0, fetched by `commons.py`, which also returns

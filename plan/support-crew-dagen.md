@@ -9,6 +9,13 @@ Elke dag: één rustig ochtendmoment, één plek waar ze de lopers zien, één g
 bezienswaardigheid 's middags, en om 16:00 in het volgende hotel. Op zondag geldt
 dat laatste niet — dan gaat het na de finish direct naar de tunnel.
 
+> **Dit document is het werkdocument, niet wat zij krijgen.** De tijden hieronder
+> zijn er om te kunnen plannen en om te zien dat het past. Het boekje dat zij
+> meekrijgen (`scripts/crewbook/make.py`) heeft ze er bewust *uit*: daar staat per
+> dag alleen een handvol plekken om uit te kiezen, met afstand, openingstijden en
+> prijs. Ze zijn op vakantie, niet op schema. De enige klokken in dat boekje zijn
+> de vensters waarin de lopers langskomen, want die zijn niet van hen.
+
 ## De hotels
 
 Alle drie liggen **praktisch op de plek waar de etappe eindigt**, binnen een paar

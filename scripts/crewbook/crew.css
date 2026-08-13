@@ -97,60 +97,76 @@ a.nav.plain {
     border: 0.6pt solid var(--route);
 }
 
-/* --- the day: timeline ------------------------------------------------- */
+/* --- the day: a menu, not a schedule ----------------------------------- */
+/*
+ * Deliberately no times and no order. They are on holiday, not on a timetable:
+ * the booklet offers what is nearby and says how far, when it is open and what
+ * it costs, and they pick. The only clock times anywhere in the booklet are the
+ * windows in which the walkers pass, because those are not theirs to choose. */
 
-.timeline { margin-top: 4mm; }
-.slot {
+.options { margin-top: 4mm; }
+.option {
     display: flex;
     gap: 4mm;
-    padding: 2.6mm 0;
+    padding: 2.4mm 0;
     border-top: 0.4pt solid var(--rule-soft);
     break-inside: avoid;
 }
-.slot:first-child { border-top: 0.7pt solid var(--ink); }
-.slot .when {
-    width: 26mm;
-    flex: none;
-    font-family: var(--sans);
-    font-size: 9pt;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-}
-.slot .when small {
-    display: block;
-    font-weight: 400;
-    font-size: 6.6pt;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    margin-top: 0.5mm;
-}
-.slot .n {
-    width: 5mm;
-    height: 5mm;
+.option:first-child { border-top: 0.7pt solid var(--ink); }
+.option .n {
+    width: 5.4mm;
+    height: 5.4mm;
     flex: none;
     border-radius: 50%;
     background: var(--route);
     color: #fffdf7;
     font-family: var(--sans);
-    font-size: 7.5pt;
+    font-size: 8pt;
     font-weight: 700;
     text-align: center;
-    line-height: 5mm;
-    margin-top: 0.3mm;
+    line-height: 5.4mm;
+    margin-top: 0.6mm;
 }
-.slot .n.blank { background: none; border: 0.6pt solid var(--rule); }
-.slot .what { flex: 1; }
-.slot .what h4 { font-size: 10.4pt; font-weight: 600; margin: 0 0 0.8mm; }
-.slot .what p { margin: 0; font-size: 9pt; line-height: 1.45; color: var(--ink-soft); }
-.slot .what p + p { margin-top: 1.2mm; }
-.slot .what .drive {
+.option .n.blank {
+    background: none;
+    border: 0.6pt solid var(--rule);
+    color: var(--ink-mute);
+}
+.option .what { flex: 1; }
+.option .what h4 {
+    font-size: 11pt;
+    font-weight: 600;
+    margin: 0 0 1mm;
+    line-height: 1.2;
+}
+.option .what .meta {
+    font-family: var(--sans);
+    font-size: 7.2pt;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 1.2mm;
+}
+.option .what .meta b { color: var(--route); font-weight: 600; }
+.option .what p { margin: 0; font-size: 9pt; line-height: 1.45; color: var(--ink-soft); }
+.option .what p + p { margin-top: 1.2mm; }
+.option .what .access {
+    font-size: 8.4pt;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-top: 1.2mm;
+}
+.option .what .access::before {
+    content: "Lopen: ";
+    font-style: normal;
     font-family: var(--sans);
     font-size: 7pt;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--ink-mute);
 }
+.option.walkers { background: var(--paper-deep); padding: 2.6mm 3mm; }
+.option.walkers .what h4 { color: var(--route); }
 
 /* --- photo cards for the places --------------------------------------- */
 
