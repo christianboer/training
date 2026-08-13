@@ -85,10 +85,23 @@ steil dan de tuin zelf. Dat is de wandeling van deze dag.
 
 **14:45 · naar het hotel** (± 30 min) → **rond 15:15 binnen**
 
-*Optioneel onderweg:* **Ightham Mote** (± 22 min van Chartwell, dan nog 10 min
-naar het hotel) — een 14e-eeuws huis met een slotgracht, gelijkvloers bij de
-ingang en het café, en veel toegankelijker dan Chartwell. Twee grote huizen op één
-dag is veel, maar het kán, want het hotel ligt om de hoek.
+### Chartwell of Ightham Mote — één van de twee
+
+Zonder National Trust-lidmaatschap kost elk huis apart geld, dus twee op één dag
+is £81 voor hen samen. Dat is niet nodig; er staat al genoeg op deze dag.
+
+**Ik zou Chartwell doen.** Het is het huis waar iemand veertig jaar heeft gewoond
+van wie ze allebei weten wie hij was, met dat uitzicht over de Weald, en het is de
+plek waar ze het over gaan hebben.
+
+**Maar kies Ightham Mote** (± 22 min van Chartwell, daarna 10 min naar het hotel,
+£19 p.p.) als een zorgeloze dag zwaarder weegt dan een grote naam. Dat 14e-eeuwse
+huis met slotgracht heeft een gelijkvloerse ingang en een gelijkvloers café, ligt
+tien minuten van het hotel, en kent niet het steile pad met 24 treden waar
+Chartwell om bekend staat. Iets goedkoper ook.
+
+Bij Chartwell kun je die klim omzeilen — zie de toegankelijkheidstabel — maar het
+mobiliteitsbusje rijdt niet elke dag, en dat weet je pas ter plekke.
 
 ---
 
@@ -163,34 +176,23 @@ moeder kan — en dan komt iedereen samen te voet in Canterbury aan.
 
 Wie liever niet wandelt: bij de Westgate Towers gaan staan en ze daar opwachten.
 
-**Vanaf ± 13:00 · de kathedraal, samen**
+**13:00 – 14:45 · de kathedraal, samen**
 Op zondag: terrein vanaf 11:30, de **kerk zelf pas vanaf 12:30**, laatste toegang
-16:00. Dat past precies achter de finish. Anderhalf uur is genoeg om het goed te
-zien.
+16:00. Dat past precies achter de finish, en anderhalf uur is genoeg om het goed te
+zien. Kaartjes kunnen aan de deur bij het Visitor Centre, dus vooraf boeken hoeft
+niet.
 
-**Rond 15:00 · naar de tunnel** (± 35 min naar Folkestone, M20 afrit 11A)
+**± 15:00 · naar de tunnel** (± 35 min naar Folkestone, M20 afrit 11A) →
+terminal rond **15:35**, en dan thuis rond **22:30**.
 
-### De keuze die op deze dag gemaakt moet worden
-
-Er is om **17:30 gratis choral evensong** in de kathedraal. Als er één manier is
-om een pelgrimsroute af te sluiten, is dat het: het koor, in de kerk waar die hele
-route achthonderd jaar naartoe loopt, zonder kaartje.
-
-Maar het kost ongeveer drie uur, en dat tikt door tot in de nacht:
-
-| | Vertrek Canterbury | Bij de terminal | Thuis (schatting) |
-|---|---|---|---|
-| **Zonder evensong** | ± 15:00 | ± 15:35 | ± 22:30 |
-| **Met evensong** (tot ± 18:20) | ± 18:30 | ± 19:05 | ± 01:30 – 02:00 |
-
-Na vier dagen, met iemand van bijna tachtig in de auto, zou ik de evensong laten
-schieten en de kathedraal 's middags rustig doen. Maar het is jullie keuze, en ik
-noem het omdat het anders zonde zou zijn om het niet geweten te hebben.
+*De gratis choral evensong van 17:30 laten we schieten: dan zou het thuiskomen
+half twee 's nachts worden, en dat is na vier dagen te veel gevraagd.*
 
 **Voor de tunnel:** inchecken kan tot uiterlijk **een uur** voor vertrek, maar
 LeShuttle adviseert 60–90 minuten, en op een zomerse zondag nog 30–60 minuten
-extra vanwege de drukte. De **Advance Passenger Information moet 24 uur vooraf
-online zijn ingevuld** — zonder dat mag je niet mee.
+extra vanwege de drukte. Met 15:35 aan de terminal zit je dus goed voor een trein
+rond 17:00. De **Advance Passenger Information moet 24 uur vooraf online zijn
+ingevuld** — zonder dat mag je niet mee.
 
 ---
 
@@ -209,31 +211,39 @@ Een uur vlak wandelen is geen probleem; steile paden en trappen zijn het punt.
 | **Great Stour Way** | Verhard en vlak. Eén gids meldt dat een specifieke 2 km-route niet geschikt is voor rolstoelen, maar de hoofdpaden zijn dat wel |
 | **Kathedraal Canterbury** | Grotendeels gelijkvloers; de krypte en de trap naar het koor hebben treden |
 
-## Wat het ongeveer kost, voor twee personen
+## Wat het kost, voor hen samen
 
-| | Per persoon | Twee samen |
-|---|---|---|
-| Leeds Castle (online geboekt) | £ 34,50 | £ 69 |
-| Chartwell, huis + tuin | £ 21,60 | £ 43 |
-| Chartwell, alleen tuin | £ 15,30 | £ 31 |
-| Ightham Mote | £ 19,00 | £ 38 |
-| Aylesford Priory, Kit's Coty, dorpen, Great Stour Way | gratis | — |
-| Kathedraal Canterbury, naar binnen | nog checken | |
+Geen National Trust-lidmaatschap, dus alles los betalen.
 
-**Chartwell, Emmetts en Ightham Mote zijn alle drie National Trust; Leeds Castle
-niet.** Eén lidmaatschap verandert de rekening van dag 2 volledig. Seniorentarieven
-kon ik voor geen van beide vinden — navragen.
+| Dag | | Per persoon | Twee samen |
+|---|---|---|---|
+| vr | Chartwell, huis + tuin | £ 21,60 | £ 43,20 |
+| za | Leeds Castle, online geboekt | £ 34,50 | £ 69,00 |
+| zo | Kathedraal Canterbury (sep-tarief) | £ 19,50 | £ 39,00 |
+| | **Totaal over vier dagen** | | **± £ 151** |
+
+Gratis, en niet de minste onderdelen van het plan: Aylesford Priory, Kit's Coty
+House, Westerham, Ide Hill, Charing, Chilham, de Great Stour Way en het
+kathedraalterrein.
+
+Wil je het lager: **Chartwell alleen tuin** is £ 15,30 p.p. (scheelt £ 12,60), of
+op zaterdag **Rochester** in plaats van Leeds Castle — kathedraal op donatiebasis
+en een kasteel voor een paar pond. Maar Leeds Castle is wel de best toegankelijke
+plek van de hele week, en dat is voor mijn moeder geld waard.
+
+Seniorentarieven kon ik nergens vinden; navragen bij de kassa kan altijd. Leeds
+Castle is online goedkoper dan aan de poort (£ 34,50 tegen £ 38,50), de kathedraal
+kan gewoon aan de deur.
 
 ## Nog te doen
 
-1. **Openingsdagen in september 2026** bij Chartwell en Ightham Mote — de National
-   Trust opent per dag en de kalender voor 2026 is nog niet definitief. Eén ronde
-   nakijken een week voor vertrek.
-2. **National Trust-lidmaatschap** ja of nee — bepaalt de opzet van dag 2.
-3. **Reserveren:** Chartwell werkt met tijdvakken voor het huis, Leeds Castle is
-   online goedkoper dan aan de poort, rolstoel/tramper bij Ightham Mote vooraf.
-4. **Tunnel:** APIS 24 uur vooraf invullen, en een vertrektijd kiezen die bij de
-   keuze rond de evensong past.
+1. **Openingsdagen in september 2026** bij Chartwell — de National Trust opent per
+   dag en de kalender voor 2026 is nog niet definitief. Eén ronde nakijken een week
+   voor vertrek.
+2. **Chartwell reserveren:** het huis werkt met tijdvakken. En daar meteen vragen of
+   het mobiliteitsbusje die dag rijdt.
+3. **Leeds Castle online kopen**, niet aan de poort.
+4. **Tunnel:** APIS 24 uur vooraf invullen, en een trein rond 17:00 boeken.
 5. **Vertrektijd van de lopers** bevestigen; alles hierboven rekent met 8:00.
 
 ## Reserve, voor slecht weer of een moede dag
