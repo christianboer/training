@@ -1,0 +1,245 @@
+/* Extra components for the crew booklet. Loaded after the routebook's
+ * style.css, which supplies the page geometry, the palette and the two
+ * typefaces — this booklet is deliberately the routebook's sibling.
+ *
+ * What is new here: hotel cards, a timeline for the day, and photo cards that
+ * carry a credit line. The credit is structural, not ornamental: every picture
+ * in this booklet is CC BY-SA or CC0 from Wikimedia Commons, and printing the
+ * photographer is the condition of being allowed to use it. */
+
+/* --- cover variant ----------------------------------------------------- */
+
+.cover .who-for {
+    font-family: var(--sans);
+    font-size: 10pt;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    margin-top: 3mm;
+    line-height: 1.6;
+}
+
+/* --- hotels ------------------------------------------------------------ */
+
+.hotels { margin-top: 4mm; }
+.hotel {
+    display: flex;
+    gap: 5mm;
+    padding: 4mm 0;
+    border-bottom: 0.4pt solid var(--rule);
+    break-inside: avoid;
+}
+.hotel:last-child { border-bottom: none; }
+.hotel .shot { width: 62mm; flex: none; }
+.hotel .shot img {
+    display: block;
+    width: 100%;
+    height: 42mm;
+    object-fit: cover;
+    border: 0.4pt solid var(--rule);
+}
+.hotel .shot .credit,
+.photo-card .credit {
+    font-family: var(--sans);
+    font-size: 5.6pt;
+    letter-spacing: 0.04em;
+    color: var(--ink-mute);
+    margin-top: 1mm;
+    line-height: 1.3;
+}
+.hotel .body { flex: 1; }
+.hotel .night {
+    font-family: var(--sans);
+    font-size: 6.4pt;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--route);
+}
+.hotel h3 {
+    font-size: 14pt;
+    font-weight: 400;
+    margin: 1mm 0 1.5mm;
+    line-height: 1.15;
+}
+.hotel .addr { font-size: 9.4pt; line-height: 1.45; color: var(--ink-soft); }
+.hotel .addr strong { color: var(--ink); font-weight: 600; }
+.hotel .tel {
+    font-family: var(--sans);
+    font-size: 9pt;
+    letter-spacing: 0.03em;
+    margin-top: 1.5mm;
+}
+.hotel .note {
+    font-size: 8.6pt;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-top: 2mm;
+    line-height: 1.4;
+}
+
+a.nav {
+    display: inline-block;
+    margin-top: 2.5mm;
+    padding: 1.4mm 3mm;
+    background: var(--route);
+    color: #fffdf7;
+    font-family: var(--sans);
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0.8mm;
+}
+a.nav.plain {
+    background: none;
+    color: var(--route);
+    border: 0.6pt solid var(--route);
+}
+
+/* --- the day: timeline ------------------------------------------------- */
+
+.timeline { margin-top: 4mm; }
+.slot {
+    display: flex;
+    gap: 4mm;
+    padding: 2.6mm 0;
+    border-top: 0.4pt solid var(--rule-soft);
+    break-inside: avoid;
+}
+.slot:first-child { border-top: 0.7pt solid var(--ink); }
+.slot .when {
+    width: 26mm;
+    flex: none;
+    font-family: var(--sans);
+    font-size: 9pt;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+.slot .when small {
+    display: block;
+    font-weight: 400;
+    font-size: 6.6pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-top: 0.5mm;
+}
+.slot .n {
+    width: 5mm;
+    height: 5mm;
+    flex: none;
+    border-radius: 50%;
+    background: var(--route);
+    color: #fffdf7;
+    font-family: var(--sans);
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-align: center;
+    line-height: 5mm;
+    margin-top: 0.3mm;
+}
+.slot .n.blank { background: none; border: 0.6pt solid var(--rule); }
+.slot .what { flex: 1; }
+.slot .what h4 { font-size: 10.4pt; font-weight: 600; margin: 0 0 0.8mm; }
+.slot .what p { margin: 0; font-size: 9pt; line-height: 1.45; color: var(--ink-soft); }
+.slot .what p + p { margin-top: 1.2mm; }
+.slot .what .drive {
+    font-family: var(--sans);
+    font-size: 7pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+}
+
+/* --- photo cards for the places --------------------------------------- */
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4mm 5mm;
+    margin-top: 3.5mm;
+}
+.photo-card { break-inside: avoid; }
+.photo-card img {
+    display: block;
+    width: 100%;
+    height: 44mm;
+    object-fit: cover;
+    border: 0.4pt solid var(--rule);
+}
+.photo-card h4 {
+    font-size: 11pt;
+    font-weight: 600;
+    margin: 2mm 0 1mm;
+    line-height: 1.2;
+}
+.photo-card p { margin: 0; font-size: 8.8pt; line-height: 1.42; color: var(--ink-soft); }
+.photo-card.wide { grid-column: 1 / -1; }
+.photo-card.wide img { height: 56mm; }
+
+/* --- callout for the good bits ---------------------------------------- */
+
+.callout {
+    margin-top: 4mm;
+    padding: 4mm 4.5mm;
+    background: var(--paper-deep);
+    border-top: 1.6pt solid var(--route);
+    break-inside: avoid;
+}
+.callout .label { color: var(--route); }
+.callout h3 { font-size: 14pt; font-weight: 400; margin: 1.5mm 0 1.5mm; }
+.callout p { margin: 0; font-size: 9.4pt; line-height: 1.5; color: var(--ink-soft); }
+.callout p + p { margin-top: 2mm; }
+.callout strong { color: var(--ink); font-weight: 600; }
+
+/* --- meet-window table ------------------------------------------------ */
+
+table.windows { width: 100%; border-collapse: collapse; margin-top: 3mm; }
+table.windows th {
+    font-family: var(--sans);
+    font-size: 6.4pt;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    text-align: left;
+    padding: 0 0 1.6mm;
+    border-bottom: 0.6pt solid var(--ink);
+}
+table.windows th.r, table.windows td.r { text-align: right; }
+table.windows td {
+    padding: 2.4mm 0;
+    border-bottom: 0.4pt solid var(--rule-soft);
+    font-size: 9.6pt;
+}
+table.windows td.day {
+    font-family: var(--sans);
+    font-size: 7pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    width: 14mm;
+}
+table.windows td.win {
+    font-family: var(--sans);
+    font-size: 10pt;
+    font-weight: 600;
+    text-align: right;
+    white-space: nowrap;
+}
+table.windows tr.finish td { font-weight: 600; }
+table.windows tr.finish td.win { color: var(--route); }
+
+/* --- credits list ----------------------------------------------------- */
+
+.credits { margin-top: 3mm; column-count: 2; column-gap: 6mm; }
+.credits div {
+    font-family: var(--sans);
+    font-size: 6.8pt;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-bottom: 1.6mm;
+    break-inside: avoid;
+}
+.credits strong { color: var(--ink); font-weight: 600; }

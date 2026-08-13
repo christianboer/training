@@ -308,6 +308,51 @@ fifth of OpenTopoMap's tiles hold the connection open until it times out.
   stage's map page must land on an even folio for its photo page to sit beside it. The
   overview fills pages 2–3 to push stage 1 onto page 4; `build_html` asserts this.
 
+## Ploegboekje (print PDF)
+
+A 12-page A4 booklet for the two who travel by car and move the bags between
+hotels, built from `plan/support-crew-dagen.md`:
+
+```bash
+python3 scripts/crewbook/make.py               # ~2 min cold, ~20 s warm
+python3 scripts/crewbook/make.py --no-maps --open
+```
+
+Output: `crewbook/kent-met-de-auto.pdf`. Named `make.py`, not `build.py`, so it
+cannot be confused with the routebook's — by python's imports or by `pgrep`.
+
+It is deliberately the routebook's sibling: it imports `../routebook/style.css`,
+`tiles.py`, `gpxread.py` and a few helpers from `routebook/build.py`, and adds
+`crew.css` for its own components (hotel cards, day timeline, photo cards).
+
+**The licence difference is the point.** Every photograph comes from Wikimedia
+Commons under CC BY-SA, CC BY or CC0, fetched by `commons.py`, which also returns
+the photographer and the licence. So unlike the routebook — which embeds Strava
+community photos and must never be published — **this PDF may be shared**, as
+long as the credits stay on the page: a line under every picture and a full list
+on page 12. Two rules follow:
+
+- **Never add a Strava photo to this booklet.** One unlicensed image drags the
+  whole PDF back into "never publish".
+- `PHOTO` in `make.py` pins files by *exact* Commons title. Search results drift;
+  a booklet should rebuild identically next month.
+
+**No free photo exists of the Holiday Inn** (a modern chain hotel), so it gets a
+generated locator map instead via `point_map()` — honest about the gap and more
+use to a driver anyway.
+
+**Day maps deliberately show no car route.** We have no routing data, and a
+straight line between two villages implies a road that may not exist. The stage
+track in terracotta plus numbered stop pins keyed to the timeline is enough.
+
+**The Google Maps links are real PDF link annotations** — Chrome's print-to-pdf
+converts `<a href>` — so on a phone the hotel buttons open navigation. Verify
+after changing them:
+
+```bash
+python3 -c "import re;d=open('crewbook/kent-met-de-auto.pdf','rb').read();print(len(re.findall(rb'/URI',d)))"
+```
+
 ## Training Dashboard
 
 Static HTML/CSS/JS site in `site/`. Displays the 13-week training plan for the **Pilgrims' Way 4-Day** (Sep 3–6, 2026, Guildford → Canterbury, 170.0 km / ~2,470m over 4 stages) and the **Trappenmarathon** (Oct 3, 2026), with progress charts, stage profiles, time prediction, exercise library, and event day reference. (The previous Swiss Irontrail T78 plan lives on in `plan/swiss-iron-trail-t78.md` as an archive; T78 ended at km 48 in a storm DNF + ankle sprain on Jun 27, 2026.)

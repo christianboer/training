@@ -13,3 +13,9 @@ __pycache__/
 # as route-photos/, so it is ours to print for the crew, not ours to publish.
 /routebook/
 /scripts/routebook/cache/
+
+# Crew booklet output. Unlike routebook/, everything in it is CC-licensed from
+# Wikimedia Commons, so this PDF may be shared — the build artefacts just don't
+# belong in git.
+/crewbook/
+/scripts/crewbook/cache/
