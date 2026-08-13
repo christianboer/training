@@ -351,6 +351,95 @@ DAYS = [
 ]
 
 
+# Wetenswaardigheden, in Dutch.
+#
+# The routebook carries these in English because they are verbatim Wikipedia. The
+# crew booklet cannot: one of its two readers does not read English. So they are
+# translated here — and a translation is legally a derivative work, which is why
+# each item names its article, the page says the translation is ours, and the
+# translations themselves go out under the same CC BY-SA 4.0. Attribution plus
+# "indicate what changed" plus share-alike is the whole of the licence; dropping
+# any of the three is not an option.
+#
+# Only figures were converted (feet and miles to metres and kilometres). Nothing
+# was added, and where a source is vague the translation stays vague.
+
+FACTS = [
+    ('Donderdag &middot; Bletchingley', [
+        ('Bletchingley', 'Bletchingley',
+         'Bletchingley (vroeger &ldquo;Blechingley&rdquo;) is een dorp in Surrey. '
+         'Het ligt aan de A25 ten oosten van Redhill en ten westen van Godstone, '
+         'heeft een beschermd dorpsgezicht met middeleeuwse gebouwen en ligt '
+         'grotendeels op een brede steilrand van de Greensand Ridge, die door de '
+         'Greensand Way wordt gevolgd.'),
+    ]),
+    ('Vrijdag &middot; tussen Bletchingley en Wrotham Heath', [
+        ('Ide Hill', 'Ide Hill',
+         'Ide Hill is een dorp in de gemeente Sundridge met Ide Hill, in het '
+         'district Sevenoaks in Kent. Het ligt op een van de hoogste punten van '
+         'de Greensand Ridge, ongeveer drie mijl (vijf kilometer) zuidwestelijk '
+         'van Sevenoaks.'),
+        ('One Tree Hill en Bitchet Common', 'One Tree Hill and Bitchet Common',
+         'One Tree Hill en Bitchet Common is een gebied van 79,2 hectare met de '
+         'status van biologisch Site of Special Scientific Interest, ten oosten '
+         'van Sevenoaks in Kent. Het ligt in het Kent Downs Area of Outstanding '
+         'Natural Beauty, en One Tree Hill wordt beheerd door de National Trust. '
+         'Er staat gemengd bos op de Lower Greensand, deels van oude oorsprong.'),
+    ]),
+    ('Zaterdag &middot; tussen Wrotham Heath en Charing Heath', [
+        ('Aylesford Priory', 'Aylesford Priory',
+         'Aylesford Priory, of &ldquo;The Friars&rdquo;, werd gesticht in 1242, '
+         'toen leden van de karmelietenorde vanuit de berg Karmel in het Heilige '
+         'Land in Engeland aankwamen. Richard de Grey, een kruisvaarder, '
+         'steunde hen en droeg de orde een stuk land over op zijn landgoed in '
+         'Aylesford in Kent.'),
+        ("Kit's Coty House", "Kit's Coty House",
+         'Kit&rsquo;s Coty House of Kit&rsquo;s Coty is een langgraf met '
+         'grafkamer bij het dorp Aylesford in het zuidoosten van Kent. Het werd '
+         'rond 4000 v.Chr. gebouwd, in het vroege neolithicum van de Britse '
+         'prehistorie, en is vandaag in ruïneuze staat bewaard.'),
+        ('White Horse Stone', 'White Horse Stone',
+         'De White Horse Stone is de naam van twee afzonderlijke '
+         'sarsen-megalieten op de flanken van Blue Bell Hill, bij het dorp '
+         'Aylesford in het zuidoosten van Kent. De Lower White Horse Stone werd '
+         'vóór 1834 verwoest; op dat moment nam de overgebleven Upper White '
+         'Horse Stone de naam en de bijbehorende volksverhalen over.'),
+        ('Lenham Cross', 'Lenham Cross',
+         'Het Lenham Cross is een krijtkruis dat is uitgesneden in de heuvelflank '
+         'ten noorden van Lenham in Kent. Het Latijnse kruis is 61 meter hoog, '
+         'met armen van 21 meter breed.'),
+    ]),
+    ('Zondag &middot; tussen Charing Heath en Canterbury', [
+        ("Archbishop's Palace, Charing", "Archbishop's Palace, Charing",
+         'Archbishop&rsquo;s Palace in Charing is een beschermd monument in '
+         'Charing, Kent. Het paleis is een belangrijke erfgoedplek die teruggaat '
+         'tot de achtste eeuw, en een van de eerste die eigendom was van het '
+         'aartsbisdom Canterbury.'),
+        ("All Saints' Church, Boughton Aluph", "All Saints' Church, Boughton Aluph",
+         'All Saints&rsquo; Church is een 13e-eeuwse pelgrimskerk in Boughton '
+         'Aluph bij Ashford, Kent, met de monumentenstatus Grade&nbsp;I. De kerk '
+         'hoort bij de Church of England.'),
+        ("Julliberrie's Grave", "Julliberrie's Grave",
+         'Julliberrie&rsquo;s Grave, ook bekend als The Giant&rsquo;s Grave of '
+         'The Grave, is een langgraf zónder grafkamer bij het dorp Chilham in het '
+         'zuidoosten van Kent. Het is vermoedelijk gebouwd in het vierde '
+         'millennium v.Chr., tijdens het vroege neolithicum van Groot-Brittannië, '
+         'en is vandaag alleen als ruïne bewaard.'),
+        ('Westgate, Canterbury', 'Westgate, Canterbury',
+         'De Westgate is een middeleeuws poortgebouw in Canterbury, Kent. Deze 18 '
+         'meter hoge westelijke poort van de stadsmuur is de grootste bewaard '
+         'gebleven stadspoort van Engeland.'),
+        ('Canterbury Cathedral', 'Canterbury Cathedral',
+         'Canterbury Cathedral is de kathedraal van de aartsbisschop van '
+         'Canterbury, de geestelijk leider van de Church of England en '
+         'symbolisch leider van de wereldwijde Anglicaanse Gemeenschap. De '
+         'kathedraal staat in Canterbury, Kent, op de plek van een van de oudste '
+         'christelijke bouwwerken van Engeland, en maakt deel uit van een '
+         'werelderfgoedlocatie.'),
+    ]),
+]
+
+
 # --- maps -----------------------------------------------------------------
 
 def day_map(day, no_maps=False):
@@ -835,6 +924,59 @@ def page_day4_places(ph, folio, day=None):
 </section>'''
 
 
+WIKI_URL = 'https://nl.wikipedia.org/'   # unused; kept out of the page on purpose
+
+
+def page_facts(groups, folio, first=False, note=''):
+    """The translated snippets. `first` carries the heading; the second page
+    continues without one, so the spread reads as one piece."""
+    blocks = []
+    for heading, items in groups:
+        rows = ''.join(f'''
+      <div class="fact-item">
+        <h4>{esc(name)}</h4>
+        <span class="km">Wikipedia: {esc(article)}</span>
+        <p>{text}</p>
+      </div>''' for name, article, text in items)
+        blocks.append(f'''
+  <div class="label" style="margin-top:5mm">{heading}</div>
+  <div class="facts-grid" style="margin-top:2.5mm">{rows}</div>''')
+
+    head = '''
+  <div class="title-block">
+    <div class="label">Onderweg</div>
+    <h2>Wat jullie passeren</h2>
+    <div class="sub">Kleine stukjes geschiedenis van de plekken waar jullie deze
+      week langsrijden — dezelfde die in het boekje van de lopers staan, hier in
+      het Nederlands.</div>
+  </div>''' if first else '''
+  <div class="recto-head">
+    <h3>Wat jullie passeren</h3>
+    <span class="of">vervolg</span>
+  </div>'''
+
+    return f'''
+<section class="page">
+  {head}
+  {''.join(blocks)}
+  {note}
+  <div class="folio {'left' if folio % 2 == 0 else 'right'}">{folio}</div>
+</section>'''
+
+
+FACTS_NOTE = '''
+  <div class="callout" style="margin-top:6mm">
+    <span class="label">Over deze tekstjes</span>
+    <h3>Waar ze vandaan komen</h3>
+    <p>Het zijn vertalingen van fragmenten uit de Engelse Wikipedia, die daar
+    onder de licentie <strong>CC&nbsp;BY-SA&nbsp;4.0</strong> staan. Bij elk
+    stukje staat het artikel waar het uit komt.</p>
+    <p>De vertaling is van ons — dat is de enige bewerking, op het omrekenen van
+    voet en mijlen naar meters en kilometers na. Die licentie werkt door: ook
+    deze vertalingen staan onder CC&nbsp;BY-SA&nbsp;4.0.</p>
+  </div>'''
+
+
 def page_practical(ph, folio):
     creds = ''.join(
         f'<div><strong>{esc(p["title"].replace("File:", ""))}</strong><br>'
@@ -937,6 +1079,14 @@ def build_html(days, maps, ov, ph):
         pages.append(page_day(day, maps.get(day['n']), ph, folio))
         pages.append(places(ph, folio + 1, day=day))
         folio += 2
+
+    # The translated snippets fill their own spread, so the day pages can stay
+    # menus. Split by day group, not by count: a day should not break mid-list.
+    assert folio % 2 == 0, f'wetenswaardigheden op recto {folio}'
+    pages.append(page_facts(FACTS[:3], folio, first=True))
+    pages.append(page_facts(FACTS[3:], folio + 1, note=FACTS_NOTE))
+    folio += 2
+
     pages.append(page_practical(ph, folio))
 
     return f'''<!doctype html>

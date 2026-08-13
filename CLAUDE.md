@@ -333,6 +333,15 @@ choose. **The only clock times in the booklet are the windows in which the walke
 pass**, on their own page, because those are not theirs to pick. Don't reintroduce
 a timed programme.
 
+**The Wikipedia snippets are translated into Dutch** (`FACTS` in `make.py`, on
+their own spread) because one of the two readers does not read English, where the
+routebook keeps them verbatim. **A translation is a derivative work**, so CC BY-SA
+4.0 asks for three things and the page gives all three: the article each snippet
+came from, a statement that the translation is ours (the only change, besides
+converting feet and miles), and the same licence on the translation. Don't drop
+any of them, and if you add a snippet, translate it faithfully — no additions, and
+stay vague where the source is vague.
+
 Options that are a real detour go in a day's `far` list, which renders on the
 facing page under `far_label`. That is a layout constraint as much as an editorial
 one: with the map band, about five entries fit a day page before the list runs off
