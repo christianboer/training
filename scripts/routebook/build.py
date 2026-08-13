@@ -58,6 +58,22 @@ OVERVIEW_ASPECT = 2.0          # same shape as the stage maps, for consistency
 STAGE_MAP_SOURCE = 'opentopomap'
 OVERVIEW_SOURCE = 'osm'
 
+# The cover photo, by stage and uuid prefix — a choice, not a ranking. This one
+# is the Inglis Memorial on Colley Hill at first light, km 34.1 of stage 1, so
+# the cover is a place they will actually walk past.
+#
+# It is printed as a band rather than full-bleed, and that is a resolution
+# decision as much as a design one: Strava's largest rendition is ~1600 px, and
+# a full-bleed A4 would spread that over 210 x 297 mm at about 190 dpi — soft,
+# and softer still on a portrait crop of a landscape photo. At 180 mm wide the
+# same file lands near 226 dpi and prints sharp.
+COVER_PHOTO = (1, '8693A75D')
+# The manifest timestamps this one at 19:07 local on 11 September — evening sun,
+# not morning, which is what the low light and the south-westerly view over the
+# Weald agree with. Worth checking rather than guessing: it would have gone to
+# print as "first light".
+COVER_CAPTION = 'Colley Hill in de avondzon'
+
 MONTHS = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli',
           'augustus', 'september', 'oktober', 'november', 'december']
 DAYS = ['maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag',
@@ -373,7 +389,23 @@ def collect(no_maps=False):
                                 target_px=2200, pad=0.05,
                                 source=OVERVIEW_SOURCE)
 
-    return data, stages, {'meta': ov_meta, 'rel': ov_rel}
+    # the cover photo: a named choice, fetched at the largest rendition
+    cst, cuuid = COVER_PHOTO
+    cp = photolib.find(cst, cuuid)
+    cover = None
+    if cp:
+        path = photolib.fetch(cp, cst, quiet=True, full=True)
+        if path:
+            dest = os.path.join(OUT, 'photos', os.path.basename(path))
+            shutil.copyfile(path, dest)
+            cover = {'rel': f'photos/{os.path.basename(path)}', 'km': cp['route_km'],
+                     'stage': cst}
+    if not cover:
+        print(f'  ! cover photo {cuuid} not found on stage {cst}', file=sys.stderr)
+        cover = stages[0]['shots'][0]
+        cover.setdefault('km', 0)
+
+    return data, stages, {'meta': ov_meta, 'rel': ov_rel}, cover
 
 
 # --- pages ---------------------------------------------------------------
@@ -386,25 +418,23 @@ def totals(stages):
     }
 
 
-def page_cover(stages):
-    hero = stages[0]['shots'][1] if len(stages[0]['shots']) > 1 else stages[0]['shots'][0]
+def page_cover(stages, cover):
     t = totals(stages)
     return f'''
-<section class="page bleed cover">
-  <img class="bg" src="{hero['rel']}" alt="">
-  <div class="scrim"></div>
-  <div class="inner">
-    <div class="eyebrow">Routeboek</div>
-    <div class="acorn">{ACORN}</div>
-    <h1>Pilgrims&rsquo;&nbsp;Way<em>Guildford &rarr; Canterbury</em></h1>
-    <div class="hair"></div>
-    <div class="meta">
-      <strong>3 &ndash; 6 september 2026</strong><br>
-      {nl_num(t['km'])} km &middot; {nl_num(t['asc'], 0)} hm &middot; vier dagen<br>
-      Christian Boer &middot; met de support crew
-    </div>
+<section class="page cover">
+  <div class="eyebrow">Routeboek</div>
+  <figure class="hero">
+    <img src="{cover['rel']}" alt="">
+    <figcaption>{esc(COVER_CAPTION)} &middot; etappe {ROMAN[cover['stage']]}, km
+      {nl_num(cover['km'])} &middot; foto: Strava-community</figcaption>
+  </figure>
+  <div class="acorn">{ACORN}</div>
+  <h1>Pilgrims&rsquo;&nbsp;Way<em>Guildford &rarr; Canterbury</em></h1>
+  <div class="hair"></div>
+  <div class="meta">
+    <strong>3 &ndash; 6 september 2026</strong><br>
+    {nl_num(t['km'])} km &middot; {nl_num(t['asc'], 0)} hoogtemeters &middot; vier dagen
   </div>
-  <div class="credit">Foto: Strava-community</div>
 </section>'''
 
 
@@ -725,14 +755,13 @@ def page_colophon(data, folio):
       trainingsplan.</dd>
 
     <dt>Gemaakt op</dt>
-    <dd>{nl_date(data['generated_at'][:10])} &middot; uit de eigen trainingsdatabase.
-      Voor de crew en voor onszelf.</dd>
+    <dd>{nl_date(data['generated_at'][:10])}</dd>
   </dl>
   <div class="folio left">{folio}</div>
 </section>'''
 
 
-def build_html(data, stages, ov):
+def build_html(data, stages, ov, cover):
     """Assemble the pages in reading order.
 
     Printed double-sided, the pages that face each other are (2,3), (4,5), (6,7)
@@ -742,7 +771,7 @@ def build_html(data, stages, ov):
     onto page 4.
     """
     css = open(os.path.join(BASE, 'style.css')).read()
-    pages = [page_cover(stages),           # 1, recto, no folio printed
+    pages = [page_cover(stages, cover),     # 1, recto, no folio printed
              page_overview(stages, ov, 2),
              page_itinerary(stages, 3)]
     folio = 4
@@ -804,11 +833,11 @@ def main():
     args = ap.parse_args()
 
     print('Collecting…')
-    data, stages, ov = collect(no_maps=args.no_maps)
+    data, stages, ov, cover = collect(no_maps=args.no_maps)
 
     html_path = os.path.join(OUT, 'routeboek.html')
     with open(html_path, 'w') as f:
-        f.write(build_html(data, stages, ov))
+        f.write(build_html(data, stages, ov, cover))
     print(f'  {html_path}')
 
     pdf_path = os.path.join(OUT, 'pilgrims-way-routeboek.pdf')

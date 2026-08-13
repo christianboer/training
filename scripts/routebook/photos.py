@@ -70,24 +70,40 @@ def select(stage, slots=4, min_score=None):
     return sorted(picked, key=lambda p: p['route_km'])
 
 
-def fetch(photo, stage, quiet=False):
-    """Download the 576x768 rendition into the local cache. -> path or None."""
+def find(stage, uuid_prefix):
+    """One named photo out of a stage's manifest — for the cover, which is a
+    choice rather than a selection."""
+    return next((p for p in load_manifest(stage)
+                 if p['uuid'].startswith(uuid_prefix)), None)
+
+
+def fetch(photo, stage, quiet=False, full=False):
+    """Download a rendition into the local cache. -> path or None.
+
+    `full` takes the 1536px-class rendition instead of the 576px one. Worth it
+    for the cover and nowhere else: at 38 mm tall a thumbnail is already past
+    what the paper can resolve, while the cover photo is the one image on the
+    page big enough for its pixel count to show.
+    """
     os.makedirs(CACHE, exist_ok=True)
-    name = f'stage{stage}_km{photo["route_km"]:05.1f}_{photo["uuid"][:8]}.jpg'
+    suffix = '_full' if full else ''
+    name = (f'stage{stage}_km{photo["route_km"]:05.1f}_'
+            f'{photo["uuid"][:8]}{suffix}.jpg')
     path = os.path.join(CACHE, name)
     if os.path.exists(path) and os.path.getsize(path) > 1000:
         return path
+    url = photo['full_url'] if full and photo.get('full_url') else photo['url']
     for attempt in range(3):
         time.sleep(0.15 * (1 + 3 * attempt))
-        r = subprocess.run(['curl', '-sfL', '--max-time', '40', '-A', UA,
-                            '-o', path, photo['url']], capture_output=True)
+        r = subprocess.run(['curl', '-sfL', '--max-time', '60', '-A', UA,
+                            '-o', path, url], capture_output=True)
         if r.returncode == 0 and os.path.exists(path) and os.path.getsize(path) > 1000:
             if not quiet:
                 print(f'    {name} ({os.path.getsize(path) // 1024} KB)')
             return path
     if os.path.exists(path):
         os.remove(path)
-    print(f'    ! failed {photo["url"]}', file=sys.stderr)
+    print(f'    ! failed {url}', file=sys.stderr)
     return None
 
 
