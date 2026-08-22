@@ -1831,6 +1831,26 @@ a:hover { color: var(--accent-light); }
 }
 
 /* Route photos — filmstrip under each stage profile */
+/* --- paved / unpaved band under each stage profile -------------------- */
+
+.stage-surface {
+    margin: -6px 0 14px;
+}
+.surface-caption {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    align-items: baseline;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+}
+.surface-caption strong { color: #d08b3a; font-weight: 600; }
+.surface-source { color: var(--text-muted); }
+
+@media (max-width: 640px) {
+    .surface-caption { padding: 0; }
+}
+
 .stage-photos {
     margin-top: 14px;
 }

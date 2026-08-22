@@ -27,7 +27,7 @@ export function renderElevationThermometer(data) {
 
     // Landmarks — derived from the data so they don't go stale when the
     // stage elevations are re-based (see ascent_override_m in the exporter)
-    const fourDay = (data.race && data.race.elevation_m) || 2472;
+    const fourDay = (data.race && data.race.elevation_m) || 2792;
     const stairs = (data.race && data.race.second_target &&
                     data.race.second_target.elevation_m) || 3090;
     const landmarks = [

@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-12T21:46:35",
+  "generated_at": "2026-08-22T19:02:06",
   "race": {
     "name": "Pilgrims' Way 4-Day",
     "date": "2026-09-03",
     "end_date": "2026-09-06",
-    "distance_km": 170.0,
-    "elevation_m": 2472,
+    "distance_km": 172.5,
+    "elevation_m": 2792,
     "days": 4,
     "start_time": "09:00",
     "location": "Guildford → Canterbury, England",
@@ -34,9 +34,9 @@
     {
       "date": "2026-09-05",
       "name": "Stage 3: Maidstone → Charing Heath",
-      "distance_km": 44.9,
-      "elevation_m": 417,
-      "role": "4-Day — longest, but flattest of the three"
+      "distance_km": 47.4,
+      "elevation_m": 737,
+      "role": "4-Day — longest of the four; trail-heavy re-route"
     },
     {
       "date": "2026-09-06",
@@ -584,8 +584,8 @@
       "phase": "Taper & Event",
       "start_date": "2026-08-31",
       "end_date": "2026-09-06",
-      "target_km": 181.0,
-      "target_elevation": 2470.0,
+      "target_km": 183.0,
+      "target_elevation": 2790.0,
       "days": [
         {
           "day": "Mon",
@@ -625,8 +625,8 @@
         {
           "day": "Sat",
           "session": "Stage 3: Maidstone → Charing Heath",
-          "target_km": 44.9,
-          "target_elevation": 417.0,
+          "target_km": 47.4,
+          "target_elevation": 737.0,
           "date": "2026-09-05"
         },
         {
@@ -1267,22 +1267,13 @@
   ],
   "history": [
     {
-      "week_start": "2025-08-11",
-      "run_km": 56.3,
-      "run_elevation": 180.0,
-      "run_hours": 5.5,
-      "total_km": 145.2,
-      "total_elevation": 386.0,
-      "activity_count": 4
-    },
-    {
       "week_start": "2025-08-18",
-      "run_km": 38.9,
-      "run_elevation": 90.0,
-      "run_hours": 3.8,
-      "total_km": 134.7,
-      "total_elevation": 358.0,
-      "activity_count": 4
+      "run_km": 19.2,
+      "run_elevation": 40.0,
+      "run_hours": 1.9,
+      "total_km": 115.0,
+      "total_elevation": 308.0,
+      "activity_count": 2
     },
     {
       "week_start": "2025-08-25",
@@ -1736,11 +1727,6 @@
     }
   ],
   "daily_runs": {
-    "2025-08-13": 9.8,
-    "2025-08-15": 9.9,
-    "2025-08-16": 36.6,
-    "2025-08-19": 10.0,
-    "2025-08-22": 9.7,
     "2025-08-24": 19.2,
     "2025-08-29": 9.8,
     "2025-08-30": 11.7,
@@ -2078,8 +2064,8 @@
     ]
   },
   "plan_totals": {
-    "target_km": 656.0,
-    "target_elevation": 7660.0
+    "target_km": 658.0,
+    "target_elevation": 7980.0
   },
   "course_profile": {
     "stages": [
@@ -2460,7 +2446,115 @@
         "total_ascent": 991,
         "min_ele": 32,
         "max_ele": 238,
-        "total_ascent_gpx": 786
+        "total_ascent_gpx": 786,
+        "surface": {
+          "paved_km": 8.33,
+          "unpaved_km": 36.32,
+          "unknown_km": 0.0,
+          "paved_pct": 18.7,
+          "unpaved_pct": 81.3,
+          "unknown_pct": 0.0,
+          "tagged_pct": 67.6,
+          "inferred_pct": 32.4,
+          "spans": [
+            {
+              "from_km": 0.0,
+              "to_km": 0.6077,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 0.6285,
+              "to_km": 2.0346,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 2.0346,
+              "to_km": 3.7399,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 3.7674,
+              "to_km": 9.5021,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 9.7335,
+              "to_km": 10.2024,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 10.2024,
+              "to_km": 11.9895,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 11.9895,
+              "to_km": 14.8223,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 14.831,
+              "to_km": 19.2743,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 19.5082,
+              "to_km": 21.0201,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 21.0201,
+              "to_km": 21.8578,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 21.8578,
+              "to_km": 22.9217,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 22.9217,
+              "to_km": 35.2939,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 35.3427,
+              "to_km": 36.2788,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 36.2788,
+              "to_km": 37.1879,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 37.1879,
+              "to_km": 38.5611,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 39.0912,
+              "to_km": 41.0366,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 41.0647,
+              "to_km": 42.5651,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 42.7334,
+              "to_km": 44.3823,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 44.3823,
+              "to_km": 44.6497,
+              "verdict": "verhard"
+            }
+          ],
+          "source": "OpenStreetMap contributors (ODbL), via Overpass"
+        }
       },
       {
         "stage": 2,
@@ -2842,342 +2936,530 @@
         "total_km": 44.4,
         "total_ascent": 728,
         "min_ele": 58,
-        "max_ele": 242
+        "max_ele": 242,
+        "surface": {
+          "paved_km": 7.34,
+          "unpaved_km": 37.09,
+          "unknown_km": 0.0,
+          "paved_pct": 16.5,
+          "unpaved_pct": 83.5,
+          "unknown_pct": 0.0,
+          "tagged_pct": 49.7,
+          "inferred_pct": 50.3,
+          "spans": [
+            {
+              "from_km": 0.0,
+              "to_km": 0.4654,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 0.4654,
+              "to_km": 2.3517,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 2.5832,
+              "to_km": 3.8237,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 3.8493,
+              "to_km": 5.0287,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 5.2107,
+              "to_km": 6.6472,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 6.6986,
+              "to_km": 7.9219,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 8.3743,
+              "to_km": 8.7856,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 8.7856,
+              "to_km": 9.2888,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 9.5365,
+              "to_km": 10.1167,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 10.3268,
+              "to_km": 12.2864,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 12.3473,
+              "to_km": 14.432,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 14.4556,
+              "to_km": 18.2906,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 18.593,
+              "to_km": 22.142,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 22.142,
+              "to_km": 22.6418,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 22.6418,
+              "to_km": 24.8818,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 24.8919,
+              "to_km": 25.2154,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 25.2488,
+              "to_km": 25.8093,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 25.8093,
+              "to_km": 26.7211,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 26.7211,
+              "to_km": 28.0904,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 28.1593,
+              "to_km": 28.5899,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 28.784,
+              "to_km": 29.4776,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 29.4776,
+              "to_km": 30.4929,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 30.4929,
+              "to_km": 31.5574,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 31.5574,
+              "to_km": 31.9673,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 31.9673,
+              "to_km": 32.44,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 32.7113,
+              "to_km": 33.0676,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 33.0676,
+              "to_km": 35.0318,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 35.0693,
+              "to_km": 37.1389,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 37.2788,
+              "to_km": 38.391,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 38.4816,
+              "to_km": 39.4097,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 39.5176,
+              "to_km": 41.5708,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 41.5708,
+              "to_km": 42.3231,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 42.3231,
+              "to_km": 42.944,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 43.1815,
+              "to_km": 43.6974,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 43.7661,
+              "to_km": 44.3186,
+              "verdict": "onverhard"
+            }
+          ],
+          "source": "OpenStreetMap contributors (ODbL), via Overpass"
+        }
       },
       {
         "stage": 3,
         "date": "2026-09-05",
         "name": "Maidstone → Charing Heath",
-        "planned_hours": 5.47,
+        "planned_hours": 5.97,
         "ascent_source": "Garmin course export",
         "profile": [
           {
             "km": 0.0,
-            "ele": 75
+            "ele": 76
           },
           {
             "km": 0.5,
-            "ele": 88
+            "ele": 79
           },
           {
-            "km": 1.0,
-            "ele": 80
-          },
-          {
-            "km": 1.6,
-            "ele": 69
-          },
-          {
-            "km": 2.3,
+            "km": 1.1,
             "ele": 67
           },
           {
-            "km": 2.9,
-            "ele": 60
+            "km": 1.7,
+            "ele": 67
           },
           {
-            "km": 3.5,
-            "ele": 49
+            "km": 2.4,
+            "ele": 64
           },
           {
-            "km": 4.1,
-            "ele": 43
+            "km": 3.0,
+            "ele": 52
+          },
+          {
+            "km": 3.6,
+            "ele": 68
+          },
+          {
+            "km": 4.2,
+            "ele": 78
           },
           {
             "km": 4.7,
-            "ele": 39
+            "ele": 87
           },
           {
-            "km": 5.4,
-            "ele": 32
+            "km": 5.3,
+            "ele": 122
           },
           {
             "km": 6.0,
-            "ele": 31
+            "ele": 131
           },
           {
-            "km": 6.4,
-            "ele": 27
+            "km": 6.7,
+            "ele": 123
           },
           {
-            "km": 6.8,
-            "ele": 20
-          },
-          {
-            "km": 7.3,
-            "ele": 18
+            "km": 7.2,
+            "ele": 105
           },
           {
             "km": 7.9,
-            "ele": 19
+            "ele": 94
           },
           {
             "km": 8.4,
+            "ele": 99
+          },
+          {
+            "km": 9.0,
+            "ele": 83
+          },
+          {
+            "km": 9.6,
+            "ele": 49
+          },
+          {
+            "km": 10.3,
+            "ele": 52
+          },
+          {
+            "km": 10.9,
+            "ele": 60
+          },
+          {
+            "km": 11.5,
+            "ele": 32
+          },
+          {
+            "km": 12.0,
+            "ele": 15
+          },
+          {
+            "km": 12.5,
             "ele": 6
           },
           {
-            "km": 8.8,
-            "ele": 6
-          },
-          {
-            "km": 9.4,
-            "ele": 4
-          },
-          {
-            "km": 9.8,
-            "ele": 2
-          },
-          {
-            "km": 10.5,
-            "ele": 4
-          },
-          {
-            "km": 11.0,
-            "ele": 4
-          },
-          {
-            "km": 11.4,
-            "ele": 6
-          },
-          {
-            "km": 11.9,
-            "ele": 6
-          },
-          {
-            "km": 12.4,
-            "ele": 7
-          },
-          {
-            "km": 13.0,
+            "km": 13.1,
             "ele": 8
           },
           {
             "km": 13.5,
-            "ele": 5
-          },
-          {
-            "km": 14.0,
-            "ele": 5
-          },
-          {
-            "km": 14.4,
             "ele": 14
           },
           {
-            "km": 15.0,
-            "ele": 10
+            "km": 14.2,
+            "ele": 29
           },
           {
-            "km": 15.6,
-            "ele": 21
+            "km": 14.8,
+            "ele": 65
           },
           {
-            "km": 16.2,
-            "ele": 33
-          },
-          {
-            "km": 16.8,
-            "ele": 47
-          },
-          {
-            "km": 17.4,
-            "ele": 53
-          },
-          {
-            "km": 18.0,
-            "ele": 106
-          },
-          {
-            "km": 18.5,
-            "ele": 174
-          },
-          {
-            "km": 19.1,
-            "ele": 147
-          },
-          {
-            "km": 19.6,
-            "ele": 118
-          },
-          {
-            "km": 20.1,
-            "ele": 87
-          },
-          {
-            "km": 20.6,
-            "ele": 74
-          },
-          {
-            "km": 21.0,
-            "ele": 92
-          },
-          {
-            "km": 21.5,
-            "ele": 100
-          },
-          {
-            "km": 22.0,
-            "ele": 105
-          },
-          {
-            "km": 22.6,
-            "ele": 107
-          },
-          {
-            "km": 23.1,
-            "ele": 95
-          },
-          {
-            "km": 23.7,
-            "ele": 101
-          },
-          {
-            "km": 24.3,
-            "ele": 110
-          },
-          {
-            "km": 25.0,
-            "ele": 120
-          },
-          {
-            "km": 25.5,
-            "ele": 124
-          },
-          {
-            "km": 25.9,
-            "ele": 113
-          },
-          {
-            "km": 26.4,
-            "ele": 106
-          },
-          {
-            "km": 27.0,
-            "ele": 115
-          },
-          {
-            "km": 27.7,
-            "ele": 100
-          },
-          {
-            "km": 28.2,
-            "ele": 103
-          },
-          {
-            "km": 28.8,
-            "ele": 111
-          },
-          {
-            "km": 29.3,
-            "ele": 107
-          },
-          {
-            "km": 29.8,
-            "ele": 101
-          },
-          {
-            "km": 30.4,
-            "ele": 97
-          },
-          {
-            "km": 31.1,
-            "ele": 98
-          },
-          {
-            "km": 31.7,
-            "ele": 94
-          },
-          {
-            "km": 32.2,
-            "ele": 94
-          },
-          {
-            "km": 32.9,
-            "ele": 109
-          },
-          {
-            "km": 33.5,
-            "ele": 107
-          },
-          {
-            "km": 34.1,
-            "ele": 128
-          },
-          {
-            "km": 34.7,
-            "ele": 121
-          },
-          {
-            "km": 35.3,
-            "ele": 138
-          },
-          {
-            "km": 36.0,
-            "ele": 141
-          },
-          {
-            "km": 36.5,
-            "ele": 137
-          },
-          {
-            "km": 37.1,
-            "ele": 152
-          },
-          {
-            "km": 37.7,
-            "ele": 155
-          },
-          {
-            "km": 38.3,
-            "ele": 150
-          },
-          {
-            "km": 38.9,
-            "ele": 147
-          },
-          {
-            "km": 39.5,
-            "ele": 153
-          },
-          {
-            "km": 40.1,
-            "ele": 159
-          },
-          {
-            "km": 40.6,
+            "km": 15.5,
             "ele": 158
           },
           {
-            "km": 41.2,
-            "ele": 157
+            "km": 16.2,
+            "ele": 169
           },
           {
-            "km": 41.7,
-            "ele": 133
-          },
-          {
-            "km": 42.4,
-            "ele": 134
-          },
-          {
-            "km": 42.9,
-            "ele": 140
-          },
-          {
-            "km": 43.5,
-            "ele": 112
-          },
-          {
-            "km": 44.1,
+            "km": 16.8,
             "ele": 100
           },
           {
-            "km": 44.6,
-            "ele": 97
+            "km": 17.4,
+            "ele": 140
           },
           {
-            "km": 44.9,
-            "ele": 89
+            "km": 18.0,
+            "ele": 184
+          },
+          {
+            "km": 18.6,
+            "ele": 155
+          },
+          {
+            "km": 19.1,
+            "ele": 130
+          },
+          {
+            "km": 19.7,
+            "ele": 75
+          },
+          {
+            "km": 20.4,
+            "ele": 63
+          },
+          {
+            "km": 20.8,
+            "ele": 82
+          },
+          {
+            "km": 21.3,
+            "ele": 95
+          },
+          {
+            "km": 21.9,
+            "ele": 107
+          },
+          {
+            "km": 22.5,
+            "ele": 186
+          },
+          {
+            "km": 23.1,
+            "ele": 188
+          },
+          {
+            "km": 23.7,
+            "ele": 186
+          },
+          {
+            "km": 24.3,
+            "ele": 194
+          },
+          {
+            "km": 24.9,
+            "ele": 190
+          },
+          {
+            "km": 25.6,
+            "ele": 188
+          },
+          {
+            "km": 26.2,
+            "ele": 198
+          },
+          {
+            "km": 26.8,
+            "ele": 188
+          },
+          {
+            "km": 27.2,
+            "ele": 177
+          },
+          {
+            "km": 27.7,
+            "ele": 173
+          },
+          {
+            "km": 28.2,
+            "ele": 171
+          },
+          {
+            "km": 28.8,
+            "ele": 175
+          },
+          {
+            "km": 29.3,
+            "ele": 163
+          },
+          {
+            "km": 29.8,
+            "ele": 173
+          },
+          {
+            "km": 30.4,
+            "ele": 164
+          },
+          {
+            "km": 30.9,
+            "ele": 183
+          },
+          {
+            "km": 31.4,
+            "ele": 183
+          },
+          {
+            "km": 32.0,
+            "ele": 185
+          },
+          {
+            "km": 32.5,
+            "ele": 173
+          },
+          {
+            "km": 33.1,
+            "ele": 189
+          },
+          {
+            "km": 33.6,
+            "ele": 184
+          },
+          {
+            "km": 34.1,
+            "ele": 136
+          },
+          {
+            "km": 34.6,
+            "ele": 86
+          },
+          {
+            "km": 35.3,
+            "ele": 103
+          },
+          {
+            "km": 36.0,
+            "ele": 107
+          },
+          {
+            "km": 36.7,
+            "ele": 118
+          },
+          {
+            "km": 37.3,
+            "ele": 125
+          },
+          {
+            "km": 37.9,
+            "ele": 129
+          },
+          {
+            "km": 38.6,
+            "ele": 143
+          },
+          {
+            "km": 39.2,
+            "ele": 137
+          },
+          {
+            "km": 39.8,
+            "ele": 149
+          },
+          {
+            "km": 40.4,
+            "ele": 155
+          },
+          {
+            "km": 41.1,
+            "ele": 150
+          },
+          {
+            "km": 41.7,
+            "ele": 147
+          },
+          {
+            "km": 42.3,
+            "ele": 155
+          },
+          {
+            "km": 42.9,
+            "ele": 158
+          },
+          {
+            "km": 43.5,
+            "ele": 158
+          },
+          {
+            "km": 44.1,
+            "ele": 152
+          },
+          {
+            "km": 44.7,
+            "ele": 131
+          },
+          {
+            "km": 45.3,
+            "ele": 126
+          },
+          {
+            "km": 45.9,
+            "ele": 105
+          },
+          {
+            "km": 46.6,
+            "ele": 85
+          },
+          {
+            "km": 47.1,
+            "ele": 95
+          },
+          {
+            "km": 47.4,
+            "ele": 90
           }
         ],
         "waypoints": [
@@ -3185,7 +3467,7 @@
             "name": "Maidstone",
             "type": "start",
             "km": 0.0,
-            "ele": 75,
+            "ele": 76,
             "cum_gain_m": 0,
             "leg_km": 0,
             "leg_gain_m": 0
@@ -3193,26 +3475,213 @@
           {
             "name": "Shell Bluebell Hill",
             "type": "aid_station",
-            "km": 20.62,
-            "ele": 74,
-            "cum_gain_m": 209,
-            "leg_km": 20.62,
-            "leg_gain_m": 209
+            "km": 20.66,
+            "ele": 76,
+            "cum_gain_m": 400,
+            "leg_km": 20.66,
+            "leg_gain_m": 400
+          },
+          {
+            "name": "The Dirty Habit",
+            "type": "aid_station",
+            "km": 34.62,
+            "ele": 87,
+            "cum_gain_m": 620,
+            "leg_km": 13.96,
+            "leg_gain_m": 220
           },
           {
             "name": "Charing Heath",
             "type": "finish",
-            "km": 44.93,
-            "ele": 89,
-            "cum_gain_m": 417,
-            "leg_km": 24.31,
-            "leg_gain_m": 208
+            "km": 47.38,
+            "ele": 90,
+            "cum_gain_m": 737,
+            "leg_km": 12.76,
+            "leg_gain_m": 117
           }
         ],
-        "total_km": 44.9,
-        "total_ascent": 417,
-        "min_ele": 2,
-        "max_ele": 174
+        "total_km": 47.4,
+        "total_ascent": 737,
+        "min_ele": 4,
+        "max_ele": 198,
+        "surface": {
+          "paved_km": 10.51,
+          "unpaved_km": 36.87,
+          "unknown_km": 0.0,
+          "paved_pct": 22.2,
+          "unpaved_pct": 77.8,
+          "unknown_pct": 0.0,
+          "tagged_pct": 51.8,
+          "inferred_pct": 48.2,
+          "spans": [
+            {
+              "from_km": 0.1155,
+              "to_km": 1.3323,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 1.3323,
+              "to_km": 1.8717,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 1.8717,
+              "to_km": 2.9601,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 2.9601,
+              "to_km": 3.3327,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 3.3327,
+              "to_km": 4.6665,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 4.8173,
+              "to_km": 8.1942,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 8.2216,
+              "to_km": 9.1214,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 9.1214,
+              "to_km": 10.54,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 10.54,
+              "to_km": 11.8576,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 11.9864,
+              "to_km": 13.4586,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 13.4586,
+              "to_km": 13.9957,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 13.9957,
+              "to_km": 14.8923,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 14.8923,
+              "to_km": 15.7935,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 15.7935,
+              "to_km": 16.2982,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 16.2982,
+              "to_km": 18.9014,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 19.3159,
+              "to_km": 19.8015,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 19.827,
+              "to_km": 20.5372,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 20.6772,
+              "to_km": 26.0153,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 26.0153,
+              "to_km": 26.8393,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 26.8393,
+              "to_km": 27.8585,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 27.9442,
+              "to_km": 34.5672,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 34.5672,
+              "to_km": 35.1325,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 35.1325,
+              "to_km": 38.3008,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 38.3008,
+              "to_km": 40.1379,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 40.1379,
+              "to_km": 40.8089,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 40.9414,
+              "to_km": 42.2012,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 42.2012,
+              "to_km": 42.5405,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 42.5405,
+              "to_km": 43.1255,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 43.1394,
+              "to_km": 45.4761,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 45.4761,
+              "to_km": 45.8574,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 45.8574,
+              "to_km": 46.6898,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 46.77,
+              "to_km": 47.1021,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 47.1021,
+              "to_km": 47.3769,
+              "verdict": "verhard"
+            }
+          ],
+          "source": "OpenStreetMap contributors (ODbL), via Overpass"
+        }
       },
       {
         "stage": 4,
@@ -3586,18 +4055,149 @@
         "total_km": 36.0,
         "total_ascent": 336,
         "min_ele": 7,
-        "max_ele": 174
+        "max_ele": 174,
+        "surface": {
+          "paved_km": 10.95,
+          "unpaved_km": 25.06,
+          "unknown_km": 0.0,
+          "paved_pct": 30.4,
+          "unpaved_pct": 69.6,
+          "unknown_pct": 0.0,
+          "tagged_pct": 62.8,
+          "inferred_pct": 37.2,
+          "spans": [
+            {
+              "from_km": 0.2754,
+              "to_km": 0.6912,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 0.6912,
+              "to_km": 1.8575,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 1.8907,
+              "to_km": 2.6314,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 2.7078,
+              "to_km": 3.1908,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 3.1908,
+              "to_km": 4.4998,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 4.4998,
+              "to_km": 4.8474,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 4.8474,
+              "to_km": 6.6434,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 6.6434,
+              "to_km": 7.5275,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 7.5275,
+              "to_km": 9.4566,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 9.4566,
+              "to_km": 9.8838,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 9.8838,
+              "to_km": 10.4239,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 10.6638,
+              "to_km": 11.6107,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 11.6107,
+              "to_km": 22.4358,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 22.4358,
+              "to_km": 25.3867,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 25.3867,
+              "to_km": 27.506,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 27.5851,
+              "to_km": 28.2152,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 28.2525,
+              "to_km": 28.518,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 28.5632,
+              "to_km": 29.1822,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 29.1822,
+              "to_km": 30.2497,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 30.2497,
+              "to_km": 32.8265,
+              "verdict": "onverhard"
+            },
+            {
+              "from_km": 32.8265,
+              "to_km": 35.3566,
+              "verdict": "verhard"
+            },
+            {
+              "from_km": 35.3745,
+              "to_km": 36.0168,
+              "verdict": "verhard"
+            }
+          ],
+          "source": "OpenStreetMap contributors (ODbL), via Overpass"
+        }
       }
     ],
-    "total_km": 169.9,
-    "total_ascent": 2472
+    "total_km": 172.4,
+    "total_ascent": 2792,
+    "surface": {
+      "paved_km": 37.1,
+      "unpaved_km": 135.3,
+      "unknown_km": 0.0,
+      "unpaved_pct": 78.5,
+      "paved_pct": 21.5,
+      "source": "OpenStreetMap contributors (ODbL), via Overpass"
+    }
   },
   "race_plan": {
     "targets": {
       "carbs_per_hour_g": 60,
       "fluid_l_per_hour": 0.5,
-      "planned_total_time": "21h17",
-      "planned_total_hours": 21.29,
+      "planned_total_time": "21h47",
+      "planned_total_hours": 21.79,
       "hr_cap": 135
     },
     "recovery_routine": [
@@ -3659,25 +4259,31 @@
         "stage": 3,
         "date": "2026-09-05",
         "name": "Maidstone → Charing Heath",
-        "km": 44.9,
-        "ascent_m": 417,
-        "planned_time": "5h28",
-        "planned_hours": 5.47,
-        "pace_min_km": 7.31,
-        "carbs_g": 328,
-        "fluid_l": 2.7,
+        "km": 47.4,
+        "ascent_m": 737,
+        "planned_time": "5h58",
+        "planned_hours": 5.97,
+        "pace_min_km": 7.56,
+        "carbs_g": 358,
+        "fluid_l": 3.0,
         "aid_stations": [
           {
             "name": "Shell Bluebell Hill",
-            "km": 20.62,
-            "ele": 74
+            "km": 20.66,
+            "ele": 76
+          },
+          {
+            "name": "The Dirty Habit",
+            "km": 34.62,
+            "ele": 87
           }
         ],
         "carry_legs_km": [
-          20.6,
-          24.3
+          20.7,
+          14.0,
+          12.8
         ],
-        "longest_carry_km": 24.3
+        "longest_carry_km": 20.7
       },
       {
         "stage": 4,
@@ -3906,8 +4512,8 @@
       },
       {
         "label": "Realistic",
-        "hours": 21.33,
-        "conditions": "Matches the 21h17 route estimate — extra walking on rough ground"
+        "hours": 21.83,
+        "conditions": "Matches the 21h47 route estimate — extra walking on rough ground"
       },
       {
         "label": "Conservative",
@@ -3920,7 +4526,7 @@
     "key_factors": [
       "Ankle stability on uneven ground — rehab compliance in weeks 1–6 decides it",
       "Back-to-back recovery routine — eat within 30 min, legs up, sleep",
-      "Stage 1 discipline — hilliest stage on day 1, with two more 44 km days behind it; going out too fast taxes days 2–4",
+      "Stage 1 discipline — hilliest stage on day 1, with a 44 km and a 47 km day behind it; going out too fast taxes days 2–4",
       "Stair economy — variant B sessions in weeks 11–12 set up the Trappenmarathon"
     ]
   }

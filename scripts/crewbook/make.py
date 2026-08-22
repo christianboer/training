@@ -57,7 +57,7 @@ PHOTO = {
     'red_lion':   'File:The Red Lion, Charing Heath - geograph.org.uk - 2077087.jpg',
     'westerham':  'File:Westerham - Market Square - geograph.org.uk - 6602829.jpg',
     'chartwell':  'File:Chartwell - Once the home of Sir Winston Churchill - geograph.org.uk - 4118422.jpg',
-    'aylesford':  'File:Aylesford Priory courtyard, 2014 - 2.jpg',
+    'thurnham':   'File:Thurnham Castle, Kent - April 2025 - 01.jpg',
     'kits_coty':  "File:Kit's Coty, Nov 2021 02.jpg",
     'leeds':      'File:Leeds Castle from the west.jpg',
     'charing':    "File:Archbishop's Palace, Charing, Dec 2020.jpg",
@@ -111,8 +111,9 @@ TUNNEL = {'name': 'Eurotunnel LeShuttle, Folkestone',
 # inside the planned total, so early is far likelier than late.
 WINDOWS = [
     ('vr', 'Ide Hill, dorpsplein', '22,5', '10:30 – 11:15', False),
-    ('za', 'Aylesford Priory', '13,4', '09:30 – 09:50', False),
-    ('za', 'Bluebell Hill', '20,6', '10:25 – 10:50', False),
+    ('za', 'Kit’s Coty, bij de hulppost', '20,7', '10:35 – 11:00', False),
+    ('za', 'Thurnham Castle, in White Horse Wood', '28,1', '11:35 – 12:05', False),
+    ('za', 'The Dirty Habit, Hollingbourne', '34,6', '12:20 – 13:00', False),
     ('zo', 'Chilham, dorpsplein', '24,3', '10:45 – 11:20', False),
     ('zo', 'langs de Stour, Canterbury', '33 – 34', '12:15 – 12:45', False),
     ('zo', 'de finish in Canterbury', '36,0', '12:30 – 13:00', True),
@@ -233,51 +234,78 @@ DAYS = [
     {
         'n': 3, 'date': '2026-09-05', 'title': 'Wrotham Heath → Charing Heath',
         'stage': 3, 'map': True,
-        'lead': 'De rijkste dag van de vier. Een gratis klooster waar de lopers '
-                'langskomen, een grafmonument van zesduizend jaar oud, een '
+        'lead': 'De rijkste dag van de vier, en de enige waarop jullie ze twee '
+                'keer kunnen zien: bij een grafmonument van zesduizend jaar oud '
+                'en bij een burchtruïne op de rand van de Downs. Daarna een '
                 'kasteel in een meer — en als het regent of als er zin is in '
                 'winkelen, een outlet op twintig minuten.',
         'stops': [
-            ('Aylesford Priory', 51.2972, 0.4722),
             ("Kit's Coty", 51.3172, 0.5006),
+            ('Thurnham Castle', 51.2942, 0.5918),
+            ('The Dirty Habit', 51.2675, 0.6432),
+            ('Aylesford Priory', 51.2972, 0.4722),
             ('Leeds Castle', 51.2486, 0.6300),
             ('Lenham', 51.2415, 0.7180),
         ],
         'options': [
-            {'n': 1, 'name': 'Aylesford Priory (The Friars)', 'walkers': True,
-             'meta': '<b>hier komen de lopers langs</b> · ± 15 min · gratis · '
-                     '365 dagen open',
-             'lines': ['Een 13e-eeuws karmelietenklooster. Terrein dag en nacht '
-                       'toegankelijk, theetuin vanaf 10:00, een cadeauwinkel en '
-                       'een werkende pottenbakkerij.',
-                       'Het klooster ligt óp hun route, dus dit is de plek waar '
-                       'jullie ze het vroegst kunnen zien.'],
-             'access': 'vlak en stil. Er loopt ook een pad langs de Medway'},
-            {'n': 2, 'name': "Kit's Coty House",
-             'meta': '± 8 min van Aylesford · gratis · altijd',
+            {'n': 1, 'name': "Kit's Coty House", 'walkers': True,
+             'meta': '<b>hier komen de lopers langs</b> · ± 15 min van het '
+                     'hotel · gratis · altijd',
              'lines': ['Een megalithisch grafmonument van rond 4000 v.Chr., pal '
-                       'langs de weg — dus zo’n zesduizend jaar oud. Vijf '
-                       'minuten kijken. Beheerd door English Heritage, en het '
-                       'ligt naast de hulppost bij Bluebell Hill.'],
+                       'langs de weg — zo’n zesduizend jaar oud, beheerd door '
+                       'English Heritage. Het staat naast de hulppost bij '
+                       'Bluebell Hill en hun pad loopt op 150 meter langs, dus '
+                       'dit is het vroegste moment van de dag.'],
              'access': 'korte vlakke aanloop'},
-            {'n': 3, 'name': 'Leeds Castle',
+            {'n': 2, 'name': 'Thurnham Castle, in White Horse Wood',
+             'walkers': True,
+             'meta': '<b>hier komen de lopers langs</b> · ± 12 min van Kit’s '
+                     'Coty · £ 2 parkeren, entree gratis · 09:00 tot schemer',
+             'lines': ['Een 12e-eeuwse burchtruïne van vuursteen op de rand van '
+                       'de North Downs, in een country park van de provincie '
+                       '(ME14 3JE). Hun pad loopt er pal langs op km 28 — jullie '
+                       'tweede kans van de dag. Parkeren met munten of via een '
+                       'app.'],
+             'access': 'één gemarkeerde route is geschikt voor rolstoel en '
+                       'buggy, de rest is gras en bos. Hek op slot bij schemer'},
+            {'n': 3, 'name': 'The Dirty Habit, Hollingbourne',
+             'walkers': True,
+             'meta': '<b>hier stoppen de lopers</b> · ± 10 min van White Horse '
+                     'Wood · za 11:30 – 23:30, eten vanaf 12:00',
+             'lines': ['Een 11e-eeuws bierhuis van monniken, pal aan de '
+                       'Pilgrims’ Way en eeuwenlang een herberg voor pelgrims op '
+                       'weg naar Canterbury. Hier vullen ze bij, rond half één — '
+                       'dus dit is de enige plek waar jullie ze zittend treffen '
+                       'in plaats van onderweg.'],
+             'access': 'eigen parkeerterrein achter het huis, en een terras aan '
+                       'die kant'},
+            {'n': 4, 'name': 'Aylesford Priory (The Friars)',
+             'meta': '± 15 min · gratis · 365 dagen open',
+             'lines': ['Een 13e-eeuws karmelietenklooster: terrein dag en nacht '
+                       'toegankelijk, theetuin vanaf 10:00, cadeauwinkel en een '
+                       'werkende pottenbakkerij. De nieuwe route loopt hier niet '
+                       'meer langs, dus geen ontmoetingsplek — maar wel de '
+                       'rustigste gratis stop van de dag.'],
+             'access': 'vlak en stil. Er loopt ook een pad langs de Medway'},
+            {'n': 5, 'name': 'Leeds Castle',
              'meta': '± 20 min · £ 34,50 online (£ 38,50 aan de poort) · park tot 18:00, kasteel tot 17:00, laatste toegang 16:00',
              'lines': ['Een kasteel op een eiland in een meer, met tweehonderd '
                        'hectare park, tuinen, een doolhof, zwarte zwanen en '
                        'meerdere eetgelegenheden. Een halve dag als je wil.'],
-             'access': 'het best geregeld van alles in dit boekje. Een gratis '
-                       'toegankelijk busje rijdt de hele dag, invalidenparkeren '
-                       'ligt op maximaal 100 m daarvan, en rolstoelen zijn '
-                       'gratis te leen. Het treintje is niet '
-                       'rolstoeltoegankelijk, het busje wel'},
-            {'n': 4, 'name': 'Lenham',
+             'access': 'het best geregeld van alles in dit boekje: een gratis '
+                       'toegankelijk busje de hele dag, invalidenparkeren op '
+                       'maximaal 100 m, rolstoelen gratis te leen. Het treintje '
+                       'is niet rolstoeltoegankelijk, het busje wel'},
+        ],
+        'far_label': 'Ook nog — vlak bij het hotel, of juist een eind om',
+        'far': [
+            {'n': 6, 'name': 'Lenham',
              'meta': '± 10 min van The Red Lion · gratis',
              'lines': ['Schilderachtig dorpsplein met een herberg uit 1602, een '
                        'tithe barn, een Grade I-kerk, een theewinkel en wat '
-                       'antiek. Fijn voor laat in de middag.'],
+                       'antiek. Fijn voor laat in de middag, en vijf minuten van '
+                       'The Dirty Habit.'],
              'access': 'vlak'},
-        ],
-        'far': [
             {'n': None, 'name': 'Ashford Designer Outlet',
              'meta': '± 20 min van The Red Lion · 80 tot 100 winkels · '
                      'za 09:00 – 21:00, zo 10:00 – 18:00',
@@ -387,23 +415,24 @@ FACTS = [
          'Er staat gemengd bos op de Lower Greensand, deels van oude oorsprong.'),
     ]),
     ('Zaterdag &middot; tussen Wrotham Heath en Charing Heath', [
-        ('Aylesford Priory', 'Aylesford Priory',
-         'Aylesford Priory, of &ldquo;The Friars&rdquo;, werd gesticht in 1242, '
-         'toen leden van de karmelietenorde vanuit de berg Karmel in het Heilige '
-         'Land in Engeland aankwamen. Richard de Grey, een kruisvaarder, '
-         'steunde hen en droeg de orde een stuk land over op zijn landgoed in '
-         'Aylesford in Kent.'),
+        ('Coldrum Long Barrow', 'Coldrum Long Barrow',
+         'Het Coldrum Long Barrow, ook bekend als de Coldrum Stones en de '
+         'Adscombe Stones, is een langgraf met grafkamer bij het dorp '
+         'Trottiscliffe in het zuidoosten van het Engelse graafschap Kent. Het '
+         'werd vermoedelijk in het vierde millennium v.Chr. gebouwd, in het '
+         'vroege neolithicum van de Britse prehistorie, en is vandaag alleen in '
+         'ruïneuze staat bewaard.'),
         ("Kit's Coty House", "Kit's Coty House",
          'Kit&rsquo;s Coty House of Kit&rsquo;s Coty is een langgraf met '
          'grafkamer bij het dorp Aylesford in het zuidoosten van Kent. Het werd '
          'rond 4000 v.Chr. gebouwd, in het vroege neolithicum van de Britse '
          'prehistorie, en is vandaag in ruïneuze staat bewaard.'),
-        ('White Horse Stone', 'White Horse Stone',
-         'De White Horse Stone is de naam van twee afzonderlijke '
-         'sarsen-megalieten op de flanken van Blue Bell Hill, bij het dorp '
-         'Aylesford in het zuidoosten van Kent. De Lower White Horse Stone werd '
-         'vóór 1834 verwoest; op dat moment nam de overgebleven Upper White '
-         'Horse Stone de naam en de bijbehorende volksverhalen over.'),
+        ('Thurnham Castle', 'Thurnham Castle',
+         'Thurnham Castle, of Godard&rsquo;s Castle, ligt ten noorden van het '
+         'dorp Thurnham, bijna vijf kilometer noordoostelijk van Maidstone in '
+         'Kent. Het is een 12e-eeuws kasteel van vuursteen, gebouwd door Robert '
+         'of Thurnham tijdens de regering van Hendrik II, op een heuvel aan de '
+         'rand van de North Downs.'),
         ('Lenham Cross', 'Lenham Cross',
          'Het Lenham Cross is een krijtkruis dat is uitgesneden in de heuvelflank '
          'ten noorden van Lenham in Kent. Het Latijnse kruis is 61 meter hoog, '
@@ -757,11 +786,12 @@ def page_windows():
   <div class="callout">
     <span class="label">Als het misgaat</span>
     <h3>Ze staan stil, of jullie missen elkaar</h3>
-    <p>De hulpposten zijn de afgesproken plekken, en ze staan alle vier ook in
+    <p>De hulpposten zijn de afgesproken plekken, en ze staan alle vijf ook in
     hun eigen boekje: <strong>Ryka’s Cafe</strong> (donderdag),
     <strong>Ide Hill Community Shop</strong> (vrijdag),
-    <strong>Shell Bluebell Hill</strong> (zaterdag) en
-    <strong>The Church Mouse Tea Rooms</strong> in Chilham (zondag).</p>
+    <strong>Shell Bluebell Hill</strong> en <strong>The Dirty Habit</strong>
+    (zaterdag) en <strong>The Church Mouse Tea Rooms</strong> in Chilham
+    (zondag).</p>
     <p>Lukt het niet, rijd dan gewoon door naar het hotel van die avond — daar
     komen ze hoe dan ook langs.</p>
   </div>
@@ -873,8 +903,8 @@ def page_day3_places(ph, folio, day=None):
   <div class="photo-grid">
     {photo_card(ph.get('leeds'), 'Leeds Castle', 'Op een eiland in het meer, met '
                 'tweehonderd hectare park eromheen.', wide=True)}
-    {photo_card(ph.get('aylesford'), 'Aylesford Priory',
-                'De binnenhof. Gratis, vlak en stil — en het ligt op hun route.')}
+    {photo_card(ph.get('thurnham'), 'Thurnham Castle',
+                'Vuursteen uit de 12e eeuw, pal langs hun pad op km 28.')}
     {photo_card(ph.get('kits_coty'), "Kit's Coty House",
                 'Drie staande stenen en een deksteen, zo’n zesduizend jaar oud.')}
   </div>
@@ -971,9 +1001,10 @@ FACTS_NOTE = '''
     <p>Het zijn vertalingen van fragmenten uit de Engelse Wikipedia, die daar
     onder de licentie <strong>CC&nbsp;BY-SA&nbsp;4.0</strong> staan. Bij elk
     stukje staat het artikel waar het uit komt.</p>
-    <p>De vertaling is van ons — dat is de enige bewerking, op het omrekenen van
-    voet en mijlen naar meters en kilometers na. Die licentie werkt door: ook
-    deze vertalingen staan onder CC&nbsp;BY-SA&nbsp;4.0.</p>
+    <p>De vertaling is van ons. Verder is er niets veranderd, op twee dingen
+    na: voet en mijlen zijn omgerekend naar meters en kilometers, en bij
+    Thurnham Castle is een Britse kaartverwijzing weggelaten. Die licentie werkt
+    door: ook deze vertalingen staan onder CC&nbsp;BY-SA&nbsp;4.0.</p>
   </div>'''
 
 
@@ -996,10 +1027,12 @@ def page_practical(ph, folio):
         <td class="r">£ 21,60</td><td class="win">£ 43,20</td></tr>
       <tr><td class="day">za</td><td>Leeds Castle, online geboekt</td>
         <td class="r">£ 34,50</td><td class="win">£ 69,00</td></tr>
+      <tr><td class="day">za</td><td>White Horse Wood, parkeren (per auto)</td>
+        <td class="r">&mdash;</td><td class="win">£ 2,00</td></tr>
       <tr><td class="day">zo</td><td>Kathedraal Canterbury</td>
         <td class="r">£ 19,50</td><td class="win">£ 39,00</td></tr>
       <tr class="finish"><td></td><td>Totaal over vier dagen</td><td></td>
-        <td class="win">± £ 151</td></tr>
+        <td class="win">± £ 153</td></tr>
     </tbody>
   </table>
   <div class="prose" style="margin-top:4mm">
@@ -1009,7 +1042,8 @@ def page_practical(ph, folio):
     <p><strong>Vooraf regelen.</strong> Chartwell werkt met tijdvakken voor het
     huis — boek dat, en vraag meteen of het mobiliteitsbusje die dag rijdt. Leeds
     Castle is online vier pond per persoon goedkoper dan aan de poort. Voor de
-    kathedraal hoeft niets vooraf.</p>
+    kathedraal hoeft niets vooraf. White Horse Wood is pay-and-display: twee pond
+    voor de hele zaterdag, met munten of via een app.</p>
     <p><strong>Openingsdagen.</strong> De National Trust opent per dag, en de
     kalender voor september 2026 stond bij het maken van dit boekje nog niet
     vast. Eén keer nakijken een week voor vertrek is verstandig.</p>
@@ -1022,7 +1056,8 @@ def page_practical(ph, folio):
     toegankelijk busje dat de hele dag rijdt, invalidenparkeren op maximaal
     honderd meter daarvan, en rolstoelen gratis te leen.
     <strong>Aylesford Priory</strong> en de <strong>Great Stour Way</strong> zijn
-    vlak. <strong>Ightham Mote</strong> heeft een gelijkvloerse ingang en café.
+    vlak. <strong>White Horse Wood</strong> heeft één gemarkeerde route die
+    geschikt is voor rolstoel en buggy; verder is het park gras en bos. <strong>Ightham Mote</strong> heeft een gelijkvloerse ingang en café.
     <strong>Chartwell</strong> is het lastigst: 250 meter over een steil pad met
     24 treden, met een busje dat niet elke dag rijdt. In <strong>Chilham</strong>
     klimmen vier steile straatjes naar het plein — parkeer boven.</p>

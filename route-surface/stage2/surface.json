@@ -1,0 +1,216 @@
+{
+ "name": "Bletchingley Maidstone",
+ "gpx": "stage2-bletchingley-maidstone.gpx",
+ "total_km": 44.43,
+ "paved_km": 7.34,
+ "unpaved_km": 37.09,
+ "unknown_km": 0.0,
+ "paved_pct": 16.5,
+ "unpaved_pct": 83.5,
+ "unknown_pct": 0.0,
+ "tagged_pct": 49.7,
+ "inferred_pct": 50.3,
+ "evidence": {
+  "surface=dirt": 10.73,
+  "designation=public_footpath": 4.96,
+  "designation=public_bridleway": 4.58,
+  "surface=compacted": 3.22,
+  "highway=bridleway": 2.92,
+  "surface=gravel": 2.51,
+  "surface=asphalt": 2.43,
+  "highway=footway": 1.99,
+  "surface=grass": 1.88,
+  "highway=unclassified": 1.64,
+  "highway=tertiary": 1.64,
+  "highway=path": 1.53,
+  "highway=track": 1.47,
+  "highway=residential": 1.01,
+  "highway=service": 0.54,
+  "tracktype=grade3": 0.5,
+  "surface=rock": 0.33,
+  "surface=mud": 0.27,
+  "surface=unpaved": 0.1,
+  "surface=ground": 0.08,
+  "highway=secondary": 0.08,
+  "surface=wood": 0.01,
+  "designation=restricted_byway": 0.01
+ },
+ "spans": [
+  {
+   "from_km": 0.0,
+   "to_km": 0.4654,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 0.4654,
+   "to_km": 2.3517,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 2.5832,
+   "to_km": 3.8237,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 3.8493,
+   "to_km": 5.0287,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 5.2107,
+   "to_km": 6.6472,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 6.6986,
+   "to_km": 7.9219,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 8.3743,
+   "to_km": 8.7856,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 8.7856,
+   "to_km": 9.2888,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 9.5365,
+   "to_km": 10.1167,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 10.3268,
+   "to_km": 12.2864,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 12.3473,
+   "to_km": 14.432,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 14.4556,
+   "to_km": 18.2906,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 18.593,
+   "to_km": 22.142,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 22.142,
+   "to_km": 22.6418,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 22.6418,
+   "to_km": 24.8818,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 24.8919,
+   "to_km": 25.2154,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 25.2488,
+   "to_km": 25.8093,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 25.8093,
+   "to_km": 26.7211,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 26.7211,
+   "to_km": 28.0904,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 28.1593,
+   "to_km": 28.5899,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 28.784,
+   "to_km": 29.4776,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 29.4776,
+   "to_km": 30.4929,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 30.4929,
+   "to_km": 31.5574,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 31.5574,
+   "to_km": 31.9673,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 31.9673,
+   "to_km": 32.44,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 32.7113,
+   "to_km": 33.0676,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 33.0676,
+   "to_km": 35.0318,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 35.0693,
+   "to_km": 37.1389,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 37.2788,
+   "to_km": 38.391,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 38.4816,
+   "to_km": 39.4097,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 39.5176,
+   "to_km": 41.5708,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 41.5708,
+   "to_km": 42.3231,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 42.3231,
+   "to_km": 42.944,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 43.1815,
+   "to_km": 43.6974,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 43.7661,
+   "to_km": 44.3186,
+   "verdict": "onverhard"
+  }
+ ],
+ "source": "OpenStreetMap contributors (ODbL), via Overpass"
+}

@@ -115,6 +115,7 @@ GROUP BY l.legging_id ORDER BY wears DESC;
 - `scripts/export_dashboard_data.py` — Export SQLite + plan markdown to `site/data/training.json` for the dashboard. Re-run after every Strava sync.
 - `scripts/route_photos/route_photos.py` — Given any GPX, find the Strava community photos along that route and build a contact sheet (see below).
 - `scripts/route_facts/route_facts.py` — Given any GPX, find the Wikipedia articles about the things you pass and write short snippets with source links (see below).
+- `scripts/route_surface/route_surface.py` — Given any GPX, work out how much of it is paved and how much is not, from OpenStreetMap (see below).
 
 ## Route Photos
 
@@ -249,6 +250,95 @@ photo strip (`renderStageFacts` in `site/js/course.js`), fed by
 `site/data/route-facts.json` (~16 KB). Collapsed by default because four stages ×
 ~12 facts would bury the profiles on a phone. Missing file → stages render without it.
 
+## Route Surface
+
+How much of a stage is tarmac and how much is not — the question that prompted the
+Aug 22 stage 3 re-route. From OpenStreetMap's `surface=*` tags via Overpass; open,
+no key, no login. All it takes is a GPX.
+
+### Any route, one command
+
+```bash
+python3 scripts/route_surface/route_surface.py <route.gpx>
+```
+
+Snaps every track segment onto the nearest OSM way, reads its `surface` tag and
+falls back to the road class where nobody has surveyed it. Writes
+`route-surface/<gpx name>/segments.json` (the durable harvest), `surface.json`
+(the summary the dashboard and routebook read) and a readable `index.html` with a
+start-to-finish band.
+
+```bash
+--reclassify           re-bucket segments.json on disk, no Overpass calls
+--max-offset 30        how far off the line a way may be to count (default 20 m)
+--out DIR
+```
+
+### The three things that were not obvious
+
+**Boxes, not `around`.** The natural query is `way(around:20, <every track
+point>)["highway"]` — exactly the ways we walk on and nothing else. It does not
+work: a 629-point linestring makes overpass-api.de answer "the server is probably
+too busy" (an HTML page, not JSON) on nearly every call. The same corridor as
+plain bboxes comes back in 1.3 s each, because bboxes are what the index is for.
+So `overpass.py` takes ~6 km boxes along the route and the 20 m proximity test
+happens locally in `match()`, which we were doing anyway. Downloading streets we
+never walk on is far cheaper than not getting an answer. The public instance
+allows **2 slots**, so `fetch_box` asks `/api/status` for a free one before
+every attempt — that check is what turned a run that failed most of its queries
+into one that finishes. **Don't run two stages in parallel**, they starve each
+other. Budget about 7 minutes per stage: roughly 13 boxes, each preceded by a
+wait of up to 40 s for a slot. The cache means an interrupted run resumes, so
+re-running until `surface.json` appears is a legitimate way to ride out a bad
+hour on the public instances.
+
+**A grid index, or it takes forever.** A bbox harvest brings back every street in
+the corridor (4,366 ways for stage 3). Testing ~1,900 track segments against all
+of them is tens of millions of distance sums in pure python. Way segments are
+binned into 100 m cells and only the cell around each midpoint is tested.
+
+**A bearing tie-break, or the answer is wrong.** For kilometres at a stretch the
+Pilgrims' Way runs a footpath directly alongside a lane, and at every junction two
+classes of way sit inside the search radius. Candidates whose bearing disagrees
+with the segment by more than 30° are penalised by 40 m of equivalent cost, so the
+parallel path beats the road beside it and a side street does not capture the
+segment crossing its mouth.
+
+### Verhard or onverhard is a judgement, so it is one file
+
+Every bucketing decision lives in `classify.py`, and `segments.json` keeps the raw
+tags, which is what makes `--reclassify` free. `compacted` and `fine_gravel` are
+the contentious ones and both count **onverhard**: they are how the North Downs
+Way chalk tracks are tagged, and underfoot they are nothing like tarmac. Flip that
+line and re-run `--reclassify` to see the other answer.
+
+The output separates **tagged** (the way carries `surface=*`) from **inferred**
+(it does not, so we go on `highway=*`), and every consumer prints the split. On
+stage 3 it is about half and half, so that honesty is not decoration.
+
+**The data is © OpenStreetMap contributors under the ODbL.** Both JSON files carry
+a `source` line, the dashboard caption names it and the routebook colophon already
+credits OSM for map data. Keep all three.
+
+### The four stages
+
+```bash
+for n in 1 2 3 4; do   # one at a time: 2 Overpass slots
+  python3 scripts/route_surface/route_surface.py plan/stages/stage$n-*.gpx \
+      --out route-surface/stage$n
+done
+python3 scripts/export_dashboard_data.py
+```
+
+`export_dashboard_data.py` reads `route-surface/stage<n>/surface.json` straight
+into `course_profile.stages[].surface` — no separate exporter, because a summary
+is small where the photo and fact lists are not. Missing file → the stage renders
+without the percentage. **On the dashboard** it is the `% unpaved` in the stage
+stats line plus a band under the profile (`renderStageSurface` in
+`site/js/course.js`), drawn on the *same* viewBox and padding as the profile so
+the stripes line up with the kilometre they belong to at any width. **In the
+routebook** it is a sixth cell in the stat band.
+
 ## Routeboek (print PDF)
 
 A 12-page A4 routebook for the support crew, built from data already in the repo —
@@ -286,6 +376,11 @@ CSS:** a stroke width only means something once you know how many image pixels l
 a millimetre of paper (`u = meta['width'] / mm_width`). A CSS `stroke-width` would
 override the attribute and silently undo that, so the overlay rules carry colour only.
 
+The four stage profiles share one domain (`X_DOMAIN`/`Y_DOMAIN` in
+`profile_svg.py`) so the pages can be compared. That domain has to clear the
+longest stage: the Aug 22 re-route took stage 3 to 47.4 km and the old 45 km x
+domain ran its profile off the plate.
+
 **Two tile sources, on purpose.** The four stage maps use OpenTopoMap for its contour
 lines; the overview uses standard OSM, because at 170 km across contours read as noise
 and several OpenTopoMap tiles in that region are permanently broken — the parent-tile
@@ -310,7 +405,7 @@ fifth of OpenTopoMap's tiles hold the connection open until it times out.
 
 ## Ploegboekje (print PDF)
 
-A 12-page A4 booklet for the two who travel by car and move the bags between
+A 14-page A4 booklet for the two who travel by car and move the bags between
 hotels, built from `plan/support-crew-dagen.md`:
 
 ```bash
@@ -346,7 +441,10 @@ Options that are a real detour go in a day's `far` list, which renders on the
 facing page under `far_label`. That is a layout constraint as much as an editorial
 one: with the map band, about five entries fit a day page before the list runs off
 the bottom — `.page` has `overflow: hidden`, so anything past that is silently
-lost. Check the last item on every day page after adding one.
+lost. Check the last item on every day page after adding one. **Five only fit if
+they are tight:** Saturday runs at five since the Aug 22 re-route gave the day two
+meeting points, and getting Lenham back on the page took cutting a paragraph from
+three of the other four.
 
 **The licence difference is the point.** Every photograph comes from Wikimedia
 Commons under CC BY-SA, CC BY or CC0, fetched by `commons.py`, which also returns
@@ -378,7 +476,7 @@ python3 -c "import re;d=open('crewbook/kent-met-de-auto.pdf','rb').read();print(
 
 ## Training Dashboard
 
-Static HTML/CSS/JS site in `site/`. Displays the 13-week training plan for the **Pilgrims' Way 4-Day** (Sep 3–6, 2026, Guildford → Canterbury, 170.0 km / ~2,470m over 4 stages) and the **Trappenmarathon** (Oct 3, 2026), with progress charts, stage profiles, time prediction, exercise library, and event day reference. (The previous Swiss Irontrail T78 plan lives on in `plan/swiss-iron-trail-t78.md` as an archive; T78 ended at km 48 in a storm DNF + ankle sprain on Jun 27, 2026.)
+Static HTML/CSS/JS site in `site/`. Displays the 13-week training plan for the **Pilgrims' Way 4-Day** (Sep 3–6, 2026, Guildford → Canterbury, 172.5 km / ~2,790m over 4 stages) and the **Trappenmarathon** (Oct 3, 2026), with progress charts, stage profiles, time prediction, exercise library, and event day reference. (The previous Swiss Irontrail T78 plan lives on in `plan/swiss-iron-trail-t78.md` as an archive; T78 ended at km 48 in a storm DNF + ankle sprain on Jun 27, 2026.)
 
 ### Serving locally
 

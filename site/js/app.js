@@ -338,7 +338,7 @@ function renderReferenceChart(races, scenarios, reference4day) {
     if (targetScenario) {
         datasets.push({
             label: '4-Day 2026 target',
-            data: [{ x: 170.0, y: targetScenario.hours, name: "Pilgrims' Way 4-Day" }],
+            data: [{ x: 172.5, y: targetScenario.hours, name: "Pilgrims' Way 4-Day" }],
             backgroundColor: '#f97316',
             borderColor: '#f97316',
             pointRadius: 10,
@@ -388,7 +388,7 @@ function initPaceCalc(data) {
     const input = document.getElementById('pace-input');
     const display = document.getElementById('pace-display');
     const result = document.getElementById('pace-result');
-    const distanceKm = (data && data.race && data.race.distance_km) || 170.0;
+    const distanceKm = (data && data.race && data.race.distance_km) || 172.5;
 
     function update() {
         const hours = parseFloat(input.value);

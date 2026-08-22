@@ -2,7 +2,7 @@
 
 **Target event:** England 4-Day (self-organized, with brother), September 3–6, 2026
 **Route:** Guildford → Canterbury along the Pilgrims' Way / North Downs Way
-**Total:** 170.0 km | ~2,470m D+ over 4 consecutive days (Stage 1 on Strava basis, Stages 2–4 still Garmin — see below)
+**Total:** 172.5 km | ~2,790m D+ over 4 consecutive days (Stage 1 on Strava basis, Stages 2–4 still Garmin — see below)
 **Second target:** Trappenmarathon, October 3, 2026 — 47 km | ~3,090m of stair repeats
 
 ---
@@ -13,12 +13,12 @@
 |---|---|---|---|---|
 | **Sep 3** | **Stage 1: Guildford → Bletchingley** | **44.7 km** | **991m** | **Queen stage — hilliest of the four** (Strava basis) |
 | **Sep 4** | **Stage 2: Bletchingley → Maidstone** | **44.4 km** | **728m** | |
-| **Sep 5** | **Stage 3: Maidstone → Charing Heath** | **44.9 km** | **417m** | Longest by distance, but the flattest of the three |
+| **Sep 5** | **Stage 3: Maidstone → Charing Heath** | **47.4 km** | **737m** | Longest of the four — re-routed onto the trail line, Aug 22 |
 | **Sep 6** | **Stage 4: Charing Heath → Canterbury** | **36.0 km** | **336m** | Victory lap into Canterbury |
 | **Sep 27** | **Euromast Trappenloop** (Rotterdam) | **589 treden** | **~100m** | Sharpener / dress rehearsal for Trappenmarathon |
 | **Oct 3** | **Trappenmarathon** | **47 km** | **~3,090m** | Stair-repeat marathon (same format as 2025: 6h20) |
 
-Planned stage times: 5h49 / 5h37 / 5h28 / 4h23 — 21h17 total. Three near-equal 44–45 km days, then a 36 km run-in to Canterbury.
+Planned stage times: 5h49 / 5h37 / 5h58 / 4h23 — 21h47 total. Two 44–45 km days, then the 47 km day, then a 36 km run-in to Canterbury.
 
 ### Refill points (course POIs in the GPX)
 
@@ -26,16 +26,34 @@ Planned stage times: 5h49 / 5h37 / 5h28 / 4h23 — 21h17 total. Three near-equal
 |---|---|---|---|
 | 1 | Ryka's Cafe | 22.9 | 22.9 km |
 | 2 | Ide Hill Community Shop | 22.5 | 22.5 km |
-| 3 | Hulppost (unnamed) | 20.6 | 24.3 km |
+| 3 | Shell Bluebell Hill · The Dirty Habit, Hollingbourne | 20.7 · 34.6 | 20.7 km |
 | 4 | The Church Mouse Tea Rooms / The White Horse Inn | 24.3 | 24.3 km |
 
-Each stage has exactly one mid-route stop, all within 20–25 km of the start. So every day is two ~22 km carries: plan for ~1.5 L of fluid and ~3 hours of food between refills, and treat the stop as the fixed reset point rather than an optional extra.
+Every stop sits within 20–25 km of the start, so the pattern is two ~22 km carries: plan for ~1.5 L of fluid and ~3 hours of food between refills, and treat the stop as the fixed reset point rather than an optional extra.
+
+**Stage 3 is the only day with two stops**, and it needs them — it is the longest day and the second leg would otherwise have run 26.7 km. With The Dirty Habit at km 34.6 the legs are 20.7 / 14.0 / 12.8 km, which makes the 47 km day the *best*-supplied of the four rather than the worst. The afternoon two-thirds need barely more than a litre between refills.
 
 *Route revision (Aug 9, 2026): the stages were rebalanced — Stage 1 shortened from 51.1 km, Stage 4 lengthened from 32.2 km, Stage 3 from 41.0 km.*
 
+*Stage 3 re-route (Aug 22, 2026): the old line carried too much tarmac — **66% of it was paved**, against 19% on stage 1 and 17% on stage 2. It was replaced with a trail-heavy alternative that is **22% paved**: 19.3 km of tarmac traded for trail. The new line is **47.4 km / 737m** where the old one was 44.9 km / 417m (same Garmin basis, so the +319m is real). It follows the North Downs Way ridge instead of dropping into the Medway valley: out past Coldrum Long Barrow, down to Upper Halling, across the Medway near Peter's Pit, then up onto Blue Bell Hill and along the ridge over Detling Hill, Thurnham Castle and Hollingbourne Downs. Only km 18–22 and km 35–45 are shared with the old line. **Aylesford Priory is no longer on the route** (3,100m off, was 507m); Kit's Coty is closer than before (154m, was 411m). A second refill was added the same day — **The Dirty Habit** at Hollingbourne, km 34.6 — which cuts the longest carry from 26.7 km back to 20.7. The previous GPX is kept as `stage3-maidstone-charing-heath-OLD.gpx`.*
+
 *The D+ figures come from two different sources. The old stage GPX files were Strava exports (`creator="StravaGPX"`); the new ones are Garmin Connect exports (`creator="Garmin Connect"`), and Garmin's elevation model sits well below Strava's on this terrain. Two checks: Stage 2 is the identical route in both files and its summed D+ went from 990m to 728m; and Strava's own route page reports **991m for Stage 1**, where the Garmin GPX sums to 786m — a 26% gap on the same line.*
 
-*Stage 1 is the only one of the four that also exists as a Strava route, so its table figure (991m) is Strava's and its planned time uses it. Stages 2–4 are still on the Garmin basis and therefore read low; once they are imported to Strava, swap in the real figures via `ascent_override_m` in the `STAGES` list in `scripts/export_dashboard_data.py`. Expect the total to land nearer ~2,900–3,000m and the planned total nearer 21h40. The elevation profiles on the dashboard are drawn from the Garmin track either way — only the headline ascent number is overridden.*
+*Stage 1 is the only one of the four that also exists as a Strava route, so its table figure (991m) is Strava's and its planned time uses it. Stages 2–4 are still on the Garmin basis and therefore read low; once they are imported to Strava, swap in the real figures via `ascent_override_m` in the `STAGES` list in `scripts/export_dashboard_data.py`. Expect the total to land nearer ~3,250m and the planned total nearer 22h05. The elevation profiles on the dashboard are drawn from the Garmin track either way — only the headline ascent number is overridden.*
+
+### Paved or not
+
+| Stage | Distance | Unpaved | Paved | From a `surface` tag |
+|---|---|---|---|---|
+| 1 | 44.6 km | 36.3 km (81%) | 8.3 km (19%) | 68% |
+| 2 | 44.4 km | 37.1 km (84%) | 7.3 km (16%) | 50% |
+| 3 | 47.4 km | 36.9 km (78%) | 10.5 km (22%) | 52% |
+| 4 | 36.0 km | 25.1 km (70%) | 10.9 km (30%) | 63% |
+| **All four** | **172.4 km** | **135.3 km (79%)** | **37.1 km (21%)** | |
+
+From OpenStreetMap's `surface` tags via Overpass (`scripts/route_surface/`), with each track segment snapped to the nearest way. **Half of the distance carries no `surface` tag**, so for that half the answer is inferred from the road class — a field path is counted unpaved, a lane paved. Treat it as a good estimate, not a measurement; the last column says how much of each stage is on solid ground.
+
+Stage 4 is the most surfaced of the four, which is the walk into Canterbury doing what it looks like on the map. Stage 3, after the re-route, is now in line with the rest instead of the outlier it was.
 
 ---
 
@@ -190,9 +208,9 @@ Practice the full event routine this weekend: same shoes + vest + nutrition, eat
 | Wed | Travel to Guildford — rest, walk, hydrate | — | — |
 | Thu | **Stage 1: Guildford → Bletchingley** | 44.7 | 991m |
 | Fri | **Stage 2: Bletchingley → Maidstone** | 44.4 | 728m |
-| Sat | **Stage 3: Maidstone → Charing Heath** | 44.9 | 417m |
+| Sat | **Stage 3: Maidstone → Charing Heath** | 47.4 | 737m |
 | Sun | **Stage 4: Charing Heath → Canterbury** | 36.0 | 336m |
-| **Total** | | **~181 km** | **~2,470m** |
+| **Total** | | **~183 km** | **~2,790m** |
 
 ## Phase 5: Stair Block — Weeks 10–13 (Sep 7 – Oct 4)
 
@@ -385,7 +403,7 @@ Three hill variants on the Barendrecht dike, each 13m elevation gain. In this bl
 | Recovery & Rehab | 1–2 | 0–13 | — | 3x/wk — the engine room | Bike carries the fitness while the ankle heals |
 | Rebuild | 3–5 | 22–48 | 0–100m | 2x/wk | Terrain: tarmac → gravel → light trail |
 | Event Specific | 6–7 | 69–78 | 280–460m | None | Back-to-back weekends, full kit |
-| Taper & Event | 8–9 | 46 + event | 100m + 2,470m | None | 170.0 km over 4 days |
+| Taper & Event | 8–9 | 46 + event | 100m + 2,790m | None | 172.5 km over 4 days |
 | Stair Block | 10–13 | 13–61 | 0–3,140m | Recovery rides | Variant B stairs → Trappenmarathon |
 
 ---
@@ -400,17 +418,17 @@ Three hill variants on the Barendrecht dike, each 13m elevation gain. In this bl
 | Trappenmarathon | 2025 | 47.2 | 3,090m | 6h20 | 8:04/km | — |
 | Swiss Irontrail T78 (to km 58, storm DNF) | 2026 | 58.0 | 3,882m | 11h47 | 12:11/km | — |
 
-### Prediction for the 4-Day (170.0 km, ~2,470m)
+### Prediction for the 4-Day (172.5 km, ~2,790m)
 
-Versus 2025: +11 km, and nominally about the same climb — but the 2025 figure is recorded GPS/barometric data while the 2026 figure comes from the Garmin course export, which reads roughly 20–25% lower than Strava on this terrain (see the route-revision note above). Expect the recorded D+ on the day to land nearer 3,000m, i.e. genuinely more climbing than 2025 as well as more distance. At 2025 pace with an elevation adjustment (+1 min per 100m D+), that adds roughly 1h20–1h40.
+Versus 2025: +13.5 km, and nominally ~600m more climb — but the 2025 figure is recorded GPS/barometric data while the 2026 figure comes from the Garmin course export, which reads roughly 20–25% lower than Strava on this terrain (see the route-revision note above). Expect the recorded D+ on the day to land nearer 3,250m, i.e. genuinely more climbing than 2025 as well as more distance. At 2025 pace with an elevation adjustment (+1 min per 100m D+), that adds roughly 1h20–1h40.
 
-**Open question on the planned times.** The 21h09 estimate was produced by a pace model fitted to the old Strava route estimates (6.92 min/km + 0.041 min per metre of climb) and then fed the *Garmin* elevation figures. Feed it Strava-basis elevations instead (~700m higher across the four days) and every stage gets ~7–8 minutes slower: **~21h40 total**, i.e. back in line with the old 21h34. Treat 21h09 as the optimistic end of the route estimate until the four stages are read off Strava directly.
+**Open question on the planned times.** The 21h47 route estimate above comes from a pace model fitted to the old Strava route estimates (6.92 min/km + 0.041 min per metre of climb), fed Strava elevation for Stage 1 and *Garmin* elevation for Stages 2–4. Put all four on the Strava basis (~3,250m rather than 2,790m) and it adds roughly 19 minutes: **~22h05 total**. Treat 21h47 as the optimistic end of the route estimate until the four stages are read off Strava directly.
 
 | Scenario | Total moving time | Conditions |
 |---|---|---|
 | Optimistic | ~19h45 | Ankle fully settled, 2025 pace holds (6:55–7:00/km) |
 | **Target** | **~20h30** | **Solid prep, ankle managed, walk breaks on schedule** |
-| Realistic | ~21h20 | Matches the 21h17 route estimate — extra walking on rough ground |
+| Realistic | ~21h50 | Matches the 21h47 route estimate — extra walking on rough ground |
 | Conservative | ~23h00 | Ankle forces walk-heavy stages — still finishes, just longer days |
 
 All scenarios fit comfortably in daylight (sunrise ~06:20, sunset ~19:45 in early September).

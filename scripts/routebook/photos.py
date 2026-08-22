@@ -35,7 +35,8 @@ UA = ('PilgrimsWayRoutebook/1.0 (personal route book; '
 # stranger's portrait has no place in our route book. Rejecting one here lets
 # the next-best photo in that stretch of the route take the slot.
 EXCLUDE = {
-    'A826D6EB',   # stage 3, km 8.9 — selfie, hooded figure
+    'A826D6EB',   # stage 3, km 8.9 — selfie, hooded figure (pre-Aug-22 line;
+                  # kept in case that stretch ever comes back)
 }
 
 

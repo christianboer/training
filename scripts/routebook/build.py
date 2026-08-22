@@ -275,7 +275,11 @@ PINNED = {4: 'Canterbury Cathedral'}
 # Wikipedia's geosearch is indifferent to whether a thing is interesting. A
 # stadium and a power station are on the route but nobody wants to read about
 # them over dinner.
-FACT_BLOCKLIST = {'Kingsmead Stadium', 'Canterbury power station'}
+FACT_BLOCKLIST = {'Kingsmead Stadium', 'Canterbury power station',
+                  # both two sentences of pure designation - a 0.7 ha and a
+                  # 4 ha geological SSSI, on stage 3 since the Aug 22 re-route
+                  'Houlder and Monarch Hill Pits, Upper Halling',
+                  'Lenham Quarry'}
 
 FACT_CAP = 8      # what fits the facing page without crowding the photos
 
@@ -613,6 +617,12 @@ def page_stage_left(s, folio):
         markers=[{'km': f['km'], 'label': str(f['n'])} for f in s['facts']])
 
     carry = p.get('longest_carry_km')
+    # the paved/unpaved split is optional: it needs an OSM harvest
+    # (scripts/route_surface/), so the band falls back to five cells without it
+    surf = pr_.get('surface') or {}
+    surf_cell = ('<div><span class="label">Onverhard</span>'
+                 f'<span class="v">{nl_num(surf["unpaved_pct"], 0)}'
+                 '<small> %</small></span></div>') if surf else ''
     return f'''
 <section class="page">
   <div class="stage-head">
@@ -629,6 +639,7 @@ def page_stage_left(s, folio):
     <div><span class="label">Gepland</span><span class="v">{p['planned_time'].replace('h', 'u')}</span></div>
     <div><span class="label">Tempo</span><span class="v">{pace(p['pace_min_km'])}<small> min/km</small></span></div>
     <div><span class="label">Hoogste punt</span><span class="v">{pr_['max_ele']}<small> m</small></span></div>
+    {surf_cell}
   </div>
   <div class="mapbox">
     <img src="{s['map_rel']}" alt="Kaart etappe {s['n']}">
@@ -663,8 +674,8 @@ STAGE_NOTE = {
        'en Newlands Corner naar de rand van Surrey.',
     2: 'Door de Kentse heuvels langs Ide Hill, met het hoogste punt van de '
        'hele tocht onderweg.',
-    3: 'De langste dag, maar ook de vlakste — door het Medway-dal en over '
-       'Bluebell Hill.',
+    3: 'De langste dag: langs de Coldrum Stones, de Medway over bij Halling '
+       'en dan de hele dag over de kam — Bluebell Hill, Detling, Hollingbourne.',
     4: 'De kortste dag, met Canterbury aan het eind: de stad waar dit pad al '
        'acht eeuwen naartoe loopt.',
 }
@@ -753,6 +764,14 @@ def page_colophon(data, folio):
       GPX volgen we de waarde van Strava, omdat de planning op die basis is
       gemaakt. Geplande tijden, tempo en de voedingsbudgetten komen uit het
       trainingsplan.</dd>
+
+    <dt>Verhard of onverhard</dt>
+    <dd>Het percentage onverhard in de kop van elke etappe is berekend uit de
+      <code>surface</code>-tags van OpenStreetMap, ook onder de Open Database
+      License. Elk stukje van het spoor is op de dichtstbijzijnde weg gelegd;
+      waar niemand de ondergrond heeft ingevoerd is die afgeleid uit het wegtype,
+      en op deze route geldt dat voor ongeveer de helft van de afstand. Reken het
+      dus als een goede schatting, niet als een meting.</dd>
 
     <dt>Gemaakt op</dt>
     <dd>{nl_date(data['generated_at'][:10])}</dd>

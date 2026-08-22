@@ -1,0 +1,137 @@
+{
+ "name": "Guildford Bletchingley",
+ "gpx": "stage1-guildford-bletchingley.gpx",
+ "total_km": 44.65,
+ "paved_km": 8.33,
+ "unpaved_km": 36.32,
+ "unknown_km": 0.0,
+ "paved_pct": 18.7,
+ "unpaved_pct": 81.3,
+ "unknown_pct": 0.0,
+ "tagged_pct": 67.6,
+ "inferred_pct": 32.4,
+ "evidence": {
+  "surface=dirt": 10.1,
+  "designation=public_footpath": 7.21,
+  "surface=asphalt": 5.96,
+  "surface=compacted": 5.94,
+  "designation=public_bridleway": 3.16,
+  "surface=ground": 2.51,
+  "surface=unpaved": 1.78,
+  "highway=path": 1.64,
+  "surface=grass": 1.48,
+  "surface=gravel": 0.96,
+  "highway=residential": 0.86,
+  "surface=sand": 0.57,
+  "highway=bridleway": 0.41,
+  "highway=cycleway": 0.35,
+  "highway=unclassified": 0.32,
+  "highway=footway": 0.3,
+  "surface=paved": 0.3,
+  "surface=earth": 0.21,
+  "highway=service": 0.2,
+  "footway=sidewalk": 0.13,
+  "surface=paving_stones": 0.12,
+  "surface=concrete": 0.08,
+  "highway=steps": 0.03,
+  "footway=crossing": 0.02
+ },
+ "spans": [
+  {
+   "from_km": 0.0,
+   "to_km": 0.6077,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 0.6285,
+   "to_km": 2.0346,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 2.0346,
+   "to_km": 3.7399,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 3.7674,
+   "to_km": 9.5021,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 9.7335,
+   "to_km": 10.2024,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 10.2024,
+   "to_km": 11.9895,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 11.9895,
+   "to_km": 14.8223,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 14.831,
+   "to_km": 19.2743,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 19.5082,
+   "to_km": 21.0201,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 21.0201,
+   "to_km": 21.8578,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 21.8578,
+   "to_km": 22.9217,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 22.9217,
+   "to_km": 35.2939,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 35.3427,
+   "to_km": 36.2788,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 36.2788,
+   "to_km": 37.1879,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 37.1879,
+   "to_km": 38.5611,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 39.0912,
+   "to_km": 41.0366,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 41.0647,
+   "to_km": 42.5651,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 42.7334,
+   "to_km": 44.3823,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 44.3823,
+   "to_km": 44.6497,
+   "verdict": "verhard"
+  }
+ ],
+ "source": "OpenStreetMap contributors (ODbL), via Overpass"
+}

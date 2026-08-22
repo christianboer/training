@@ -13,9 +13,10 @@ export function renderCourseProfile(data) {
             <div class="stage-header">
                 <span class="stage-num">Stage ${stage.stage}</span>
                 <span class="stage-name">${stage.name}</span>
-                <span class="stage-stats">${stage.total_km} km · ${stage.total_ascent}m D+ · plan ${formatHours(stage.planned_hours)}</span>
+                <span class="stage-stats">${stage.total_km} km · ${stage.total_ascent}m D+ · plan ${formatHours(stage.planned_hours)}${stage.surface ? ` · ${Math.round(stage.surface.unpaved_pct)}% unpaved` : ''}</span>
             </div>
             <div class="course-profile-wrap stage-profile" id="stage-profile-${i}"></div>
+            <div class="stage-surface" id="stage-surface-${i}"></div>
             <div class="stage-photos" id="stage-photos-${stage.stage}"></div>
             <div class="stage-facts" id="stage-facts-${stage.stage}"></div>
         </div>
@@ -27,11 +28,34 @@ export function renderCourseProfile(data) {
         <span class="course-legend-item"><span class="course-swatch" style="background: #3b82f6"></span>Flat</span>
         <span class="course-legend-item"><span class="course-swatch" style="background: #a78bfa"></span>Descent</span>
         <span class="course-legend-item"><span class="course-swatch" style="background: var(--aid); transform: rotate(45deg)"></span>Refill point</span>
+        <span class="course-legend-item"><span class="course-swatch" style="background: #b4762f"></span>Unpaved</span>
+        <span class="course-legend-item"><span class="course-swatch" style="background: #7a7d82"></span>Paved</span>
     </div>`;
 
     stages.forEach((stage, i) => {
         renderStageProfile(document.getElementById(`stage-profile-${i}`), stage, i);
+        renderStageSurface(document.getElementById(`stage-surface-${i}`), stage);
     });
+}
+
+/**
+ * Caption for the paved/unpaved band. The band itself is drawn inside the
+ * profile SVG (see renderStageProfile) so that it stays aligned; only the words
+ * live out here.
+ *
+ * The data is OSM-derived (see scripts/route_surface/), so the caption names the
+ * source and the licence, and it is honest about how much of the split is a
+ * surveyed `surface` tag versus inferred from the road class.
+ */
+function renderStageSurface(el, stage) {
+    if (!el || !stage.surface || !stage.surface.spans) return;
+    const s = stage.surface;
+    el.innerHTML = `
+    <div class="surface-caption">
+        <strong>${s.unpaved_km.toFixed(1)} km unpaved</strong> · ${s.paved_km.toFixed(1)} km paved${s.unknown_km ? ` · ${s.unknown_km.toFixed(1)} km unknown` : ''}
+        <span class="surface-source">surface from ${s.source || 'OpenStreetMap'} —
+            ${Math.round(s.tagged_pct)}% tagged, ${Math.round(s.inferred_pct)}% inferred from road class</span>
+    </div>`;
 }
 
 /**
@@ -199,9 +223,16 @@ function renderStageProfile(container, stage, idx) {
     const profile = stage.profile;
     const waypoints = stage.waypoints || [];
 
-    // SVG dimensions — shorter than the old single-course chart
-    const w = 1060, h = 200;
-    const padL = 50, padR = 20, padT = 34, padB = 40;
+    // SVG dimensions — shorter than the old single-course chart.
+    // The paved/unpaved band, when there is one, lives inside this same SVG
+    // rather than in a sibling element: the chart is drawn with
+    // preserveAspectRatio="xMidYMid meet", so it letterboxes to fit its box and
+    // a separate full-width strip lines up with nothing. Sharing the viewBox is
+    // the only way the stripes stay over the kilometre they describe.
+    const hasBand = !!(stage.surface && stage.surface.spans);
+    const bandH = hasBand ? 22 : 0;
+    const w = 1060, h = 200 + bandH;
+    const padL = 50, padR = 20, padT = 34, padB = 40 + bandH;
     const chartW = w - padL - padR;
     const chartH = h - padT - padB;
 
@@ -286,6 +317,24 @@ function renderStageProfile(container, stage, idx) {
         <text x="${x(km)}" y="${padT + chartH + 18}" text-anchor="middle" class="course-axis-label">${km}</text>
     `).join('');
 
+    // Paved / unpaved, from OpenStreetMap — see scripts/route_surface/
+    const SURFACE_FILL = { onverhard: '#b4762f', verhard: '#7a7d82' };
+    const bandY = padT + chartH + 26;
+    const surfaceBand = !hasBand ? '' : `
+        <g class="course-surface-band">
+            <rect x="${padL}" y="${bandY}" width="${chartW}" height="12" rx="1.5"
+                  fill="var(--border)"/>
+            ${stage.surface.spans.map(sp => {
+                const x0 = x(Math.max(0, sp.from_km));
+                const x1 = x(Math.min(sp.to_km, maxKm));
+                return `<rect x="${x0.toFixed(1)}" y="${bandY}"
+                    width="${Math.max(0.6, x1 - x0).toFixed(1)}" height="12"
+                    fill="${SURFACE_FILL[sp.verdict] || 'var(--border)'}"/>`;
+            }).join('')}
+            <text x="${padL - 8}" y="${bandY + 9}" text-anchor="end"
+                  class="course-axis-label">surface</text>
+        </g>`;
+
     container.innerHTML = `
     <svg viewBox="0 0 ${w} ${h}" class="course-svg" preserveAspectRatio="xMidYMid meet">
         <defs>
@@ -300,6 +349,7 @@ function renderStageProfile(container, stage, idx) {
 
         ${gridLines.join('')}
         ${kmMarkers}
+        ${surfaceBand}
 
         <path d="${areaPath}" fill="url(#profile-fill-grad-${idx})"/>
         <path d="${linePath}" fill="none" stroke="url(#profile-grad-${idx})" stroke-width="2.5" stroke-linejoin="round"/>

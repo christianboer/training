@@ -316,7 +316,7 @@ function renderMetrics(data) {
         <div class="metric-item">
             <div class="metric-label">Longest run (52w)</div>
             <div class="metric-value">${getLongestRun(data)} km</div>
-            <div class="metric-sub">longest stage: 44.9 km</div>
+            <div class="metric-sub">longest stage: 47.4 km</div>
         </div>
     `;
 }

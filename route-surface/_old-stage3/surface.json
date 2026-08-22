@@ -1,0 +1,134 @@
+{
+ "name": "Maidstone Charing Heath",
+ "gpx": "stage3-maidstone-charing-heath-OLD.gpx",
+ "total_km": 44.93,
+ "paved_km": 29.78,
+ "unpaved_km": 15.15,
+ "unknown_km": 0.0,
+ "paved_pct": 66.3,
+ "unpaved_pct": 33.7,
+ "unknown_pct": 0.0,
+ "tagged_pct": 80.8,
+ "inferred_pct": 19.2,
+ "evidence": {
+  "surface=asphalt": 23.73,
+  "surface=compacted": 6.54,
+  "surface=dirt": 5.29,
+  "highway=primary": 2.66,
+  "highway=unclassified": 2.38,
+  "highway=footway": 1.2,
+  "highway=bridleway": 1.19,
+  "footway=sidewalk": 0.34,
+  "surface=gravel": 0.31,
+  "designation=public_bridleway": 0.27,
+  "highway=tertiary": 0.21,
+  "highway=cycleway": 0.21,
+  "highway=path": 0.17,
+  "designation=byway_open_to_all_traffic": 0.16,
+  "highway=service": 0.13,
+  "highway=residential": 0.04,
+  "surface=unpaved": 0.03,
+  "footway=crossing": 0.03,
+  "footway=traffic_island": 0.02,
+  "surface=paving_stones": 0.01,
+  "surface=concrete": 0.01
+ },
+ "spans": [
+  {
+   "from_km": 0.0712,
+   "to_km": 5.5836,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 5.7528,
+   "to_km": 8.4146,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 8.8886,
+   "to_km": 10.0122,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 10.0122,
+   "to_km": 11.4942,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 11.5283,
+   "to_km": 13.0056,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 13.0056,
+   "to_km": 13.9834,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 13.9834,
+   "to_km": 16.99,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 16.99,
+   "to_km": 19.1746,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 19.3431,
+   "to_km": 20.6364,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 20.6364,
+   "to_km": 22.6489,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 22.6489,
+   "to_km": 32.3366,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 32.3366,
+   "to_km": 35.5049,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 35.5049,
+   "to_km": 37.3419,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 37.3419,
+   "to_km": 38.014,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 38.1466,
+   "to_km": 39.4063,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 39.4063,
+   "to_km": 39.7457,
+   "verdict": "verhard"
+  },
+  {
+   "from_km": 39.7457,
+   "to_km": 40.3306,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 40.3446,
+   "to_km": 42.9388,
+   "verdict": "onverhard"
+  },
+  {
+   "from_km": 42.9388,
+   "to_km": 44.9343,
+   "verdict": "verhard"
+  }
+ ],
+ "source": "OpenStreetMap contributors (ODbL), via Overpass"
+}

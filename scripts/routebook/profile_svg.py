@@ -5,13 +5,15 @@ Geometry only — every colour and type size comes from the routebook stylesheet
 because the SVG is inlined into the page and CSS classes reach straight into it.
 That keeps one palette in one file instead of two.
 
-All four stages are drawn on the *same* domain (0-250 m, 0-45 km) so the pages
-can be compared: stage 3 should look flat next to stage 1 and stage 4 should
-look short, and it only does that if the axes do not rescale per page.
+All four stages are drawn on the *same* domain (0-250 m, 0-48 km) so the pages
+can be compared: stage 4 should look short next to the others, and stage 3 -
+the longest since the Aug 22 re-route - should run nearly the full width. That
+only works if the axes do not rescale per page. The x domain has to clear the
+longest stage (47.4 km); at 45 the stage 3 profile ran off the plate.
 """
 
 Y_DOMAIN = (0, 250)      # metres, shared by every stage
-X_DOMAIN = (0, 45)       # kilometres, shared by every stage
+X_DOMAIN = (0, 48)       # kilometres, shared by every stage - must clear the longest
 Y_STEP = 50              # gridline spacing in metres
 X_STEP = 5               # km tick spacing
 

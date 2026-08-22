@@ -19,3 +19,7 @@ __pycache__/
 # belong in git.
 /crewbook/
 /scripts/crewbook/cache/
+
+# Raw Overpass responses for the surface analysis. Regenerable, and large —
+# route-surface/*/segments.json is the durable part and that one is committed.
+/scripts/route_surface/cache/

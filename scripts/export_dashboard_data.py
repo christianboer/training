@@ -31,7 +31,7 @@ RACE_DATE = '2026-09-03'   # Stage 1 of the England 4-Day
 EVENTS = [
     {"date": "2026-09-03", "name": "Stage 1: Guildford → Bletchingley", "distance_km": 44.7, "elevation_m": 991, "role": "Queen stage — hilliest of the four"},
     {"date": "2026-09-04", "name": "Stage 2: Bletchingley → Maidstone", "distance_km": 44.4, "elevation_m": 728, "role": "4-Day"},
-    {"date": "2026-09-05", "name": "Stage 3: Maidstone → Charing Heath", "distance_km": 44.9, "elevation_m": 417, "role": "4-Day — longest, but flattest of the three"},
+    {"date": "2026-09-05", "name": "Stage 3: Maidstone → Charing Heath", "distance_km": 47.4, "elevation_m": 737, "role": "4-Day — longest of the four; trail-heavy re-route"},
     {"date": "2026-09-06", "name": "Stage 4: Charing Heath → Canterbury", "distance_km": 36.0, "elevation_m": 336, "role": "Victory lap into Canterbury"},
     {"date": "2026-09-27", "name": "Euromast Trappenloop", "distance_km": 0.6, "elevation_m": 100, "role": "Sharpener — 589 steps"},
     {"date": "2026-10-03", "name": "Trappenmarathon", "distance_km": 47, "elevation_m": 3090, "role": "Stair-repeat marathon"},
@@ -470,7 +470,7 @@ STAGES = [
      "gpx": "stage2-bletchingley-maidstone.gpx", "planned_hours": 5.62,
      "start": "Bletchingley", "finish": "Maidstone"},
     {"stage": 3, "date": "2026-09-05", "name": "Maidstone → Charing Heath",
-     "gpx": "stage3-maidstone-charing-heath.gpx", "planned_hours": 5.47,
+     "gpx": "stage3-maidstone-charing-heath.gpx", "planned_hours": 5.97,
      "start": "Maidstone", "finish": "Charing Heath"},
     {"stage": 4, "date": "2026-09-06", "name": "Charing Heath → Canterbury",
      "gpx": "stage4-charing-heath-canterbury.gpx", "planned_hours": 4.38,
@@ -582,6 +582,29 @@ def parse_gpx_profile(gpx_path, num_points=100, waypoint_defs=None):
     }
 
 
+SURFACE_DIR = os.path.join(BASE_DIR, 'route-surface')
+
+
+def load_surface(stage_n):
+    """The paved/unpaved split for one stage, from
+    `route-surface/stage<n>/surface.json` (written by
+    `scripts/route_surface/route_surface.py`).
+
+    Optional on purpose: the file is OSM-derived and needs a network harvest, so
+    a checkout without it renders the stage stats without the percentage rather
+    than failing. Same contract as route-facts and route-photos."""
+    path = os.path.join(SURFACE_DIR, f'stage{stage_n}', 'surface.json')
+    if not os.path.exists(path):
+        return None
+    try:
+        d = json.load(open(path))
+    except Exception:
+        return None
+    keep = ('paved_km', 'unpaved_km', 'unknown_km', 'paved_pct', 'unpaved_pct',
+            'unknown_pct', 'tagged_pct', 'inferred_pct', 'spans', 'source')
+    return {k: d[k] for k in keep if k in d}
+
+
 def build_stage_profiles():
     """Parse each stage GPX into an elevation profile with start/finish waypoints."""
     stages = []
@@ -598,21 +621,40 @@ def build_stage_profiles():
             # Keep the GPX profile shape, but report the ascent on the stated basis
             profile["total_ascent_gpx"] = profile["total_ascent"]
             profile["total_ascent"] = s["ascent_override_m"]
-        stages.append({
+        entry = {
             "stage": s["stage"],
             "date": s["date"],
             "name": s["name"],
             "planned_hours": s["planned_hours"],
             "ascent_source": s.get("ascent_source", "Garmin course export"),
             **profile,
-        })
+        }
+        surface = load_surface(s["stage"])
+        if surface:
+            entry["surface"] = surface
+        stages.append(entry)
     if not stages:
         return None
-    return {
+    out = {
         "stages": stages,
         "total_km": round(sum(s["total_km"] for s in stages), 1),
         "total_ascent": round(sum(s["total_ascent"] for s in stages)),
     }
+    surfaced = [s for s in stages if s.get("surface")]
+    if len(surfaced) == len(stages):
+        paved = sum(s["surface"]["paved_km"] for s in stages)
+        unpaved = sum(s["surface"]["unpaved_km"] for s in stages)
+        unknown = sum(s["surface"]["unknown_km"] for s in stages)
+        known = paved + unpaved + unknown
+        out["surface"] = {
+            "paved_km": round(paved, 1),
+            "unpaved_km": round(unpaved, 1),
+            "unknown_km": round(unknown, 1),
+            "unpaved_pct": round(unpaved / known * 100, 1) if known else 0,
+            "paved_pct": round(paved / known * 100, 1) if known else 0,
+            "source": stages[0]["surface"].get("source"),
+        }
+    return out
 
 
 def build_stage_plan(course_profile, carbs_per_hr=60, fluid_l_per_hr=0.5):
@@ -698,8 +740,8 @@ def main():
             "name": "Pilgrims' Way 4-Day",
             "date": RACE_DATE,
             "end_date": "2026-09-06",
-            "distance_km": 170.0,
-            "elevation_m": 2472,
+            "distance_km": 172.5,
+            "elevation_m": 2792,
             "days": 4,
             "start_time": "09:00",
             "location": "Guildford → Canterbury, England",
@@ -737,7 +779,7 @@ def main():
             "scenarios": [
                 {"label": "Optimistic", "hours": 19.75, "conditions": "Ankle fully settled, 2025 pace holds (6:55–7:00/km)"},
                 {"label": "Target", "hours": 20.5, "conditions": "Solid prep, ankle managed, walk breaks on schedule"},
-                {"label": "Realistic", "hours": 21.33, "conditions": "Matches the 21h17 route estimate — extra walking on rough ground"},
+                {"label": "Realistic", "hours": 21.83, "conditions": "Matches the 21h47 route estimate — extra walking on rough ground"},
                 {"label": "Conservative", "hours": 23.0, "conditions": "Ankle forces walk-heavy stages — still finishes, just longer days"},
             ],
             "cutoff_hours": 26,
@@ -745,7 +787,7 @@ def main():
             "key_factors": [
                 "Ankle stability on uneven ground — rehab compliance in weeks 1–6 decides it",
                 "Back-to-back recovery routine — eat within 30 min, legs up, sleep",
-                "Stage 1 discipline — hilliest stage on day 1, with two more 44 km days behind it; going out too fast taxes days 2–4",
+                "Stage 1 discipline — hilliest stage on day 1, with a 44 km and a 47 km day behind it; going out too fast taxes days 2–4",
                 "Stair economy — variant B sessions in weeks 11–12 set up the Trappenmarathon",
             ],
         },
